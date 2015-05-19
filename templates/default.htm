@@ -1,0 +1,16 @@
+---
+description: 'Default Template'
+---
+<!DOCTYPE html> 
+<!--[if IE 8]> <html lang="en"> <![endif]--> 
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]--> 
+<head>
+    {{ partial('layout-head') }}
+</head> 
+<body>
+    {{ partial('layout-header')}}
+    {{ code_block('breadcrumbs') }}
+    {{ page() }} 
+    {{ partial('layout-footer') }}
+</body>
+</html>
