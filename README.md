@@ -1,6 +1,5 @@
 # Bones - A barebones LemonStand theme
 
-
 ## Running Gulp
 
 Gulp is a simple build system for web things. It automates compiling Sass, minifying files, and so on.
@@ -18,3 +17,9 @@ Gulp is a simple build system for web things. It automates compiling Sass, minif
 * gulp-jshint (https://www.npmjs.com/package/jshint)
 * gulp-concat (https://www.npmjs.com/package/concat)
 * gulp-uglify (https://www.npmjs.com/package/gulp-uglify)
+* gulp-rename (https://www.npmjs.com/package/gulp-rename)
+* glup-notify (https://www.npmjs.com/package/gulp-notify)
+
+---
+
+[LemonStand.com](https://lemonstand.com) | [LemonStand Docs](https://docs.lemonstand.com)
