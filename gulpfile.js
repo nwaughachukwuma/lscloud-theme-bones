@@ -1,17 +1,40 @@
-var gulp = require('gulp');
+// Load plugins
+var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    minifycss = require('gulp-minify-css'),
+    jshint = require('gulp-jshint'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
+    rename = require('gulp-rename'),
+    notify = require('gulp-notify');
 
-// Include plugins
-var jshint = require('gulp-jshint');
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var notify = require("gulp-notify");
+// Source paths
+var jsSrc = [
+        'resources/scripts/src/*.js'
+    ],
+    sassSrc = [
+        'resources/stylesheets/src/*.scss'
+    ];
 
+// Complile and minify Sass 
+gulp.task('styles', function () {
+    gulp.src(sassSrc)
+        .pipe(sass({
+            style: 'expanded',
+            lineNumbers: true,
+            sourcemap: false,
+            includePaths: require('node-neat').includePaths
+        }))
+        .pipe(gulp.dest('resources/stylesheets'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(minifycss())
+        .pipe(gulp.dest('resources/stylesheets'))
+        .pipe(notify({ message: 'Styles task complete' }));
+}); 
 
 // Lint
 gulp.task('lint', function() {
-    return gulp.src('js/*.js')
+    return gulp.src(jsSrc)
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
         .pipe(notify(
@@ -30,28 +53,22 @@ gulp.task('lint', function() {
         ));
 });
 
-// Compile sass
-gulp.task('sass', function() {
-    return gulp.src('sass/*.scss')
-        .pipe(sass())
-        .pipe(gulp.dest('resources/stylesheets'));
-});
-
-// Concat & minify JS
-gulp.task('scripts', function() {
-    return gulp.src('resources/js/*.js')
-        .pipe(concat('_all.js'))
-        .pipe(gulp.dest('resources/js'))
-        .pipe(rename('all.min.js'))
+// Concat and uglify scripts
+gulp.task('scripts', function () {
+    gulp.src(jsSrc)
+        .pipe(concat('all.js'))
+        .pipe(rename({ suffix: '.min' }))
         .pipe(uglify())
-        .pipe(gulp.dest('resources/js'));
-});
+        .pipe(gulp.dest('resources/scripts'))
+        .pipe(notify({ message: 'Scripts task complete' }));
+});   
 
 // Watch for changes
 gulp.task('watch', function() {
-    gulp.watch('resources/js/*.js', ['lint', 'scripts']);
-    gulp.watch('sass/**/*.scss', ['sass']);
+    gulp.watch(jsSrc, ['lint']);
+    gulp.watch(sassSrc, ['styles']);
+    gulp.watch(jsSrc, ['scripts']);
 });
 
 // Default task
-gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);
+gulp.task('default', ['styles', 'lint', 'scripts', 'watch']);
