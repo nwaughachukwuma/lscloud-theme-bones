@@ -10,6 +10,7 @@ Gulp is a simple build system for web things. It automates compiling Sass, minif
 
 ## Node Modules
 
+* gulp (https://www.npmjs.com/package/gulp)
 * gulp-sass (https://www.npmjs.com/package/gulp-sass)
 * node-bourbon (https://www.npmjs.com/package/node-bourbon)
 * node-neat (https://www.npmjs.com/package/node-neat)
