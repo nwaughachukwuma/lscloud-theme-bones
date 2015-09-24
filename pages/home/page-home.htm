@@ -6,4 +6,21 @@ published: true
 name: Bones
 url: /
 ---
-<p>Home page.</p>
+<h1>Home page.</h1>
+<section>
+  <h2>Hero Section: showcase key content on site</h2>
+  <img src="http://placehold.it/960x150">
+</section>
+<hr>
+<section>
+  <h2>Some copy</h2>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</p>
+</section>
+<hr>
+<section>
+  <h2>Feature products (collection)</h2>
+
+  {{ partial('partial-product-grid', {featuredCollection: 'featuredCollection'|collection}) }}
+
+</section>
+<hr>

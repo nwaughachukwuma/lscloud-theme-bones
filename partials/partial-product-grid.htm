@@ -1,0 +1,11 @@
+{% if featuredCollection %}
+  {% for product in featuredCollection.products %}
+  <p>
+    <a href="/product/{{ product.url_name }}" class="btn btn-default">
+      {{ product.name }}
+    </a>
+  </p>
+  {% endfor %}
+  {% else %}
+  <p>The product collection was not found. Please create a collection and name it: <em>featuredCollection</em>.</p>
+{% endif %}
