@@ -16,7 +16,7 @@ var jsSrc = [
         'resources/stylesheets/src/*.scss'
     ];
 
-// Complile and minify Sass 
+// Compile and minify Sass 
 gulp.task('styles', function () {
     gulp.src(sassSrc)
         .pipe(sass({
