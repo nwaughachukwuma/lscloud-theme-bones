@@ -1,9 +1,11 @@
 {% if featuredCollection %}
   {% for product in featuredCollection.products %}
+  <a href="/product/{{ product.url_name }}">
+    <img src="{{ product.images.first.thumbnail(400, 'auto', {crop: true}) }}" >
+  </a>
   <p>
     <a href="/product/{{ product.url_name }}" class="btn btn-default">
-      {{ product.name }}
-    </a>
+      {{ product.name }}</a> :: {{ product.price|currency }}
   </p>
   {% endfor %}
   {% else %}
