@@ -6,4 +6,43 @@ published: true
 name: Category
 url: '/category/:urlName@/:page?'
 ---
-<p>Category page.</p>
+<h3>Categories</h3>
+
+{% tree categories %}
+  <ul class="{% if tree.topLevel %} categories-group {% else %} sub-category {% endif %}">
+    {% for category in tree.items %}
+      <li>
+        <a href="/category/{{ category.fullUrlName }}">{{ category.name }}</a>
+        {% branch category.children %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endtree %}
+
+{% if not category %}
+  <h2>Category not found</h2>
+  <p>We are sorry, the requested category was not found.</p>
+{% else %}
+  {% paginate products by 1 %}
+		<ul class="clearfix">  
+		  {% for product in pagination.items %}
+				{% set is_on_sale = product.onSale %}
+				{% set page_url = '/product/' ~ product.url_name %}
+				<li class="{{ is_on_sale ? 'sale' : null }}">
+		      <a href="{{ page_url }}"><img src="{{ product.images.first.thumbnail(365, 365)|default('http://placehold.it/365x365') }}" width="365" height="365" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
+		      <h3><a href="{{ page_url }}">{{ product.name }}</a></h3>
+		      <span>
+		        <a href="{{ page_url }}">
+		          <i>
+		            {% if is_on_sale %}<span class="oldprice">{{ product.fullPrice|currency }}</span>{% endif %}
+		            {{ product.price|currency }}
+		          </i>
+		        </a>
+		      </span>
+			    {% if is_on_sale %}<span class="salesign">SALE</span>{% endif %}
+				</li>
+		  {% endfor %}
+		</ul>
+	  {% navigation %}
+  {% endpaginate %}
+{% endif %}
