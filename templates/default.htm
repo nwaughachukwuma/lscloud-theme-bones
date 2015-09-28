@@ -3,47 +3,50 @@ description: 'Default Template'
 ---
 <!DOCTYPE html>
 <html>
-  <head>
-    <title></title>
-  </head>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="/">Bones</a></li>
-        <li>
-          <a href="/shop">Shop</a>
+<head>
+{{ partial("layout-head") }}
+</head>
+<header>
+  <nav>
+    <ul>
+      <li><a href="/">Bones</a></li>
+      <li>
+        <a href="/shop">Shop</a>
 
-          {% for category in categories %}
+        {% for category in categories %}
+        <ul>
+          {% if category.children %}
+          <li><a href="/category/{{ category.fullUrlName }}">{{category.name}}</a></li>
           <ul>
-            {% if category.children %}
-            <li><a href="/category/{{ category.fullUrlName }}">{{category.name}}</a></li>
-            <ul>
-              {% for child in category.children %}
-              <li><a href="/category/{{ child.fullUrlName }}">{{child.name}}</a></li>
-              {% endfor %}
-            </ul>
-            {% else %}
-            <li><a href="/category/{{ category.fullUrlName }}">{{category.name}}</a></li>
-            {% endif %}
+            {% for child in category.children %}
+            <li><a href="/category/{{ child.fullUrlName }}">{{child.name}}</a></li>
+            {% endfor %}
           </ul>
-          {% endfor %}
-          
-        </li>
-        <li><a href="/contact">Say Hello</a></li>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="/sign-in">Sign In/Up</a></li>
-        <li><a href="/cart">Cart</a></li>
-        <li>
-        {{ open_form({'method': 'get', 'action': site_url('search')}) }}
-          <input type="text" name="query" value="{{query|unescape}}" placeholder="Search store&hellip;"/>
-        {{ close_form() }}
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <body>
-  {{ page() }}
-  </body>
-  <footer><p>footer</p></footer>
-</html> 
+          {% else %}
+          <li><a href="/category/{{ category.fullUrlName }}">{{category.name}}</a></li>
+          {% endif %}
+        </ul>
+        {% endfor %}
 
+      </li>
+      <li><a href="/contact">Say Hello</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/sign-in">Sign In/Up</a></li>
+      <li><a href="/cart">Cart</a></li>
+      <li>
+        {{ open_form({'method': 'get', 'action': site_url('search')}) }}
+        <input type="text" name="query" value="{{query|unescape}}" placeholder="Search store&hellip;"/>
+        {{ close_form() }}
+      </li>
+    </ul>
+    <!-- Current page and breadcrumbs -->
+    <h2>{{ page.title }}</h2>
+    {{ code_block('breadcrumbs') }}
+    <br />
+  </nav>
+</header>
+<body>
+  {{ page() }}
+</body>
+<footer><p>footer</p></footer>
+</html>

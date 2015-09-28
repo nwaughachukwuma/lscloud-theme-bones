@@ -6,8 +6,6 @@ published: true
 name: Product
 url: '/product/:urlName'
 ---
-<h1>Product page.</h1>
-
 {% for image in product.images %}
 <img src="{{ image.thumbnail('960', 'auto')|default('http://placehold.it/80x80') }}" >
 {% endfor %}

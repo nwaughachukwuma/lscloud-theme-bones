@@ -1,0 +1,11 @@
+.breadcrumbs {
+	.crumb {
+		float: left;
+		list-style: none;
+		text-style: none;
+	}
+	:not(:last-child):after {
+		content: "/";
+		margin-left: 5px;
+	}
+}
