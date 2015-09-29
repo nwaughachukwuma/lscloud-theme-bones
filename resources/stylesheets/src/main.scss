@@ -1,6 +1,18 @@
+@import "bourbon";
+@import "neat";
+// Sign-in
+.login-register-wrap { @include outer-container;
+	section { @include span-columns(6);
+		h3 { @include fill-parent; }
+		label { @include fill-parent; }
+		input { @include fill-parent; }
+		.button { width: auto; }
+	}
+}
+// Breadcrumbs
 .breadcrumbs {
 	.crumb {
-		float: left;
+		display: inline;
 		list-style: none;
 		text-style: none;
 	}
