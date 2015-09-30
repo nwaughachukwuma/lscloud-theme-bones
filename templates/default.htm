@@ -7,6 +7,12 @@ description: 'Default Template'
 {{ partial("layout-head") }}
 </head>
 <header>
+  {% if customer %}
+    Welcome, {{ customer.first_name }}!
+    <a href="/logout">Logout</a>
+  {% else %}
+    <a href="/sign-in">Login or Register</a>
+  {% endif %}
   <nav>
     <ul>
       <li><a href="/">Bones</a></li>
@@ -31,7 +37,6 @@ description: 'Default Template'
       </li>
       <li><a href="/contact">Say Hello</a></li>
       <li><a href="/about">About Us</a></li>
-      <li><a href="/sign-in">Sign In/Up</a></li>
       <li><a href="/cart">Cart</a></li>
       <li>
         {{ open_form({'method': 'get', 'action': site_url('search')}) }}
