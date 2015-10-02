@@ -9,17 +9,21 @@ url: '/product/:urlName'
 {% for image in product.images %}
 <img src="{{ image.thumbnail('960', 'auto')|default('http://placehold.it/80x80') }}" >
 {% endfor %}
-
+ s9
 <h2>{{ product.name }}</h2>
 <p>{{ product.price|currency }}</p>
 <p>{{ product.description|unescape }}</p>
 
 <!-- open form -->
+{{ open_form({'class': 'custom', 'onsubmit': 'return false'}) }}
+	{% if product %}
 
-<input type="hidden" name="productId" value="{{ product.id }}">
-<label>Quantity <input type="text" value="{{ quantity|default("1") }}" name="quantity"></label>
-<a href="#">Add to cart</a>
+		<input type="hidden" name="productId" value="{{ product.id }}">
+		<label>Quantity <input type="text" value="{{ quantity|default("1") }}" name="quantity"></label>
+		<a href="#">Add to cart</a>
+	{% else %}
+	<!-- NO PRODUCT -->
 
-<!-- close form -->
+{{ close_form }}
 
 <hr>
