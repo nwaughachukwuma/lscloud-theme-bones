@@ -8,6 +8,6 @@
       {{ product.name }}</a> :: {{ product.price|currency }}
   </p>
   {% endfor %}
-  {% else %}
+{% else %}
   <p>The product collection was not found. Please create a collection and name it: <em>featuredCollection</em>.</p>
 {% endif %}
