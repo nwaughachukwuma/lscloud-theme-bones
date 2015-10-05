@@ -20,7 +20,7 @@ url: '/product/:urlName'
 
     <!-- product attributes -->
     {% if product.productAttributes.count %}
-      <table class="compact">
+      <table>
         {% for attribute in product.productAttributes %}
           <tr>
             <th>{{ attribute.name }}</th>
@@ -32,58 +32,45 @@ url: '/product/:urlName'
 
     <!-- product options -->
     {% if product.options.count %}
-      <div class="clearfix">
-        {% for index, option in product.options %}
-          <div class="option">
-            <label class="title" for="{{ 'option-'~index }}">{{ option.name }}</label>
-            <select id="{{ 'option-'~index }}" name="options[{{ option.id }}]" class="product-option" data-ajax-handler="shop:product" data-ajax-update="#product-page=shop-product">
-              {% for key, value in option.values %}
-                <option value='{{ key }}' {{ option_state(postedOptions[option.id], key) }}>{{ value }}</option>
-              {% endfor %}
-            </select>
-          </div>
-        {% endfor %}
-      </div>
+      {% for index, option in product.options %}
+        <label for="{{ 'option-'~index }}">{{ option.name }}</label>
+        <select id="{{ 'option-'~index }}" name="options[{{ option.id }}]" data-ajax-handler="shop:product" data-ajax-update="">
+          {% for key, value in option.values %}
+            <option value='{{ key }}' {{ option_state(postedOptions[option.id], key) }}>{{ value }}</option>
+          {% endfor %}
+        </select>
+      {% endfor %}
     {% endif %}
 
     <!-- product extras -->
     {% if product.extras.count %}
-    <h3>Product Extras</h3>
-      <div class="clearfix">
-        {% for index, extra in product.extras %}
-            <div class="extra">
-                <label class="title" for="{{ 'extra-'~index }}">{{ extra.name }} ({{ extra.price|currency }})</label>
-                {% if extra.enabled %}
-                    <input type="checkbox" id="{{ 'extra-'~index }}" {{ checkbox_state(postedExtras[extra.id], extra.id) }} name="extras[{{ extra.id }}]" data-ajax-handler="shop:product" data-ajax-update="#product-page=shop-product">
-                {% else %}
-                    <input type="checkbox" disabled="disabled">
-                {% endif %}
-            </div>
-        {% endfor %}
-      </div>
+    <h2>Product Extras</h2>
+      {% for index, extra in product.extras %}
+        <label for="{{ 'extra-'~index }}">{{ extra.name }} ({{ extra.price|currency }})</label>
+        {% if extra.enabled %}
+            <input type="checkbox" id="{{ 'extra-'~index }}" {{ checkbox_state(postedExtras[extra.id], extra.id) }} name="extras[{{ extra.id }}]" data-ajax-handler="shop:product" data-ajax-update="">
+        {% else %}
+            <input type="checkbox" disabled="disabled">
+        {% endif %}
+      {% endfor %}
     {% endif %}
 
     <!-- quantity & add-to-cart -->
     {% if product.enabled %}
       {% if not product.isOutOfStock() or product.allow_preorder %}
-        {{ open_form() }}
-          <input type="text" value="{{ quantity|default("1") }}" name="quantity"/>
-          <input type="hidden" name="productId" value="{{ product.id }}"/>
-          <button type="button" class="btn btn-primary btn-large" href="#" id="add_to_cart">
-          <i class="icon-plus"></i> &nbsp; Add to cart</button>
-        {{ close_form() }}
+        <label>Quantity <input type="text" value="{{ quantity|default("1") }}" name="quantity"></label>
+        <input type="hidden" name="productId" value="{{ product.id }}"/>
+        <button type="button" href="#">Add to cart</button>
       {% else %}
-        <div class="not-available">
-          <p>
-          This product is temporarily unavailable.
-          {% if product.om('expected_availability_date', posted_options) %}
-          <br/>The expected availability date is <strong>{{ product.om('expected_availability_date', posted_options).format('%x') }}</strong>
-          {% endif %}
-          </p>
-        </div>
+        <p>
+        This product is temporarily unavailable.
+        {% if product.om('expected_availability_date', posted_options) %}
+        <br/>The expected availability date is <strong>{{ product.om('expected_availability_date', posted_options).format('%x') }}</strong>
+        {% endif %}
+        </p>
       {% endif %}
     {% else %}
-        <div class="not-available"><p>This product is not available.</p></div>
+        <h2>This product is not available.</h2>
     {% endif %}
 
     <!-- picture grid -->
@@ -97,16 +84,10 @@ url: '/product/:urlName'
 
     <!-- related products -->
     {% if product.related.count %}
-    <div class="related-items product-list twelve columns">
-      <h3>Related Items</h3>
-      <div class="row">
-        <ul class="clearfix"> 
-        {% for product in product.related %}
-          {{ partial('partial-product-grid', {'product':product}) }}
-        {% endfor %} 
-        </ul>
-      </div>
-    </div>
+      <h2>Related Items</h2>
+      {% for product in product.related %}
+        {{ partial('partial-product-grid', {'product':product}) }}
+      {% endfor %} 
     {% endif %}
 
   {% else %}
