@@ -11,8 +11,12 @@ url: '/product/:urlName'
   {% if product %}
     {% set on_sale = product.onSale %}
     <div itemscope itemtype="http://schema.org/Product">
+
       <h2 itemprop="name">{{ product.name }}</h2>
       <meta itemprop="sku" content="{{ product.sku }}" />
+      <link itemprop="url" href="{{ '/product/' ~ product.url_name }}" />
+
+      <!-- product cost -->
       <h4 class="cost">
         {% if on_sale %}
         <span class="oldprice">{{ product.fullPrice|currency }}</span>
@@ -22,7 +26,7 @@ url: '/product/:urlName'
 
       <!-- product attributes -->
       {% if product.productAttributes.count %}
-        <table>
+        <table class="attributes">
           {% for attribute in product.productAttributes %}
             <tr>
               <th>{{ attribute.name }}</th>
@@ -87,16 +91,16 @@ url: '/product/:urlName'
         <img itemprop="image" src="{{ image.thumbnail('330', 'auto')|default('http://placehold.it/330x330') }}" >
       {% endfor %}
 
+      <!-- product details -->
       <h2>Product Details</h2>
       <p itemprop="description">{{ product.description|unescape }}</p>
 
+      <!-- product ratings -->
       <h2>Ratings goes here</h2>
-      <!--  Example markup
       <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
         Rated <span itemprop="ratingValue">3.5</span>/5
         based on <span itemprop="reviewCount">11</span> customer reviews
       </div> 
-      -->
 
       <!-- related products -->
       {% if product.related.count %}
