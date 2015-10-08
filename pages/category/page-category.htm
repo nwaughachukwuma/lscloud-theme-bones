@@ -37,7 +37,7 @@ url: '/category/:urlName@/:page?'
 					<h4 class="cost">
 						{% if is_on_sale %}<span>{{ product.fullPrice|currency }}</span>{% endif %}
 						{{ product.price|currency }}
-					</h4 class="cost">
+					</h4>
 				</a>
 				{% if is_on_sale %}<span>SALE</span>{% endif %}
 			</li>
