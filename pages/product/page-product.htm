@@ -11,12 +11,12 @@ url: '/product/:urlName'
   {% if product %}
     {% set on_sale = product.onSale %}
     <h2>{{ product.name }}</h2>
-    <i>
+    <h4 class="cost">
       {% if on_sale %}
       <span class="oldprice">{{ product.fullPrice|currency }}</span>
       {% endif %}
       {{ product.price|currency }}
-    </i>
+    </h4 class="cost">
 
     <!-- product attributes -->
     {% if product.productAttributes.count %}
