@@ -88,7 +88,9 @@ url: '/product/:urlName'
 
       <!-- picture grid -->
       {% for image in product.images %}
-        <img itemprop="image" src="{{ image.thumbnail('330', 'auto')|default('http://placehold.it/330x330') }}" >
+        <figure>
+          <a href="{{ page_url }}"><img itemprop="image" src="{{ product.images.first.thumbnail(365, 365)|default('http://placehold.it/365x365') }}" width="365" height="365" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
+        </figure>
       {% endfor %}
 
       <!-- product details -->

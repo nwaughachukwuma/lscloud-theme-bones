@@ -9,15 +9,6 @@ url: /cart
 {{ open_form({'class': 'custom'}) }}
 {% if itemCount %}
 	<table>
-<!-- 		<tr>
-			<th>Item</th>
-			<th>Quantity</th>
-			<th>Price</th>
-			{% if cart.getDiscountTotal() > 0 %}
-				<th>Discount</th>
-				<th>Unit Price</th>
-			{% endif %}
-		</tr> -->
 		{% for item in items %}
 		<tr>
 			<td>

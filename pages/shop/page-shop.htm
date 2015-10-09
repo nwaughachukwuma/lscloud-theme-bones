@@ -15,7 +15,9 @@ url: '/shop/:page?'
 				{% set is_on_sale = product.onSale %}
 				{% set page_url = '/product/' ~ product.url_name %}
 				<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Product" class="{{ is_on_sale ? 'sale' : null }}">
-					<a href="{{ page_url }}"><img itemprop="image" src="{{ product.images.first.thumbnail(365, 365)|default('http://placehold.it/365x365') }}" width="365" height="365" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
+					<figure>
+						<a href="{{ page_url }}"><img itemprop="image" src="{{ product.images.first.thumbnail(365, 365)|default('http://placehold.it/365x365') }}" width="365" height="365" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
+					</figure>
 					<h3><a itemprop="url" href="{{ page_url }}"><span itemprop="name">{{ product.name }}</span></a></h3>
 					<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 					{% if product.enabled %}
