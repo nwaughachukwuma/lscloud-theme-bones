@@ -6,4 +6,29 @@ published: true
 name: Shop
 url: '/shop/:page?'
 ---
-<p>Shop page.</p>
+{{ open_form() }}
+  {% paginate products by 2 %}
+
+<ul>  
+  {% for product in pagination.items %}
+
+  	{% set is_on_sale = product.onSale %}
+		{% set page_url = '/product/' ~ product.url_name %}
+		<li class="{{ is_on_sale ? 'sale' : null }}">
+			<a href="{{ page_url }}"><img src="{{ product.images.first.thumbnail(365, 365)|default('http://placehold.it/365x365') }}" width="365" height="365" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
+			<h3><a href="{{ page_url }}">{{ product.name }}</a></h3>
+      <h4 class="cost">
+        {% if on_sale %}
+        <span class="oldprice">{{ product.fullPrice|currency }}</span>
+        {% endif %}
+        {{ product.price|currency }}
+      </h4>
+		</li>
+
+  {% endfor %}
+</ul>
+
+{% navigation %}
+
+  {% endpaginate %}
+{{ close_form() }}
