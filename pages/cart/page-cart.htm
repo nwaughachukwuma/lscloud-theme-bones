@@ -9,7 +9,7 @@ url: /cart
 {{ open_form({'class': 'custom'}) }}
 {% if itemCount %}
 	<table>
-		<tr>
+<!-- 		<tr>
 			<th>Item</th>
 			<th>Quantity</th>
 			<th>Price</th>
@@ -17,21 +17,28 @@ url: /cart
 	      <th>Discount</th>
 	      <th>Unit Price</th>
 	    {% endif %}
-		</tr>
+		</tr> -->
 	  {% for item in items %}
 		<tr>
 			<td>
-				<a class="hide-for-small" href="/product/{{ item.product.url_name }}"><img src="{{ item.product.images.first.thumbnail(160, 160)|default('http://placehold.it/160x160') }}"/></a>
+				<a href="/product/{{ item.product.url_name }}"><img src="{{ item.product.images.first.thumbnail(160, 160)|default('http://placehold.it/160x160') }}"/></a>
+			</td>
+			<td>
 				<h3><a href="/product/{{ item.product.url_name }}">{{ item.product.name }}</a></h3>
 				{% set description = item.optionsString() %}
 				{% if description %}<p>{{ description|unescape }}</p>{% endif %}
 			</td>
-			<td class="narrow"><input type="text" name="item_quantity[{{ item.key }}]" value="{{ item.quantity }}"></td>
+			<td><input type="text" name="item_quantity[{{ item.key }}]" value="{{ item.quantity }}"></td>
+			<td><i>{{ item.fullPrice()|currency }}</i></td> 
+			{% if cart.getDiscountTotal() > 0 %}
+				<td><i>{{ item.totalDiscount()|currency }}</i></td>
+				<td><i>{{ item.price()|currency }}</i></td>
+			{% endif %}
+			<td><i>{{ item.total()|currency }}</i></td>
+			<td>
+				<a href="#" data-ajax-handler="shop:cart" {# data-ajax-confirm="Do you really want to remove this item from the cart?" #} data-ajax-update="#cart-content=shop-cart-content, #mini-cart=shop-minicart"data-ajax-extra-fields="delete_item='{{ item.key }}'">Remove</a>
+      </td>
 
-	<!--
-			<td>Items go here</td>
-			<td>Quantity goes hre</td>  
-	ETC...-->
 		</tr>
 		{% endfor %}
 	</table>
