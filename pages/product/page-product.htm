@@ -70,7 +70,7 @@ url: '/product/:urlName'
           <meta itemprop="price" content="{{ product.price }}" />
           <label>Quantity <input type="text" value="{{ quantity|default("1") }}" name="quantity"></label>
           <input type="hidden" name="productId" value="{{ product.id }}"/>
-          <button type="button" href="#">Add to cart</button>
+          <a class="button" href="#" data-ajax-handler="shop:onAddToCart" data-ajax-update="#mini-cart=shop-minicart">Add to Cart</a>
         {% else %}
           <p>
           This product is temporarily unavailable.
@@ -97,18 +97,18 @@ url: '/product/:urlName'
 
       <!-- product ratings -->
       <h2>Ratings goes here</h2>
-      <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+<!--       <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
         Rated <span itemprop="ratingValue">3.5</span>/5
         based on <span itemprop="reviewCount">11</span> customer reviews
-      </div> 
+      </div>  -->
 
       <!-- related products -->
-      {% if product.related.count %}
+<!--       {% if product.related.count %}
         <h2>Related Items</h2>
         {% for product in product.related %}
           {{ partial('partial-product-grid', {'product':product}) }}
         {% endfor %} 
-      {% endif %}
+      {% endif %} -->
     </div>
 
   {% else %}
