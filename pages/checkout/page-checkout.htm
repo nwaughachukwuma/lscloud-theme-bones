@@ -6,4 +6,19 @@ published: true
 name: Checkout
 url: /checkout
 ---
-<p>Checkout page.</p>
+{% if not items.count %}
+  <a href="{{ site_url('shop') }}">Your cart is empty! Continue shopping.</a>
+{% else %}
+  <div id="checkout-page">
+
+<!-- {{ partial('shop-checkout') }} -->
+{% if step == 'billing_info' %}
+  {{ partial('partial-checkout-address') }}
+{% elseif step == 'shipping_method' %}
+  {{ partial('partial-checkout-shippingmethod') }}
+{% elseif step == 'pay' %}
+  {{ partial('partial-checkout-pay') }}
+{% endif %}
+
+  </div>
+{% endif %}
