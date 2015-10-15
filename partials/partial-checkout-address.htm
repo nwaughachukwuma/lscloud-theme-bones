@@ -110,7 +110,7 @@
           <span class="error"></span>
 
         <!-- See the onSetBillingAndShippignInfo AJAX handler implementation on the Checkout page's AJAX tab -->
-        <a class="button" href="#" data-ajax-handler="shop:checkout" data-ajax-update="#checkout-page=shop-checkout, #breadcrumbs-area=shop-checkout-progress, #mini-cart=shop-minicart">Next step</a>
+        <a class="button" href="#" data-ajax-handler="shop:checkout" data-ajax-update="#checkout-page=partial-checkout-shipping-payment, #breadcrumbs-area=shop-checkout-progress, #mini-cart=shop-minicart">Next step</a>
 
-  <input type="hidden" name="step" value="billing_info,shipping_info"/>
+  <input type="hidden" name="step" value="shipping_method"/>
 {{ close_form }}
