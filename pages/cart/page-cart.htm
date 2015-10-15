@@ -46,11 +46,9 @@ url: /cart
 	<input type="text" id="coupon" name="coupon" value="{{ coupon_code }}" placeholder="Coupon code" />
 
 	<a href="#" data-ajax-handler="shop:cart" data-ajax-update="#cart-content=shop-cart-content, #mini-cart=shop-minicart">Update cart</a>
-	<!-- {% if customer %} -->
+
 		<a href="{{ site_url('/checkout') }}">Checkout</a>
-<!-- 	{% else %}
-		<a href="{{ site_url('/checkout-start') }}">Checkout</a>
-	{% endif %} -->
+
 
 	<a href="{{ site_url('shop') }}">Continue shopping</a>
 
