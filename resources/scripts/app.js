@@ -38,6 +38,27 @@
     });
 
     //
+    // Apply Foundation form customization to payment forms
+    //
+    function foundationCustomizePaymentForms() {
+      $('#payment_form form').addClass('custom');
+      $(document).foundationCustomForms();
+      $('#payment_form form div.custom.dropdown').css('width', '100%');
+      $('#payment_form form input[type=button], #payment_form form input[type=submit]').addClass('button');
+    }
+
+    if ($('#payment_form').length) {
+      foundationCustomizePaymentForms();
+    }
+
+    $(document).on('change', '#payment_method', function() {
+      $(this).sendRequest('shop:onUpdatePaymentMethod', {
+          update: {'#payment_form' : 'partial-paymentform'},
+          onAfterUpdate: foundationCustomizePaymentForms
+      });
+    })
+
+    //
     // Handle the shipping option radio button clicks
     //
     $('#checkout-page').on('change', '#shipping-methods input', function(){
@@ -46,8 +67,10 @@
       // action does all the calculations.
       //
       $(this).sendRequest('shop:onCheckoutShippingMethod', {
-        update: {'#checkout-totals': 'shop-checkout-totals', '#mini-cart':'shop-minicart'}
+        update: {'#checkout-totals': 'shop-checkout-totals', '#mini-cart':'shop-minicart'},
+                  update: {'#payment_form' : 'partial-paymentform'}
       })
+
     });
 
     $(document).on('click', '#copy_billing_to_shipping', function (){

@@ -1,0 +1,34 @@
+<!-- Pay partial -->
+{% if cart %}
+  <h2>shop-cart-items</h2>
+
+  {% if order.payment_processed %}
+    <p class="flash info"><strong>Thank you!</strong> The payment is already processed for this order.</p>
+  {% else %}
+
+  <label for="payment_method">Payment method</label>
+  <!-- 
+    The payment form below (id="payment_form") automatically updates when
+    the payment method is changed. See app.js for the implementation details. 
+  -->
+  {{ open_form({'class': 'custom'}) }}
+    <select name="paymentMethodId" id="payment_method">
+      <option value=''> - </option>
+      {% for method in paymentMethods %}
+          <option value="{{ method.id }}">{{ method.name }}</option>
+      {% endfor %}
+    </select>
+  </form>
+  <div id="payment_form">
+   {{ partial('partial-paymentform') }}
+  </div>
+
+  {% endif %}
+
+  <div class="three columns offset-by-two data-list align-right">
+    <h2>shop-checkout-totals</h2>
+  </div>
+  
+{% else %}
+  <p class="flash error">Order not found.</p>
+{% endif %}
