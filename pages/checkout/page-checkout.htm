@@ -18,7 +18,7 @@ url: /checkout
 		{% elseif step == 'shipping_method' %}
 			{{ partial('partial-checkout-shipping-payment') }}
 		{% elseif step == 'pay' %}
-			{{ partial('partial-checkout-pay') }}
+			{{ partial('partial-checkout-receipt') }}
 		{% endif %}
 	</div>
 	{% else %}
