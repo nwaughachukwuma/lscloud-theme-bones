@@ -1,8 +1,7 @@
 {{ open_form({'class': 'custom'}) }}
-  <div class="row">
+
     <h3>Shipping Method</h3>
 
-    <div class="six columns">
       {% if shippingOptions %}
         <input type="hidden" value="" name="shippingMethod">
         <table class="compact full-width" id="shipping-methods">
@@ -38,21 +37,15 @@
       {% else %}
         <p>We are sorry, there are no shipping options available for your location.</p>
       {% endif %}
-    </div>
     
     <div class="three columns data-list align-right" id="checkout-totals">
       {{ partial('shop-checkout-totals') }}
     </div>
-  </div>
 
   {% if shippingOptions %}
-    <div class="row"> 
-      <div class="twelve columns">
-        <div class="right">
+
           <a class="button" href="#" data-ajax-handler="shop:checkout" data-ajax-update="#checkout-page=shop-checkout, #breadcrumbs-area=shop-checkout-progress, #mini-cart=shop-minicart">Place order &amp; pay</a>
-        </div>
-      </div>
-    </div>
+
   {% endif %}
   <input type="hidden" name="step" value="shipping_method,review" />
   <input type="hidden" name="nextStep" value="pay" />
@@ -63,13 +56,11 @@
 {% if cart %}
   {{ partial('shop-cart-items') }}
 
-  <div class="row">
-    <div class="six columns">
+
       {% if order.payment_processed %}
         <p class="flash info"><strong>Thank you!</strong> The payment is already processed for this order.</p>
       {% else %}
-        <div class="row">
-          <div class="twelve columns">
+
             <label for="payment_method">Payment method</label>
             <!-- 
               The payment form below (id="payment_form") automatically updates when
@@ -83,18 +74,16 @@
                 {% endfor %}
               </select>
             </form>
-          </div>
-        </div>
-        <div class="row">
+
           <div id="payment_form">{{ partial('shop-paymentform') }}</div>
-        </div>
+
       {% endif %}
-    </div>
+
   
     <div class="three columns offset-by-two data-list align-right">
       {{ partial('shop-checkout-totals') }}
     </div>
-  </div>
+
   
 {% else %}
   <p class="flash error">Order not found.</p>
