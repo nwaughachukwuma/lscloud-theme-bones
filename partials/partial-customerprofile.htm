@@ -46,9 +46,8 @@
 
         <label for="billing_state">State</label>
         <select id="billing_state" name="billing[shop_state_id]" data-ajax-refresh > 
-          {{ partial('shop-stateoptions', {'states': billingStates, 'selected': billing.state.id}) }}
-        {% set states = shippingStates %}
-        {% set selected = shipping.state.id %}
+        {% set states = billingStates %}
+        {% set selected = billing.state.id %}
             {% for state in states %}
                 <option value="{{ state.id }}" {{ option_state(selected, state.id) }}>
                     {{ state.name }}
