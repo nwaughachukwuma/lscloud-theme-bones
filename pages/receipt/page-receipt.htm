@@ -13,11 +13,52 @@ url: '/receipt/:paymenthash'
   <p><strong>Payment method: </strong> {{ payment.guessPaymentMethod().name }}</p>
   <p><strong>Order Date: </strong> {{ invoice.order.created_at.format('M jS, Y') }}</p>
 
-  {{ partial('shop-invoiceitems') }}
-  
+	<table>
+	  <tr>
+	    <th>Item</th>
+	    <th>Quantity</th>
+	    <th>Price</th>
+	    {% if invoice.getDiscountTotal() > 0 %}
+	      <th>Discount</th>
+	      <th>Unit Price</th>
+	    {% endif %}
+	    <th>Total</th>
+	  </tr>
+	  {% for shipment in invoice.shipments %}
+    {% for item in shipment.shipmentItems %}
+    <tr>
+      <td>
+        <a href="/product/{{ item.product.url_name }}"><img src="{{ item.product.images.first.thumbnail(80, 80)|default('http://placehold.it/80x80') }}"/></a>
+          <h2><a href="/product/{{ item.product.url_name }}">{{ item.product.name }}</a></h2>
+
+          {% set description = item.optionsString() %}
+          {% if description %}<p>{{ description|unescape }}</p>{% endif %}
+
+      </td>
+      <td><h4>{{ item.quantity|number_format(0) }}</h4></td>
+      <td><h4>{{ item.base_price|currency }}</h4></td>
+      {% if invoice.getDiscountTotal() > 0 %}
+        <td><h4>{{ item.totalDiscount()|currency }}</h4></td>
+        <td><h4>{{ item.pivot.price|currency }}</h4></td>
+      {% endif %}
+      <td><h4>{{ (item.quantity *item.pivot.price)|currency }}</h4></td>
+    </tr>
+    {% endfor %}
+	  {% endfor %}
+	</table>
+
   {% if invoice.isPaid() %}
 
-  {{ partial('shop-invoicetotals') }}
+	{% if invoice.getDiscountTotal() > 0 %}
+	  <p><strong>Discount applied:</strong> <h4>{{ invoice.getDiscountTotal()|currency }}</h4></p>
+	{% endif %}
+	<p><strong>Subtotal:</strong> <h4>{{ invoice.subtotal|currency }}</h4></p>
+	<p><strong>Sales Tax:</strong> <h4>{{ invoice.tax_total|currency }}</h4></p>
+	<p><strong>Shipping:</strong> <h4>{{ invoice.total_shipping_quote|currency }}</h4></p>
+	{% if invoice.order.total_shipping_tax > 0 %}
+	  <p><strong>Shipping Taxes:</strong> <h4>{{ invoice.order.total_shipping_tax|currency }}</h4></p>
+	{% endif %}
+	<p class="subtotal"><strong>Total:</strong>  <h4>{{ invoice.total|currency }}</h4></p>
 
   <a class="button" href="{{ site_url('shop') }}">Continue Shopping</a>
 
