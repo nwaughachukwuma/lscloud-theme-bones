@@ -8,11 +8,11 @@ url: /profile
 ---
 {% if customer %}
   <section id="profile-addresses">
-  {{ partial('shop-customerprofile') }}
+  {{ partial('partial-customerprofile') }}
   </section>
 
   <div id="profile-changepassword">
-    {{ partial('shop-changepassword') }}
+    {{ partial('partial-changepassword') }}
   </div>
 {% else %}
   Please <a href="{{ root_url('login') }}">login</a> to edit your profile.
