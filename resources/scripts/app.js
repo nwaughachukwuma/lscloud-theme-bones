@@ -37,24 +37,9 @@
       }
     });
 
-    //
-    // Apply Foundation form customization to payment forms
-    //
-    function foundationCustomizePaymentForms() {
-      $('#payment_form form').addClass('custom');
-      $(document).foundationCustomForms();
-      $('#payment_form form div.custom.dropdown').css('width', '100%');
-      $('#payment_form form input[type=button], #payment_form form input[type=submit]').addClass('button');
-    }
-
-    if ($('#payment_form').length) {
-      foundationCustomizePaymentForms();
-    }
-
     $(document).on('change', '#payment_method', function() {
       $(this).sendRequest('shop:onUpdatePaymentMethod', {
-          update: {'#payment_form' : 'partial-paymentform'},
-          onAfterUpdate: foundationCustomizePaymentForms
+        update: {'#payment_form' : 'partial-paymentform'},
       });
     })
 
@@ -68,7 +53,6 @@
       //
       $(this).sendRequest('shop:onCheckoutShippingMethod', {
         update: {'#checkout-totals': 'shop-checkout-totals', '#mini-cart':'shop-minicart'},
-                  update: {'#payment_form' : 'partial-paymentform'}
       })
 
     });
@@ -78,7 +62,7 @@
       $(this).sendRequest('shop:onCheckoutBillingInfo', {
           onAfterUpdate: function() {
             $(this).sendRequest('shop:onCopyBillingToShipping', {
-              update: {'#checkout-page' : 'shop-checkout-address', '#mini-cart':'shop-minicart'}
+              update: {'#checkout-page' : 'partial-checkout-address', '#mini-cart':'shop-minicart'}
             });
           }
       });
