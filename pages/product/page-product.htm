@@ -70,7 +70,7 @@ url: '/product/:urlName'
           <meta itemprop="price" content="{{ product.price }}" />
           <label>Quantity <input type="text" value="{{ quantity|default("1") }}" name="quantity"></label>
           <input type="hidden" name="productId" value="{{ product.id }}"/>
-          <a class="button-next" href="#" data-ajax-handler="shop:onAddToCart" data-ajax-update="#mini-cart=shop-minicart">Add to Cart</a>
+          <a class="button next" href="#" data-ajax-handler="shop:onAddToCart" data-ajax-update="#mini-cart=shop-minicart">Add to Cart</a>
         {% else %}
           <p>
           This product is temporarily unavailable.
