@@ -1,0 +1,22 @@
+@import "bourbon";
+@import "neat";
+//FONTS
+//sizes
+$large: modular-scale(4);
+$normal: modular-scale(1);
+$small: modular-scale(-1);
+//colours
+$grey: rgb(155, 155, 155);
+//weights
+$light: 200;
+$normal: 400;
+$heavy: 700;
+
+body {
+	font-family: $helvetica;
+}
+h1 {
+	font-size: $large;
+	font-weight: $light;
+	color: $grey;
+}
