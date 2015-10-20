@@ -12,17 +12,17 @@ url: '/product/:urlName'
     {% set on_sale = product.onSale %}
     <div itemscope itemtype="http://schema.org/Product">
 
-      <h2 itemprop="name">{{ product.name }}</h2>
+      <meta itemprop="name" content="{{ product.name }}" />
       <meta itemprop="sku" content="{{ product.sku }}" />
       <link itemprop="url" href="{{ '/product/' ~ product.url_name }}" />
 
       <!-- product cost -->
-      <h4 class="cost">
+      <h2 class="cost">
         {% if on_sale %}
         <span class="oldprice">{{ product.fullPrice|currency }}</span>
         {% endif %}
         {{ product.price|currency }}
-      </h4>
+      </h2>
 
       <!-- product attributes -->
       {% if product.productAttributes.count %}
@@ -94,11 +94,11 @@ url: '/product/:urlName'
       {% endfor %}
 
       <!-- product details -->
-      <h2>Product Details</h2>
+      <h1>Product Details</h1>
       <p itemprop="description">{{ product.description|unescape }}</p>
 
       <!-- product ratings -->
-      <h2>Ratings goes here</h2>
+      <h1>Ratings goes here</h1>
 <!--       <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
         Rated <span itemprop="ratingValue">3.5</span>/5
         based on <span itemprop="reviewCount">11</span> customer reviews

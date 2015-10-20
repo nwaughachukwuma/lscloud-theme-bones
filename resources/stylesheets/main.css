@@ -26,8 +26,7 @@ nav {
   nav ul {
     float: right;
     margin: 0;
-    padding: 0;
-    list-style: none; }
+    padding: 0; }
   nav li {
     display: inline-block; }
 
@@ -60,9 +59,8 @@ nav {
 
 .breadcrumbs .crumb {
   display: inline;
-  list-style: none;
-  text-style: none; }
+  list-style: none; }
 
 .breadcrumbs :not(:last-child):after {
-  content: "/";
+  content: ">";
   margin-left: 5px; }

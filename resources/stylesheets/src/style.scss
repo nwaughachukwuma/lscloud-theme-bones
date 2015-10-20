@@ -1,0 +1,61 @@
+@import "bourbon";
+@import "neat";
+//FONTS
+//sizes
+$large: modular-scale(4);
+$medium: modular-scale(1);
+$small: modular-scale(0);
+$tiny: modular-scale(-1);
+//colours
+$black: rgb(74, 74, 74);
+$grey: rgb(155, 155, 155);
+//weights
+$thin: 100;
+$light: 200;
+$normal: 400;
+$heavy: 700;
+
+body {
+	font-family: $helvetica;
+}
+// Titles
+h1 {
+	font-size: $large;
+	font-weight: $light;
+	color: $grey;
+}	
+// Subtitles, costs
+h2 {
+	font-size: $medium;
+	font-weight: $normal;
+	color: $black;
+}
+// Forms, paragraph text
+h3 {
+	font-size: $small;
+	font-weight: $normal;
+	color: $black;
+}
+// Labels, text buttons, footer
+h4 {
+	font-size: $tiny;
+	font-weight: $light;
+	color: $black;
+}
+a {
+	text-decoration: none;
+	color: $black;
+}
+ul {
+	list-style: none;
+	li {
+		font-size: $small;
+		font-weight: $normal;
+		color: $black;
+	}
+}
+input {
+	font-size: $small;
+	font-weight: $light;
+	color: $black;
+}

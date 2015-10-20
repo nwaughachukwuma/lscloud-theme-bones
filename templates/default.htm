@@ -18,6 +18,8 @@ description: 'Default Template'
 
   <link rel="stylesheet" type="text/css" href="/cms/core.css">
   <link rel="stylesheet" type="text/css" href="{{ 'stylesheets/main.css'|theme_resource }}">
+  <link rel="stylesheet" type="text/css" href="{{ 'stylesheets/style.css'|theme_resource }}">
+  <link rel="stylesheet" type="text/css" href="{{ 'stylesheets/responsive.css'|theme_resource }}">
 
   <script type="text/javascript" src="{{ 'scripts/main.js'|theme_resource }}"></script>
   <script type="text/javascript" src="{{ 'scripts/jquery.js'|theme_resource }}"></script>
@@ -37,7 +39,7 @@ description: 'Default Template'
       <li>
         <a href="/shop">Shop</a>
 
-        {% for category in categories %}
+<!--         {% for category in categories %}
         <ul>
           {% if category.children %}
           <li><a href="/category/{{ category.fullUrlName }}">{{category.name}}</a></li>
@@ -50,7 +52,7 @@ description: 'Default Template'
           <li><a href="/category/{{ category.fullUrlName }}">{{category.name}}</a></li>
           {% endif %}
         </ul>
-        {% endfor %}
+        {% endfor %} -->
 
       </li>
       <li><a href="/contact">Say Hello</a></li>
