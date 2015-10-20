@@ -1,5 +1,34 @@
 @import "bourbon";
 @import "neat";
+// Header
+header {
+	@include span-columns(12);
+}
+
+nav {
+	@include span-columns(12);
+	height: 70px;
+	background: rgba(155,154,155,0.03);
+
+	ul {
+		float: right;
+		margin: 0;
+	  padding: 0;
+	  list-style: none;
+	}
+
+	li {
+		display: inline-block;
+	}
+}
+
+#logo {
+	float: left;
+}
+// Footer
+
+footer {}
+
 // Sign-in
 .login-register-wrap { @include outer-container;
 	section { @include span-columns(6);

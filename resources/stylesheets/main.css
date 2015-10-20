@@ -6,6 +6,34 @@ html {
 *::before {
   box-sizing: inherit; }
 
+header {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  header:last-child {
+    margin-right: 0; }
+
+nav {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  height: 70px;
+  background: rgba(155, 154, 155, 0.03); }
+  nav:last-child {
+    margin-right: 0; }
+  nav ul {
+    float: right;
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  nav li {
+    display: inline-block; }
+
+#logo {
+  float: left; }
+
 .login-register-wrap {
   max-width: 68em;
   margin-left: auto;
