@@ -7,17 +7,31 @@ name: Bones
 url: /
 ---
 <section>
-  <h2>Hero Section: showcase key content on site</h2>
+  <h2>Primary Product Placeholder</h2>
   <img src="http://placehold.it/960x150">
 </section>
 <hr>
 <section>
-  <h2>Some copy</h2>
+  <h2>How Does It Work?</h2>
   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</p>
 </section>
 <hr>
 <section>
-  <h2>Featured products (a collection)</h2>
+  <h2>Check These Out</h2></h2>
+
+  {% set featuredCollection = 'featured'|collection %}
+    {% paginate featuredCollection.products by 8 %}
+        {% for product in pagination.items %}
+        <a href="/product/{{ product.url_name }}">
+          <img src="{{ product.images.first.thumbnail(400, 'auto', {crop: true}) }}" >
+        </a>
+        <p>
+          <a href="/product/{{ product.url_name }}" class="btn btn-default">
+            {{ product.name }}</a> :: {{ product.price|currency }}
+        </p>
+        {% endfor %}
+    {% navigation %}
+  {% endpaginate %}
 
 	{% if featuredCollection %}
 	  {% for product in featuredCollection.products %}
