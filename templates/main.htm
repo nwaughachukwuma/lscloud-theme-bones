@@ -27,7 +27,7 @@ description: 'Default Template'
 <header>
   <nav>
     <div id="logo">
-      <a href="/">Bones Logo</a>
+      <a href="/">LOGO</a>
     </div>
     <ul>
       <li>
@@ -51,13 +51,12 @@ description: 'Default Template'
       <li><a href="/search">Search</a></li>
       <li>
         {% if customer %}
-          My Account
-          <a href="/logout">Logout</a>
+          <a href="/logout">My Account</a>
         {% else %}
           <a href="/sign-in">Login</a>
         {% endif %}
       </li>
-      <li><a href="/cart">Cart</a></li>
+      <li><a href="/cart">Shopping Bag</a></li>
       <!-- <li>
         {{ open_form({'method': 'get', 'action': site_url('search')}) }}
         <input type="text" name="query" value="{{query|unescape}}" placeholder="Search store&hellip;"/>
