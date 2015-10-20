@@ -3,9 +3,9 @@
 //FONTS
 //sizes
 $large: modular-scale(4);
-$medium: modular-scale(3);
-$small: modular-scale(2);
-$tiny: modular-scale(1);
+$medium: modular-scale(1);
+$small: modular-scale(0);
+$tiny: modular-scale(-1);
 //colours
 $black: rgb(74, 74, 74);
 $grey: rgb(155, 155, 155);
@@ -23,14 +23,14 @@ h1 {
 	font-size: $large;
 	font-weight: $light;
 	color: $grey;
-}
+}	
 // Subtitles, costs
 h2 {
 	font-size: $medium;
 	font-weight: $normal;
 	color: $black;
 }
-// Forms, paragraph text, header nav
+// Forms, paragraph text
 h3 {
 	font-size: $small;
 	font-weight: $normal;
@@ -39,6 +39,23 @@ h3 {
 // Labels, text buttons, footer
 h4 {
 	font-size: $tiny;
+	font-weight: $light;
+	color: $black;
+}
+a {
+	text-decoration: none;
+	color: $black;
+}
+ul {
+	list-style: none;
+	li {
+		font-size: $small;
+		font-weight: $normal;
+		color: $black;
+	}
+}
+input {
+	font-size: $small;
 	font-weight: $light;
 	color: $black;
 }

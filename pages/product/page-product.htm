@@ -17,12 +17,12 @@ url: '/product/:urlName'
       <link itemprop="url" href="{{ '/product/' ~ product.url_name }}" />
 
       <!-- product cost -->
-      <h4 class="cost">
+      <h2 class="cost">
         {% if on_sale %}
         <span class="oldprice">{{ product.fullPrice|currency }}</span>
         {% endif %}
         {{ product.price|currency }}
-      </h4>
+      </h2>
 
       <!-- product attributes -->
       {% if product.productAttributes.count %}

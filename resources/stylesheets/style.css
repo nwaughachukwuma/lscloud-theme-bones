@@ -15,16 +15,32 @@ h1 {
   color: #9b9b9b; }
 
 h2 {
-  font-size: 2.36859em;
+  font-size: 1.333em;
   font-weight: 400;
   color: #4a4a4a; }
 
 h3 {
-  font-size: 1.77689em;
+  font-size: 1em;
   font-weight: 400;
   color: #4a4a4a; }
 
 h4 {
-  font-size: 1.333em;
+  font-size: 0.75019em;
+  font-weight: 200;
+  color: #4a4a4a; }
+
+a {
+  text-decoration: none;
+  color: #4a4a4a; }
+
+ul {
+  list-style: none; }
+  ul li {
+    font-size: 1em;
+    font-weight: 400;
+    color: #4a4a4a; }
+
+input {
+  font-size: 1em;
   font-weight: 200;
   color: #4a4a4a; }
