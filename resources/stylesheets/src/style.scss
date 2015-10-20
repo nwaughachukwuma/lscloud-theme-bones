@@ -1,19 +1,28 @@
 @import "bourbon";
 @import "neat";
-//FONTS
-//sizes
+// --- FONTS ---
+// Sizes
 $large: modular-scale(4);
 $medium: modular-scale(1);
 $small: modular-scale(0);
 $tiny: modular-scale(-1);
-//colours
+// Colours
 $black: rgb(74, 74, 74);
 $grey: rgb(155, 155, 155);
-//weights
+$white: #fff;
+// Weights
 $thin: 100;
 $light: 200;
 $normal: 400;
 $heavy: 700;
+// --- BUTTONS ---
+$action-color: #F0C332;
+$base-border-radius: 3px;
+$base-spacing: 1.5em;
+$small-spacing: $base-spacing / 2;
+// Transitions
+$base-duration: 150ms;
+$base-timing: ease;
 
 body {
 	font-family: $helvetica;
@@ -59,3 +68,23 @@ input {
 	font-weight: $light;
 	color: $black;
 }
+// Buttons
+.button-next {
+	background-color: $action-color;
+	border: 0;
+	border-radius: $base-border-radius;
+	color: $white;
+	cursor: pointer;
+	font-size: $small;
+	font-weight: $heavy;
+	padding: $small-spacing $base-spacing;
+	@include transition( background-color $base-duration $base-timing );
+	vertical-align: middle;
+	white-space: nowrap;
+  &:hover,
+  &:focus {
+    background-color: shade($action-color, 20%);
+    color: $white;
+  }
+}
+
