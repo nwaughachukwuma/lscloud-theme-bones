@@ -6,4 +6,36 @@ published: true
 name: Search
 url: /search
 ---
-<p>Search page.</p>
+ <p>Products found: {{ products.get().count() }}</p>
+{{ open_form() }}
+	{% paginate products by 48 %}
+
+<ul>  
+	{% for product in pagination.items %}
+	{% set is_on_sale = product.onSale %}
+	{% set page_url = '/product/' ~ product.url_name %}
+
+	<li class="{{ is_on_sale ? 'sale' : null }}">
+
+		<a href="{{ page_url }}"><img src="{{ product.images.first.thumbnail(365, 365)|default('http://placehold.it/365x365') }}" width="365" height="365" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
+
+		<h3><a href="{{ page_url }}">{{ product.name }}</a></h3>
+		<span>
+			<a href="{{ page_url }}">
+				<h4>
+					{% if is_on_sale %}<span class="oldprice">{{ product.fullPrice|currency }}</span>{% endif %}
+					{{ product.price|currency }}
+				</h4>
+			</a>
+		</span>
+
+			{% if is_on_sale %}<span class="salesign">SALE</span>{% endif %}
+
+	</li>
+	{% endfor %}
+</ul>
+
+	{% navigation %}
+
+	{% endpaginate %}
+{{ close_form() }}

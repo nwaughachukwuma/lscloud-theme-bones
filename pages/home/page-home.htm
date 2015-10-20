@@ -19,7 +19,19 @@ url: /
 <section>
   <h2>Featured products (a collection)</h2>
 
-  {{ partial('partial-product-grid', {featuredCollection: 'featuredCollection'|collection}) }}
+	{% if featuredCollection %}
+	  {% for product in featuredCollection.products %}
+	  <a href="/product/{{ product.url_name }}">
+	    <img src="{{ product.images.first.thumbnail(400, 'auto', {crop: true}) }}" >
+	  </a>
+	  <p>
+	    <a href="/product/{{ product.url_name }}" class="btn btn-default">
+	      {{ product.name }}</a> :: {{ product.price|currency }}
+	  </p>
+	  {% endfor %}
+	{% else %}
+	  <p>The product collection was not found. Please create a collection and name it: <em>featuredCollection</em>.</p>
+	{% endif %}
 
 </section>
 <hr>

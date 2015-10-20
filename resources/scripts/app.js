@@ -37,6 +37,12 @@
       }
     });
 
+    $(document).on('change', '#payment_method', function() {
+      $(this).sendRequest('shop:onUpdatePaymentMethod', {
+        update: {'#payment_form' : 'partial-paymentform'},
+      });
+    })
+
     //
     // Handle the shipping option radio button clicks
     //
@@ -46,8 +52,9 @@
       // action does all the calculations.
       //
       $(this).sendRequest('shop:onCheckoutShippingMethod', {
-        update: {'#checkout-totals': 'shop-checkout-totals', '#mini-cart':'shop-minicart'}
+        update: {'#checkout-totals': 'shop-checkout-totals', '#mini-cart':'shop-minicart'},
       })
+
     });
 
     $(document).on('click', '#copy_billing_to_shipping', function (){
@@ -55,7 +62,7 @@
       $(this).sendRequest('shop:onCheckoutBillingInfo', {
           onAfterUpdate: function() {
             $(this).sendRequest('shop:onCopyBillingToShipping', {
-              update: {'#checkout-page' : 'shop-checkout-address', '#mini-cart':'shop-minicart'}
+              update: {'#checkout-page' : 'partial-checkout-address', '#mini-cart':'shop-minicart'}
             });
           }
       });

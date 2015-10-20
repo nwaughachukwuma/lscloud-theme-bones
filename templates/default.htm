@@ -26,7 +26,7 @@ description: 'Default Template'
 </head>
 <header>
   {% if customer %}
-    Welcome, {{ customer.first_name }}!
+    Welcome, <a href="/profile">{{ customer.first_name }}!</a>
     <a href="/logout">Logout</a>
   {% else %}
     <a href="/sign-in">Login or Register</a>
@@ -62,6 +62,7 @@ description: 'Default Template'
         {{ close_form() }}
       </li>
     </ul>
+    <div id="mini-cart">{{ partial('shop-minicart') }}</div>
     <!-- Current page and breadcrumbs -->
     <h1>{{ page.title }}</h1>
     {{ code_block('breadcrumbs') }}
