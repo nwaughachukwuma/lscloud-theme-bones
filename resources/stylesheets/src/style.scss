@@ -117,3 +117,14 @@ input {
     color: shade($link, 20%);
   }
 }
+// Forms
+label {
+  color: $grey;
+  font-size: $tiny;
+  font-weight: $light;
+  margin-bottom: $small-spacing / 2;
+
+  &.required::after {
+    content: "*";
+  }
+}

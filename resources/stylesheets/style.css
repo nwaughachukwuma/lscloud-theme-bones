@@ -87,3 +87,11 @@ input {
   .continue-shopping:focus {
     border-color: #006ca0;
     color: #006ca0; }
+
+label {
+  color: #9b9b9b;
+  font-size: 0.75019em;
+  font-weight: 200;
+  margin-bottom: 0.375em; }
+  label.required::after {
+    content: "*"; }
