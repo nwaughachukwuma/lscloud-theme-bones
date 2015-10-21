@@ -75,3 +75,15 @@ input {
   .call-to-action:focus {
     background-color: #c09c28;
     color: #fff; }
+
+.continue-shopping {
+  background-color: #fff;
+  border: 1px solid #9B9B9B;
+  border-radius: 3px;
+  color: #0087C8;
+  font-weight: 700;
+  padding: 0.75em 1.5em; }
+  .continue-shopping:hover,
+  .continue-shopping:focus {
+    border-color: #006ca0;
+    color: #006ca0; }
