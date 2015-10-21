@@ -16,13 +16,13 @@
                     {{ radio_state(shippingMethodInfo.id, option.id) }}
                     type="radio" id="{{ 'option'~index }}"/>
                     
-                  <span class="choice-title">
+                  <h2 class="choice-title">
                     {{ option.shippingMethodName }}
                     {% if option.shippingServiceName %}: {{ option.shippingServiceName }}{% endif %}
-                  </span>
+                  </h2>
                   
                   {% if option.error_hint %}
-                    <span class="choice-description error-hint">{{ option.error_hint }}</span>
+                    <h2 class="choice-description error-hint">{{ option.error_hint }}</h2>
                   {% endif %}
                 </label>
               </td>

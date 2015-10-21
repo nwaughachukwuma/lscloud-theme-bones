@@ -68,11 +68,6 @@ ul {
 		color: $black;
 	}
 }
-input {
-	font-size: $small;
-	font-weight: $light;
-	color: $black;
-}
 // Buttons
 .button {
 	border: 0;
@@ -132,12 +127,16 @@ label {
     content: "*";
   }
 }
-input {
+#{$all-text-inputs},
+select[multiple=multiple] {
 	border: 1px solid $base-border-color;
   border-radius: $base-border-radius;
   font-size: $small;
   margin-bottom: $small-spacing;
   padding: $base-spacing / 3;
+	font-size: $small;
+	font-weight: $light;
+	color: $black;
   &:hover {
     border-color: shade($base-border-color, 20%);
   }
@@ -146,4 +145,14 @@ input {
     box-shadow: inset 0 1px 3px rgba(#000, 0.06), 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
     outline: none;
   }
+}
+select {
+  margin-bottom: $base-spacing;
+  max-width: 100%;
+  width: auto;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  margin-right: $small-spacing / 2;
 }
