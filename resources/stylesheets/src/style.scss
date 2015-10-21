@@ -25,7 +25,7 @@ $small-spacing: $base-spacing / 2;
 // Transitions
 $base-duration: 150ms;
 $base-timing: ease;
-
+$input-height: 44px;
 body {
 	font-family: $helvetica;
 }
@@ -105,7 +105,7 @@ ul {
 }
 .continue-shopping {
 	background-color: $white;
-	border: 1px solid #9B9B9B;
+	border: 1px solid $grey;
 	border-radius: $base-border-radius;
 	color: $link;
 	font-weight: $heavy;
@@ -128,7 +128,7 @@ label {
   }
 }
 #{$all-text-inputs},
-select[multiple=multiple] {
+select {
 	border: 1px solid $base-border-color;
   border-radius: $base-border-radius;
   font-size: $small;
@@ -147,9 +147,7 @@ select[multiple=multiple] {
   }
 }
 select {
-  margin-bottom: $base-spacing;
-  max-width: 100%;
-  width: auto;
+	height: 34px;
 }
 input[type="checkbox"],
 input[type="radio"] {

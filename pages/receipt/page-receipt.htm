@@ -60,10 +60,10 @@ url: '/receipt/:paymenthash'
 	{% endif %}
 	<p class="subtotal"><strong>Total:</strong>  <h4>{{ invoice.total|currency }}</h4></p>
 
-  <a class="button" href="{{ site_url('shop') }}">Continue Shopping</a>
+  <a class="button call-to-action" href="{{ site_url('shop') }}">Continue Shopping</a>
 
   {% else %}
-    <p><a class="button" href="{{ site_url('review/'~order.order_hash) }}">Pay the order</a></p>
+    <p><a class="button next" href="{{ site_url('review/'~order.order_hash) }}">Place order</a></p>
   {% endif %}
 
 {% else %}

@@ -4,10 +4,9 @@
 
       {% if shippingOptions %}
         <input type="hidden" value="" name="shippingMethod">
-        <table class="compact full-width" id="shipping-methods">
+
           {% for index, option in shippingOptions %}
-            <tr>
-              <td>
+
                 <label for="{{ 'option'~index }}">
                   <!-- The shipping method radio button clicks are handled in the app.js -->
                   <input name="shippingMethod" 
@@ -16,24 +15,23 @@
                     {{ radio_state(shippingMethodInfo.id, option.id) }}
                     type="radio" id="{{ 'option'~index }}"/>
                     
-                  <h2 class="choice-title">
+                  <span class="choice-title">
                     {{ option.shippingMethodName }}
                     {% if option.shippingServiceName %}: {{ option.shippingServiceName }}{% endif %}
-                  </h2>
+                  </span>
                   
                   {% if option.error_hint %}
-                    <h2 class="choice-description error-hint">{{ option.error_hint }}</h2>
+                    <span class="choice-description error-hint">{{ option.error_hint }}</span>
                   {% endif %}
                 </label>
-              </td>
-              <td class="narrow">
+                <span>
                 {% if not option.error_hint  %}
                   {{ not option.is_free ? option.quote|currency : 'free' }}
                 {% endif %}
-              </td>
-            </tr>
+                </span>
+
           {% endfor %}
-        </table>  
+
       {% else %}
         <p>We are sorry, there are no shipping options available for your location.</p>
       {% endif %}
@@ -44,7 +42,7 @@
 
   {% if shippingOptions %}
 
-          <a class="button" href="#" data-ajax-handler="shop:checkout" data-ajax-update="#checkout-page=partial-checkout">Place order &amp; pay</a>
+          <a class="button next" href="#" data-ajax-handler="shop:checkout" data-ajax-update="#checkout-page=partial-checkout">Place order &amp; pay</a>
 
   {% endif %}
   <input type="hidden" name="step" value="shipping_method,review" />
