@@ -1,6 +1,6 @@
 ---
 action: 'shop:search'
-template: default
+template: main
 protocol: all
 published: true
 name: Search
@@ -10,7 +10,7 @@ url: /search
 {{ open_form() }}
 	{% paginate products by 48 %}
 
-<ul>  
+<ul>
 	{% for product in pagination.items %}
 	{% set is_on_sale = product.onSale %}
 	{% set page_url = '/product/' ~ product.url_name %}

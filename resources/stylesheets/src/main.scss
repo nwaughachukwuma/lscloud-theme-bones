@@ -1,12 +1,22 @@
 @import "bourbon";
+@import "responsive";
 @import "neat";
+
 // Header
 header {
 	@include span-columns(12);
+	@include outer-container;
+}
+
+section {
+	@include span-columns(12);
+	@include outer-container;
+	text-align: center;
 }
 
 nav {
 	@include span-columns(12);
+	@include outer-container;
 	height: 70px;
 	background: rgba(155,154,155,0.03);
 
@@ -29,8 +39,10 @@ nav {
 footer {}
 
 // Sign-in
-.login-register-wrap { @include outer-container;
-	section { @include span-columns(6);
+.login-register-wrap {
+	@include outer-container;
+	section {
+		@include span-columns(6);
 		h3 { @include fill-parent; }
 		label { @include fill-parent; }
 		input { @include fill-parent; }

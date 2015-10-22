@@ -1,6 +1,6 @@
 ---
 action: 'shop:product'
-template: default
+template: main
 protocol: all
 published: true
 name: Product
@@ -109,7 +109,7 @@ url: '/product/:urlName'
         <h2>Related Items</h2>
         {% for product in product.related %}
           {{ partial('partial-product-grid', {'product':product}) }}
-        {% endfor %} 
+        {% endfor %}
       {% endif %} -->
     </div>
 

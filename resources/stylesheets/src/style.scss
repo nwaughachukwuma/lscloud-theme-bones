@@ -31,10 +31,11 @@ body {
 }
 // Titles
 h1 {
+	@include span-columns(4);
 	font-size: $large;
 	font-weight: $light;
 	color: $grey;
-}	
+}
 // Subtitles, costs
 h2 {
 	font-size: $medium;

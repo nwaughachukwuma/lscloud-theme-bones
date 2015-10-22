@@ -1,6 +1,6 @@
 ---
 action: 'shop:products'
-template: default
+template: main
 protocol: all
 published: true
 name: Shop
@@ -9,7 +9,7 @@ url: '/shop/:page?'
 {{ open_form() }}
 	{% paginate products by 10 %}
 	<div itemtype="http://schema.org/ItemList">
-		<ul>  
+		<ul>
 			{% for product in pagination.items %}
 
 				{% set is_on_sale = product.onSale %}

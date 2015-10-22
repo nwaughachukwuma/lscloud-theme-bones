@@ -59,11 +59,13 @@ description: 'Default Template'
         {% endif %}
       </li>
       <li><a href="/cart">Shopping Bag</a></li>
-      <!-- <li>
+      {% if search %}
+      <li>
         {{ open_form({'method': 'get', 'action': site_url('search')}) }}
         <input type="text" name="query" value="{{query|unescape}}" placeholder="Search store&hellip;"/>
         {{ close_form() }}
-      </li> -->
+      </li>
+      {% endif %}
     </ul>
     <!-- Current page and breadcrumbs -->
     <!-- <h1>{{ page.title }}</h1> -->
@@ -73,5 +75,5 @@ description: 'Default Template'
 <body>
   {{ page() }}
 </body>
-<footer><p>footer</p></footer>
+<footer><p>Footer goes here</p></footer>
 </html>
