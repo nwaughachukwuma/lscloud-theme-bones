@@ -11,46 +11,50 @@ url: /cart
 {% if itemCount %}
 	<table id="cart-table">
 		<tr><td><h1>{{ page.title }}</h1></td></tr>
+		<tr><td><hr></td></tr>
 		{% for item in items %}
 		<tr>
 			<td class="cart-image">
 				<a href="/product/{{ item.product.url_name }}"><img src="{{ item.product.images.first.thumbnail(160, 160)|default('http://placehold.it/160x160') }}"/></a>
 			</td>
 			<td class="cart-name">
-				<h3><a href="/product/{{ item.product.url_name }}">{{ item.product.name }}</a></h3>
+				<h2><a href="/product/{{ item.product.url_name }}">{{ item.product.name }}</a></h2>
 				{% set description = item.optionsString() %}
 				{% if description %}<p>{{ description|unescape }}</p>{% endif %}
 			</td>
-			<td class="cart-quantity"><input type="text" name="item_quantity[{{ item.key }}]" value="{{ item.quantity }}"></td>
-			<td><h4>{{ item.fullPrice()|currency }}</h4></td> 
+			<td class="cart-item-price"><h2>{{ item.fullPrice()|currency }}</h2></td> 
 			{% if cart.getDiscountTotal() > 0 %}
-				<td><h4>{{ item.totalDiscount()|currency }}</h4></td>
-				<td><h4>{{ item.price()|currency }}</h4></td>
+				<td><h2>{{ item.totalDiscount()|currency }}</h2></td>
+				<td><h2>{{ item.price()|currency }}</h2></td>
 			{% endif %}
-			<td><h4>{{ item.total()|currency }}</h4></td>
-			<td>
-				<a href="#" data-ajax-handler="shop:cart" {# data-ajax-confirm="Do you really want to remove this item from the cart?" #} data-ajax-update="#cart-content=shop-cart-content, #mini-cart=shop-minicart"data-ajax-extra-fields="delete_item='{{ item.key }}'">Remove</a>
+			<td class="cart-item-total"><h2>{{ item.total()|currency }}</h2></td>
+			<td class="cart-quantity">
+				<input type="text" name="item_quantity[{{ item.key }}]" value="{{ item.quantity }}">
+			</td>
+			<td class="cart-remove">
+				<h4><a href="#" data-ajax-handler="shop:cart" {# data-ajax-confirm="Do you really want to remove this item from the cart?" #} data-ajax-update="#cart-content=shop-cart-content, #mini-cart=shop-minicart"data-ajax-extra-fields="delete_item='{{ item.key }}'">Remove</a></h4>
 			</td>
 		</tr>
+		<tr><td><hr></td></tr>
 		{% endfor %}
+		<tr><td><input type="text" id="coupon" name="coupon" value="{{ coupon_code }}" placeholder="Coupon code" /><a href="#" data-ajax-handler="shop:cart" data-ajax-update="#cart-content=shop-cart-content, #mini-cart=shop-minicart"> Update cart</a></td></tr>
+		<tr><td class="cart-subtotal"><h2>Subtotal: <strong>{{ totals.total|currency }}</strong></h2></td></tr>
+		<br>
+		<tr><td>
+			<a class="button continue-shopping" href="{{ site_url('shop') }}">Continue shopping</a>
+			{% if customer %}
+				<a class="button next" href="{{ site_url('/checkout') }}">Checkout</a>
+			{% else %}
+				<a class="button next" href="{{ site_url('/checkout-start') }}">Checkout</a>
+			{% endif %}
+		</td></tr>
 	</table>
 
 	{% if totals.discountTotal > 0 %}
 		<h4><strong>Coupon discount:</strong> {{ totals.discountTotal|currency }}</h4>
-	{% endif %}
+	{% endif %}	
 
-	<h3><strong>Subtotal:</strong>  {{ totals.total|currency }}</h3>
 
-	
-	<input type="text" id="coupon" name="coupon" value="{{ coupon_code }}" placeholder="Coupon code" />
-
-	<a href="#" data-ajax-handler="shop:cart" data-ajax-update="#cart-content=shop-cart-content, #mini-cart=shop-minicart">Update cart</a>
-	<a class="button continue-shopping" href="{{ site_url('shop') }}">Continue shopping</a>
-	{% if customer %}
-		<a class="button next" href="{{ site_url('/checkout') }}">Checkout</a>
-	{% else %}
-		<a class="button next" href="{{ site_url('/checkout-start') }}">Checkout</a>
-	{% endif %}
 {% else %}
 	<h2>Your cart is empty! Continue shopping.</h2>
 {% endif %}

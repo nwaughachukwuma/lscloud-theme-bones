@@ -21,6 +21,7 @@ $heavy: 700;
 $action-color: #F0C332;
 $base-border-radius: 3px;
 $base-spacing: 1.5em;
+$continue-spacing: 4em;
 $small-spacing: $base-spacing / 2;
 // Transitions
 $base-duration: 150ms;
@@ -109,7 +110,7 @@ ul {
 	border-radius: $base-border-radius;
 	color: $link;
 	font-weight: $heavy;
-	padding: $small-spacing $base-spacing;
+	padding: $small-spacing $continue-spacing;
   &:hover,
   &:focus {
     border-color: shade($link, 20%);

@@ -1,6 +1,7 @@
 @import "bourbon";
 @import "responsive";
 @import "neat";
+@import "style";
 
 .wrapper {
 	@include outer-container;
@@ -39,7 +40,7 @@ nav {
 }
 
 // Body
- #featured-content {
+#featured-content {
 	// @include span-columns(12);
 	@include outer-container;
 	text-align: center;
@@ -88,8 +89,41 @@ section #featured-products {
 		@include fill-parent;
 		@include row(table);
 		td {
+			vertical-align: top;
+			text-align: right;
+			.continue-shopping {
+				margin-right: 1em;
+				line-height: 4em;
+			}
+			h1 {
+				text-align: left;
+			}
+		}
+		.cart-image {
+			@include span-columns(2);
+			text-align: left;
+		}
+		.cart-name {
+			@include span-columns(5);
+			text-align: left;
+		}
+		.cart-item-price {
 			@include span-columns(1);
-			@include pad();
+		}
+		.cart-item-total {
+			@include span-columns(1);
+		}
+		.cart-quantity {
+			@include span-columns(2);
+			input {
+				width: 79px;
+			}
+		}
+		.cart-remove {
+			@include span-columns(1);
+		}
+		.cart-subtotal {
+			margin-bottom: 1em;
 		}
 	}
 
