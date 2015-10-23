@@ -1,3 +1,4 @@
+@import "reset"
 @import "bourbon";
 @import "responsive";
 @import "neat";
@@ -7,8 +8,8 @@
 }
 // Header
 header {
-	@include span-columns(12);
-	@include outer-container;
+	width: 100%;
+	background: rgba(155,154,155,0.03);
 }
 
 section {
@@ -18,9 +19,7 @@ section {
 
 nav {
 	@include span-columns(12);
-	@include outer-container;
 	height: 70px;
-	background: rgba(155,154,155,0.03);
 
 	ul {
 		float: right;
@@ -38,6 +37,16 @@ nav {
 }
 
 // Body
+#featured-product {
+
+	h1 {
+		@include span-columns(12);
+	}
+	p {
+
+	}
+}
+
  #featured-content {
 	// @include span-columns(12);
 	@include outer-container;
@@ -59,12 +68,6 @@ nav {
 	}
 }
 
-section #featured-products {
-
-	p {
-
-	}
-}
 // Footer
 
 footer {}
