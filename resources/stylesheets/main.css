@@ -38,36 +38,32 @@ body:before {
   width: 100%; }
 
 header {
-  float: left;
-  display: block;
-  margin-right: 1.69492%;
-  width: 100%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto; }
-  header:last-child {
-    margin-right: 0; }
   header::after {
     clear: both;
     content: "";
     display: table; }
+
+section {
+  float: left;
+  display: block;
+  margin-right: 1.69492%;
+  width: 100%;
+  max-width: 1200px; }
+  section:last-child {
+    margin-right: 0; }
 
 nav {
   float: left;
   display: block;
   margin-right: 1.69492%;
   width: 100%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
   height: 70px;
   background: rgba(155, 154, 155, 0.03); }
   nav:last-child {
     margin-right: 0; }
-  nav::after {
-    clear: both;
-    content: "";
-    display: table; }
   nav ul {
     float: right;
     margin: 0;
@@ -139,6 +135,24 @@ nav {
   .product-related:last-child {
     margin-right: 0; }
 
+#cart-table {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  #cart-table::after {
+    clear: both;
+    content: "";
+    display: table; }
+  #cart-table tr {
+    width: 100%;
+    display: table;
+    width: 100%;
+    table-layout: fixed; }
+    #cart-table tr td {
+      display: table-cell;
+      width: 8.33333%;
+      padding: 1.69492%; }
+
 .login-register-wrap {
   max-width: 1200px;
   margin-left: auto;
@@ -148,12 +162,8 @@ nav {
     content: "";
     display: table; }
   .login-register-wrap section {
-    float: left;
-    display: block;
-    margin-right: 1.69492%;
-    width: 49.15254%; }
-    .login-register-wrap section:last-child {
-      margin-right: 0; }
+    display: table-cell;
+    width: 50%; }
     .login-register-wrap section h3 {
       width: 100%; }
     .login-register-wrap section label {

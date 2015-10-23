@@ -6,7 +6,6 @@ published: true
 name: Product
 url: '/product/:urlName'
 ---
-
 <!-- open form -->
 {{ open_form({'class': 'custom', 'onsubmit': 'return false'}) }}
   {% if product %}
@@ -27,6 +26,15 @@ url: '/product/:urlName'
             {{ product.price|currency }}
           </h2>
 
+          <select id="item_rating" name="fields[item_rating]">
+            <option value="" diabled>-</option>
+            <option value="1">&starf;&star;&star;&star;&star;</option>
+            <option value="2">&starf;&starf;&star;&star;&star;</option>
+            <option value="3">&starf;&starf;&starf;&star;&star;</option>
+            <option value="4">&starf;&starf;&starf;&starf;&star;</option>
+            <option value="5">&starf;&starf;&starf;&starf;&starf;</option>
+          </select>
+          <a href="/reviews">View reviews</a>
   <!--       <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
           Rated <span itemprop="ratingValue">3.5</span>/5
           based on <span itemprop="reviewCount">11</span> customer reviews
@@ -110,9 +118,9 @@ url: '/product/:urlName'
 
         <hr class="fill-parent">
 
-        <!-- product ratings -->
+        <!-- related products -->
         {% if product.related.count %}
-        <!-- <h1>You Might be Into These</h1> -->
+        <h1>You Might be Into These</h1>
           {% for product in product.related|slice(0, 4)%}
           <div class="product-related">
             <a href="{{ page_url }}"><img itemprop="image" src="{{ product.images.first.thumbnail(280, 280)|default('http://placehold.it/280x280') }}" width="280" height="280" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
@@ -130,9 +138,9 @@ url: '/product/:urlName'
       </div>
 
   {% else %}
-
-  <h2>We are sorry, the requested product was not found.</h2>
-
+  <div class="wrapper">
+    <h2>We are sorry, the requested product was not found.</h2>
+  </div>
   {% endif %}
     </div>
 {{ close_form }}

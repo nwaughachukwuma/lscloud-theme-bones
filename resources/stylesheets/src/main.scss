@@ -10,18 +10,16 @@
 }
 // Header
 header {
-	@include span-columns(12);
 	@include outer-container;
 }
 
-// section {
-// 	@include span-columns(12);
-// 	max-width: 1200px;
-// }
+section {
+	@include span-columns(12);
+	max-width: 1200px;
+}
 
 nav {
 	@include span-columns(12);
-	@include outer-container;
 	height: 70px;
 	background: rgba(155,154,155,0.03);
 
@@ -68,7 +66,7 @@ section #featured-products {
 
 	}
 }
-// Product-page
+// Product page
 #product-form {
 	@include span-columns(6);
 }
@@ -82,6 +80,19 @@ section #featured-products {
 }
 .product-related {
 	@include span-columns(3);
+}
+// Cart page
+#cart-table {
+	@include outer-container;
+	tr {
+		@include fill-parent;
+		@include row(table);
+		td {
+			@include span-columns(1);
+			@include pad();
+		}
+	}
+
 }
 // Footer
 

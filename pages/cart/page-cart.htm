@@ -1,26 +1,27 @@
 ---
 action: 'shop:cart'
-template: default
+template: main
 protocol: all
 published: true
 name: Cart
 url: /cart
 ---
-<h1>{{ page.title }}</h1>
+
 {{ open_form({'class': 'custom'}) }}
 {% if itemCount %}
-	<table>
+	<table id="cart-table">
+		<tr><td><h1>{{ page.title }}</h1></td></tr>
 		{% for item in items %}
 		<tr>
-			<td>
+			<td class="cart-image">
 				<a href="/product/{{ item.product.url_name }}"><img src="{{ item.product.images.first.thumbnail(160, 160)|default('http://placehold.it/160x160') }}"/></a>
 			</td>
-			<td>
+			<td class="cart-name">
 				<h3><a href="/product/{{ item.product.url_name }}">{{ item.product.name }}</a></h3>
 				{% set description = item.optionsString() %}
 				{% if description %}<p>{{ description|unescape }}</p>{% endif %}
 			</td>
-			<td><input type="text" name="item_quantity[{{ item.key }}]" value="{{ item.quantity }}"></td>
+			<td class="cart-quantity"><input type="text" name="item_quantity[{{ item.key }}]" value="{{ item.quantity }}"></td>
 			<td><h4>{{ item.fullPrice()|currency }}</h4></td> 
 			{% if cart.getDiscountTotal() > 0 %}
 				<td><h4>{{ item.totalDiscount()|currency }}</h4></td>
@@ -37,11 +38,8 @@ url: /cart
 	{% if totals.discountTotal > 0 %}
 		<h4><strong>Coupon discount:</strong> {{ totals.discountTotal|currency }}</h4>
 	{% endif %}
-	<h4><strong>Cart total:</strong> {{ totals.subtotal|currency }}</h4>
-	{% if totals.totalShippingQuote > 0 %}
-		<h4><strong>Shipping:</strong> {{ totals.totalShippingQuote|currency }}</h4>
-	{% endif %}
-	<h3><strong>Estimated total:</strong>  {{ totals.total|currency }}</h3>
+
+	<h3><strong>Subtotal:</strong>  {{ totals.total|currency }}</h3>
 
 	
 	<input type="text" id="coupon" name="coupon" value="{{ coupon_code }}" placeholder="Coupon code" />
