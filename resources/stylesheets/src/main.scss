@@ -126,7 +126,21 @@ section #featured-products {
 			margin-bottom: 1em;
 		}
 	}
-
+}
+// Checkout Start Page
+.checkout-start-login {
+	@include span-columns(6);
+	input {
+		@include fill-parent;
+	}
+	h4 {
+    margin-top: -38px;
+    margin-right: 1em;
+    text-align: right;
+	}
+}
+.checkout-start-guest {
+	@include span-columns(6);
 }
 // Footer
 

@@ -285,6 +285,20 @@ nav {
     #cart-table tr .cart-subtotal {
       margin-bottom: 1em; }
 
+.checkout-start-login {
+  display: table-cell;
+  width: 50%; }
+  .checkout-start-login input {
+    width: 100%; }
+  .checkout-start-login h4 {
+    margin-top: -38px;
+    margin-right: 1em;
+    text-align: right; }
+
+.checkout-start-guest {
+  display: table-cell;
+  width: 50%; }
+
 .login-register-wrap {
   max-width: 1200px;
   margin-left: auto;
