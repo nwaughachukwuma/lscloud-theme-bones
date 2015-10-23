@@ -1,6 +1,7 @@
 @import "reset";
 @import "bourbon";
 @import "responsive";
+@import "style";
 @import "neat";
 
 .wrapper {
@@ -31,7 +32,8 @@ nav {
     }
 
     li {
-        display: inline-block;
+      display: inline-block;
+			padding: 20px 25px;
     }
 }
 

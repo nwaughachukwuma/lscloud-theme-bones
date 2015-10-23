@@ -68,6 +68,17 @@ ul {
 		color: $black;
 	}
 }
+
+#cart-nav-link {
+	background: $grey;
+	width: 200px;
+  height: 70px;
+	padding: 20px 45px;
+
+	a {
+		color: $white;
+	}
+}
 // Buttons
 .button {
 	border: 0;

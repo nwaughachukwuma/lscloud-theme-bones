@@ -60,7 +60,7 @@ description: 'Default Template'
           <a href="/sign-in">Login</a>
         {% endif %}
       </li>
-      <li><a href="/cart">Shopping Bag</a></li>
+      <li id="cart-nav-link"><a href="/cart">Shopping Bag</a></li>
       {% if search %}
       <li>
         {{ open_form({'method': 'get', 'action': site_url('search')}) }}
