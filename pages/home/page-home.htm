@@ -6,47 +6,55 @@ published: true
 name: Bones
 url: /
 ---
-<section>
-  <h1>Primary Product Placeholder</h1>
-  <img src="http://placehold.it/960x150">
-</section>
-<hr>
-<section>
-  <h1>How Does It Work?</h1>
-  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</p>
-  <a class="button call-to-action" href="/shop">Shop Now</a>
-</section>
-<hr>
-<section>
-  <h1>Check These Out</h1>
+<div class="wrapper">
+  <section>
+    <div id="featured-product">
+      <h1>Primary Product Placeholder</h1>
+      <img src="http://placehold.it/960x150">
+    </div>
+  </section>
 
-  {% set featuredCollection = 'featured'|collection %}
-    {% paginate featuredCollection.products by 8 %}
-        {% for product in pagination.items %}
-        <a href="/product/{{ product.url_name }}">
-          <img src="{{ product.images.first.thumbnail(400, 'auto', {crop: true}) }}" >
-        </a>
-        <p>
-          <a href="/product/{{ product.url_name }}" class="btn btn-default">
-            {{ product.name }}</a> :: {{ product.price|currency }}
-        </p>
-        {% endfor %}
-    {% navigation %}
-  {% endpaginate %}
+  <section>
+    <div id="featured-content">
+      <h1>How Does It Work?</h1>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</p>
+      <div class="button">
+        <a class="button call-to-action" href="/shop">Shop Now</a>
+      </div>
+    </div>
+  </section>
 
-	{% if featuredCollection %}
-	  {% for product in featuredCollection.products %}
-	  <a href="/product/{{ product.url_name }}">
-	    <img src="{{ product.images.first.thumbnail(400, 'auto', {crop: true}) }}" >
-	  </a>
-	  <p>
-	    <a href="/product/{{ product.url_name }}" class="btn btn-default">
-	      {{ product.name }}</a> :: {{ product.price|currency }}
-	  </p>
-	  {% endfor %}
-	{% else %}
-	  <p>The product collection was not found. Please create a collection and name it: <em>featuredCollection</em>.</p>
-	{% endif %}
+  <section>
+    <div id="featured-collection">
+      <h1>Check These Out</h1>
 
-</section>
-<hr>
+      {% set featuredCollection = 'featured'|collection %}
+        {% paginate featuredCollection.products by 8 %}
+            {% for product in pagination.items %}
+            <a href="/product/{{ product.url_name }}">
+              <img src="{{ product.images.first.thumbnail(400, 'auto', {crop: true}) }}" >
+            </a>
+            <p>
+              <a href="/product/{{ product.url_name }}" class="btn btn-default">
+                {{ product.name }}</a> :: {{ product.price|currency }}
+            </p>
+            {% endfor %}
+        {% navigation %}
+      {% endpaginate %}
+
+    	{% if featuredCollection %}
+    	  {% for product in featuredCollection.products %}
+    	  <a href="/product/{{ product.url_name }}">
+    	    <img src="{{ product.images.first.thumbnail(400, 'auto', {crop: true}) }}" >
+    	  </a>
+    	  <p>
+    	    <a href="/product/{{ product.url_name }}" class="btn btn-default">
+    	      {{ product.name }}</a> :: {{ product.price|currency }}
+    	  </p>
+    	  {% endfor %}
+    	{% else %}
+    	  <p>The product collection was not found. Please create a collection and name it: <em>featuredCollection</em>.</p>
+    	{% endif %}
+    </div>
+  </section>
+</div>

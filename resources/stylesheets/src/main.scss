@@ -2,6 +2,9 @@
 @import "responsive";
 @import "neat";
 
+.wrapper {
+	@include outer-container;
+}
 // Header
 header {
 	@include span-columns(12);
@@ -10,8 +13,7 @@ header {
 
 section {
 	@include span-columns(12);
-	@include outer-container;
-	text-align: center;
+	max-width: 1200px;
 }
 
 nav {
@@ -33,6 +35,35 @@ nav {
 
 #logo {
 	float: left;
+}
+
+// Body
+ #featured-content {
+	// @include span-columns(12);
+	@include outer-container;
+	text-align: center;
+
+	h1 {
+
+	}
+
+	p {
+		@include shift(2);
+		@include span-columns(8);
+		@include omega;
+	}
+
+	.button {
+		@include shift(4);
+		@include span-columns(4);
+	}
+}
+
+section #featured-products {
+
+	p {
+
+	}
 }
 // Footer
 
