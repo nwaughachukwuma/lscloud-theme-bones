@@ -58,6 +58,9 @@ html {
     content: "";
     display: table; }
 
+.fill-parent {
+  width: 100%; }
+
 header {
   width: 100%;
   background: rgba(155, 154, 155, 0.03); }
@@ -89,6 +92,107 @@ nav {
 #logo {
   float: left; }
 
+#featured-content {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+  #featured-content::after {
+    clear: both;
+    content: "";
+    display: table; }
+  #featured-content p {
+    margin-left: 16.94915%;
+    float: left;
+    display: block;
+    margin-right: 1.69492%;
+    width: 66.10169%;
+    margin-right: 0; }
+    #featured-content p:last-child {
+      margin-right: 0; }
+  #featured-content .button {
+    margin-left: 33.89831%;
+    float: left;
+    display: block;
+    margin-right: 1.69492%;
+    width: 32.20339%; }
+    #featured-content .button:last-child {
+      margin-right: 0; }
+
+.product-featured {
+  float: left;
+  display: block;
+  margin-right: 1.69492%;
+  width: 23.72881%; }
+  .product-featured:last-child {
+    margin-right: 0; }
+
+#product-form {
+  float: left;
+  display: block;
+  margin-right: 1.69492%;
+  width: 49.15254%; }
+  #product-form:last-child {
+    margin-right: 0; }
+
+.product-image-grid {
+  float: left;
+  display: block;
+  margin-right: 1.69492%;
+  width: 49.15254%;
+  margin-right: 0; }
+  .product-image-grid:last-child {
+    margin-right: 0; }
+
+.product-description {
+  float: left;
+  display: block;
+  margin-right: 1.69492%;
+  width: 66.10169%;
+  margin-right: 0; }
+  .product-description:last-child {
+    margin-right: 0; }
+
+.product-related {
+  float: left;
+  display: block;
+  margin-right: 1.69492%;
+  width: 23.72881%; }
+  .product-related:last-child {
+    margin-right: 0; }
+
+#cart-table {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  #cart-table::after {
+    clear: both;
+    content: "";
+    display: table; }
+  #cart-table tr {
+    width: 100%;
+    display: table;
+    width: 100%;
+    table-layout: fixed; }
+    #cart-table tr .cart-image {
+      display: table-cell;
+      width: 16.66667%; }
+    #cart-table tr .cart-name {
+      display: table-cell;
+      width: 41.66667%; }
+    #cart-table tr .cart-item-price {
+      display: table-cell;
+      width: 8.33333%; }
+    #cart-table tr .cart-item-total {
+      display: table-cell;
+      width: 8.33333%; }
+    #cart-table tr .cart-quantity {
+      display: table-cell;
+      width: 16.66667%; }
+    #cart-table tr .cart-remove {
+      display: table-cell;
+      width: 8.33333%; }
+
 .login-register-wrap {
   max-width: 1200px;
   margin-left: auto;
@@ -98,12 +202,8 @@ nav {
     content: "";
     display: table; }
   .login-register-wrap section {
-    float: left;
-    display: block;
-    margin-right: 1.69492%;
-    width: 49.15254%; }
-    .login-register-wrap section:last-child {
-      margin-right: 0; }
+    display: table-cell;
+    width: 50%; }
     .login-register-wrap section h3 {
       width: 100%; }
     .login-register-wrap section label {
@@ -120,43 +220,3 @@ nav {
 .breadcrumbs :not(:last-child):after {
   content: ">";
   margin-left: 5px; }
-  .breadcrumbs :not(:last-child):after #featured-product h1 {
-    float: left;
-    display: block;
-    margin-right: 1.69492%;
-    width: 100%; }
-    .breadcrumbs :not(:last-child):after #featured-product h1:last-child {
-      margin-right: 0; }
-  .breadcrumbs :not(:last-child):after #featured-content {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center; }
-    .breadcrumbs :not(:last-child):after #featured-content::after {
-      clear: both;
-      content: "";
-      display: table; }
-    .breadcrumbs :not(:last-child):after #featured-content p {
-      margin-left: 16.94915%;
-      float: left;
-      display: block;
-      margin-right: 1.69492%;
-      width: 66.10169%;
-      margin-right: 0; }
-      .breadcrumbs :not(:last-child):after #featured-content p:last-child {
-        margin-right: 0; }
-    .breadcrumbs :not(:last-child):after #featured-content .button {
-      margin-left: 33.89831%;
-      float: left;
-      display: block;
-      margin-right: 1.69492%;
-      width: 32.20339%; }
-      .breadcrumbs :not(:last-child):after #featured-content .button:last-child {
-        margin-right: 0; }
-  .breadcrumbs :not(:last-child):after .product-featured {
-    float: left;
-    display: block;
-    margin-right: 1.69492%;
-    width: 23.72881%; }
-    .breadcrumbs :not(:last-child):after .product-featured:last-child {
-      margin-right: 0; }
