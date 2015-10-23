@@ -74,9 +74,11 @@ section #featured-products {
 }
 .product-image-grid {
 	@include span-columns(6);
+	@include omega();
 }
 .product-description {
 	@include span-columns(8);
+	@include omega();
 }
 .product-related {
 	@include span-columns(3);

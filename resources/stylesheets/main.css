@@ -117,7 +117,8 @@ nav {
   float: left;
   display: block;
   margin-right: 1.69492%;
-  width: 49.15254%; }
+  width: 49.15254%;
+  margin-right: 0; }
   .product-image-grid:last-child {
     margin-right: 0; }
 
@@ -125,7 +126,8 @@ nav {
   float: left;
   display: block;
   margin-right: 1.69492%;
-  width: 66.10169%; }
+  width: 66.10169%;
+  margin-right: 0; }
   .product-description:last-child {
     margin-right: 0; }
 

@@ -97,11 +97,9 @@ url: '/product/:urlName'
 
         <!-- picture grid -->
         <div class="product-image-grid">
-        {% for image in product.images %}
           <figure>
-            <a href="{{ page_url }}"><img itemprop="image" src="{{ product.images.first.thumbnail(365, 365)|default('http://placehold.it/365x365') }}" width="365" height="365" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
+            <a href="{{ page_url }}"><img itemprop="image" src="{{ product.images.first.thumbnail(580, 580)|default('http://placehold.it/580x580') }}" width="580" height="580" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
           </figure>
-        {% endfor %}
         </div>
 
         <hr class="fill-parent">
@@ -114,8 +112,8 @@ url: '/product/:urlName'
 
         <!-- product ratings -->
         {% if product.related.count %}
-        <h1 class="fill-parent">You Might be Into These</h1>
-          {% for product in product.related %}
+        <!-- <h1>You Might be Into These</h1> -->
+          {% for product in product.related|slice(0, 4)%}
           <div class="product-related">
             <a href="{{ page_url }}"><img itemprop="image" src="{{ product.images.first.thumbnail(280, 280)|default('http://placehold.it/280x280') }}" width="280" height="280" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
             <p>{{ product.name }}</p>
