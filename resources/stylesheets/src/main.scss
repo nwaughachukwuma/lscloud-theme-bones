@@ -5,16 +5,19 @@
 .wrapper {
 	@include outer-container;
 }
+.fill-parent {
+	@include fill-parent;
+}
 // Header
 header {
 	@include span-columns(12);
 	@include outer-container;
 }
 
-section {
-	@include span-columns(12);
-	max-width: 1200px;
-}
+// section {
+// 	@include span-columns(12);
+// 	max-width: 1200px;
+// }
 
 nav {
 	@include span-columns(12);
@@ -64,6 +67,19 @@ section #featured-products {
 	p {
 
 	}
+}
+// Product-page
+#product-form {
+	@include span-columns(6);
+}
+.product-image-grid {
+	@include span-columns(6);
+}
+.product-description {
+	@include span-columns(8);
+}
+.product-related {
+	@include span-columns(3);
 }
 // Footer
 
