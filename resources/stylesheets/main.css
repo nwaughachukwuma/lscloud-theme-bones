@@ -1,3 +1,46 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 html {
   box-sizing: border-box; }
 
@@ -46,41 +89,6 @@ nav {
 #logo {
   float: left; }
 
-#featured-product h1 {
-  float: left;
-  display: block;
-  margin-right: 1.69492%;
-  width: 100%; }
-  #featured-product h1:last-child {
-    margin-right: 0; }
-
-#featured-content {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center; }
-  #featured-content::after {
-    clear: both;
-    content: "";
-    display: table; }
-  #featured-content p {
-    margin-left: 16.94915%;
-    float: left;
-    display: block;
-    margin-right: 1.69492%;
-    width: 66.10169%;
-    margin-right: 0; }
-    #featured-content p:last-child {
-      margin-right: 0; }
-  #featured-content .button {
-    margin-left: 33.89831%;
-    float: left;
-    display: block;
-    margin-right: 1.69492%;
-    width: 32.20339%; }
-    #featured-content .button:last-child {
-      margin-right: 0; }
-
 .login-register-wrap {
   max-width: 1200px;
   margin-left: auto;
@@ -112,3 +120,43 @@ nav {
 .breadcrumbs :not(:last-child):after {
   content: ">";
   margin-left: 5px; }
+  .breadcrumbs :not(:last-child):after #featured-product h1 {
+    float: left;
+    display: block;
+    margin-right: 1.69492%;
+    width: 100%; }
+    .breadcrumbs :not(:last-child):after #featured-product h1:last-child {
+      margin-right: 0; }
+  .breadcrumbs :not(:last-child):after #featured-content {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; }
+    .breadcrumbs :not(:last-child):after #featured-content::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .breadcrumbs :not(:last-child):after #featured-content p {
+      margin-left: 16.94915%;
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 66.10169%;
+      margin-right: 0; }
+      .breadcrumbs :not(:last-child):after #featured-content p:last-child {
+        margin-right: 0; }
+    .breadcrumbs :not(:last-child):after #featured-content .button {
+      margin-left: 33.89831%;
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 32.20339%; }
+      .breadcrumbs :not(:last-child):after #featured-content .button:last-child {
+        margin-right: 0; }
+  .breadcrumbs :not(:last-child):after .product-featured {
+    float: left;
+    display: block;
+    margin-right: 1.69492%;
+    width: 23.72881%; }
+    .breadcrumbs :not(:last-child):after .product-featured:last-child {
+      margin-right: 0; }

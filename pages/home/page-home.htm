@@ -8,7 +8,7 @@ url: /
 ---
 <div class="wrapper">
   <section>
-    <div id="featured-product">
+    <div id="featured-carousel">
       <h1>Primary Product Placeholder</h1>
       <img src="http://placehold.it/960x150">
     </div>
@@ -30,30 +30,19 @@ url: /
       {% set featuredCollection = 'featured'|collection %}
         {% paginate featuredCollection.products by 8 %}
             {% for product in pagination.items %}
-            <a href="/product/{{ product.url_name }}">
-              <img src="{{ product.images.first.thumbnail(400, 'auto', {crop: true}) }}" >
-            </a>
-            <p>
-              <a href="/product/{{ product.url_name }}" class="btn btn-default">
-                {{ product.name }}</a> :: {{ product.price|currency }}
-            </p>
+            <div class="product-featured">
+              <a href="/product/{{ product.url_name }}">
+                <img src="{{ product.images.first.thumbnail(400, 'auto', {crop: true}) }}" >
+              </a>
+              <p>
+                <a href="/product/{{ product.url_name }}" class="btn btn-default">
+                  {{ product.name }}</a> {{ product.price|currency }}
+              </p>
+            </div>
             {% endfor %}
         {% navigation %}
       {% endpaginate %}
 
-    	{% if featuredCollection %}
-    	  {% for product in featuredCollection.products %}
-    	  <a href="/product/{{ product.url_name }}">
-    	    <img src="{{ product.images.first.thumbnail(400, 'auto', {crop: true}) }}" >
-    	  </a>
-    	  <p>
-    	    <a href="/product/{{ product.url_name }}" class="btn btn-default">
-    	      {{ product.name }}</a> :: {{ product.price|currency }}
-    	  </p>
-    	  {% endfor %}
-    	{% else %}
-    	  <p>The product collection was not found. Please create a collection and name it: <em>featuredCollection</em>.</p>
-    	{% endif %}
     </div>
   </section>
 </div>
