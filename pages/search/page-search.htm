@@ -6,6 +6,7 @@ published: true
 name: Search
 url: /search
 ---
+<h1>{{ page.title }}</h1>
  <p>Products found: {{ products.get().count() }}</p>
 {{ open_form() }}
 	{% paginate products by 48 %}

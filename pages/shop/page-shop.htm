@@ -6,6 +6,7 @@ published: true
 name: Shop
 url: '/shop/:page?'
 ---
+<h1>{{ page.title }}</h1>
 {{ open_form() }}
 	{% paginate products by 10 %}
 	<div itemtype="http://schema.org/ItemList">
