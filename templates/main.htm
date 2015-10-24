@@ -27,9 +27,11 @@ description: 'Default Template'
   <script type="text/javascript" src="/cms/core.js"></script>
 </head>
 <header>
+  <div class="wrapper">
   <nav>
+
     <div id="logo">
-      <a href="/">LOGO</a>
+      <a href="/">BONES</a>
     </div>
     <ul>
       <li>
@@ -58,7 +60,7 @@ description: 'Default Template'
           <a href="/sign-in">Login</a>
         {% endif %}
       </li>
-      <li><a href="/cart">Shopping Bag</a></li>
+      <li id="cart-nav-link"><a href="/cart">Shopping Bag</a></li>
       {% if search %}
       <li>
         {{ open_form({'method': 'get', 'action': site_url('search')}) }}
@@ -69,10 +71,11 @@ description: 'Default Template'
     </ul>
     <!-- Current page and breadcrumbs -->
 
-    {{ code_block('breadcrumbs') }}
   </nav>
+</div>
 </header>
 <body>
+  {{ code_block('breadcrumbs') }}
   {{ page() }}
 </body>
 <footer><p>Footer goes here</p></footer>

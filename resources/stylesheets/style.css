@@ -42,6 +42,14 @@ ul {
     font-weight: 400;
     color: #4a4a4a; }
 
+#cart-nav-link {
+  background: #9b9b9b;
+  width: 200px;
+  height: 70px;
+  padding: 20px 45px; }
+  #cart-nav-link a {
+    color: #fff; }
+
 .button {
   border: 0;
   border-radius: 3px;
