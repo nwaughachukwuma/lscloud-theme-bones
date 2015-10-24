@@ -17,7 +17,7 @@
 // Header
 header {
 	width: 100%;
-	background: rgba(155,154,155,0.03);
+	background: $lightgrey;
 }
 
 section {
@@ -180,7 +180,10 @@ section #featured-products {
 }
 // Footer
 
-footer {}
+footer {
+	height: 200px;
+	background: $lightgrey;
+}
 
 // Sign-in
 .login-register-wrap {

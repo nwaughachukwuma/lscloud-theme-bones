@@ -522,6 +522,10 @@ nav {
     #cart-table tr .cart-subtotal {
       margin-bottom: 1em; }
 
+footer {
+  height: 200px;
+  background: rgba(155, 154, 155, 0.03); }
+
 .login-register-wrap {
   max-width: 1200px;
   margin-left: auto;
