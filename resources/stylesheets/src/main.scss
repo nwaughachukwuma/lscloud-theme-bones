@@ -183,7 +183,11 @@ section #featured-products {
 	input {
 		@include fill-parent;
 	}
+	input:last-child {
+		margin-top: 1em;
+	}
 	h4 {
+    font-style: italic;
     margin-top: -38px;
     margin-right: 1em;
     text-align: right;
@@ -191,6 +195,9 @@ section #featured-products {
 }
 .checkout-start-guest {
 	@include span-columns(6);
+	input {
+		@include fill-parent;
+	}
 }
 // Footer
 
