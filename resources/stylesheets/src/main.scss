@@ -5,7 +5,7 @@
 @import "style";
 
 .wrapper {
-    @include outer-container;
+  @include outer-container;
 }
 .fill-parent {
 	@include fill-parent;
@@ -17,25 +17,29 @@ header {
 }
 
 section {
-    @include span-columns(12);
-    max-width: 1200px;
+  @include span-columns(12);
+  max-width: 1200px;
 }
 
 nav {
-    @include span-columns(12);
-    height: 70px;
+  @include span-columns(12);
+  height: 70px;
 
-    ul {
-      float: right;
-      margin: 0;
-      padding: 0;
-    }
+  ul {
+    float: right;
+    margin: 0;
+    padding: 0;
+  }
 
-    li {
-      display: inline-block;
-			padding: 20px 25px;
-    }
+  li {
+    display: inline-block;
+		padding: 20px 25px;
+  }
 
+  .breadcrumbs {
+    float: left;
+    color: red;
+  }
 }
 
 #logo {
@@ -49,14 +53,14 @@ nav {
     text-align: center;
 
     p {
-        @include shift(2);
-        @include span-columns(8);
-        @include omega;
+      @include shift(2);
+      @include span-columns(8);
+      @include omega;
     }
 
     .button {
-        @include shift(4);
-        @include span-columns(4);
+      @include shift(4);
+      @include span-columns(4);
     }
 }
 
@@ -208,7 +212,7 @@ footer {
   }
 
   #copyright {
-    @include span-columns(2);
+    @include span-columns(8);
     float: right;
     text-align: right;
   }
@@ -226,10 +230,20 @@ footer {
     }
 }
 // Breadcrumbs
-.breadcrumbs{
+.breadcrumbs {
+  float: left;
+  display: block;
+  margin: 83px 0 65px 0;
+  width: 100%;
+  font-size: 1em;
+
+    ul {
+      margin: 0;
+    }
+
     .crumb {
-        display: inline;
-        list-style: none;
+      display: inline;
+      list-style: none;
     }
     :not(:last-child):after {
         content: ">";
