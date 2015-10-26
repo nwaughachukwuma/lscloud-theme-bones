@@ -1,5 +1,8 @@
-body {
+body, h1 {
   margin: 0; }
+
+ul {
+  padding: 0; }
 
 html {
   box-sizing: border-box; }
@@ -183,6 +186,9 @@ nav {
   nav li {
     display: inline-block;
     padding: 20px 25px; }
+  nav .breadcrumbs {
+    float: left;
+    color: red; }
 
 #logo {
   float: left; }
@@ -331,7 +337,7 @@ footer {
     margin: 65px 0 0 0; }
   footer #copyright {
     display: table-cell;
-    width: 16.66667%;
+    width: 66.66667%;
     float: right;
     text-align: right; }
 
@@ -355,10 +361,17 @@ footer {
     .login-register-wrap section .button {
       width: auto; }
 
-.breadcrumbs .crumb {
-  display: inline;
-  list-style: none; }
-
-.breadcrumbs :not(:last-child):after {
-  content: ">";
-  margin-left: 5px; }
+.breadcrumbs {
+  float: left;
+  display: block;
+  margin: 83px 0 65px 0;
+  width: 100%;
+  font-size: 1em; }
+  .breadcrumbs ul {
+    margin: 0; }
+  .breadcrumbs .crumb {
+    display: inline;
+    list-style: none; }
+  .breadcrumbs :not(:last-child):after {
+    content: ">";
+    margin-left: 5px; }
