@@ -1,7 +1,6 @@
 @import "reset";
 @import "bourbon";
 @import "responsive";
-@import "style";
 @import "neat";
 @import "style";
 
@@ -75,48 +74,7 @@ section #featured-products {
 	@include span-columns(3);
 }
 
-// Product page
-#product-form {
-    @include span-columns(6);
-}
-.product-image-grid {
-    @include span-columns(6);
-    @include omega();
-}
-.product-description {
-    @include span-columns(8);
-    @include omega();
-}
-.product-related {
-    @include span-columns(3);
-}
-// Cart page
-#cart-table {
-    @include outer-container;
-    tr {
-        @include fill-parent;
-        @include row(table);
-        .cart-image {
-            @include span-columns(2);
-        }
-        .cart-name {
-            @include span-columns(5);
-        }
-        .cart-item-price {
-            @include span-columns(1)
-        }
-        .cart-item-total {
-            @include span-columns(1)
-        }
-        .cart-quantity {
-            @include span-columns(2);
-        }
-        .cart-remove {
-            @include span-columns(1);
-        }
-    }
 
-}
 // Product page
 #product-form {
 	@include span-columns(6);
@@ -188,7 +146,7 @@ section #featured-products {
 	}
 	h4 {
     font-style: italic;
-    margin-top: -38px;
+    margin-top: -37px;
     margin-right: 1em;
     text-align: right;
 	}
