@@ -525,6 +525,16 @@ nav {
 footer {
   height: 200px;
   background: rgba(155, 154, 155, 0.03); }
+  footer ul {
+    display: table-cell;
+    width: 16.66667%;
+    float: left;
+    margin: 65px 0 0 0; }
+    footer ul .copyright {
+      display: table-cell;
+      width: 16.66667%;
+      float: right;
+      text-align: right; }
 
 .login-register-wrap {
   max-width: 1200px;
