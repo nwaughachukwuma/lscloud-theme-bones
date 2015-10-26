@@ -1,176 +1,6 @@
 body {
   margin: 0; }
 
-html, body, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, summary,
-time, mark, audio, video {
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block; }
-
-ol, ul {
-  list-style: none; }
-
-blockquote, q {
-  quotes: none; }
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-html {
-  box-sizing: border-box; }
-
-*,
-*::after,
-*::before {
-  box-sizing: inherit; }
-
-body {
-  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
-
-h1 {
-  font-size: 3.15733em;
-  font-weight: 200;
-  color: #9b9b9b; }
-
-h2 {
-  font-size: 1.333em;
-  font-weight: 400;
-  color: #4a4a4a; }
-
-h3 {
-  font-size: 1em;
-  font-weight: 400;
-  color: #4a4a4a; }
-
-h4 {
-  font-size: 0.75019em;
-  font-weight: 200;
-  color: #4a4a4a; }
-
-a {
-  text-decoration: none;
-  color: #4a4a4a; }
-  a:hover {
-    color: #0087C8; }
-
-ul {
-  list-style: none; }
-  ul li {
-    font-size: 1em;
-    font-weight: 400;
-    color: #4a4a4a; }
-
-#cart-nav-link {
-  background: #9b9b9b;
-  width: 200px;
-  height: 70px;
-  padding: 20px 45px; }
-  #cart-nav-link a {
-    color: #fff; }
-
-.button {
-  border: 0;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 1em;
-  -webkit-transition: background-color 150ms ease;
-  -moz-transition: background-color 150ms ease;
-  transition: background-color 150ms ease;
-  vertical-align: middle;
-  white-space: nowrap; }
-
-.next {
-  background-color: #F0C332;
-  color: #fff;
-  font-weight: 700;
-  padding: 0.75em 1.5em; }
-  .next:hover,
-  .next:focus {
-    background-color: #c09c28;
-    color: #fff; }
-
-.call-to-action {
-  background-color: #F0C332;
-  color: #fff;
-  font-weight: 700;
-  padding: 1.5em 1.5em; }
-  .call-to-action:hover,
-  .call-to-action:focus {
-    background-color: #c09c28;
-    color: #fff; }
-
-.continue-shopping {
-  background-color: #fff;
-  border: 1px solid #9b9b9b;
-  border-radius: 3px;
-  color: #0087C8;
-  font-weight: 700;
-  padding: 0.75em 4em; }
-  .continue-shopping:hover,
-  .continue-shopping:focus {
-    border-color: #006ca0;
-    color: #006ca0; }
-
-label {
-  display: block;
-  color: #9b9b9b;
-  font-size: 0.75019em;
-  font-weight: 200;
-  margin-bottom: 0.375em; }
-  label.required::after {
-    content: "*"; }
-
-input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea,
-select {
-  border: 1px solid #DDD;
-  border-radius: 3px;
-  font-size: 1em;
-  margin-bottom: 0.75em;
-  padding: 0.5em;
-  font-size: 1em;
-  font-weight: 200;
-  color: #4a4a4a; }
-  input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, textarea:hover,
-  select:hover {
-    border-color: #b1b1b1; }
-  input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, textarea:focus,
-  select:focus {
-    border-color: #F0C332;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(238, 188, 26, 0.7);
-    outline: none; }
-
-select {
-  height: 34px; }
-
-input[type="checkbox"],
-input[type="radio"] {
-  display: inline;
-  margin-right: 0.375em; }
-
 html {
   box-sizing: border-box; }
 
@@ -439,56 +269,6 @@ nav {
     display: table;
     width: 100%;
     table-layout: fixed; }
-    #cart-table tr .cart-image {
-      display: table-cell;
-      width: 16.66667%; }
-    #cart-table tr .cart-name {
-      display: table-cell;
-      width: 41.66667%; }
-    #cart-table tr .cart-item-price {
-      display: table-cell;
-      width: 8.33333%; }
-    #cart-table tr .cart-item-total {
-      display: table-cell;
-      width: 8.33333%; }
-    #cart-table tr .cart-quantity {
-      display: table-cell;
-      width: 16.66667%; }
-    #cart-table tr .cart-remove {
-      display: table-cell;
-      width: 8.33333%; }
-
-#product-form {
-  display: table-cell;
-  width: 50%; }
-
-.product-image-grid {
-  display: table-cell;
-  width: 50%;
-  margin-right: 0; }
-
-.product-description {
-  display: table-cell;
-  width: 66.66667%;
-  margin-right: 0; }
-
-.product-related {
-  display: table-cell;
-  width: 25%; }
-
-#cart-table {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto; }
-  #cart-table::after {
-    clear: both;
-    content: "";
-    display: table; }
-  #cart-table tr {
-    width: 100%;
-    display: table;
-    width: 100%;
-    table-layout: fixed; }
     #cart-table tr td {
       vertical-align: top;
       text-align: right; }
@@ -521,6 +301,25 @@ nav {
       width: 8.33333%; }
     #cart-table tr .cart-subtotal {
       margin-bottom: 1em; }
+
+.checkout-start-login {
+  display: table-cell;
+  width: 50%; }
+  .checkout-start-login input {
+    width: 100%; }
+  .checkout-start-login input:last-child {
+    margin-top: 1em; }
+  .checkout-start-login h4 {
+    font-style: italic;
+    margin-top: -37px;
+    margin-right: 1em;
+    text-align: right; }
+
+.checkout-start-guest {
+  display: table-cell;
+  width: 50%; }
+  .checkout-start-guest input {
+    width: 100%; }
 
 footer {
   height: 200px;
