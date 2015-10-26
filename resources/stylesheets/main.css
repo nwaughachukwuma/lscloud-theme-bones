@@ -190,9 +190,6 @@ input[type="radio"] {
 .fill-parent {
   width: 100%; }
 
-.fill-parent {
-  width: 100%; }
-
 header {
   width: 100%;
   background: rgba(155, 154, 155, 0.03); }
@@ -358,6 +355,50 @@ nav {
   width: 50%; }
   .checkout-start-guest input {
     width: 100%; }
+
+#billing-form {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  #billing-form::after {
+    clear: both;
+    content: "";
+    display: table; }
+  #billing-form .delivery-billing-info {
+    display: table-cell;
+    width: 50%; }
+    #billing-form .delivery-billing-info .billing-first-name {
+      display: table-cell;
+      width: 50%; }
+    #billing-form .delivery-billing-info .billing-last-name {
+      display: table-cell;
+      width: 50%;
+      margin-right: 0; }
+    #billing-form .delivery-billing-info .billing-email {
+      display: table-cell;
+      width: 100%;
+      margin-right: 0; }
+    #billing-form .delivery-billing-info .billing-address {
+      display: table-cell;
+      width: 100%;
+      margin-right: 0; }
+    #billing-form .delivery-billing-info .billing-city {
+      display: table-cell;
+      width: 50%; }
+    #billing-form .delivery-billing-info .billing-postal-code {
+      display: table-cell;
+      width: 50%;
+      margin-right: 0; }
+    #billing-form .delivery-billing-info .billing-country {
+      display: table-cell;
+      width: 50%; }
+    #billing-form .delivery-billing-info .billing-state {
+      display: table-cell;
+      width: 50%;
+      margin-right: 0; }
+    #billing-form .delivery-billing-info .billing-phone {
+      display: table-cell;
+      width: 100%; }
 
 footer {
   height: 200px;

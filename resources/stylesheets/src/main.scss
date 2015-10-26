@@ -8,9 +8,6 @@
     @include outer-container;
 }
 .fill-parent {
-    @include fill-parent;
-}
-.fill-parent {
 	@include fill-parent;
 }
 // Header
@@ -157,6 +154,47 @@ section #featured-products {
 		@include fill-parent;
 	}
 }
+// Checkout Process
+#billing-form {
+	@include outer-container;
+	.delivery-billing-info {
+		@include span-columns(6);
+		.billing-first-name {
+			@include span-columns(3 of 6);
+		}
+		.billing-last-name {
+			@include span-columns(3	of 6);
+			@include omega();
+		}
+		.billing-email {
+			@include span-columns(6 of 6);
+			@include omega();
+		}
+		.billing-address {
+			@include span-columns(6 of 6);
+			@include omega();
+		}
+		.billing-city {
+			@include span-columns(3 of 6);
+		}
+		.billing-postal-code {
+			@include span-columns(3 of 6);
+			@include omega();
+		}
+		.billing-country {
+			@include span-columns(3 of 6);
+		}
+		.billing-state {
+			@include span-columns(3 of 6);
+			@include omega();
+		}
+		.billing-phone {
+			@include span-columns(6 of 6);
+		}
+	}
+}
+
+
 // Footer
 
 footer {
