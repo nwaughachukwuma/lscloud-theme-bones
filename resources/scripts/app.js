@@ -59,14 +59,28 @@
 
     $(document).on('click', '#copy_billing_to_shipping', function (){
       //data-ajax-handler="shop:onCopyBillingToShipping" data-ajax-update="#checkout-page=shop-checkoutaddress"
-      $(this).sendRequest('shop:onCheckoutBillingInfo', {
-          onAfterUpdate: function() {
-            $(this).sendRequest('shop:onCopyBillingToShipping', {
-              update: {'#checkout-page' : 'partial-checkout-address', '#mini-cart':'shop-minicart'}
-            });
-          }
-      });
-    })
+      if($(this).is(':checked')) {
+        $("#shipping-form").hide();
+      } else {
+        $("#shipping-form").show();
+      }
+        // $(this).sendRequest('shop:onCheckoutBillingInfo', {
+        //     onAfterUpdate: function() {
+        //       $(this).sendRequest('shop:onCopyBillingToShipping', {
+        //         update: {'#checkout-page' : 'partial-checkout-address', '#mini-cart':'shop-minicart'}
+        //       });
+        //     }
+        // });
+
+    });
+
+$('.pChk').click(function() {
+    if( $(this).is(':checked')) {
+        $("#ProjectListButton").show();
+    } else {
+        $("#ProjectListButton").hide();
+    }
+}); 
     
   });
 })(jQuery);
