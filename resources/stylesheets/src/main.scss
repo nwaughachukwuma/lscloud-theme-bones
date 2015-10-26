@@ -189,14 +189,14 @@ footer {
     float: left;
     margin: 65px 0 0 0;
 
-    .copyright {
-      @include span-columns(2);
-      float: right;
-      text-align: right;
-    }
+
   }
 
-
+  #copyright {
+    @include span-columns(2);
+    float: right;
+    text-align: right;
+  }
 }
 
 // Sign-in
