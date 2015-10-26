@@ -171,6 +171,9 @@ nav {
 	@include outer-container;
 	.delivery-billing-info {
 		@include span-columns(6);
+		input,textarea,select {
+			@include fill-parent;
+		}
 		.billing-first-name {
 			@include span-columns(3 of 6);
 		}
