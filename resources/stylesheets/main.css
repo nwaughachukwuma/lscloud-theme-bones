@@ -409,6 +409,8 @@ nav {
     width: 49.15254%; }
     #billing-form .delivery-billing-info:last-child {
       margin-right: 0; }
+    #billing-form .delivery-billing-info input, #billing-form .delivery-billing-info textarea, #billing-form .delivery-billing-info select {
+      width: 100%; }
     #billing-form .delivery-billing-info .billing-first-name {
       float: left;
       display: block;
