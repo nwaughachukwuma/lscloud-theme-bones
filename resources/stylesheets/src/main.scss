@@ -7,15 +7,11 @@
 .wrapper {
   @include outer-container;
 }
+
 .fill-parent {
-<<<<<<< HEAD
   @include fill-parent;
 }
-.fill-parent {
-=======
->>>>>>> 30b3220b82c8d2f5abdf75a4da42ee7a6066f1be
-	@include fill-parent;
-}
+
 // Header
 header {
 	width: 100%;
@@ -69,18 +65,24 @@ nav {
       @include span-columns(4);
     }
 }
-
-section #featured-products {
-
-    p {
-
-    }
-}
-
 .product-featured {
 	@include span-columns(3);
 }
 
+// Shop Page
+.product {
+  @include span-columns(4);
+
+  figure {
+    text-align: center;
+  }
+}
+.product:nth-child(3n+3) {
+  margin-right: 0px;
+}
+.product-information {
+  padding: 0 10px;
+}
 
 // Product page
 #product-form {

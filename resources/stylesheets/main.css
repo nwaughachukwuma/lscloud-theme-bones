@@ -1,4 +1,4 @@
-body, h1 {
+body, h1, figure {
   margin: 0; }
 
 ul {
@@ -262,6 +262,22 @@ nav {
   width: 23.72881%; }
   .product-featured:last-child {
     margin-right: 0; }
+
+.product {
+  float: left;
+  display: block;
+  margin-right: 1.69492%;
+  width: 32.20339%; }
+  .product:last-child {
+    margin-right: 0; }
+  .product figure {
+    text-align: center; }
+
+.product:nth-child(3n+3) {
+  margin-right: 0px; }
+
+.product-information {
+  padding: 0 10px; }
 
 #product-form {
   float: left;

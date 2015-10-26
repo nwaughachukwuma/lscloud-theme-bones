@@ -6,7 +6,7 @@ published: true
 name: Shop
 url: '/shop/:page?'
 ---
-<h1>{{ page.title }}</h1>
+<div class="wrapper">
 {{ open_form() }}
 	{% paginate products by 10 %}
 	<div itemtype="http://schema.org/ItemList">
@@ -15,27 +15,30 @@ url: '/shop/:page?'
 
 				{% set is_on_sale = product.onSale %}
 				{% set page_url = '/product/' ~ product.url_name %}
+				<div class="product">
 				<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Product" class="{{ is_on_sale ? 'sale' : null }}">
 					<figure>
 						<a href="{{ page_url }}"><img itemprop="image" src="{{ product.images.first.thumbnail(365, 365)|default('http://placehold.it/365x365') }}" width="365" height="365" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
 					</figure>
-					<h3><a itemprop="url" href="{{ page_url }}"><span itemprop="name">{{ product.name }}</span></a></h3>
-					<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-					{% if product.enabled %}
-						<link itemprop="availability" href="http://schema.org/InStock" />
-						<meta itemprop="priceCurrency" content="USD" /> <!-- Should get currency code through variable -->
-						<meta itemprop="price" content="{{ product.price }}" />
-						<h4 class="cost">
-							{% if on_sale %}
-							<span class="oldprice">{{ product.fullPrice|currency }}</span>
-							{% endif %}
-							{{ product.price|currency }}
-						</h4>
-					{% else %}
-					<link itemprop="availability" href="http://schema.org/OutOfStock"/>
-					{% endif %}
+					<div class="product-information">
+						<h3><a itemprop="url" href="{{ page_url }}"><span itemprop="name">{{ product.name }}</span></a></h3>
+						<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+						{% if product.enabled %}
+							<link itemprop="availability" href="http://schema.org/InStock" />
+							<meta itemprop="priceCurrency" content="USD" /> <!-- Should get currency code through variable -->
+							<meta itemprop="price" content="{{ product.price }}" />
+							<h4 class="cost">
+								{% if on_sale %}
+								<span class="oldprice">{{ product.fullPrice|currency }}</span>
+								{% endif %}
+								{{ product.price|currency }}
+							</h4>
+						{% else %}
+						<link itemprop="availability" href="http://schema.org/OutOfStock"/>
+						{% endif %}
+					</div>
 				</li>
-
+				</div>
 			{% endfor %}
 		</ul>
 	</div>
@@ -43,3 +46,4 @@ url: '/shop/:page?'
 
 	{% endpaginate %}
 {{ close_form() }}
+</div>
