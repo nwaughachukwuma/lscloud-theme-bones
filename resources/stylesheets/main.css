@@ -181,6 +181,9 @@ input[type="radio"] {
   display: inline;
   margin-right: 0.375em; }
 
+.sale {
+  text-decoration: line-through; }
+
 .wrapper {
   max-width: 1200px;
   margin-left: auto;
