@@ -1,13 +1,14 @@
 ---
 action: 'shop:category'
-template: default
+template: main
 protocol: all
 published: true
 name: Category
 url: '/category/:urlName@/:page?'
 ---
-<h1>{{ page.title }}</h1>
+<div class="wrapper">
 {% tree categories %}
+
 <ul>
 	{% for category in tree.items %}
 	<li>
@@ -22,28 +23,37 @@ url: '/category/:urlName@/:page?'
 	<h2>Category not found</h2>
 	<p>We are sorry, the requested category was not found.</p>
 {% else %}
+
+
 	{% paginate products by 9 %}
-	<ul>  
+	<ul>
 		{% for product in pagination.items %}
 			{% set is_on_sale = product.onSale %}
 			{% set page_url = '/product/' ~ product.url_name %}
+			<div class="product">
 			<li class="{{ is_on_sale ? 'sale' : null }}">
 				<figure>
 					<a href="{{ page_url }}">
 					<img src="{{ product.images.first.thumbnail(365, 365)|default('http://placehold.it/365x365') }}" width="365" height="365" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/>
 					</a>
 				</figure>
+				<div class="product-information">
 				<h3><a href="{{ page_url }}">{{ product.name }}</a></h3>
 				<a href="{{ page_url }}">
 					<h4 class="cost">
-						{% if is_on_sale %}<span>{{ product.fullPrice|currency }}</span>{% endif %}
+						{% if is_on_sale %}
+							<span class="sale">{{ product.fullPrice|currency }}</span>
+						{% endif %}
 						{{ product.price|currency }}
 					</h4>
 				</a>
-				{% if is_on_sale %}<span>SALE</span>{% endif %}
+				<!-- {% if is_on_sale %}<span>SALE</span>{% endif %} -->
+				</div>
 			</li>
+			</div>
 		{% endfor %}
 	</ul>
 	{% navigation %}
 	{% endpaginate %}
 {% endif %}
+</div>
