@@ -61,17 +61,25 @@
       //data-ajax-handler="shop:onCopyBillingToShipping" data-ajax-update="#checkout-page=shop-checkoutaddress"
       if($(this).is(':checked')) {
         $("#shipping-form").hide();
+
+        $(this).sendRequest('shop:onCheckoutBillingInfo', {
+          onAfterUpdate: function() {
+            $(this).sendRequest('shop:onCopyBillingToShipping', {
+              update: {'#checkout-page' : 'partial-checkout-address', '#mini-cart':'shop-minicart'}
+            });
+          }
+        });
+
       } else {
         $("#shipping-form").show();
       }
-        // $(this).sendRequest('shop:onCheckoutBillingInfo', {
-        //     onAfterUpdate: function() {
-        //       $(this).sendRequest('shop:onCopyBillingToShipping', {
-        //         update: {'#checkout-page' : 'partial-checkout-address', '#mini-cart':'shop-minicart'}
-        //       });
-        //     }
-        // });
 
+    });
+
+    $( document ).ajaxSuccess(function( event, request, settings ) { 
+      if ( $( '#copy_billing_to_shipping' ).length ) { 
+        $("#copy_billing_to_shipping").prop('checked', true);
+      } 
     });
 
 $('.pChk').click(function() {
