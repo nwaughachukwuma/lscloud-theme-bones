@@ -335,61 +335,33 @@ nav {
       #cart-table tr td h1 {
         text-align: left; }
     #cart-table tr .cart-image {
-      float: left;
-      display: block;
-      margin-right: 1.69492%;
-      width: 15.25424%;
+      display: table-cell;
+      width: 16.66667%;
       text-align: left; }
-      #cart-table tr .cart-image:last-child {
-        margin-right: 0; }
     #cart-table tr .cart-name {
-      float: left;
-      display: block;
-      margin-right: 1.69492%;
-      width: 40.67797%;
+      display: table-cell;
+      width: 41.66667%;
       text-align: left; }
-      #cart-table tr .cart-name:last-child {
-        margin-right: 0; }
     #cart-table tr .cart-item-price {
-      float: left;
-      display: block;
-      margin-right: 1.69492%;
-      width: 6.77966%; }
-      #cart-table tr .cart-item-price:last-child {
-        margin-right: 0; }
+      display: table-cell;
+      width: 8.33333%; }
     #cart-table tr .cart-item-total {
-      float: left;
-      display: block;
-      margin-right: 1.69492%;
-      width: 6.77966%; }
-      #cart-table tr .cart-item-total:last-child {
-        margin-right: 0; }
+      display: table-cell;
+      width: 8.33333%; }
     #cart-table tr .cart-quantity {
-      float: left;
-      display: block;
-      margin-right: 1.69492%;
-      width: 15.25424%; }
-      #cart-table tr .cart-quantity:last-child {
-        margin-right: 0; }
+      display: table-cell;
+      width: 16.66667%; }
       #cart-table tr .cart-quantity input {
         width: 79px; }
     #cart-table tr .cart-remove {
-      float: left;
-      display: block;
-      margin-right: 1.69492%;
-      width: 6.77966%; }
-      #cart-table tr .cart-remove:last-child {
-        margin-right: 0; }
+      display: table-cell;
+      width: 8.33333%; }
     #cart-table tr .cart-subtotal {
       margin-bottom: 1em; }
 
 .checkout-start-login {
-  float: left;
-  display: block;
-  margin-right: 1.69492%;
-  width: 49.15254%; }
-  .checkout-start-login:last-child {
-    margin-right: 0; }
+  display: table-cell;
+  width: 50%; }
   .checkout-start-login input {
     width: 100%; }
   .checkout-start-login input:last-child {
@@ -401,12 +373,8 @@ nav {
     text-align: right; }
 
 .checkout-start-guest {
-  float: left;
-  display: block;
-  margin-right: 1.69492%;
-  width: 49.15254%; }
-  .checkout-start-guest:last-child {
-    margin-right: 0; }
+  display: table-cell;
+  width: 50%; }
   .checkout-start-guest input {
     width: 100%; }
 
@@ -419,104 +387,56 @@ nav {
     content: "";
     display: table; }
   #billing-form .delivery-billing-info {
-    float: left;
-    display: block;
-    margin-right: 1.69492%;
-    width: 49.15254%; }
-    #billing-form .delivery-billing-info:last-child {
-      margin-right: 0; }
+    display: table-cell;
+    width: 50%; }
     #billing-form .delivery-billing-info input, #billing-form .delivery-billing-info textarea, #billing-form .delivery-billing-info select {
       width: 100%; }
     #billing-form .delivery-billing-info .billing-first-name {
-      float: left;
-      display: block;
-      margin-right: 3.44828%;
-      width: 48.27586%; }
-      #billing-form .delivery-billing-info .billing-first-name:last-child {
-        margin-right: 0; }
+      display: table-cell;
+      width: 50%; }
     #billing-form .delivery-billing-info .billing-last-name {
-      float: left;
-      display: block;
-      margin-right: 3.44828%;
-      width: 48.27586%;
+      display: table-cell;
+      width: 50%;
       margin-right: 0; }
-      #billing-form .delivery-billing-info .billing-last-name:last-child {
-        margin-right: 0; }
     #billing-form .delivery-billing-info .billing-email {
-      float: left;
-      display: block;
-      margin-right: 3.44828%;
+      display: table-cell;
       width: 100%;
       margin-right: 0; }
-      #billing-form .delivery-billing-info .billing-email:last-child {
-        margin-right: 0; }
     #billing-form .delivery-billing-info .billing-address {
-      float: left;
-      display: block;
-      margin-right: 3.44828%;
+      display: table-cell;
       width: 100%;
       margin-right: 0; }
-      #billing-form .delivery-billing-info .billing-address:last-child {
-        margin-right: 0; }
     #billing-form .delivery-billing-info .billing-city {
-      float: left;
-      display: block;
-      margin-right: 3.44828%;
-      width: 48.27586%; }
-      #billing-form .delivery-billing-info .billing-city:last-child {
-        margin-right: 0; }
+      display: table-cell;
+      width: 50%; }
     #billing-form .delivery-billing-info .billing-postal-code {
-      float: left;
-      display: block;
-      margin-right: 3.44828%;
-      width: 48.27586%;
+      display: table-cell;
+      width: 50%;
       margin-right: 0; }
-      #billing-form .delivery-billing-info .billing-postal-code:last-child {
-        margin-right: 0; }
     #billing-form .delivery-billing-info .billing-country {
-      float: left;
-      display: block;
-      margin-right: 3.44828%;
-      width: 48.27586%; }
-      #billing-form .delivery-billing-info .billing-country:last-child {
-        margin-right: 0; }
+      display: table-cell;
+      width: 50%; }
     #billing-form .delivery-billing-info .billing-state {
-      float: left;
-      display: block;
-      margin-right: 3.44828%;
-      width: 48.27586%;
+      display: table-cell;
+      width: 50%;
       margin-right: 0; }
-      #billing-form .delivery-billing-info .billing-state:last-child {
-        margin-right: 0; }
     #billing-form .delivery-billing-info .billing-phone {
-      float: left;
-      display: block;
-      margin-right: 3.44828%;
+      display: table-cell;
       width: 100%; }
-      #billing-form .delivery-billing-info .billing-phone:last-child {
-        margin-right: 0; }
 
 footer {
   height: 200px;
   background: rgba(155, 154, 155, 0.03); }
   footer ul {
-    float: left;
-    display: block;
-    margin-right: 1.69492%;
-    width: 15.25424%;
+    display: table-cell;
+    width: 16.66667%;
     float: left;
     margin: 65px 0 0 0; }
-    footer ul:last-child {
-      margin-right: 0; }
   footer #copyright {
-    float: left;
-    display: block;
-    margin-right: 1.69492%;
-    width: 66.10169%;
+    display: table-cell;
+    width: 66.66667%;
     float: right;
     text-align: right; }
-    footer #copyright:last-child {
-      margin-right: 0; }
 
 .login-register-wrap {
   max-width: 1200px;
@@ -527,12 +447,8 @@ footer {
     content: "";
     display: table; }
   .login-register-wrap section {
-    float: left;
-    display: block;
-    margin-right: 1.69492%;
-    width: 49.15254%; }
-    .login-register-wrap section:last-child {
-      margin-right: 0; }
+    display: table-cell;
+    width: 50%; }
     .login-register-wrap section h3 {
       width: 100%; }
     .login-register-wrap section label {

@@ -6,7 +6,7 @@ published: true
 name: Category
 url: '/category/:urlName@/:page?'
 ---
-<h1>{{ page.title }}</h1>
+<div class="wrapper">
 {% tree categories %}
 <ul>
 	{% for category in tree.items %}
@@ -23,7 +23,7 @@ url: '/category/:urlName@/:page?'
 	<p>We are sorry, the requested category was not found.</p>
 {% else %}
 	{% paginate products by 9 %}
-	<ul>  
+	<ul>
 		{% for product in pagination.items %}
 			{% set is_on_sale = product.onSale %}
 			{% set page_url = '/product/' ~ product.url_name %}
@@ -47,3 +47,4 @@ url: '/category/:urlName@/:page?'
 	{% navigation %}
 	{% endpaginate %}
 {% endif %}
+</div>
