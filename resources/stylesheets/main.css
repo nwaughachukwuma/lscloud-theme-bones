@@ -338,33 +338,61 @@ nav {
       #cart-table tr td h1 {
         text-align: left; }
     #cart-table tr .cart-image {
-      display: table-cell;
-      width: 16.66667%;
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 15.25424%;
       text-align: left; }
+      #cart-table tr .cart-image:last-child {
+        margin-right: 0; }
     #cart-table tr .cart-name {
-      display: table-cell;
-      width: 41.66667%;
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 40.67797%;
       text-align: left; }
+      #cart-table tr .cart-name:last-child {
+        margin-right: 0; }
     #cart-table tr .cart-item-price {
-      display: table-cell;
-      width: 8.33333%; }
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 6.77966%; }
+      #cart-table tr .cart-item-price:last-child {
+        margin-right: 0; }
     #cart-table tr .cart-item-total {
-      display: table-cell;
-      width: 8.33333%; }
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 6.77966%; }
+      #cart-table tr .cart-item-total:last-child {
+        margin-right: 0; }
     #cart-table tr .cart-quantity {
-      display: table-cell;
-      width: 16.66667%; }
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 15.25424%; }
+      #cart-table tr .cart-quantity:last-child {
+        margin-right: 0; }
       #cart-table tr .cart-quantity input {
         width: 79px; }
     #cart-table tr .cart-remove {
-      display: table-cell;
-      width: 8.33333%; }
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 6.77966%; }
+      #cart-table tr .cart-remove:last-child {
+        margin-right: 0; }
     #cart-table tr .cart-subtotal {
       margin-bottom: 1em; }
 
 .checkout-start-login {
-  display: table-cell;
-  width: 50%; }
+  float: left;
+  display: block;
+  margin-right: 1.69492%;
+  width: 49.15254%; }
+  .checkout-start-login:last-child {
+    margin-right: 0; }
   .checkout-start-login input {
     width: 100%; }
   .checkout-start-login input:last-child {
@@ -376,70 +404,204 @@ nav {
     text-align: right; }
 
 .checkout-start-guest {
-  display: table-cell;
-  width: 50%; }
+  float: left;
+  display: block;
+  margin-right: 1.69492%;
+  width: 49.15254%; }
+  .checkout-start-guest:last-child {
+    margin-right: 0; }
   .checkout-start-guest input {
     width: 100%; }
 
-#billing-form {
+#delivery-billing-info {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto; }
-  #billing-form::after {
+  #delivery-billing-info::after {
     clear: both;
     content: "";
     display: table; }
-  #billing-form .delivery-billing-info {
-    display: table-cell;
-    width: 50%; }
-    #billing-form .delivery-billing-info input, #billing-form .delivery-billing-info textarea, #billing-form .delivery-billing-info select {
-      width: 100%; }
-    #billing-form .delivery-billing-info .billing-first-name {
-      display: table-cell;
-      width: 50%; }
-    #billing-form .delivery-billing-info .billing-last-name {
-      display: table-cell;
-      width: 50%;
+  #delivery-billing-info #billing-form {
+    float: left;
+    display: block;
+    margin-right: 1.69492%;
+    width: 49.15254%; }
+    #delivery-billing-info #billing-form:last-child {
       margin-right: 0; }
-    #billing-form .delivery-billing-info .billing-email {
-      display: table-cell;
+    #delivery-billing-info #billing-form input, #delivery-billing-info #billing-form textarea, #delivery-billing-info #billing-form select {
+      width: 100%; }
+    #delivery-billing-info #billing-form a {
+      display: block;
+      text-align: center; }
+    #delivery-billing-info #billing-form input[type="checkbox"] {
+      width: auto; }
+    #delivery-billing-info #billing-form h4 {
+      display: inline-block; }
+    #delivery-billing-info #billing-form .billing-first-name {
+      float: left;
+      display: block;
+      margin-right: 3.44828%;
+      width: 48.27586%; }
+      #delivery-billing-info #billing-form .billing-first-name:last-child {
+        margin-right: 0; }
+    #delivery-billing-info #billing-form .billing-last-name {
+      float: left;
+      display: block;
+      margin-right: 3.44828%;
+      width: 48.27586%;
+      margin-right: 0; }
+      #delivery-billing-info #billing-form .billing-last-name:last-child {
+        margin-right: 0; }
+    #delivery-billing-info #billing-form .billing-email {
+      float: left;
+      display: block;
+      margin-right: 3.44828%;
       width: 100%;
       margin-right: 0; }
-    #billing-form .delivery-billing-info .billing-address {
-      display: table-cell;
+      #delivery-billing-info #billing-form .billing-email:last-child {
+        margin-right: 0; }
+    #delivery-billing-info #billing-form .billing-address {
+      float: left;
+      display: block;
+      margin-right: 3.44828%;
       width: 100%;
       margin-right: 0; }
-    #billing-form .delivery-billing-info .billing-city {
-      display: table-cell;
-      width: 50%; }
-    #billing-form .delivery-billing-info .billing-postal-code {
-      display: table-cell;
-      width: 50%;
+      #delivery-billing-info #billing-form .billing-address:last-child {
+        margin-right: 0; }
+    #delivery-billing-info #billing-form .billing-city {
+      float: left;
+      display: block;
+      margin-right: 3.44828%;
+      width: 48.27586%; }
+      #delivery-billing-info #billing-form .billing-city:last-child {
+        margin-right: 0; }
+    #delivery-billing-info #billing-form .billing-postal-code {
+      float: left;
+      display: block;
+      margin-right: 3.44828%;
+      width: 48.27586%;
       margin-right: 0; }
-    #billing-form .delivery-billing-info .billing-country {
-      display: table-cell;
-      width: 50%; }
-    #billing-form .delivery-billing-info .billing-state {
-      display: table-cell;
-      width: 50%;
+      #delivery-billing-info #billing-form .billing-postal-code:last-child {
+        margin-right: 0; }
+    #delivery-billing-info #billing-form .billing-country {
+      float: left;
+      display: block;
+      margin-right: 3.44828%;
+      width: 48.27586%; }
+      #delivery-billing-info #billing-form .billing-country:last-child {
+        margin-right: 0; }
+    #delivery-billing-info #billing-form .billing-state {
+      float: left;
+      display: block;
+      margin-right: 3.44828%;
+      width: 48.27586%;
       margin-right: 0; }
-    #billing-form .delivery-billing-info .billing-phone {
-      display: table-cell;
+      #delivery-billing-info #billing-form .billing-state:last-child {
+        margin-right: 0; }
+    #delivery-billing-info #billing-form .billing-phone {
+      float: left;
+      display: block;
+      margin-right: 3.44828%;
       width: 100%; }
+      #delivery-billing-info #billing-form .billing-phone:last-child {
+        margin-right: 0; }
+    #delivery-billing-info #billing-form #shipping-form {
+      float: left;
+      display: block;
+      margin-right: 3.44828%;
+      width: 100%; }
+      #delivery-billing-info #billing-form #shipping-form:last-child {
+        margin-right: 0; }
+      #delivery-billing-info #billing-form #shipping-form .shipping-first-name {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 48.27586%; }
+        #delivery-billing-info #billing-form #shipping-form .shipping-first-name:last-child {
+          margin-right: 0; }
+      #delivery-billing-info #billing-form #shipping-form .shipping-last-name {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 48.27586%;
+        margin-right: 0; }
+        #delivery-billing-info #billing-form #shipping-form .shipping-last-name:last-child {
+          margin-right: 0; }
+      #delivery-billing-info #billing-form #shipping-form .shipping-email {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 100%;
+        margin-right: 0; }
+        #delivery-billing-info #billing-form #shipping-form .shipping-email:last-child {
+          margin-right: 0; }
+      #delivery-billing-info #billing-form #shipping-form .shipping-address {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 100%;
+        margin-right: 0; }
+        #delivery-billing-info #billing-form #shipping-form .shipping-address:last-child {
+          margin-right: 0; }
+      #delivery-billing-info #billing-form #shipping-form .shipping-city {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 48.27586%; }
+        #delivery-billing-info #billing-form #shipping-form .shipping-city:last-child {
+          margin-right: 0; }
+      #delivery-billing-info #billing-form #shipping-form .shipping-postal-code {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 48.27586%;
+        margin-right: 0; }
+        #delivery-billing-info #billing-form #shipping-form .shipping-postal-code:last-child {
+          margin-right: 0; }
+      #delivery-billing-info #billing-form #shipping-form .shipping-country {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 48.27586%; }
+        #delivery-billing-info #billing-form #shipping-form .shipping-country:last-child {
+          margin-right: 0; }
+      #delivery-billing-info #billing-form #shipping-form .shipping-state {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 48.27586%;
+        margin-right: 0; }
+        #delivery-billing-info #billing-form #shipping-form .shipping-state:last-child {
+          margin-right: 0; }
+      #delivery-billing-info #billing-form #shipping-form .shipping-phone {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 100%; }
+        #delivery-billing-info #billing-form #shipping-form .shipping-phone:last-child {
+          margin-right: 0; }
 
 footer {
   height: 200px;
   background: rgba(155, 154, 155, 0.03); }
   footer ul {
-    display: table-cell;
-    width: 16.66667%;
+    float: left;
+    display: block;
+    margin-right: 1.69492%;
+    width: 15.25424%;
     float: left;
     margin: 65px 0 0 0; }
+    footer ul:last-child {
+      margin-right: 0; }
   footer #copyright {
-    display: table-cell;
-    width: 66.66667%;
+    float: left;
+    display: block;
+    margin-right: 1.69492%;
+    width: 66.10169%;
     float: right;
     text-align: right; }
+    footer #copyright:last-child {
+      margin-right: 0; }
 
 .login-register-wrap {
   max-width: 1200px;
@@ -450,8 +612,12 @@ footer {
     content: "";
     display: table; }
   .login-register-wrap section {
-    display: table-cell;
-    width: 50%; }
+    float: left;
+    display: block;
+    margin-right: 1.69492%;
+    width: 49.15254%; }
+    .login-register-wrap section:last-child {
+      margin-right: 0; }
     .login-register-wrap section h3 {
       width: 100%; }
     .login-register-wrap section label {

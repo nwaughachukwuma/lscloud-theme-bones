@@ -1,9 +1,10 @@
 {{ flash() }}
 {{ open_form({'class': 'custom', 'data-validation-message' : ''}) }}
 
-<div id="billing-form">
+<div id="delivery-billing-info">
 	<h2>Delivery & Billing Info</h2>
-	<div class="delivery-billing-info">
+	<div id="billing-form">
+		<hr>
 		<div class="billing-first-name">
 			<label for="billing_firstName">First Name *</label>
 			<input type="text" name="billingInfo[firstName]" id="billing_firstName" value="{{ billingInfo.firstName }}"/>
@@ -64,70 +65,80 @@
 			<input type="text" name="billingInfo[phone]" id="billing_phone" value="{{ billingInfo.phone }}"/>
 			<span class="error"></span>
 		</div>
-	</div>
-</div>
-	<input type="checkbox" name="c1" id="copy_billing_to_shipping"><h4>Use for shipping address</h4>
 
+		
+		<!-- See the onCopyBillingToShipping AJAX handler implementation on the Checkout page's AJAX tab -->
+		<!-- <a href="#" id="copy_billing_to_shipping">Copy Billing Information</a> -->
+		<input type="checkbox" name="c1" id="copy_billing_to_shipping"><h4>Use for shipping address</h4>
 
+		<!-- Hide when unchecked (See app.js for implementation) -->
+		<div id="shipping-form" style="display: none;">
+			<h3>Shipping Information</h3> 
+			<div class="shipping-first-name">
+				<label for="shipping_firstName">First Name *</label>
+				<input type="text" name="shippingInfo[firstName]" id="shipping_firstName" value="{{ shippingInfo.firstName }}"/>
+				<span class="error"></span>
+			</div>
+			<div class="shipping-last-name">
+				<label for="shipping_lastName">Last Name *</label>
+				<input type="text" name="shippingInfo[lastName]" id="shipping_lastName" value="{{ shippingInfo.lastName }}"/>
+				<span class="error"></span>
+			</div>
+			<div class="shipping-email">
+				
+			</div>
+			<div class="shipping-address">
+				<label for="shipping_address">Address *</label>
+				<textarea name="shippingInfo[streetAddressLine1]" id="shipping_address">{{ shippingInfo.streetAddressLine1 }}</textarea>
+				<span class="error"></span>
+			</div>
+			<div class="shipping-city">
+				<label for="shipping_city">City *</label>
+				<input type="text" name="shippingInfo[city]" id="shipping_city" value="{{ shippingInfo.city }}"/>
+				<span class="error"></span>
+			</div>
+			<div class="shipping-postal-code">
+				<label for="shipping_postalCode">Zip Code *</label>
+				<input type="text" name="shippingInfo[postalCode]" id="shipping_postalCode" value="{{ shippingInfo.postalCode }}"/>
+				<span class="error"></span>		</div>
+			<div class="shipping-country">
+				<label for="shipping_country">Country *</label>
+				<select id="shipping_country" name="shippingInfo[countryId]" data-state-selector="#shipping_state" data-current-state="{{ shippingInfo.stateId }}" >
+					{% for country in countries %}
+						<option {{ option_state(shippingInfo.countryId, country.id) }} value="{{ country.id }}">{{ country.name }}</option>
+					{% endfor %}
+				</select>
+				<span class="error"></span>
+			</div>
+			<div class="shipping-state">
+				<label for="shipping_state">State *</label>
+				<select id="shipping_state" name="shippingInfo[stateId]" data-ajax-refresh > 
+					{% set states = billingStates %}
+					{% set selected = billingInfo.stateId %}
+					{% for state in states %}
+							<option value="{{ state.id }}" {{ option_state(selected, state.id) }}>
+									{{ state.name }}
+							</option>
+					{% else %}
+							<option selected value="">- no states -</option>
+					{% endfor %} 
+				</select>
+				<span class="error"></span>
+			</div>
+			<div class="shipping-phone">
+				<label for="shipping_phone">Phone Number *</label>
+				<input type="text" name="shippingInfo[phone]" id="shipping_phone" value="{{ shippingInfo.phone }}"/>
+				<span class="error"></span>
+			</div>
+		</div>
 
-
-	<!-- See the onCopyBillingToShipping AJAX handler implementation on the Checkout page's AJAX tab -->
-	<!-- <a href="#" id="copy_billing_to_shipping">Copy Billing Information</a> -->
-	<div id="shipping-form" style="display: none;">
-			<h3 class="inline-block">Shipping Information</h3> 
-
-			<label for="shipping_firstName">First Name *</label>
-			<input type="text" name="shippingInfo[firstName]" id="shipping_firstName" value="{{ shippingInfo.firstName }}"/>
-			<span class="error"></span>
-
-			<label for="shipping_lastName">Last Name *</label>
-			<input type="text" name="shippingInfo[lastName]" id="shipping_lastName" value="{{ shippingInfo.lastName }}"/>
-			<span class="error"></span>
-
-			<label for="shipping_phone">Phone Number *</label>
-			<input type="text" name="shippingInfo[phone]" id="shipping_phone" value="{{ shippingInfo.phone }}"/>
-			<span class="error"></span>
-
-			<label for="shipping_address">Address *</label>
-			<textarea name="shippingInfo[streetAddressLine1]" id="shipping_address">{{ shippingInfo.streetAddressLine1 }}</textarea>
-			<span class="error"></span>
-
-			<label for="shipping_city">City *</label>
-			<input type="text" name="shippingInfo[city]" id="shipping_city" value="{{ shippingInfo.city }}"/>
-			<span class="error"></span>
-
-			<label for="shipping_postalCode">Zip Code *</label>
-			<input type="text" name="shippingInfo[postalCode]" id="shipping_postalCode" value="{{ shippingInfo.postalCode }}"/>
-			<span class="error"></span>
-
-			<label for="shipping_country">Country *</label>
-			<select id="shipping_country" name="shippingInfo[countryId]" data-state-selector="#shipping_state" data-current-state="{{ shippingInfo.stateId }}" >
-				{% for country in countries %}
-					<option {{ option_state(shippingInfo.countryId, country.id) }} value="{{ country.id }}">{{ country.name }}</option>
-				{% endfor %}
-			</select>
-			<span class="error"></span>
-
-			<label for="shipping_state">State *</label>
-			<select id="shipping_state" name="shippingInfo[stateId]" data-ajax-refresh > 
-				{% set states = billingStates %}
-				{% set selected = billingInfo.stateId %}
-				{% for state in states %}
-						<option value="{{ state.id }}" {{ option_state(selected, state.id) }}>
-								{{ state.name }}
-						</option>
-				{% else %}
-						<option selected value="">- no states -</option>
-				{% endfor %} 
-			</select>
-			<span class="error"></span>
-	</div>
-
-
-
-		<!-- See the onSetBillingAndShippignInfo AJAX handler implementation on the Checkout page's AJAX tab -->
-		<a class="button next" href="#" data-ajax-handler="shop:checkout" data-ajax-handler="shop:onCopyBillingToShipping" data-ajax-update="#checkout-page=partial-checkout">Next step</a>
+	<!-- See the onSetBillingAndShippignInfo AJAX handler implementation on the Checkout page's AJAX tab -->
+	<a class="button next" href="#" data-ajax-handler="shop:checkout" data-ajax-handler="shop:onCopyBillingToShipping" data-ajax-update="#checkout-page=partial-checkout">Next step</a>
 
 	<input type="hidden" name="step" value="billing_info,shipping_info"/>
+
+	</div>
+
+</div>
 
 {{ close_form }}
