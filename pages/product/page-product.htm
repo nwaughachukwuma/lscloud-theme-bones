@@ -69,7 +69,7 @@ url: '/product/:urlName'
           <h2>Extras</h2>
             {% for index, extra in product.extras|slice(0, 2) %}
             <div class="product-extras">
-                <img src="{{ extra.images.first.thumbnail(230, 230) }}"/>
+                <img src="{{ extra.images.first.thumbnail(230, 230)|default('http://placehold.it/230x230') }}" width="230" height="230" alt="{{ extra.images.first.description }}" title="{{ extra.images.first.title }}"/>
               {% if extra.enabled %}
                 <input type="checkbox" id="{{ 'extra-'~index }}" {{ checkbox_state(postedExtras[extra.id], extra.id) }} name="extras[{{ extra.id }}]" data-ajax-handler="shop:product" data-ajax-update="">
               {% else %}
