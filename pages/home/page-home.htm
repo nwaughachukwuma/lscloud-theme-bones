@@ -30,13 +30,18 @@ url: /
       {% set featuredCollection = 'featured'|collection %}
         {% paginate featuredCollection.products by 8 %}
             {% for product in pagination.items %}
+            {% set on_sale = product.onSale %}
             <div class="product-featured">
               <a href="/product/{{ product.url_name }}">
                 <img src="{{ product.images.first.thumbnail('auto', 'auto', {crop: true}) }}" >
               </a>
               <p>
                 <a href="/product/{{ product.url_name }}" class="btn btn-default">
-                  {{ product.name }}</a> {{ product.price|currency }}
+                  {{ product.name }}</a>
+                   {{ product.price|currency }}
+                     {% if on_sale %}
+                     <span class="oldprice">{{ product.fullPrice|currency }}</span>
+                     {% endif %}
               </p>
             </div>
             {% endfor %}

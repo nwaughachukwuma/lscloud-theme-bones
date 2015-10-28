@@ -73,8 +73,9 @@ url: '/product/:urlName'
                   <input type="checkbox" id="{{ 'extra-'~index }}" {{ checkbox_state(postedExtras[extra.id], extra.id) }} name="extras[{{ extra.id }}]" data-ajax-handler="shop:product" data-ajax-update="">
 
                   {% for extra in product.extras %}
-                  <img src="{{ extra.images.first.thumbnail(auto, 'auto') }}"/>
-{% endfor %}
+                    <img src="{{ extra.images.first.thumbnail(auto, 'auto') }}"/>
+                  {% endfor %}
+
               {% else %}
                   <input type="checkbox" disabled="disabled">
               {% endif %}
