@@ -187,7 +187,8 @@ input[type="radio"] {
     display: table; }
 
 .fill-parent {
-  width: 100%; }
+  width: 100%;
+  border: 1px solid #9B9B9B; }
 
 header {
   width: 100%;
@@ -382,85 +383,90 @@ nav {
     clear: both;
     content: "";
     display: table; }
-  #delivery-billing-info #billing-form {
+  #delivery-billing-info .billing-summary {
     display: table-cell;
-    width: 50%; }
-    #delivery-billing-info #billing-form input, #delivery-billing-info #billing-form textarea, #delivery-billing-info #billing-form select {
-      width: 100%; }
-    #delivery-billing-info #billing-form a {
-      display: block;
-      text-align: center; }
-    #delivery-billing-info #billing-form input[type="checkbox"] {
-      width: auto; }
-    #delivery-billing-info #billing-form h4 {
-      display: inline-block; }
-    #delivery-billing-info #billing-form .billing-first-name {
+    width: 58.33333%; }
+    #delivery-billing-info .billing-summary #billing-form {
       display: table-cell;
-      width: 50%; }
-    #delivery-billing-info #billing-form .billing-last-name {
-      display: table-cell;
-      width: 50%;
-      margin-right: 0; }
-    #delivery-billing-info #billing-form .billing-email {
-      display: table-cell;
-      width: 100%;
-      margin-right: 0; }
-    #delivery-billing-info #billing-form .billing-address {
-      display: table-cell;
-      width: 100%;
-      margin-right: 0; }
-    #delivery-billing-info #billing-form .billing-city {
-      display: table-cell;
-      width: 50%; }
-    #delivery-billing-info #billing-form .billing-postal-code {
-      display: table-cell;
-      width: 50%;
-      margin-right: 0; }
-    #delivery-billing-info #billing-form .billing-country {
-      display: table-cell;
-      width: 50%; }
-    #delivery-billing-info #billing-form .billing-state {
-      display: table-cell;
-      width: 50%;
-      margin-right: 0; }
-    #delivery-billing-info #billing-form .billing-phone {
-      display: table-cell;
-      width: 100%; }
-    #delivery-billing-info #billing-form #shipping-form {
-      display: table-cell;
-      width: 100%; }
-      #delivery-billing-info #billing-form #shipping-form .shipping-first-name {
+      width: 85.71429%; }
+      #delivery-billing-info .billing-summary #billing-form input, #delivery-billing-info .billing-summary #billing-form textarea, #delivery-billing-info .billing-summary #billing-form select {
+        width: 100%; }
+      #delivery-billing-info .billing-summary #billing-form a {
+        float: right; }
+      #delivery-billing-info .billing-summary #billing-form input[type="checkbox"] {
+        width: auto; }
+      #delivery-billing-info .billing-summary #billing-form h4 {
+        display: inline-block; }
+      #delivery-billing-info .billing-summary #billing-form .billing-first-name {
         display: table-cell;
         width: 50%; }
-      #delivery-billing-info #billing-form #shipping-form .shipping-last-name {
+      #delivery-billing-info .billing-summary #billing-form .billing-last-name {
         display: table-cell;
         width: 50%;
         margin-right: 0; }
-      #delivery-billing-info #billing-form #shipping-form .shipping-email {
+      #delivery-billing-info .billing-summary #billing-form .billing-email {
         display: table-cell;
         width: 100%;
         margin-right: 0; }
-      #delivery-billing-info #billing-form #shipping-form .shipping-address {
+      #delivery-billing-info .billing-summary #billing-form .billing-address {
         display: table-cell;
         width: 100%;
         margin-right: 0; }
-      #delivery-billing-info #billing-form #shipping-form .shipping-city {
+      #delivery-billing-info .billing-summary #billing-form .billing-city {
         display: table-cell;
         width: 50%; }
-      #delivery-billing-info #billing-form #shipping-form .shipping-postal-code {
+      #delivery-billing-info .billing-summary #billing-form .billing-postal-code {
         display: table-cell;
         width: 50%;
         margin-right: 0; }
-      #delivery-billing-info #billing-form #shipping-form .shipping-country {
+      #delivery-billing-info .billing-summary #billing-form .billing-country {
         display: table-cell;
         width: 50%; }
-      #delivery-billing-info #billing-form #shipping-form .shipping-state {
+      #delivery-billing-info .billing-summary #billing-form .billing-state {
         display: table-cell;
         width: 50%;
         margin-right: 0; }
-      #delivery-billing-info #billing-form #shipping-form .shipping-phone {
+      #delivery-billing-info .billing-summary #billing-form .billing-phone {
         display: table-cell;
         width: 100%; }
+      #delivery-billing-info .billing-summary #billing-form #shipping-form {
+        display: table-cell;
+        width: 100%; }
+        #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-first-name {
+          display: table-cell;
+          width: 50%; }
+        #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-last-name {
+          display: table-cell;
+          width: 50%;
+          margin-right: 0; }
+        #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-email {
+          display: table-cell;
+          width: 100%;
+          margin-right: 0; }
+        #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-address {
+          display: table-cell;
+          width: 100%;
+          margin-right: 0; }
+        #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-city {
+          display: table-cell;
+          width: 50%; }
+        #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-postal-code {
+          display: table-cell;
+          width: 50%;
+          margin-right: 0; }
+        #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-country {
+          display: table-cell;
+          width: 50%; }
+        #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-state {
+          display: table-cell;
+          width: 50%;
+          margin-right: 0; }
+        #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-phone {
+          display: table-cell;
+          width: 100%; }
+  #delivery-billing-info .order-summary {
+    display: table-cell;
+    width: 41.66667%; }
 
 footer {
   height: 200px;
