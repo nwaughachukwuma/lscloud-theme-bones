@@ -385,7 +385,9 @@ nav {
     display: table; }
   #delivery-billing-info .billing-summary {
     display: table-cell;
-    width: 58.33333%; }
+    width: 66.66667%;
+    border-right: 1px solid #9b9b9b;
+    padding-right: 4.16667%; }
     #delivery-billing-info .billing-summary #billing-form {
       display: table-cell;
       width: 85.71429%; }
@@ -466,7 +468,8 @@ nav {
           width: 100%; }
   #delivery-billing-info .order-summary {
     display: table-cell;
-    width: 41.66667%; }
+    width: 33.33333%;
+    padding-left: 4.16667%; }
 
 footer {
   height: 200px;

@@ -171,7 +171,9 @@ nav {
 #delivery-billing-info {
 	@include outer-container;
 	.billing-summary {
-		@include span-columns(7);
+		@include span-columns(8);
+    border-right: 1px solid $grey;
+    padding-right: percentage(1/24);
 		#billing-form {
 			@include span-columns(6 of 7);
 			input,textarea,select {
@@ -256,7 +258,8 @@ nav {
 		}
 	}
 	.order-summary {
-		@include span-columns(5);
+		@include span-columns(4);
+    padding-left: percentage(1/24);
 	}
 }
 

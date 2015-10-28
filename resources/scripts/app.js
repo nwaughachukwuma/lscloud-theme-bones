@@ -5,6 +5,9 @@
 (function ($) {
 
   $(document).ready(function() {
+    el = document.querySelector("hr");
+    color = window.getComputedStyle(el).getPropertyValue("border-top-color");
+    console.log(color);
     // 
     // Handle thumbnail clicks on the Product page
     //
