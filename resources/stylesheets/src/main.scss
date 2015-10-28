@@ -175,9 +175,8 @@ nav {
 			@include fill-parent;
 		}
 		a {
-	    display: block;
-	    text-align: center;
-		}
+	    float: right;
+    }
 		input[type="checkbox"] {
 			width: auto;
 		}

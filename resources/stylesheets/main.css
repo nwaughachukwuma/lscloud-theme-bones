@@ -431,8 +431,7 @@ nav {
     #delivery-billing-info #billing-form input, #delivery-billing-info #billing-form textarea, #delivery-billing-info #billing-form select {
       width: 100%; }
     #delivery-billing-info #billing-form a {
-      display: block;
-      text-align: center; }
+      float: right; }
     #delivery-billing-info #billing-form input[type="checkbox"] {
       width: auto; }
     #delivery-billing-info #billing-form h4 {

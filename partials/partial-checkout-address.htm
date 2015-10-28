@@ -71,6 +71,9 @@
 		<!-- <a href="#" id="copy_billing_to_shipping">Copy Billing Information</a> -->
 		<input type="checkbox" name="c1" id="copy_billing_to_shipping"><h4>Use for shipping address</h4>
 
+		<!-- See the onSetBillingAndShippignInfo AJAX handler implementation on the Checkout page's AJAX tab -->
+		<a class="button next" href="#" data-ajax-handler="shop:checkout" data-ajax-handler="shop:onCopyBillingToShipping" data-ajax-update="#checkout-page=partial-checkout">Next step</a>
+
 		<!-- Hide when unchecked (See app.js for implementation) -->
 		<div id="shipping-form" style="display: none;">
 			<h3>Shipping Information</h3> 
@@ -131,9 +134,6 @@
 				<span class="error"></span>
 			</div>
 		</div>
-
-	<!-- See the onSetBillingAndShippignInfo AJAX handler implementation on the Checkout page's AJAX tab -->
-	<a class="button next" href="#" data-ajax-handler="shop:checkout" data-ajax-handler="shop:onCopyBillingToShipping" data-ajax-update="#checkout-page=partial-checkout">Next step</a>
 
 	<input type="hidden" name="step" value="billing_info,shipping_info"/>
 
