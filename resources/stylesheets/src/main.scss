@@ -157,7 +157,7 @@ nav {
 }
 // Checkout Start Page
 .checkout-start-login {
-	@include span-columns(6);
+	@include span-columns(5);
 	input {
 		@include fill-parent;
 	}
@@ -172,9 +172,12 @@ nav {
 	}
 }
 .checkout-start-guest {
-	@include span-columns(6);
-	input {
+	@include span-columns(5);
+	@include shift(1);
+	a {
 		@include fill-parent;
+    display: block;
+    text-align: center;
 	}
 }
 // Checkout Process
