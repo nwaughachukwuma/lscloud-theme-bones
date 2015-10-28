@@ -425,7 +425,10 @@ nav {
     float: left;
     display: block;
     margin-right: 1.69492%;
-    width: 57.62712%; }
+    width: 57.62712%;
+    border-right: 1px solid #000;
+    padding-right: 40px;
+    margin-right: 2.94118%; }
     #delivery-billing-info .billing-summary:last-child {
       margin-right: 0; }
     #delivery-billing-info .billing-summary #billing-form {
@@ -590,7 +593,7 @@ nav {
     float: left;
     display: block;
     margin-right: 1.69492%;
-    width: 40.67797%; }
+    width: 32.20339%; }
     #delivery-billing-info .order-summary:last-child {
       margin-right: 0; }
 

@@ -171,6 +171,9 @@ nav {
 	@include outer-container;
 	.billing-summary {
 		@include span-columns(7);
+    border-right: 1px solid #000;
+    padding-right: 40px;
+    margin-right: flex-gutter(7);
 		#billing-form {
 			@include span-columns(6 of 7);
 			input,textarea,select {
@@ -255,7 +258,7 @@ nav {
 		}
 	}
 	.order-summary {
-		@include span-columns(5);
+		@include span-columns(4);
 	}
 }
 
