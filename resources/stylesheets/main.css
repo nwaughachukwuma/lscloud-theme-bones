@@ -385,9 +385,10 @@ nav {
     display: table; }
   #delivery-billing-info .billing-summary {
     display: table-cell;
-    width: 66.66667%;
+    width: 62.5%;
     border-right: 1px solid #9b9b9b;
-    padding-right: 4.16667%; }
+    padding-right: 4.16667%;
+    margin-right: 0; }
     #delivery-billing-info .billing-summary #billing-form {
       display: table-cell;
       width: 85.71429%; }
@@ -469,7 +470,14 @@ nav {
   #delivery-billing-info .order-summary {
     display: table-cell;
     width: 33.33333%;
-    padding-left: 4.16667%; }
+    margin-left: 4.16667%; }
+    #delivery-billing-info .order-summary .order-summary-description {
+      display: table-cell;
+      width: 50%; }
+    #delivery-billing-info .order-summary .order-summary-amount {
+      display: table-cell;
+      width: 50%;
+      text-align: right; }
 
 footer {
   height: 200px;
