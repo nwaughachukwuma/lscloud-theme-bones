@@ -194,7 +194,8 @@ input[type="radio"] {
     display: table; }
 
 .fill-parent {
-  width: 100%; }
+  width: 100%;
+  border: 1px solid #9B9B9B; }
 
 header {
   width: 100%;

@@ -10,7 +10,7 @@ url: '/product/:urlName'
 {{ open_form({'class': 'custom', 'onsubmit': 'return false'}) }}
   {% if product %}
   {% set on_sale = product.onSale %}
-      
+
       <div class="wrapper" itemscope itemtype="http://schema.org/Product">
         <div id="product-form">
           <h1>{{ page.title }}</h1>
@@ -71,6 +71,10 @@ url: '/product/:urlName'
               <label for="{{ 'extra-'~index }}">{{ extra.name }} ({{ extra.price|currency }})</label>
               {% if extra.enabled %}
                   <input type="checkbox" id="{{ 'extra-'~index }}" {{ checkbox_state(postedExtras[extra.id], extra.id) }} name="extras[{{ extra.id }}]" data-ajax-handler="shop:product" data-ajax-update="">
+
+                  {% for extra in product.extras %}
+                  <img src="{{ extra.images.first.thumbnail(auto, 'auto') }}"/>
+{% endfor %}
               {% else %}
                   <input type="checkbox" disabled="disabled">
               {% endif %}
@@ -144,5 +148,3 @@ url: '/product/:urlName'
   {% endif %}
     </div>
 {{ close_form }}
-
-
