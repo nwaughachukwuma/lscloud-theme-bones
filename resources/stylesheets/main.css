@@ -425,9 +425,10 @@ nav {
     float: left;
     display: block;
     margin-right: 1.69492%;
-    width: 66.10169%;
+    width: 61.86441%;
     border-right: 1px solid #9b9b9b;
-    padding-right: 4.16667%; }
+    padding-right: 4.16667%;
+    margin-right: 0; }
     #delivery-billing-info .billing-summary:last-child {
       margin-right: 0; }
     #delivery-billing-info .billing-summary #billing-form {
@@ -593,9 +594,24 @@ nav {
     display: block;
     margin-right: 1.69492%;
     width: 32.20339%;
-    padding-left: 4.16667%; }
+    margin-left: 4.16667%; }
     #delivery-billing-info .order-summary:last-child {
       margin-right: 0; }
+    #delivery-billing-info .order-summary .order-summary-description {
+      float: left;
+      display: block;
+      margin-right: 5.26316%;
+      width: 47.36842%; }
+      #delivery-billing-info .order-summary .order-summary-description:last-child {
+        margin-right: 0; }
+    #delivery-billing-info .order-summary .order-summary-amount {
+      float: left;
+      display: block;
+      margin-right: 5.26316%;
+      width: 47.36842%;
+      text-align: right; }
+      #delivery-billing-info .order-summary .order-summary-amount:last-child {
+        margin-right: 0; }
 
 footer {
   height: 200px;
