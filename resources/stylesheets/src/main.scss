@@ -89,6 +89,16 @@ nav {
 #product-form {
 	@include span-columns(6);
 }
+.product-extras {
+	@include span-columns(3 of 6);
+	margin-right: 0;
+	img {
+		display: block;
+	}
+	label {
+		display: inline-block;
+	}
+}
 .product-image-grid {
 	@include span-columns(6);
 	@include omega();

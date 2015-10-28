@@ -66,21 +66,20 @@ url: '/product/:urlName'
 
           <!-- product extras -->
           {% if product.extras.count %}
-          <h2>Product Extras</h2>
-            {% for index, extra in product.extras %}
-              <label for="{{ 'extra-'~index }}">{{ extra.name }} ({{ extra.price|currency }})</label>
+          <h2>Extras</h2>
+            {% for index, extra in product.extras|slice(0, 2) %}
+            <div class="product-extras">
+                <img src="{{ extra.images.first.thumbnail(230, 230) }}"/>
               {% if extra.enabled %}
-                  <input type="checkbox" id="{{ 'extra-'~index }}" {{ checkbox_state(postedExtras[extra.id], extra.id) }} name="extras[{{ extra.id }}]" data-ajax-handler="shop:product" data-ajax-update="">
-
-                  {% for extra in product.extras %}
-                  <img src="{{ extra.images.first.thumbnail(auto, 'auto') }}"/>
-{% endfor %}
+                <input type="checkbox" id="{{ 'extra-'~index }}" {{ checkbox_state(postedExtras[extra.id], extra.id) }} name="extras[{{ extra.id }}]" data-ajax-handler="shop:product" data-ajax-update="">
               {% else %}
-                  <input type="checkbox" disabled="disabled">
+                <input type="checkbox" disabled="disabled">
               {% endif %}
+                <label for="{{ 'extra-'~index }}"><h3>{{ extra.name }} ({{ extra.price|currency }})</h3></label>
+            </div>
             {% endfor %}
-          {% endif %}
 
+          {% endif %}
           <!-- quantity & add-to-cart -->
           <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
           {% if product.enabled %}
@@ -105,6 +104,7 @@ url: '/product/:urlName'
           {% endif %}
           </div>
           <time itemprop="releaseDate" datetime="{{ product.om('expected_availability_date', posted_options).format('%x') }}"></time>
+
         </div>
 
         <!-- picture grid -->
@@ -114,18 +114,20 @@ url: '/product/:urlName'
           </figure>
         </div>
 
-        <hr class="fill-parent">
+        <hr>
 
         <!-- product details -->
         <h1>Product Details</h1>
-        <div class="product-description" itemprop="description">{{ product.description|unescape }}</div>
+        <div class="product-description" itemprop="description">
+          <h3>{{ product.description|unescape }}</h3>
+        </div>
 
         <hr class="fill-parent">
 
         <!-- related products -->
         {% if product.related.count %}
         <h1>You Might be Into These</h1>
-          {% for product in product.related|slice(0, 4)%}
+          {% for product in product.related|slice(0, 4) %}
           <div class="product-related">
             <a href="{{ page_url }}"><img itemprop="image" src="{{ product.images.first.thumbnail(280, 280)|default('http://placehold.it/280x280') }}" width="280" height="280" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
             <p>{{ product.name }}</p>

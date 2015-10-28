@@ -291,6 +291,19 @@ nav {
   #product-form:last-child {
     margin-right: 0; }
 
+.product-extras {
+  float: left;
+  display: block;
+  margin-right: 3.44828%;
+  width: 48.27586%;
+  margin-right: 0; }
+  .product-extras:last-child {
+    margin-right: 0; }
+  .product-extras img {
+    display: block; }
+  .product-extras label {
+    display: inline-block; }
+
 .product-image-grid {
   float: left;
   display: block;
