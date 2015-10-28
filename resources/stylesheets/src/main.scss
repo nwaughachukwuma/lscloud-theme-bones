@@ -169,87 +169,93 @@ nav {
 // Checkout Process
 #delivery-billing-info {
 	@include outer-container;
-	#billing-form {
-		@include span-columns(6);
-		input,textarea,select {
-			@include fill-parent;
-		}
-		a {
-	    float: right;
-    }
-		input[type="checkbox"] {
-			width: auto;
-		}
-		h4 {
-			display: inline-block;
-		}
-		.billing-first-name {
-			@include span-columns(3 of 6);
-		}
-		.billing-last-name {
-			@include span-columns(3	of 6);
-			@include omega();
-		}
-		.billing-email {
-			@include span-columns(6 of 6);
-			@include omega();
-		}
-		.billing-address {
-			@include span-columns(6 of 6);
-			@include omega();
-		}
-		.billing-city {
-			@include span-columns(3 of 6);
-		}
-		.billing-postal-code {
-			@include span-columns(3 of 6);
-			@include omega();
-		}
-		.billing-country {
-			@include span-columns(3 of 6);
-		}
-		.billing-state {
-			@include span-columns(3 of 6);
-			@include omega();
-		}
-		.billing-phone {
-			@include span-columns(6 of 6);
-		}
-		#shipping-form {
-			@include span-columns(6 of 6);
-			.shipping-first-name {
+	.billing-summary {
+		@include span-columns(7);
+		#billing-form {
+			@include span-columns(6 of 7);
+			input,textarea,select {
+				@include fill-parent;
+			}
+			a {
+		    float: right;
+	    }
+			input[type="checkbox"] {
+				width: auto;
+			}
+			h4 {
+				display: inline-block;
+			}
+			.billing-first-name {
 				@include span-columns(3 of 6);
 			}
-			.shipping-last-name {
+			.billing-last-name {
 				@include span-columns(3	of 6);
 				@include omega();
 			}
-			.shipping-email {
+			.billing-email {
 				@include span-columns(6 of 6);
 				@include omega();
 			}
-			.shipping-address {
+			.billing-address {
 				@include span-columns(6 of 6);
 				@include omega();
 			}
-			.shipping-city {
+			.billing-city {
 				@include span-columns(3 of 6);
 			}
-			.shipping-postal-code {
-				@include span-columns(3 of 6);
-				@include omega();
-			}
-			.shipping-country {
-				@include span-columns(3 of 6);
-			}
-			.shipping-state {
+			.billing-postal-code {
 				@include span-columns(3 of 6);
 				@include omega();
 			}
-			.shipping-phone {
+			.billing-country {
+				@include span-columns(3 of 6);
+			}
+			.billing-state {
+				@include span-columns(3 of 6);
+				@include omega();
+			}
+			.billing-phone {
 				@include span-columns(6 of 6);
+			}
+			#shipping-form {
+				@include span-columns(6 of 6);
+				.shipping-first-name {
+					@include span-columns(3 of 6);
+				}
+				.shipping-last-name {
+					@include span-columns(3	of 6);
+					@include omega();
+				}
+				.shipping-email {
+					@include span-columns(6 of 6);
+					@include omega();
+				}
+				.shipping-address {
+					@include span-columns(6 of 6);
+					@include omega();
+				}
+				.shipping-city {
+					@include span-columns(3 of 6);
+				}
+				.shipping-postal-code {
+					@include span-columns(3 of 6);
+					@include omega();
+				}
+				.shipping-country {
+					@include span-columns(3 of 6);
+				}
+				.shipping-state {
+					@include span-columns(3 of 6);
+					@include omega();
+				}
+				.shipping-phone {
+					@include span-columns(6 of 6);
+				}
 			}
 		}
+	}
+	.order-summary {
+		@include span-columns(5);
 	}
 }
 
