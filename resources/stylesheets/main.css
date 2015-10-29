@@ -45,6 +45,10 @@ a {
   a:hover {
     color: #0087C8; }
 
+p {
+  font-size: 1.125em;
+  font-weight: 200; }
+
 ul {
   list-style: none; }
   ul li {
@@ -211,6 +215,8 @@ nav {
     clear: both;
     content: "";
     display: table; }
+  #featured-content h1 {
+    margin: 50px 0 60px 0; }
   #featured-content p {
     margin-left: 16.94915%;
     float: left;
@@ -228,6 +234,9 @@ nav {
     width: 32.20339%; }
     #featured-content .button:last-child {
       margin-right: 0; }
+
+#featured-collection h1 {
+  margin: 38px 0 56px 0; }
 
 .product-featured {
   float: left;

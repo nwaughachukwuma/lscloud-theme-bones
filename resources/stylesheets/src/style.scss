@@ -63,6 +63,12 @@ a {
 		color: $link;
 	}
 }
+
+p {
+	font-size: 1.125em;
+	font-weight: $light;
+}
+
 ul {
 	list-style: none;
 	li {
