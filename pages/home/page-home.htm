@@ -37,8 +37,8 @@ url: /
               </a>
               <p>
                 <a href="/product/{{ product.url_name }}" class="btn btn-default">
-                  {{ product.name }}</a>
-                   {{ product.price|currency }}
+                  {{ product.name }}</a><br>
+                   <span class="price">{{ product.price|currency }}</span>
                      {% if on_sale %}
                      <span class="oldprice">{{ product.fullPrice|currency }}</span>
                      {% endif %}
