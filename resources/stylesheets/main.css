@@ -206,9 +206,6 @@ nav {
   nav li {
     display: inline-block;
     padding: 20px 25px; }
-  nav .breadcrumbs {
-    float: left;
-    color: red; }
 
 #logo {
   float: left; }
@@ -675,6 +672,16 @@ nav {
             margin-right: 0; }
         #delivery-billing-info .billing-summary #pay-form #payment_form ul.form li:last-child {
           margin-right: 0; }
+          #delivery-billing-info .billing-summary #pay-form #payment_form ul.form li:last-child label {
+            display: none; }
+          #delivery-billing-info .billing-summary #pay-form #payment_form ul.form li:last-child::before {
+            content: "<label>CVC</label>";
+            content: "CVC";
+            display: block;
+            color: #9b9b9b;
+            font-size: 0.75019em;
+            font-weight: 200;
+            margin-bottom: 0.375em; }
       #delivery-billing-info .billing-summary #pay-form #payment_form .button {
         width: 100%;
         display: block;

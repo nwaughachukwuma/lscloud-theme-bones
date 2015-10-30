@@ -5,95 +5,80 @@
 @import "style";
 
 .wrapper {
-  @include outer-container;
+	@include outer-container;
 }
-
 .fill-parent {
-  @include fill-parent;
-  border: 1px solid #9B9B9B;
+	@include fill-parent;
+	border: 1px solid #9B9B9B;
 }
-
 // Header
 header {
 	width: 100%;
 	background: $lightgrey;
 }
-
 section {
-  @include span-columns(12);
-  max-width: 1200px;
+	@include span-columns(12);
+	max-width: 1200px;
 }
-
 nav {
-  @include span-columns(12);
-  height: 70px;
+	@include span-columns(12);
+	height: 70px;
+	ul {
+		float: right;
+		margin: 0;
+		padding: 0;
+	}
 
-  ul {
-    float: right;
-    margin: 0;
-    padding: 0;
-  }
-
-  li {
-    display: inline-block;
+	li {
+		display: inline-block;
 		padding: 20px 25px;
-  }
-
-  .breadcrumbs {
-    float: left;
-    color: red;
-  }
+	}
 }
-
 #logo {
-    float: left;
+		float: left;
 }
-
 // Body
 #featured-content {
-    // @include span-columns(12);
-    @include outer-container;
-    text-align: center;
+		// @include span-columns(12);
+		@include outer-container;
+		text-align: center;
 
 		h1 {
 			margin: 50px 0 60px 0;
 		}
 		
-    p {
-      @include shift(2);
-      @include span-columns(8);
-      @include omega;
-    }
+		p {
+			@include shift(2);
+			@include span-columns(8);
+			@include omega;
+		}
 
-    .button {
-      @include shift(4);
-      @include span-columns(4);
-    }
+		.button {
+			@include shift(4);
+			@include span-columns(4);
+		}
 }
-
 #featured-collection {
 	h1 {
 		margin: 38px 0 56px 0;
 	}
 }
-
 .product-featured {
 	@include span-columns(3);
 }
-
 // Shop Page
 .product {
-  @include span-columns(4);
+	@include span-columns(4);
 
-  figure {
-    text-align: center;
-  }
+	figure {
+		text-align: center;
+	}
 }
 .product:nth-child(3n+3) {
-  margin-right: 0px;
+	margin-right: 0px;
 }
 .product-information {
-  padding: 0 10px;
+	padding: 0 10px;
 }
 
 // Product page
@@ -176,10 +161,10 @@ nav {
 		margin-top: 1em;
 	}
 	h4 {
-    font-style: italic;
-    margin-top: -37px;
-    margin-right: 1em;
-    text-align: right;
+		font-style: italic;
+		margin-top: -37px;
+		margin-right: 1em;
+		text-align: right;
 	}
 }
 .checkout-start-guest {
@@ -187,8 +172,8 @@ nav {
 	@include shift(1);
 	a {
 		@include fill-parent;
-    display: block;
-    text-align: center;
+		display: block;
+		text-align: center;
 	}
 }
 // Checkout Process
@@ -196,9 +181,9 @@ nav {
 	@include outer-container;
 	.billing-summary {
 		@include span-columns(7.5);
-    border-right: 1px solid $grey;
-    padding-right: percentage(1/24);
-    margin-right: 0;
+		border-right: 1px solid $grey;
+		padding-right: percentage(1/24);
+		margin-right: 0;
 		#billing-form {
 			@include span-columns(6 of 7);
 			float: none;
@@ -206,8 +191,8 @@ nav {
 				@include fill-parent;
 			}
 			a {
-		    float: right;
-	    }
+				float: right;
+			}
 			input[type="checkbox"] {
 				width: auto;
 			}
@@ -317,9 +302,9 @@ nav {
 			}
 			a {
 				@include fill-parent;
-		    display: block;
-		    text-align: center;
-		    margin-top: $base-spacing;
+				display: block;
+				text-align: center;
+				margin-top: $base-spacing;
 			}
 		}
 		#pay-form {
@@ -350,88 +335,95 @@ nav {
 					}
 					li:last-child {
 						@include omega();
+						label {
+							display: none;
+						}
+						&::before {
+							content: "<label>CVC</label>";
+							content: "CVC";
+							display: block;
+							color: #9b9b9b;
+							font-size: 0.75019em;
+							font-weight: 200;
+							margin-bottom: 0.375em;
+						}
 					}
 				}
 				.button {
 					@include fill-parent;
-			    display: block;
-			    text-align: center;
-			    margin-top: $base-spacing;
+					display: block;
+					text-align: center;
+					margin-top: $base-spacing;
 					background-color: $action-color;
 					color: $white;
 					font-weight: $heavy;
 					padding: $small-spacing $base-spacing;
-				  &:hover,
-				  &:focus {
-				    background-color: shade($action-color, 20%);
-				    color: $white;
-				  }
+					&:hover,
+					&:focus {
+						background-color: shade($action-color, 20%);
+						color: $white;
+					}
 				}
 			}
 		}
 	}
 	.order-summary {
 		@include span-columns(4);
-    margin-left: percentage(1/24);
-    .order-summary-description {
-    	@include span-columns(2 of 4);
-    }
-    .order-summary-amount {
-    	@include span-columns(2 of 4);
-    	text-align: right;
-    }
+		margin-left: percentage(1/24);
+		.order-summary-description {
+			@include span-columns(2 of 4);
+		}
+		.order-summary-amount {
+			@include span-columns(2 of 4);
+			text-align: right;
+		}
 	}
 }
-
-
 // Footer
-
 footer {
 	height: 200px;
 	background: $lightgrey;
 
-  ul {
-    @include span-columns(2);
-    float: left;
-    margin: 65px 0 0 0;
-  }
+	ul {
+		@include span-columns(2);
+		float: left;
+		margin: 65px 0 0 0;
+	}
 
-  #copyright {
-    @include span-columns(8);
-    float: right;
-    text-align: right;
-  }
+	#copyright {
+		@include span-columns(8);
+		float: right;
+		text-align: right;
+	}
 }
-
 // Sign-in
 .login-register-wrap {
-    @include outer-container;
-    section {
-        @include span-columns(6);
-        h3 { @include fill-parent; }
-        label { @include fill-parent; }
-        input { @include fill-parent; }
-        .button { width: auto; }
-    }
+		@include outer-container;
+		section {
+				@include span-columns(6);
+				h3 { @include fill-parent; }
+				label { @include fill-parent; }
+				input { @include fill-parent; }
+				.button { width: auto; }
+		}
 }
 // Breadcrumbs
 .breadcrumbs {
-  float: left;
-  display: block;
-  margin: 83px 0 65px 0;
-  width: 100%;
-  font-size: 1em;
+	float: left;
+	display: block;
+	margin: 83px 0 65px 0;
+	width: 100%;
+	font-size: 1em;
+	ul {
+		margin: 0;
+	}
 
-    ul {
-      margin: 0;
-    }
-
-    .crumb {
-      display: inline;
-      list-style: none;
-    }
-    :not(:last-child):after {
-        content: ">";
-        margin-left: 5px;
-    }
+	.crumb {
+		display: inline;
+		list-style: none;
+	}
+	:not(:last-child):after {
+			content: ">";
+			margin-left: 5px;
+	}
 }
