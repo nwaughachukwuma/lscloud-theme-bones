@@ -147,14 +147,26 @@
 		<h2>Order Summary</h2>
 		<hr>
 		<div class="order-summary-description">
-			<h3>Discount</h3>
+			{% if totals.discountTotal > 0 %}
+				<h3>Discount</h3>
+			{% endif %}	
 			<h3>Subtotal</h3>
+			{% if totals.totalShippingQuote %}
+			  <h3>Shipping</h3>
+			{% endif %}
+			<h3>Tax</h3>
 			<h2>Total</h2>
 		</div>
 		<div class="order-summary-amount">
-			<h3>2.00</h3>
-			<h3>2..0000</h3>
-			<h2>20.00</h2>
+			{% if totals.discountTotal > 0 %}
+				<h3>{{ totals.discountTotal|currency }}</h3>
+			{% endif %}	
+			<h3>{{ totals.subtotal|currency }}</h3>
+			{% if totals.totalShippingQuote %}
+			  <h3>{{ totals.totalShippingQuote|currency }}</h3>
+			{% endif %}
+			<h3>{{ totals.totalTax|currency }}</h3>
+			<h2>{{ totals.total|currency }}</h2>
 		</div>
 	</div>
 
