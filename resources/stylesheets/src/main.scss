@@ -322,6 +322,47 @@ nav {
 		    margin-top: $base-spacing;
 			}
 		}
+		#pay-form {
+			@include span-columns(6 of 7);
+			margin-top: $small-spacing;
+			label {
+				@include fill-parent;
+			}
+			#payment-form {
+				ul.form {
+					@include span-columns(6 of 6);
+					li:first-child {
+						@include span-columns(3 of 6);
+					}
+					li:nth-child(2) {
+						@include span-columns(3 of 6);
+						@include omega();
+					}
+					li:nth-child(3) {
+						@include fill-parent;
+						@include omega();
+					}
+					li:nth-child(4) + li {
+						@include span-columns(2 of 6);
+					}
+					li:last-child {
+						@include span-columns(2 of 6);
+						@include omega();
+					}
+				}
+				.button {
+					background-color: $action-color;
+					color: $white;
+					font-weight: $heavy;
+					padding: $small-spacing $base-spacing;
+				  &:hover,
+				  &:focus {
+				    background-color: shade($action-color, 20%);
+				    color: $white;
+				  }
+				}
+			}
+		}
 	}
 	.order-summary {
 		@include span-columns(4);
