@@ -1,18 +1,68 @@
 ---
 action: 'shop:receipt'
-template: default
+template: main
 protocol: all
 published: true
 name: Receipt
 url: '/receipt/:paymenthash'
 ---
-<h1>{{ page.title }}</h1>
 {% if invoice %}
-
-  <p>Please keep this information for your records.</p>
-  <p><strong>Order number: </strong> #{{ invoice.order.number }} </p>
-  <p><strong>Payment method: </strong> {{ payment.guessPaymentMethod().name }}</p>
+<div id="receipt">
+  <h1>Thanks For Your Order!</h1>
+  <p>You're order number is <strong>{{ invoice.order.number }}</strong>. Look for a confirmation email soon. Questions?</p>
+  <p>Customer Service: support@lemonstand.com or 1-855-332-0555</p>
+  <table class="receipt-billing-info">
+    <tr>
+      <td>Delivery Address</td>
+      <td>Delivery Method</td>
+      <td>Billing Address</td>
+      <td>Payment Method</td>
+    </tr>
+    <tr><td><hr></td></tr>
+    <tr>
+      <td>
+        <ul>
+          <li>
+            {{ billingInfo.firstName }}
+            {{ billingInfo.lastName }}
+          </li>
+          <li>{{ billingInfo.streetAddressLine1 }}</li>
+          <li>
+            {{ billingInfo.city }},
+            {{ billingInfo.state.code }}
+            {{ billingInfo.postalCode }}
+          </li>
+          <li>{{ billingInfo.country.name }}</li>
+        </ul>
+      </td>
+      <td>{{ payment.guessShippingMethod().name }}</td>
+      <td>{{ invoice.firstName }}</td>
+      <td>{{ invoice.shippingInfo.firstName }}</td>
+      <td>{{ payment.guessPaymentMethod().name }}</td>
+    </tr>
+  </table>
   <p><strong>Order Date: </strong> {{ invoice.order.created_at.format('M jS, Y') }}</p>
+
+  <table class="receipt-items">
+    <tr>
+      <td><h2><strong>Product</strong></h2></td>
+      <td><h2><strong>Qty</strong></h2></td>
+      <td><h2><strong>Total</strong></h2></td>
+    </tr>
+    {% for shipment in invoice.shipments %}
+    {% for item in shipment.shipmentItems %}
+      <tr>
+        <td>{{ item.product.name }}</td>
+        <td>{{ item.quantity|number_format(0) }}</td>
+        <td>{{ (item.quantity *item.pivot.price)|currency }}</td>
+      </tr>
+    {% endfor %}
+    {% endfor %}
+  </table>
+</div>
+
+  <p><strong>Payment method: </strong> {{ payment.guessPaymentMethod().name }}</p>
+
 
 	<table>
 	  <tr>
@@ -68,5 +118,7 @@ url: '/receipt/:paymenthash'
   {% endif %}
 
 {% else %}
-  <p class="flash error">Invoice not found.</p>
+  <div class="wrapper">
+    <p class="flash error">Invoice not found.</p>  
+  </div>
 {% endif %}

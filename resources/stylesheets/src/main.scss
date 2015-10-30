@@ -379,6 +379,29 @@ nav {
 		}
 	}
 }
+#receipt {
+	@include outer-container;
+	.receipt-items {
+		@include fill-parent;
+		tr {
+			@include fill-parent;
+			@include row(table);
+			padding: $base-spacing;
+			border: 1px solid $grey;
+			td:first-child {
+				@include span-columns(5);
+				@include shift(1);
+			}
+			td:nth-child(n+2) {
+				@include span-columns(3);
+			}
+		}
+		tr:first-child {
+			background-color: $lightgrey;
+			border-bottom: none;
+		}
+	}
+}
 // Footer
 footer {
 	height: 200px;
