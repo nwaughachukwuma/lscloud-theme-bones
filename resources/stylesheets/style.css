@@ -1,7 +1,9 @@
 html {
   box-sizing: border-box; }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: inherit; }
 
 body {
@@ -19,7 +21,7 @@ h2 {
 
 h3 {
   font-size: 1em;
-  font-weight: 400;
+  font-weight: 200;
   color: #4a4a4a; }
 
 h4 {
@@ -68,7 +70,8 @@ ul {
   color: #fff;
   font-weight: 700;
   padding: 0.75em 1.5em; }
-  .next:hover, .next:focus {
+  .next:hover,
+  .next:focus {
     background-color: #c09c28;
     color: #fff; }
 
@@ -77,7 +80,8 @@ ul {
   color: #fff;
   font-weight: 700;
   padding: 1.5em 1.5em; }
-  .call-to-action:hover, .call-to-action:focus {
+  .call-to-action:hover,
+  .call-to-action:focus {
     background-color: #c09c28;
     color: #fff; }
 
@@ -88,7 +92,8 @@ ul {
   color: #0087C8;
   font-weight: 700;
   padding: 0.75em 4em; }
-  .continue-shopping:hover, .continue-shopping:focus {
+  .continue-shopping:hover,
+  .continue-shopping:focus {
     border-color: #006ca0;
     color: #006ca0; }
 

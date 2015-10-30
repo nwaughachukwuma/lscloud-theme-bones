@@ -1,7 +1,33 @@
 {{ open_form({'class': 'custom'}) }}
 
-    <h3>Shipping Method</h3>
+<div id="delivery-billing-info">
+  <div class="billing-summary">
+    <h2>Delivery & Billing Info</h2>
+    <hr>
+    <div id="billing-form">
 
+    <ul>
+
+      <li>
+        {{ billingInfo.firstName }}
+        {{ billingInfo.lastName }}
+      </li>
+      <li>{{ billingInfo.streetAddressLine1 }}</li>
+      <li>
+        {{ billingInfo.city }},
+        {{ billingInfo.state.code }}
+        {{ billingInfo.postalCode }}
+      </li>
+      <li>{{ billingInfo.country.name }}</li>
+
+    </ul>
+
+    </div>
+ 
+    <h2>Delivery Method</h2>
+    <hr>
+
+    <div id="shipping-form">
       {% if shippingOptions %}
         <input type="hidden" value="" name="shippingMethod">
 
@@ -32,19 +58,45 @@
 
           {% endfor %}
 
+          <a class="button next" href="#" data-ajax-handler="shop:checkout" data-ajax-update="#checkout-page=partial-checkout">Place order &amp; pay</a>
+          
       {% else %}
         <p>We are sorry, there are no shipping options available for your location.</p>
       {% endif %}
-    
-    <div class="three columns data-list align-right" id="checkout-totals">
-      <h2>shop-checkout-totals</h2>
     </div>
 
-  {% if shippingOptions %}
 
-          <a class="button next" href="#" data-ajax-handler="shop:checkout" data-ajax-update="#checkout-page=partial-checkout">Place order &amp; pay</a>
 
-  {% endif %}
   <input type="hidden" name="step" value="shipping_method,review" />
   <input type="hidden" name="nextStep" value="pay" />
+
+    </div>
+      <div class="order-summary">
+    <h2>Order Summary</h2>
+    <hr>
+    <div class="order-summary-description">
+      {% if totals.discountTotal > 0 %}
+        <h3>Discount</h3>
+      {% endif %} 
+      <h3>Subtotal</h3>
+      {% if totals.totalShippingQuote %}
+        <h3>Shipping</h3>
+      {% endif %}
+      <h3>Tax</h3>
+      <h2>Total</h2>
+    </div>
+    <div class="order-summary-amount">
+      {% if totals.discountTotal > 0 %}
+        <h3>{{ totals.discountTotal|currency }}</h3>
+      {% endif %} 
+      <h3>{{ totals.subtotal|currency }}</h3>
+      {% if totals.totalShippingQuote %}
+        <h3>{{ totals.totalShippingQuote|currency }}</h3>
+      {% endif %}
+      <h3>{{ totals.totalTax|currency }}</h3>
+      <h2>{{ totals.total|currency }}</h2>
+    </div>
+  </div>
+
+</div>
 {{ close_form }}

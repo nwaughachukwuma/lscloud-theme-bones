@@ -7,13 +7,17 @@ ul {
 html {
   box-sizing: border-box; }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: inherit; }
 
 html {
   box-sizing: border-box; }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: inherit; }
 
 body {
@@ -31,7 +35,7 @@ h2 {
 
 h3 {
   font-size: 1em;
-  font-weight: 400;
+  font-weight: 200;
   color: #4a4a4a; }
 
 h4 {
@@ -80,7 +84,8 @@ ul {
   color: #fff;
   font-weight: 700;
   padding: 0.75em 1.5em; }
-  .next:hover, .next:focus {
+  .next:hover,
+  .next:focus {
     background-color: #c09c28;
     color: #fff; }
 
@@ -89,7 +94,8 @@ ul {
   color: #fff;
   font-weight: 700;
   padding: 1.5em 1.5em; }
-  .call-to-action:hover, .call-to-action:focus {
+  .call-to-action:hover,
+  .call-to-action:focus {
     background-color: #c09c28;
     color: #fff; }
 
@@ -100,7 +106,8 @@ ul {
   color: #0087C8;
   font-weight: 700;
   padding: 0.75em 4em; }
-  .continue-shopping:hover, .continue-shopping:focus {
+  .continue-shopping:hover,
+  .continue-shopping:focus {
     border-color: #006ca0;
     color: #006ca0; }
 
@@ -331,33 +338,61 @@ nav {
       #cart-table tr td h1 {
         text-align: left; }
     #cart-table tr .cart-image {
-      display: table-cell;
-      width: 16.66667%;
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 15.25424%;
       text-align: left; }
+      #cart-table tr .cart-image:last-child {
+        margin-right: 0; }
     #cart-table tr .cart-name {
-      display: table-cell;
-      width: 41.66667%;
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 40.67797%;
       text-align: left; }
+      #cart-table tr .cart-name:last-child {
+        margin-right: 0; }
     #cart-table tr .cart-item-price {
-      display: table-cell;
-      width: 8.33333%; }
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 6.77966%; }
+      #cart-table tr .cart-item-price:last-child {
+        margin-right: 0; }
     #cart-table tr .cart-item-total {
-      display: table-cell;
-      width: 8.33333%; }
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 6.77966%; }
+      #cart-table tr .cart-item-total:last-child {
+        margin-right: 0; }
     #cart-table tr .cart-quantity {
-      display: table-cell;
-      width: 16.66667%; }
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 15.25424%; }
+      #cart-table tr .cart-quantity:last-child {
+        margin-right: 0; }
       #cart-table tr .cart-quantity input {
         width: 79px; }
     #cart-table tr .cart-remove {
-      display: table-cell;
-      width: 8.33333%; }
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 6.77966%; }
+      #cart-table tr .cart-remove:last-child {
+        margin-right: 0; }
     #cart-table tr .cart-subtotal {
       margin-bottom: 1em; }
 
 .checkout-start-login {
-  display: table-cell;
-  width: 41.66667%; }
+  float: left;
+  display: block;
+  margin-right: 1.69492%;
+  width: 40.67797%; }
+  .checkout-start-login:last-child {
+    margin-right: 0; }
   .checkout-start-login input {
     width: 100%; }
   .checkout-start-login input:last-child {
@@ -369,9 +404,13 @@ nav {
     text-align: right; }
 
 .checkout-start-guest {
-  display: table-cell;
-  width: 41.66667%;
+  float: left;
+  display: block;
+  margin-right: 1.69492%;
+  width: 40.67797%;
   margin-left: 8.47458%; }
+  .checkout-start-guest:last-child {
+    margin-right: 0; }
   .checkout-start-guest a {
     width: 100%;
     display: block;
@@ -386,14 +425,22 @@ nav {
     content: "";
     display: table; }
   #delivery-billing-info .billing-summary {
-    display: table-cell;
-    width: 62.5%;
+    float: left;
+    display: block;
+    margin-right: 1.69492%;
+    width: 61.86441%;
     border-right: 1px solid #9b9b9b;
     padding-right: 4.16667%;
     margin-right: 0; }
+    #delivery-billing-info .billing-summary:last-child {
+      margin-right: 0; }
     #delivery-billing-info .billing-summary #billing-form {
-      display: table-cell;
-      width: 85.71429%; }
+      float: left;
+      display: block;
+      margin-right: 2.94118%;
+      width: 85.29412%; }
+      #delivery-billing-info .billing-summary #billing-form:last-child {
+        margin-right: 0; }
       #delivery-billing-info .billing-summary #billing-form input, #delivery-billing-info .billing-summary #billing-form textarea, #delivery-billing-info .billing-summary #billing-form select {
         width: 100%; }
       #delivery-billing-info .billing-summary #billing-form a {
@@ -403,97 +450,202 @@ nav {
       #delivery-billing-info .billing-summary #billing-form h4 {
         display: inline-block; }
       #delivery-billing-info .billing-summary #billing-form .billing-first-name {
-        display: table-cell;
-        width: 50%; }
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 48.27586%; }
+        #delivery-billing-info .billing-summary #billing-form .billing-first-name:last-child {
+          margin-right: 0; }
       #delivery-billing-info .billing-summary #billing-form .billing-last-name {
-        display: table-cell;
-        width: 50%;
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 48.27586%;
         margin-right: 0; }
+        #delivery-billing-info .billing-summary #billing-form .billing-last-name:last-child {
+          margin-right: 0; }
       #delivery-billing-info .billing-summary #billing-form .billing-email {
-        display: table-cell;
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
         width: 100%;
         margin-right: 0; }
+        #delivery-billing-info .billing-summary #billing-form .billing-email:last-child {
+          margin-right: 0; }
       #delivery-billing-info .billing-summary #billing-form .billing-address {
-        display: table-cell;
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
         width: 100%;
         margin-right: 0; }
+        #delivery-billing-info .billing-summary #billing-form .billing-address:last-child {
+          margin-right: 0; }
       #delivery-billing-info .billing-summary #billing-form .billing-city {
-        display: table-cell;
-        width: 50%; }
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 48.27586%; }
+        #delivery-billing-info .billing-summary #billing-form .billing-city:last-child {
+          margin-right: 0; }
       #delivery-billing-info .billing-summary #billing-form .billing-postal-code {
-        display: table-cell;
-        width: 50%;
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 48.27586%;
         margin-right: 0; }
+        #delivery-billing-info .billing-summary #billing-form .billing-postal-code:last-child {
+          margin-right: 0; }
       #delivery-billing-info .billing-summary #billing-form .billing-country {
-        display: table-cell;
-        width: 50%; }
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 48.27586%; }
+        #delivery-billing-info .billing-summary #billing-form .billing-country:last-child {
+          margin-right: 0; }
       #delivery-billing-info .billing-summary #billing-form .billing-state {
-        display: table-cell;
-        width: 50%;
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 48.27586%;
         margin-right: 0; }
+        #delivery-billing-info .billing-summary #billing-form .billing-state:last-child {
+          margin-right: 0; }
       #delivery-billing-info .billing-summary #billing-form .billing-phone {
-        display: table-cell;
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
         width: 100%; }
+        #delivery-billing-info .billing-summary #billing-form .billing-phone:last-child {
+          margin-right: 0; }
       #delivery-billing-info .billing-summary #billing-form #shipping-form {
-        display: table-cell;
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
         width: 100%; }
+        #delivery-billing-info .billing-summary #billing-form #shipping-form:last-child {
+          margin-right: 0; }
         #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-first-name {
-          display: table-cell;
-          width: 50%; }
+          float: left;
+          display: block;
+          margin-right: 3.44828%;
+          width: 48.27586%; }
+          #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-first-name:last-child {
+            margin-right: 0; }
         #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-last-name {
-          display: table-cell;
-          width: 50%;
+          float: left;
+          display: block;
+          margin-right: 3.44828%;
+          width: 48.27586%;
           margin-right: 0; }
+          #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-last-name:last-child {
+            margin-right: 0; }
         #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-email {
-          display: table-cell;
+          float: left;
+          display: block;
+          margin-right: 3.44828%;
           width: 100%;
           margin-right: 0; }
+          #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-email:last-child {
+            margin-right: 0; }
         #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-address {
-          display: table-cell;
+          float: left;
+          display: block;
+          margin-right: 3.44828%;
           width: 100%;
           margin-right: 0; }
+          #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-address:last-child {
+            margin-right: 0; }
         #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-city {
-          display: table-cell;
-          width: 50%; }
+          float: left;
+          display: block;
+          margin-right: 3.44828%;
+          width: 48.27586%; }
+          #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-city:last-child {
+            margin-right: 0; }
         #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-postal-code {
-          display: table-cell;
-          width: 50%;
+          float: left;
+          display: block;
+          margin-right: 3.44828%;
+          width: 48.27586%;
           margin-right: 0; }
+          #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-postal-code:last-child {
+            margin-right: 0; }
         #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-country {
-          display: table-cell;
-          width: 50%; }
+          float: left;
+          display: block;
+          margin-right: 3.44828%;
+          width: 48.27586%; }
+          #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-country:last-child {
+            margin-right: 0; }
         #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-state {
-          display: table-cell;
-          width: 50%;
+          float: left;
+          display: block;
+          margin-right: 3.44828%;
+          width: 48.27586%;
           margin-right: 0; }
+          #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-state:last-child {
+            margin-right: 0; }
         #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-phone {
-          display: table-cell;
+          float: left;
+          display: block;
+          margin-right: 3.44828%;
           width: 100%; }
+          #delivery-billing-info .billing-summary #billing-form #shipping-form .shipping-phone:last-child {
+            margin-right: 0; }
+      #delivery-billing-info .billing-summary #billing-form ul {
+        width: 100%;
+        background-color: rgba(155, 154, 155, 0.03);
+        border: 1px solid #9b9b9b;
+        padding: 0.75em; }
+        #delivery-billing-info .billing-summary #billing-form ul li {
+          font-size: 0.75019em;
+          font-weight: 200;
+          margin-bottom: 0.1em; }
   #delivery-billing-info .order-summary {
-    display: table-cell;
-    width: 33.33333%;
+    float: left;
+    display: block;
+    margin-right: 1.69492%;
+    width: 32.20339%;
     margin-left: 4.16667%; }
+    #delivery-billing-info .order-summary:last-child {
+      margin-right: 0; }
     #delivery-billing-info .order-summary .order-summary-description {
-      display: table-cell;
-      width: 50%; }
+      float: left;
+      display: block;
+      margin-right: 5.26316%;
+      width: 47.36842%; }
+      #delivery-billing-info .order-summary .order-summary-description:last-child {
+        margin-right: 0; }
     #delivery-billing-info .order-summary .order-summary-amount {
-      display: table-cell;
-      width: 50%;
+      float: left;
+      display: block;
+      margin-right: 5.26316%;
+      width: 47.36842%;
       text-align: right; }
+      #delivery-billing-info .order-summary .order-summary-amount:last-child {
+        margin-right: 0; }
 
 footer {
   height: 200px;
   background: rgba(155, 154, 155, 0.03); }
   footer ul {
-    display: table-cell;
-    width: 16.66667%;
+    float: left;
+    display: block;
+    margin-right: 1.69492%;
+    width: 15.25424%;
     float: left;
     margin: 65px 0 0 0; }
+    footer ul:last-child {
+      margin-right: 0; }
   footer #copyright {
-    display: table-cell;
-    width: 66.66667%;
+    float: left;
+    display: block;
+    margin-right: 1.69492%;
+    width: 66.10169%;
     float: right;
     text-align: right; }
+    footer #copyright:last-child {
+      margin-right: 0; }
 
 .login-register-wrap {
   max-width: 1200px;
@@ -504,8 +656,12 @@ footer {
     content: "";
     display: table; }
   .login-register-wrap section {
-    display: table-cell;
-    width: 50%; }
+    float: left;
+    display: block;
+    margin-right: 1.69492%;
+    width: 49.15254%; }
+    .login-register-wrap section:last-child {
+      margin-right: 0; }
     .login-register-wrap section h3 {
       width: 100%; }
     .login-register-wrap section label {

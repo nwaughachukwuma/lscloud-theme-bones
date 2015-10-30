@@ -280,6 +280,17 @@ nav {
 					@include span-columns(6 of 6);
 				}
 			}
+			ul {
+				@include fill-parent;
+				background-color: $lightgrey;
+				border: 1px solid $grey;
+				padding: $small-spacing;
+				li {
+					font-size: $tiny;
+					font-weight: $light;
+					margin-bottom: 0.1em;
+				}
+			}
 		}
 	}
 	.order-summary {
