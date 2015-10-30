@@ -328,9 +328,12 @@ nav {
 			label {
 				@include fill-parent;
 			}
-			#payment-form {
+			#payment_form {
 				ul.form {
 					@include span-columns(6 of 6);
+					input {
+						@include fill-parent;
+					}
 					li:first-child {
 						@include span-columns(3 of 6);
 					}
@@ -342,15 +345,18 @@ nav {
 						@include fill-parent;
 						@include omega();
 					}
-					li:nth-child(4) + li {
+					li:nth-child(n+4) {
 						@include span-columns(2 of 6);
 					}
 					li:last-child {
-						@include span-columns(2 of 6);
 						@include omega();
 					}
 				}
 				.button {
+					@include fill-parent;
+			    display: block;
+			    text-align: center;
+			    margin-top: $base-spacing;
 					background-color: $action-color;
 					color: $white;
 					font-weight: $heavy;
