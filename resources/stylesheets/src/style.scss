@@ -33,7 +33,8 @@ body {
 }
 // Titles
 h1 {
-	font-size: $large;
+	// font-size: $large;
+	font-size: 2.625em;
 	font-weight: $light;
 	color: $grey;
 }
@@ -62,6 +63,12 @@ a {
 		color: $link;
 	}
 }
+
+p {
+	font-size: 1.125em;
+	font-weight: $light;
+}
+
 ul {
 	list-style: none;
 	li {
@@ -174,6 +181,27 @@ input[type="radio"] {
 // 	text-decoration: line-through;
 // }
 
+.product-featured {
+	p {
+		color: $grey;
+		font-size: 0.875em;
+		// line-height: 19px;
+		font-weight: $heavy;
+	}
+
+	a {
+		color: #000000;
+	}
+}
+
+.price {
+	font-size: 1.125em;
+	font-weight: $light;
+}
+
 .oldprice {
 	text-decoration: line-through;
+	color: #9B9B9B;
+	font-size: 1.125em;
+	font-weight: $light;
 }

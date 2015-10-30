@@ -55,6 +55,10 @@ nav {
     @include outer-container;
     text-align: center;
 
+		h1 {
+			margin: 50px 0 60px 0;
+		}
+		
     p {
       @include shift(2);
       @include span-columns(8);
@@ -66,6 +70,13 @@ nav {
       @include span-columns(4);
     }
 }
+
+#featured-collection {
+	h1 {
+		margin: 38px 0 56px 0;
+	}
+}
+
 .product-featured {
 	@include span-columns(3);
 }
