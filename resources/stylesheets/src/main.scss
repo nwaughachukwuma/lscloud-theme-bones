@@ -291,6 +291,15 @@ nav {
 					font-size: $tiny;
 					font-weight: $light;
 					margin-bottom: 0.1em;
+					&:first-child {
+						float: left;
+					}
+					&:nth-child(2) {
+						float: right;
+					}
+					&:nth-child(3) {
+						clear: both;
+					}
 				}
 			}
 		}

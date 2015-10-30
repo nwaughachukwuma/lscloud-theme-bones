@@ -603,6 +603,12 @@ nav {
           font-size: 0.75019em;
           font-weight: 200;
           margin-bottom: 0.1em; }
+          #delivery-billing-info .billing-summary #billing-form ul li:first-child {
+            float: left; }
+          #delivery-billing-info .billing-summary #billing-form ul li:nth-child(2) {
+            float: right; }
+          #delivery-billing-info .billing-summary #billing-form ul li:nth-child(3) {
+            clear: both; }
     #delivery-billing-info .billing-summary #delivery-form {
       float: left;
       display: block;

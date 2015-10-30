@@ -10,6 +10,7 @@
           {{ billingInfo.firstName }}
           {{ billingInfo.lastName }}
         </li>
+        <li class="edit"><a href="/checkout">Edit</a></li>
         <li>{{ billingInfo.streetAddressLine1 }}</li>
         <li>
           {{ billingInfo.city }},
@@ -18,7 +19,7 @@
         </li>
         <li>{{ billingInfo.country.name }}</li>
       </ul>
-      <input type="checkbox" checked><h4>Use for shipping address</h4>
+      <input type="checkbox" checked disabled><h4>Use for shipping address</h4>
     </div>
  
     <h2>Delivery Method</h2>
