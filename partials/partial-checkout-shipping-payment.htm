@@ -5,29 +5,26 @@
     <h2>Delivery & Billing Info</h2>
     <hr>
     <div id="billing-form">
-
-    <ul>
-
-      <li>
-        {{ billingInfo.firstName }}
-        {{ billingInfo.lastName }}
-      </li>
-      <li>{{ billingInfo.streetAddressLine1 }}</li>
-      <li>
-        {{ billingInfo.city }},
-        {{ billingInfo.state.code }}
-        {{ billingInfo.postalCode }}
-      </li>
-      <li>{{ billingInfo.country.name }}</li>
-
-    </ul>
-
+      <ul>
+        <li>
+          {{ billingInfo.firstName }}
+          {{ billingInfo.lastName }}
+        </li>
+        <li>{{ billingInfo.streetAddressLine1 }}</li>
+        <li>
+          {{ billingInfo.city }},
+          {{ billingInfo.state.code }}
+          {{ billingInfo.postalCode }}
+        </li>
+        <li>{{ billingInfo.country.name }}</li>
+      </ul>
+      <input type="checkbox" checked><h4>Use for shipping address</h4>
     </div>
  
     <h2>Delivery Method</h2>
     <hr>
 
-    <div id="shipping-form">
+    <div id="delivery-form">
       {% if shippingOptions %}
         <input type="hidden" value="" name="shippingMethod">
 
@@ -41,20 +38,24 @@
                     {{ radio_state(shippingMethodInfo.id, option.id) }}
                     type="radio" id="{{ 'option'~index }}"/>
                     
-                  <span class="choice-title">
+                  <span>
                     {{ option.shippingMethodName }}
                     {% if option.shippingServiceName %}: {{ option.shippingServiceName }}{% endif %}
                   </span>
                   
                   {% if option.error_hint %}
-                    <span class="choice-description error-hint">{{ option.error_hint }}</span>
+                    <span>{{ option.error_hint }}</span>
                   {% endif %}
+
+                  <span class="delivery-cost">
+                  {% if not option.error_hint  %}
+                    {{ not option.is_free ? option.quote|currency : 'free' }}
+                  {% endif %}
+                  </span>
+
                 </label>
-                <span>
-                {% if not option.error_hint  %}
-                  {{ not option.is_free ? option.quote|currency : 'free' }}
-                {% endif %}
-                </span>
+
+                
 
           {% endfor %}
 

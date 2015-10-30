@@ -201,6 +201,7 @@ nav {
     margin-right: 0;
 		#billing-form {
 			@include span-columns(6 of 7);
+			float: none;
 			input,textarea,select {
 				@include fill-parent;
 			}
@@ -285,11 +286,31 @@ nav {
 				background-color: $lightgrey;
 				border: 1px solid $grey;
 				padding: $small-spacing;
+				margin-bottom: 0;
 				li {
 					font-size: $tiny;
 					font-weight: $light;
 					margin-bottom: 0.1em;
 				}
+			}
+		}
+		#delivery-form {
+			@include span-columns(6 of 7);
+			label {
+				@include fill-parent;
+				font-size: $small;
+				font-weight: $light;
+				color: $black;
+				margin-top: $small-spacing;
+				.delivery-cost {
+					float: right;
+				}
+			}
+			a {
+				@include fill-parent;
+		    display: block;
+		    text-align: center;
+		    margin-top: $base-spacing;
 			}
 		}
 	}

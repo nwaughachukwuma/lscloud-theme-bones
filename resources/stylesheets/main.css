@@ -438,7 +438,8 @@ nav {
       float: left;
       display: block;
       margin-right: 2.94118%;
-      width: 85.29412%; }
+      width: 85.29412%;
+      float: none; }
       #delivery-billing-info .billing-summary #billing-form:last-child {
         margin-right: 0; }
       #delivery-billing-info .billing-summary #billing-form input, #delivery-billing-info .billing-summary #billing-form textarea, #delivery-billing-info .billing-summary #billing-form select {
@@ -596,11 +597,32 @@ nav {
         width: 100%;
         background-color: rgba(155, 154, 155, 0.03);
         border: 1px solid #9b9b9b;
-        padding: 0.75em; }
+        padding: 0.75em;
+        margin-bottom: 0; }
         #delivery-billing-info .billing-summary #billing-form ul li {
           font-size: 0.75019em;
           font-weight: 200;
           margin-bottom: 0.1em; }
+    #delivery-billing-info .billing-summary #delivery-form {
+      float: left;
+      display: block;
+      margin-right: 2.94118%;
+      width: 85.29412%; }
+      #delivery-billing-info .billing-summary #delivery-form:last-child {
+        margin-right: 0; }
+      #delivery-billing-info .billing-summary #delivery-form label {
+        width: 100%;
+        font-size: 1em;
+        font-weight: 200;
+        color: #4a4a4a;
+        margin-top: 0.75em; }
+        #delivery-billing-info .billing-summary #delivery-form label .delivery-cost {
+          float: right; }
+      #delivery-billing-info .billing-summary #delivery-form a {
+        width: 100%;
+        display: block;
+        text-align: center;
+        margin-top: 1.5em; }
   #delivery-billing-info .order-summary {
     float: left;
     display: block;
