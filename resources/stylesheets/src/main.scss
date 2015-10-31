@@ -151,6 +151,41 @@ nav {
 		}
 	}
 }
+#checkout-progress {
+	@include outer-container;
+	tr {
+		@include row(table);
+		text-align: center;
+	}
+	tr:first-child {
+		td {
+			p {
+		    padding: 0.25em 1.125em 0.25em 0.625em;
+		    width: 0px;
+		    margin: auto;
+		    background-color: $progress-green;
+		    color: white;
+		    border-radius: $base-border-radius;
+			}
+			&::after {
+		    content: " ";
+		    margin-top: -18px;
+		    margin-left: 50%;
+		    width: 384px;
+		    height: 6px;
+		    background-color: $progress-green;
+		    display: block;
+			}
+			&:last-child:after {
+				width: 0px;
+			}
+		}
+	}
+	tr:nth-child(2) {
+    margin-top: 15px;
+    margin-bottom: 2em;
+	}
+}
 // Checkout Start Page
 .checkout-start-login {
 	@include span-columns(5);

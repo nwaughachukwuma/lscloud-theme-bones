@@ -383,6 +383,40 @@ nav {
     #cart-table tr .cart-subtotal {
       margin-bottom: 1em; }
 
+#checkout-progress {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  #checkout-progress::after {
+    clear: both;
+    content: "";
+    display: table; }
+  #checkout-progress tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    text-align: center; }
+  #checkout-progress tr:first-child td p {
+    padding: 0.25em 1.125em 0.25em 0.625em;
+    width: 0px;
+    margin: auto;
+    background-color: #55A537;
+    color: white;
+    border-radius: 3px; }
+  #checkout-progress tr:first-child td::after {
+    content: " ";
+    margin-top: -18px;
+    margin-left: 50%;
+    width: 384px;
+    height: 6px;
+    background-color: #55A537;
+    display: block; }
+  #checkout-progress tr:first-child td:last-child:after {
+    width: 0px; }
+  #checkout-progress tr:nth-child(2) {
+    margin-top: 15px;
+    margin-bottom: 2em; }
+
 .checkout-start-login {
   float: left;
   display: block;
