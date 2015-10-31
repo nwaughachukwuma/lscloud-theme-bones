@@ -405,6 +405,7 @@ nav {
     border-radius: 3px; }
   #checkout-progress tr:first-child td::after {
     z-index: -9;
+    position: relative;
     content: " ";
     margin-top: -18px;
     margin-left: -50%;

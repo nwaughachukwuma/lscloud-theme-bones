@@ -169,6 +169,7 @@ nav {
 			}
 			&::after {
 				z-index: -9;
+				position: relative;
 		    content: " ";
 		    margin-top: -18px;
 		    margin-left: -50%;
