@@ -41,7 +41,9 @@ url: '/receipt/:paymenthash'
       <td>{{ payment.guessPaymentMethod().name }}</td>
     </tr>
   </table>
+  
   <p><strong>Order Date: </strong> {{ invoice.order.created_at.format('M jS, Y') }}</p>
+  <p><strong>Payment method: </strong> {{ payment.guessPaymentMethod().name }}</p>
 
   <table class="receipt-items">
     <tr>
@@ -59,63 +61,41 @@ url: '/receipt/:paymenthash'
     {% endfor %}
     {% endfor %}
   </table>
-</div>
 
-  <p><strong>Payment method: </strong> {{ payment.guessPaymentMethod().name }}</p>
-
-
-	<table>
-	  <tr>
-	    <th>Item</th>
-	    <th>Quantity</th>
-	    <th>Price</th>
-	    {% if invoice.getDiscountTotal() > 0 %}
-	      <th>Discount</th>
-	      <th>Unit Price</th>
-	    {% endif %}
-	    <th>Total</th>
-	  </tr>
-	  {% for shipment in invoice.shipments %}
-    {% for item in shipment.shipmentItems %}
-    <tr>
-      <td>
-        <a href="/product/{{ item.product.url_name }}"><img src="{{ item.product.images.first.thumbnail(80, 80)|default('http://placehold.it/80x80') }}"/></a>
-          <h2><a href="/product/{{ item.product.url_name }}">{{ item.product.name }}</a></h2>
-
-          {% set description = item.optionsString() %}
-          {% if description %}<p>{{ description|unescape }}</p>{% endif %}
-
-      </td>
-      <td><h4>{{ item.quantity|number_format(0) }}</h4></td>
-      <td><h4>{{ item.base_price|currency }}</h4></td>
-      {% if invoice.getDiscountTotal() > 0 %}
-        <td><h4>{{ item.totalDiscount()|currency }}</h4></td>
-        <td><h4>{{ item.pivot.price|currency }}</h4></td>
-      {% endif %}
-      <td><h4>{{ (item.quantity *item.pivot.price)|currency }}</h4></td>
-    </tr>
-    {% endfor %}
-	  {% endfor %}
-	</table>
+  <hr>
 
   {% if invoice.isPaid() %}
 
-	{% if invoice.getDiscountTotal() > 0 %}
-	  <p><strong>Discount applied:</strong> <h4>{{ invoice.getDiscountTotal()|currency }}</h4></p>
-	{% endif %}
-	<p><strong>Subtotal:</strong> <h4>{{ invoice.subtotal|currency }}</h4></p>
-	<p><strong>Sales Tax:</strong> <h4>{{ invoice.tax_total|currency }}</h4></p>
-	<p><strong>Shipping:</strong> <h4>{{ invoice.total_shipping_quote|currency }}</h4></p>
-	{% if invoice.order.total_shipping_tax > 0 %}
-	  <p><strong>Shipping Taxes:</strong> <h4>{{ invoice.order.total_shipping_tax|currency }}</h4></p>
-	{% endif %}
-	<p class="subtotal"><strong>Total:</strong>  <h4>{{ invoice.total|currency }}</h4></p>
+  <div class="receipt-totals">
 
-  <a class="button call-to-action" href="{{ site_url('shop') }}">Continue Shopping</a>
+    <div class="receipt-totals-description">
+      {% if invoice.getDiscountTotal() > 0 %}
+        <h3>Discount</h3>
+      {% endif %} 
+      <h3>Subtotal</h3>
+        <h3>Shipping</h3>
+      <h3>Tax</h3>
+      <h2>Total</h2>
+    </div>
 
+    <div class="receipt-totals-amount">
+      {% if invoice.getDiscountTotal() > 0 %}
+        <h3>{{ invoice.getDiscountTotal()|currency }}</h3>
+      {% endif %} 
+      <h3>{{ invoice.subtotal|currency }}</h3>
+      <h3>{{ invoice.total_shipping_quote|currency }}</h3>
+      <h3>{{ invoice.tax_total|currency }}</h3>      
+      <h2>{{ invoice.total|currency }}</h2>
+    </div>
+
+    <a class="button call-to-action" href="{{ site_url('shop') }}">Continue Shopping</a>
+
+  </div>
   {% else %}
     <p><a class="button next" href="{{ site_url('review/'~order.order_hash) }}">Place order</a></p>
   {% endif %}
+
+</div>
 
 {% else %}
   <div class="wrapper">

@@ -401,6 +401,24 @@ nav {
 			border-bottom: none;
 		}
 	}
+	.receipt-totals {
+		@include span-columns(4);
+		@include shift(8);
+		.receipt-totals-description {
+			@include span-columns(2 of 4);
+		}
+		.receipt-totals-amount {
+			@include span-columns(2 of 4);
+			@include omega();
+			text-align: right;
+		}
+		a {
+			@include fill-parent;
+			clear: both;
+			display: block;
+			text-align: center;
+		}
+	}
 }
 // Footer
 footer {

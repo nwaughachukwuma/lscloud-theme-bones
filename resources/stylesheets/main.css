@@ -754,6 +754,35 @@ nav {
     #receipt .receipt-items tr:first-child {
       background-color: rgba(155, 154, 155, 0.03);
       border-bottom: none; }
+  #receipt .receipt-totals {
+    float: left;
+    display: block;
+    margin-right: 1.69492%;
+    width: 32.20339%;
+    margin-left: 67.79661%; }
+    #receipt .receipt-totals:last-child {
+      margin-right: 0; }
+    #receipt .receipt-totals .receipt-totals-description {
+      float: left;
+      display: block;
+      margin-right: 5.26316%;
+      width: 47.36842%; }
+      #receipt .receipt-totals .receipt-totals-description:last-child {
+        margin-right: 0; }
+    #receipt .receipt-totals .receipt-totals-amount {
+      float: left;
+      display: block;
+      margin-right: 5.26316%;
+      width: 47.36842%;
+      margin-right: 0;
+      text-align: right; }
+      #receipt .receipt-totals .receipt-totals-amount:last-child {
+        margin-right: 0; }
+    #receipt .receipt-totals a {
+      width: 100%;
+      clear: both;
+      display: block;
+      text-align: center; }
 
 footer {
   height: 200px;
