@@ -39,24 +39,24 @@ nav {
 }
 // Body
 #featured-content {
-		// @include span-columns(12);
-		@include outer-container;
-		text-align: center;
+	// @include span-columns(12);
+	@include outer-container;
+	text-align: center;
 
-		h1 {
-			margin: 50px 0 60px 0;
-		}
-		
-		p {
-			@include shift(2);
-			@include span-columns(8);
-			@include omega;
-		}
+	h1 {
+		margin: 50px 0 60px 0;
+	}
+	
+	p {
+		@include shift(2);
+		@include span-columns(8);
+		@include omega;
+	}
 
-		.button {
-			@include shift(4);
-			@include span-columns(4);
-		}
+	.button {
+		@include shift(4);
+		@include span-columns(4);
+	}
 }
 #featured-collection {
 	h1 {
@@ -418,6 +418,9 @@ nav {
 			display: block;
 			text-align: center;
 		}
+	}
+	hr {
+		margin: 2em 0 2em 0;
 	}
 }
 // Footer

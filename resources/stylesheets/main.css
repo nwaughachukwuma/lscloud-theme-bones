@@ -783,6 +783,8 @@ nav {
       clear: both;
       display: block;
       text-align: center; }
+  #receipt hr {
+    margin: 2em 0 2em 0; }
 
 footer {
   height: 200px;
