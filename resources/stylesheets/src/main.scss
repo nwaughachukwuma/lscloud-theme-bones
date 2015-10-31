@@ -163,27 +163,41 @@ nav {
 		    padding: 0.25em 1.125em 0.25em 0.625em;
 		    width: 0px;
 		    margin: auto;
-		    background-color: $progress-green;
+		    background-color: rgb(216, 216, 216);
 		    color: white;
 		    border-radius: $base-border-radius;
 			}
 			&::after {
+				z-index: -9;
 		    content: " ";
 		    margin-top: -18px;
-		    margin-left: 50%;
+		    margin-left: -50%;
 		    width: 384px;
 		    height: 6px;
-		    background-color: $progress-green;
+		    background-color: rgb(216, 216, 216);
 		    display: block;
 			}
-			&:last-child:after {
+			&:first-child:after {
 				width: 0px;
+			}
+		}
+		.current-step {
+			p {
+				background-color: $progress-green;
+			}
+			&::after {
+				background-color: $progress-green;
 			}
 		}
 	}
 	tr:nth-child(2) {
-    margin-top: 15px;
+    margin-top: 1.5em;
     margin-bottom: 2em;
+	}
+	tr:nth-child(2) {
+		.grey {
+			color: $grey;
+		}
 	}
 }
 // Checkout Start Page

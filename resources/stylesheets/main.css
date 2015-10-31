@@ -180,7 +180,7 @@ input[type="radio"] {
 
 header {
   width: 100%;
-  background: rgba(155, 154, 155, 0.03); }
+  background: rgba(155, 155, 155, 0.3); }
 
 section {
   float: left;
@@ -400,22 +400,29 @@ nav {
     padding: 0.25em 1.125em 0.25em 0.625em;
     width: 0px;
     margin: auto;
-    background-color: #55A537;
+    background-color: #d8d8d8;
     color: white;
     border-radius: 3px; }
   #checkout-progress tr:first-child td::after {
+    z-index: -9;
     content: " ";
     margin-top: -18px;
-    margin-left: 50%;
+    margin-left: -50%;
     width: 384px;
     height: 6px;
-    background-color: #55A537;
+    background-color: #d8d8d8;
     display: block; }
-  #checkout-progress tr:first-child td:last-child:after {
+  #checkout-progress tr:first-child td:first-child:after {
     width: 0px; }
+  #checkout-progress tr:first-child .current-step p {
+    background-color: #55A537; }
+  #checkout-progress tr:first-child .current-step::after {
+    background-color: #55A537; }
   #checkout-progress tr:nth-child(2) {
-    margin-top: 15px;
+    margin-top: 1.5em;
     margin-bottom: 2em; }
+  #checkout-progress tr:nth-child(2) .grey {
+    color: #9b9b9b; }
 
 .checkout-start-login {
   float: left;
@@ -626,7 +633,7 @@ nav {
             margin-right: 0; }
       #delivery-billing-info .billing-summary #billing-form ul {
         width: 100%;
-        background-color: rgba(155, 154, 155, 0.03);
+        background-color: rgba(155, 155, 155, 0.3);
         border: 1px solid #9b9b9b;
         padding: 0.75em;
         margin-bottom: 0; }
@@ -786,7 +793,7 @@ nav {
         #receipt .receipt-items tr td:nth-child(n+2):last-child {
           margin-right: 0; }
     #receipt .receipt-items tr:first-child {
-      background-color: rgba(155, 154, 155, 0.03);
+      background-color: rgba(155, 155, 155, 0.3);
       border-bottom: none; }
   #receipt .receipt-totals {
     float: left;
@@ -822,7 +829,7 @@ nav {
 
 footer {
   height: 200px;
-  background: rgba(155, 154, 155, 0.03); }
+  background: rgba(155, 155, 155, 0.3); }
   footer ul {
     float: left;
     display: block;
