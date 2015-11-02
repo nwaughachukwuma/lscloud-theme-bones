@@ -7,7 +7,7 @@
 body {
 	position: relative;
   min-height: 100vh;
-  padding-bottom: 200px;
+  padding-bottom: 283px;
 }
 .wrapper {
 	@include outer-container;
@@ -19,7 +19,7 @@ body {
 // Header
 header {
 	width: 100%;
-	background: $lightgrey;
+	background: $headergrey;
 	margin-bottom: 83px;
 }
 section {
@@ -485,19 +485,23 @@ nav {
 // Footer
 footer {
 	height: 200px;
-	background: $lightgrey;
+	background: $headergrey;
 	bottom: 0;
 	position: absolute;
 	width: 100%;
 	ul {
 		@include span-columns(2);
-		float: left;
-		margin: 65px 0 0 0;
+		margin-top: 55px;
+		li {
+			color: $grey;
+			margin-bottom: 0.5em;
+			font-size: 14px;
+			font-weight: $light;
+		}
 	}
 
 	#copyright {
 		@include span-columns(8);
-		float: right;
 		text-align: right;
 	}
 }
