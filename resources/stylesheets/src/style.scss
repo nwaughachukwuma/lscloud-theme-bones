@@ -63,7 +63,7 @@ a {
 	text-decoration: none;
 	color: $black;
 	&:hover {
-		color: $action-color;
+		color: $link;
 	}
 }
 
@@ -87,7 +87,7 @@ ul {
 		color: $white;
 		font-weight: $bold;
 		&:hover {
-			color: $link;
+			color: $action-color;
 		}
 	}
 }

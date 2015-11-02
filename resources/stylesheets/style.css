@@ -33,7 +33,7 @@ a {
   text-decoration: none;
   color: #4a4a4a; }
   a:hover {
-    color: #F0C332; }
+    color: #0087C8; }
 
 p {
   font-size: 1.125em;
@@ -52,7 +52,7 @@ ul {
     color: #fff;
     font-weight: 500; }
     #cart-nav-link a:hover {
-      color: #0087C8; }
+      color: #F0C332; }
 
 .button {
   border: 0;

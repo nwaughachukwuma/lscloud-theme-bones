@@ -13,8 +13,9 @@ body {
 	@include outer-container;
 }
 .fill-parent {
-	@include fill-parent;
-	border: 1px solid #9B9B9B;
+	@include span-columns(12);
+  margin-top: 3em;
+  margin-bottom: 2em;
 }
 // Header
 header {
