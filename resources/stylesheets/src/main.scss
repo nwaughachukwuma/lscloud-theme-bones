@@ -14,8 +14,7 @@ body {
 }
 .fill-parent {
 	@include span-columns(12);
-  margin-top: 3em;
-  margin-bottom: 2em;
+	@include omega();
 }
 // Header
 header {
@@ -88,7 +87,6 @@ nav {
 // Shop Page
 .product {
 	@include span-columns(4);
-
 	figure {
 		text-align: center;
 		img {
@@ -104,29 +102,50 @@ nav {
 }
 
 // Product page
-#product-form {
-	@include span-columns(5);
-	.product-quantity {
-		@include span-columns(1 of 6);
-		height: 43px;
-		text-align: center;
+.product-wrap {
+	#product-form {
+		@include span-columns(5);
+		.product-quantity {
+			@include span-columns(1 of 6);
+			height: 43px;
+			text-align: center;
+		}
+		.product-add {
+			@include span-columns(5 of 6);
+			@include omega();
+			text-align: center;
+		}
+		.product-extras + div {
+			 margin-right: 0;
+		}
+		.product-attributes {
+			margin-bottom: 1em;
+			h2 {
+				display: inline-block;
+				font-size: $small;
+			}
+			h3 {
+				display: inline;
+			}
+		}
 	}
-	.product-add {
-		@include span-columns(5 of 6);
-		@include omega();
-		text-align: center;
+	hr {
+	  margin-top: 3em;
+		margin-bottom: 2em;
 	}
 }
+
 .product-extras {
 	@include span-columns(3 of 6);
-	margin-right: 0;
 	img {
 		display: block;
+		border: 1px solid $lightgrey;
 	}
 	label {
 		display: inline-block;
 	}
 }
+
 .product-image-grid {
 	@include span-columns(6);
 	@include shift(1);

@@ -184,8 +184,7 @@ body {
   display: block;
   margin-right: 1.69492%;
   width: 100%;
-  margin-top: 3em;
-  margin-bottom: 2em; }
+  margin-right: 0; }
   .fill-parent:last-child {
     margin-right: 0; }
 
@@ -295,42 +294,55 @@ nav {
 .product-information {
   padding: 0 10px; }
 
-#product-form {
+.product-wrap #product-form {
   float: left;
   display: block;
   margin-right: 1.69492%;
   width: 40.67797%; }
-  #product-form:last-child {
+  .product-wrap #product-form:last-child {
     margin-right: 0; }
-  #product-form .product-quantity {
+  .product-wrap #product-form .product-quantity {
     float: left;
     display: block;
     margin-right: 3.44828%;
     width: 13.7931%;
     height: 43px;
     text-align: center; }
-    #product-form .product-quantity:last-child {
+    .product-wrap #product-form .product-quantity:last-child {
       margin-right: 0; }
-  #product-form .product-add {
+  .product-wrap #product-form .product-add {
     float: left;
     display: block;
     margin-right: 3.44828%;
     width: 82.75862%;
     margin-right: 0;
     text-align: center; }
-    #product-form .product-add:last-child {
+    .product-wrap #product-form .product-add:last-child {
       margin-right: 0; }
+  .product-wrap #product-form .product-extras + div {
+    margin-right: 0; }
+  .product-wrap #product-form .product-attributes {
+    margin-bottom: 1em; }
+    .product-wrap #product-form .product-attributes h2 {
+      display: inline-block;
+      font-size: 1em; }
+    .product-wrap #product-form .product-attributes h3 {
+      display: inline; }
+
+.product-wrap hr {
+  margin-top: 3em;
+  margin-bottom: 2em; }
 
 .product-extras {
   float: left;
   display: block;
   margin-right: 3.44828%;
-  width: 48.27586%;
-  margin-right: 0; }
+  width: 48.27586%; }
   .product-extras:last-child {
     margin-right: 0; }
   .product-extras img {
-    display: block; }
+    display: block;
+    border: 1px solid rgba(155, 155, 155, 0.3); }
   .product-extras label {
     display: inline-block; }
 

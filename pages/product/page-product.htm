@@ -11,15 +11,15 @@ url: '/product/:urlName'
   {% if product %}
   {% set on_sale = product.onSale %}
 
-      <div class="wrapper" itemscope itemtype="http://schema.org/Product">
+      <div class="wrapper product-wrap" itemscope itemtype="http://schema.org/Product">
         <div id="product-form">
-          <h1>{{ page.title }}</h1>
+          <h1 class="fill-parent">{{ page.title }}</h1>
           <meta itemprop="name" content="{{ product.name }}" />
           <meta itemprop="sku" content="{{ product.sku }}" />
           <link itemprop="url" href="{{ '/product/' ~ product.url_name }}" />
 
           <!-- product cost -->
-          <h2 class="cost">
+          <h2 class="fill-parent">
             {% if on_sale %}
             <span class="oldprice">{{ product.fullPrice|currency }}</span>
             {% endif %}
@@ -42,14 +42,13 @@ url: '/product/:urlName'
 
           <!-- product attributes -->
           {% if product.productAttributes.count %}
-            <table class="attributes">
+            <div class="product-attributes">
               {% for attribute in product.productAttributes %}
-                <tr>
-                  <th>{{ attribute.name }}</th>
-                  <td>{{ attribute.value }}</td>
-                </tr>
+                  <h2>{{ attribute.name }}</h2>
+                  <h3>{{ attribute.value }}</h3>
+                  <br />
               {% endfor %}
-            </table>
+            </div>
           {% endif %}
 
           <!-- product options -->
@@ -120,7 +119,7 @@ url: '/product/:urlName'
         <hr class="fill-parent">
 
         <!-- product details -->
-        <h1>Product Details</h1>
+        <h1 class="fill-parent">Product Details</h1>
         <div class="product-description" itemprop="description">
           <h3>{{ product.description|unescape }}</h3>
         </div>
@@ -128,7 +127,7 @@ url: '/product/:urlName'
         <!-- related products -->
         {% if product.related.count %}
         <hr class="fill-parent">
-        <h1>You Might be Into These</h1>
+        <h1 class="fill-parent">You Might be Into These</h1>
           {% for product in product.related|slice(0, 4) %}
           <div class="product-related">
             <a href="{{ page_url }}"><img itemprop="image" src="{{ product.images.first.thumbnail(280, 280)|default('http://placehold.it/280x280') }}" width="280" height="280" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
