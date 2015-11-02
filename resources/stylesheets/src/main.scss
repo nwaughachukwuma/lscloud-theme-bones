@@ -50,6 +50,7 @@ nav {
   h1 {
   	color: white;
   	padding: 174px;
+  	font-size: $large;
   }
 }
 // Body
@@ -79,6 +80,9 @@ nav {
 }
 .product-featured {
 	@include span-columns(3);
+	img {
+		border: 1px solid $lightgrey;
+	}
 }
 // Shop Page
 .product {

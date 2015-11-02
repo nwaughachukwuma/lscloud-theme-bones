@@ -31,12 +31,12 @@ url: /
       <h1>Check These Out</h1>
 
       {% set featuredCollection = 'featured'|collection %}
-        {% paginate featuredCollection.products by 8 %}
+        {% paginate featuredCollection.products by 4 %}
             {% for product in pagination.items %}
             {% set on_sale = product.onSale %}
             <div class="product-featured">
               <a href="/product/{{ product.url_name }}">
-                <img src="{{ product.images.first.thumbnail('auto', 'auto', {crop: true}) }}" >
+                <img src="{{ product.images.first.thumbnail('280', '280') }}" >
               </a>
               <p>
                 <a href="/product/{{ product.url_name }}" class="btn btn-default">
@@ -48,7 +48,6 @@ url: /
               </p>
             </div>
             {% endfor %}
-        {% navigation %}
       {% endpaginate %}
     </div>
   </section>

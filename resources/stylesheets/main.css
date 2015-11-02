@@ -229,7 +229,8 @@ nav {
     margin-right: 0; }
   .banner h1 {
     color: white;
-    padding: 174px; }
+    padding: 174px;
+    font-size: 3.15733em; }
 
 #featured-content {
   text-align: center;
@@ -267,6 +268,8 @@ nav {
   width: 23.72881%; }
   .product-featured:last-child {
     margin-right: 0; }
+  .product-featured img {
+    border: 1px solid rgba(155, 155, 155, 0.3); }
 
 .product {
   float: left;
