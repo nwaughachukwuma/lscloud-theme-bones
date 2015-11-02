@@ -23,7 +23,7 @@ header {
 	margin-bottom: 83px;
 }
 section {
-	@include span-columns(12);
+	@include outer-container;
 }
 nav {
 	@include span-columns(12);
@@ -46,6 +46,7 @@ nav {
   background: url(../images/bones-banner.png) no-repeat;
   height: 400px;
   text-align: center;
+  background-size: cover;
   h1 {
   	color: white;
   	padding: 174px;
@@ -53,23 +54,22 @@ nav {
 }
 // Body
 #featured-content {
-	// @include span-columns(12);
-	@include outer-container;
 	text-align: center;
-
+	padding: 3em 0 3em 0;
+	background-color: $headergrey;
+	max-width: none;
 	h1 {
-		margin: 50px 0 60px 0;
+		margin-bottom: 1em;
 	}
-	
 	p {
-		@include shift(2);
-		@include span-columns(8);
+		@include shift(3);
+		@include span-columns(6);
 		@include omega;
 	}
-
 	.button {
-		@include shift(4);
-		@include span-columns(4);
+		@include shift(5);
+		@include span-columns(2);
+		margin-top: 2em;
 	}
 }
 #featured-collection {

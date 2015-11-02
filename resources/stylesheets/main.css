@@ -189,12 +189,13 @@ header {
   margin-bottom: 83px; }
 
 section {
-  float: left;
-  display: block;
-  margin-right: 1.69492%;
-  width: 100%; }
-  section:last-child {
-    margin-right: 0; }
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  section::after {
+    clear: both;
+    content: "";
+    display: table; }
 
 nav {
   float: left;
@@ -222,7 +223,8 @@ nav {
   width: 100%;
   background: url(../images/bones-banner.png) no-repeat;
   height: 400px;
-  text-align: center; }
+  text-align: center;
+  background-size: cover; }
   .banner:last-child {
     margin-right: 0; }
   .banner h1 {
@@ -230,31 +232,28 @@ nav {
     padding: 174px; }
 
 #featured-content {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center; }
-  #featured-content::after {
-    clear: both;
-    content: "";
-    display: table; }
+  text-align: center;
+  padding: 3em 0 3em 0;
+  background-color: #F9F9F9;
+  max-width: none; }
   #featured-content h1 {
-    margin: 50px 0 60px 0; }
+    margin-bottom: 1em; }
   #featured-content p {
-    margin-left: 16.94915%;
+    margin-left: 25.42373%;
     float: left;
     display: block;
     margin-right: 1.69492%;
-    width: 66.10169%;
+    width: 49.15254%;
     margin-right: 0; }
     #featured-content p:last-child {
       margin-right: 0; }
   #featured-content .button {
-    margin-left: 33.89831%;
+    margin-left: 42.37288%;
     float: left;
     display: block;
     margin-right: 1.69492%;
-    width: 32.20339%; }
+    width: 15.25424%;
+    margin-top: 2em; }
     #featured-content .button:last-child {
       margin-right: 0; }
 
