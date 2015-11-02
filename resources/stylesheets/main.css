@@ -299,9 +299,27 @@ nav {
   float: left;
   display: block;
   margin-right: 1.69492%;
-  width: 49.15254%; }
+  width: 40.67797%; }
   #product-form:last-child {
     margin-right: 0; }
+  #product-form .product-quantity {
+    float: left;
+    display: block;
+    margin-right: 3.44828%;
+    width: 13.7931%;
+    height: 43px;
+    text-align: center; }
+    #product-form .product-quantity:last-child {
+      margin-right: 0; }
+  #product-form .product-add {
+    float: left;
+    display: block;
+    margin-right: 3.44828%;
+    width: 82.75862%;
+    margin-right: 0;
+    text-align: center; }
+    #product-form .product-add:last-child {
+      margin-right: 0; }
 
 .product-extras {
   float: left;
@@ -321,9 +339,12 @@ nav {
   display: block;
   margin-right: 1.69492%;
   width: 49.15254%;
+  margin-left: 8.47458%;
   margin-right: 0; }
   .product-image-grid:last-child {
     margin-right: 0; }
+  .product-image-grid img {
+    border: 1px solid rgba(155, 155, 155, 0.3); }
 
 .product-description {
   float: left;

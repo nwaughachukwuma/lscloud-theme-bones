@@ -81,15 +81,18 @@ url: '/product/:urlName'
 
           {% endif %}
           <!-- quantity & add-to-cart -->
-          <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
           {% if product.enabled %}
             {% if not product.isOutOfStock() or product.allow_preorder %}
+            <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
               <link itemprop="availability" href="http://schema.org/InStock" />
               <meta itemprop="priceCurrency" content="USD" /> <!-- Should get currency code through variable -->
               <meta itemprop="price" content="{{ product.price }}" />
-              <label>Quantity <input type="text" value="{{ quantity|default("1") }}" name="quantity"></label>
-              <input type="hidden" name="productId" value="{{ product.id }}"/>
-              <a class="button next" href="#" data-ajax-handler="shop:onAddToCart" data-ajax-update="#mini-cart=shop-minicart">Add to Cart</a>
+            </div>
+            <label>Quantity</label>
+            <input class="product-quantity" type="text" value="{{ quantity|default("1") }}" name="quantity">
+            <input type="hidden" name="productId" value="{{ product.id }}"/>
+            <a class="button next product-add" href="#" data-ajax-handler="shop:onAddToCart" data-ajax-update="#mini-cart=shop-minicart">Add to Cart</a>
             {% else %}
               <p>
               This product is temporarily unavailable.
@@ -102,7 +105,7 @@ url: '/product/:urlName'
             <link itemprop="availability" href="http://schema.org/OutOfStock"/>
             <h2>This product is not available.</h2>
           {% endif %}
-          </div>
+
           <time itemprop="releaseDate" datetime="{{ product.om('expected_availability_date', posted_options).format('%x') }}"></time>
 
         </div>
