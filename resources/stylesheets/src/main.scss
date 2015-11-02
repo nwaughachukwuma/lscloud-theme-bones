@@ -28,7 +28,6 @@ section {
 }
 nav {
 	@include span-columns(12);
-	height: 70px;
 	ul {
 		float: right;
 		margin: 0;
@@ -37,11 +36,12 @@ nav {
 
 	li {
 		display: inline-block;
-		padding: 20px 25px;
+		padding: $base-spacing;
 	}
 }
 #logo {
-		float: left;
+	float: left;
+	padding: 13px;
 }
 // Body
 #featured-content {

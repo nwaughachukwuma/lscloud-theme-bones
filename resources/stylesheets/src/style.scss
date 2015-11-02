@@ -19,6 +19,7 @@ $progress-green: #55A537;
 $thin: 100;
 $light: 200;
 $normal: 400;
+$bold: 500;
 $heavy: 700;
 // --- BUTTONS ---
 $action-color: #F0C332;
@@ -75,19 +76,16 @@ ul {
 	list-style: none;
 	li {
 		font-size: $small;
-		font-weight: $normal;
+		font-weight: $light;
 		color: $black;
 	}
 }
 
 #cart-nav-link {
 	background: $grey;
-	width: 200px;
-  height: 70px;
-	padding: 20px 45px;
-
 	a {
 		color: $white;
+		font-weight: $bold;
 	}
 }
 // Buttons
