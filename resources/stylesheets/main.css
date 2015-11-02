@@ -47,7 +47,7 @@ a {
   text-decoration: none;
   color: #4a4a4a; }
   a:hover {
-    color: #0087C8; }
+    color: #F0C332; }
 
 p {
   font-size: 1.125em;
@@ -192,8 +192,7 @@ section {
   float: left;
   display: block;
   margin-right: 1.69492%;
-  width: 100%;
-  max-width: 1200px; }
+  width: 100%; }
   section:last-child {
     margin-right: 0; }
 
@@ -215,6 +214,20 @@ nav {
 #logo {
   float: left;
   padding: 13px; }
+
+.banner {
+  float: left;
+  display: block;
+  margin-right: 1.69492%;
+  width: 100%;
+  background: url(../images/bones-banner.png) no-repeat;
+  height: 400px;
+  text-align: center; }
+  .banner:last-child {
+    margin-right: 0; }
+  .banner h1 {
+    color: white;
+    padding: 174px; }
 
 #featured-content {
   max-width: 1200px;

@@ -24,7 +24,6 @@ header {
 }
 section {
 	@include span-columns(12);
-	max-width: 1200px;
 }
 nav {
 	@include span-columns(12);
@@ -33,7 +32,6 @@ nav {
 		margin: 0;
 		padding: 0;
 	}
-
 	li {
 		display: inline-block;
 		padding: $base-spacing;
@@ -42,6 +40,16 @@ nav {
 #logo {
 	float: left;
 	padding: 13px;
+}
+.banner {
+	@include span-columns(12);
+  background: url(../images/bones-banner.png) no-repeat;
+  height: 400px;
+  text-align: center;
+  h1 {
+  	color: white;
+  	padding: 174px;
+  }
 }
 // Body
 #featured-content {
