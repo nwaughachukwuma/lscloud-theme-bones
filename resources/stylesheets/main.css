@@ -881,7 +881,8 @@ footer {
     display: block;
     margin-right: 1.69492%;
     width: 66.10169%;
-    text-align: right; }
+    text-align: right;
+    margin-top: 70px; }
     footer #copyright:last-child {
       margin-right: 0; }
 

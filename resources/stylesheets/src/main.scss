@@ -512,10 +512,10 @@ footer {
 			font-weight: $light;
 		}
 	}
-
 	#copyright {
 		@include span-columns(8);
 		text-align: right;
+		margin-top: 70px;
 	}
 }
 // Sign-in
