@@ -4,6 +4,10 @@
 @import "neat";
 @import "style";
 
+body {
+	position: relative;
+  min-height: 100vh;
+}
 .wrapper {
 	@include outer-container;
 }
@@ -72,6 +76,9 @@ nav {
 
 	figure {
 		text-align: center;
+		img {
+			border: 1px solid $lightgrey;
+		}
 	}
 }
 .product:nth-child(3n+3) {
@@ -477,7 +484,9 @@ nav {
 footer {
 	height: 200px;
 	background: $lightgrey;
-
+	bottom: 0;
+	position: absolute;
+	width: 100%;
 	ul {
 		@include span-columns(2);
 		float: left;
