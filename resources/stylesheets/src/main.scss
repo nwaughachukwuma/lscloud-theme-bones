@@ -452,8 +452,8 @@ nav {
 		}
 	}
 	.receipt-totals {
-		@include span-columns(4);
-		@include shift(8);
+		@include span-columns(3);
+		@include shift(9);
 		.receipt-totals-description {
 			@include span-columns(2 of 4);
 		}

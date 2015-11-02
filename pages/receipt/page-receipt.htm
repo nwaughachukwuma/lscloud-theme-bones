@@ -11,7 +11,7 @@ url: '/receipt/:paymenthash'
   <h1>Thanks For Your Order!</h1>
   <p>You're order number is <strong>{{ invoice.order.number }}</strong>. Look for a confirmation email soon. Questions?</p>
   <p>Customer Service: support@lemonstand.com or 1-855-332-0555</p>
-  <table class="receipt-billing-info">
+<!--   <table class="receipt-billing-info">
     <tr>
       <td>Delivery Address</td>
       <td>Delivery Method</td>
@@ -40,7 +40,7 @@ url: '/receipt/:paymenthash'
       <td>{{ invoice.shippingInfo.firstName }}</td>
       <td>{{ payment.guessPaymentMethod().name }}</td>
     </tr>
-  </table>
+  </table> -->
   
   <p><strong>Order Date: </strong> {{ invoice.order.created_at.format('M jS, Y') }}</p>
   <p><strong>Payment method: </strong> {{ payment.guessPaymentMethod().name }}</p>
