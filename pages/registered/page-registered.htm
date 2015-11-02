@@ -1,10 +1,11 @@
 ---
-template: default
+template: main
 protocol: all
 published: true
 name: Registered
 url: /registered
 ---
+<div class="wrapper">
 <h1>{{ page.title }}</h1>
 <p>Thank you for registering, a confirmation email has been sent to your email address.</p>
 {% if customer %}
@@ -12,3 +13,4 @@ url: /registered
 {% else %}
   <p>Please <a href="{{ root_url('/sign-in') }}">sign in</a> using your email and password.</p>
 {% endif %}
+</div>

@@ -1,11 +1,12 @@
 ---
 action: 'shop:orders'
-template: default
+template: main
 protocol: all
 published: true
 name: Orders
 url: /orders
 ---
+<div class="wrapper">  
 <h1>{{ page.title }}</h1>
 {% if not orders or not orders.count %}
   <p class="flash info">Orders not found</p>
@@ -28,3 +29,4 @@ url: /orders
     {% endfor %}
   </table>
 {% endif %}
+</div>

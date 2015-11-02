@@ -1,10 +1,11 @@
 ---
 action: 'shop:order'
-template: default
+template: main
 published: true
 name: Order
 url: '/order/:orderId'
 ---
+<div class="wrapper">
 <h1>{{ page.title }}</h1>
 {% if order %}
 
@@ -63,3 +64,4 @@ url: '/order/:orderId'
 {% else %}
   <p class="flash error">Order not found</p>
 {% endif %}
+</div>

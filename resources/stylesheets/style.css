@@ -51,6 +51,8 @@ ul {
   #cart-nav-link a {
     color: #fff;
     font-weight: 500; }
+    #cart-nav-link a:hover {
+      color: #0087C8; }
 
 .button {
   border: 0;
