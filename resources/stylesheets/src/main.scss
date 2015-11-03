@@ -215,12 +215,17 @@ nav {
 		}
 		.cart-quantity {
 			@include span-columns(2);
+			line-height: 63px;
 			input {
 				width: 79px;
 			}
 		}
 		.cart-remove {
 			@include span-columns(1);
+			line-height: 63px;
+			h4 {
+				margin: 0;
+			}
 		}
 		.cart-subtotal {
 			margin-bottom: 1em;

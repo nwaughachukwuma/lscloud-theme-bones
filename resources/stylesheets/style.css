@@ -46,6 +46,14 @@ ul {
     font-weight: 200;
     color: #4a4a4a; }
 
+span.error {
+  color: #D20606;
+  font-size: 1em;
+  font-weight: 400;
+  margin-top: -0.75em;
+  margin-bottom: 1em;
+  display: block; }
+
 #cart-nav-link {
   background: #9b9b9b; }
   #cart-nav-link a {

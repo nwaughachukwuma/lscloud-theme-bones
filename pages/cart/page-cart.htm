@@ -36,7 +36,7 @@ url: /cart
 		</tr>
 		<tr><td><hr></td></tr>
 		{% endfor %}
-		<tr><td><input type="text" id="coupon" name="coupon" value="{{ coupon_code }}" placeholder="Coupon code" /><a href="#" data-ajax-handler="shop:cart" data-ajax-update="#cart-content=shop-cart-content, #mini-cart=shop-minicart"> Update cart</a></td></tr>
+		<tr><td><input type="text" id="coupon" name="coupon" value="{{ coupon_code }}" placeholder="Coupon code" /><a href="#" data-ajax-handler="shop:cart" data-ajax-update="#cart-content=shop-cart-content, #mini-cart=shop-minicart">&nbsp; &#8635; Update cart</a></td></tr>
 		<tr><td class="cart-subtotal"><h2>Subtotal: <strong>{{ totals.total|currency }}</strong></h2></td></tr>
 		<br>
 		<tr><td>
