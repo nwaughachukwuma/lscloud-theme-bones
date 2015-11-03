@@ -7,9 +7,11 @@ name: Shop
 url: '/shop/:page?'
 ---
 <div class="wrapper">
+
 {{ open_form() }}
-	{% paginate products by 10 %}
+	{% paginate products by 4 %}
 	<div itemtype="http://schema.org/ItemList">
+	<h1>{{ page.title }}</h1>
 		<ul>
 			{% for product in pagination.items %}
 
@@ -36,13 +38,16 @@ url: '/shop/:page?'
 						{% else %}
 						<link itemprop="availability" href="http://schema.org/OutOfStock"/>
 						{% endif %}
+						</div>
 					</div>
 				</li>
 				</div>
 			{% endfor %}
 		</ul>
 	</div>
-	{% navigation %}
+	<div class="nav-wrap">
+		{% navigation %}		
+	</div>
 
 	{% endpaginate %}
 {{ close_form() }}

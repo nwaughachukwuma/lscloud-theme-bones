@@ -276,6 +276,15 @@ nav {
   .product-featured img {
     border: 1px solid rgba(155, 155, 155, 0.3); }
 
+.nav-wrap ul {
+  clear: both;
+  text-align: center; }
+  .nav-wrap ul li {
+    display: inline;
+    padding: 1em; }
+  .nav-wrap ul .active a {
+    color: #9b9b9b; }
+
 .product {
   float: left;
   display: block;

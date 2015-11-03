@@ -85,6 +85,24 @@ nav {
 	}
 }
 // Shop Page
+.nav-wrap {
+	ul {
+		clear: both;
+		text-align: center;
+		li {
+			display: inline;
+	    padding: 1em;
+	    a {
+	    	// color: $grey;
+	    }
+		}
+		.active {
+			a {
+				color: $grey;
+			}
+		}
+	}	
+}
 .product {
 	@include span-columns(4);
 	figure {
