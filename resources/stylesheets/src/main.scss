@@ -286,12 +286,12 @@ nav {
 	input:last-child {
 		margin-top: 1em;
 	}
-	h4 {
-		font-style: italic;
-		margin-top: -37px;
-		margin-right: 1em;
-		text-align: right;
-	}
+
+}
+.forgotpass {
+	font-style: italic;
+	margin: -37px 1em 24px 0;
+	text-align: right;
 }
 .checkout-start-guest {
 	@include span-columns(5);
@@ -574,14 +574,14 @@ footer {
 }
 // Sign-in
 .login-register-wrap {
-		@include outer-container;
-		section {
-				@include span-columns(6);
-				h3 { @include fill-parent; }
-				label { @include fill-parent; }
-				input { @include fill-parent; }
-				.button { width: auto; }
-		}
+	@include outer-container;
+	section {
+		@include span-columns(6);
+		h3 { @include fill-parent; }
+		label { @include fill-parent; }
+		input { @include fill-parent; }
+		.button { width: auto; margin-top: $small-spacing;}
+	}
 }
 // Breadcrumbs
 .breadcrumbs {

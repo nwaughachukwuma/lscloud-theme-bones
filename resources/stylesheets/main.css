@@ -516,11 +516,11 @@ nav {
     width: 100%; }
   .checkout-start-login input:last-child {
     margin-top: 1em; }
-  .checkout-start-login h4 {
-    font-style: italic;
-    margin-top: -37px;
-    margin-right: 1em;
-    text-align: right; }
+
+.forgotpass {
+  font-style: italic;
+  margin: -37px 1em 24px 0;
+  text-align: right; }
 
 .checkout-start-guest {
   float: left;
@@ -959,7 +959,8 @@ footer {
     .login-register-wrap section input {
       width: 100%; }
     .login-register-wrap section .button {
-      width: auto; }
+      width: auto;
+      margin-top: 0.75em; }
 
 .breadcrumbs {
   float: left;
