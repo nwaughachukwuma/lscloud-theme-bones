@@ -505,6 +505,14 @@ nav {
   #checkout-progress tr:nth-child(2) .grey {
     color: #9b9b9b; }
 
+span.error {
+  color: #D20606;
+  font-size: .75em;
+  font-weight: 400;
+  margin-top: -.75em;
+  margin-bottom: 1em;
+  display: block; }
+
 .checkout-start-login {
   float: left;
   display: block;

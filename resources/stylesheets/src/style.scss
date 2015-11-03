@@ -15,6 +15,7 @@ $white: #fff;
 $link: #0087C8;
 $base-border-color: #DDD;
 $progress-green: #55A537;
+$red: #D20606;
 // Weights
 $thin: 100;
 $light: 200;
@@ -80,7 +81,14 @@ ul {
 		color: $black;
 	}
 }
-
+span.error {
+	color: $red;
+	font-size: $small;
+	font-weight: $normal;
+	margin-top: -$small-spacing;
+	margin-bottom: 1em;
+	display: block;
+}
 #cart-nav-link {
 	background: $grey;
 	a {
