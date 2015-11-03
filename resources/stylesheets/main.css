@@ -276,14 +276,23 @@ nav {
   .product-featured img {
     border: 1px solid rgba(155, 155, 155, 0.3); }
 
-.nav-wrap ul {
-  clear: both;
-  text-align: center; }
-  .nav-wrap ul li {
-    display: inline;
-    padding: 1em; }
-  .nav-wrap ul .active a {
-    color: #9b9b9b; }
+.nav-wrap {
+  float: left;
+  display: block;
+  margin-right: 1.69492%;
+  width: 100%;
+  margin-right: 0;
+  margin-top: 1.5em; }
+  .nav-wrap:last-child {
+    margin-right: 0; }
+  .nav-wrap ul {
+    clear: both;
+    text-align: center; }
+    .nav-wrap ul li {
+      display: inline;
+      padding: 1em; }
+    .nav-wrap ul .active a {
+      color: #9b9b9b; }
 
 .product {
   float: left;

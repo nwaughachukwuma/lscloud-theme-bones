@@ -86,6 +86,9 @@ nav {
 }
 // Shop Page
 .nav-wrap {
+	@include span-columns(12);
+	@include omega();
+	margin-top: $base-spacing;
 	ul {
 		clear: both;
 		text-align: center;
