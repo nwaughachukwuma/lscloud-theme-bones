@@ -155,6 +155,10 @@ input[type="radio"] {
   display: inline;
   margin-right: 0.375em; }
 
+.oldprice {
+  text-decoration: line-through;
+  font-size: 1em; }
+
 .product-featured h3 {
   font-weight: 700;
   margin: 0.5em 0 0.5em 0; }
@@ -163,9 +167,6 @@ input[type="radio"] {
   color: #9b9b9b;
   font-weight: 200;
   display: inline; }
-
-.oldprice {
-  text-decoration: line-through; }
 
 body {
   position: relative;
@@ -203,6 +204,32 @@ section {
     clear: both;
     content: "";
     display: table; }
+  section #home-details {
+    float: left;
+    display: block;
+    margin-right: 1.69492%;
+    width: 49.15254%; }
+    section #home-details:last-child {
+      margin-right: 0; }
+  section #featured-carousel {
+    float: left;
+    display: block;
+    margin-right: 1.69492%;
+    width: 49.15254%; }
+    section #featured-carousel:last-child {
+      margin-right: 0; }
+    section #featured-carousel img {
+      width: 100%; }
+    section #featured-carousel .product-carousel h3 {
+      font-weight: 700;
+      margin: 0.5em 0 0.5em 0; }
+    section #featured-carousel .product-carousel h2 {
+      color: #9b9b9b;
+      font-weight: 200;
+      display: inline; }
+    section #featured-carousel .product-carousel img {
+      width: 100%;
+      border: 1px solid rgba(155, 155, 155, 0.3); }
 
 nav {
   float: left;
@@ -222,6 +249,9 @@ nav {
 #logo {
   float: left;
   padding: 13px; }
+
+.home-banner {
+  max-width: none; }
 
 .banner {
   float: left;

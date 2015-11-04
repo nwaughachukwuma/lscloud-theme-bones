@@ -141,6 +141,10 @@ input[type="radio"] {
   display: inline;
   margin-right: 0.375em; }
 
+.oldprice {
+  text-decoration: line-through;
+  font-size: 1em; }
+
 .product-featured h3 {
   font-weight: 700;
   margin: 0.5em 0 0.5em 0; }
@@ -149,6 +153,3 @@ input[type="radio"] {
   color: #9b9b9b;
   font-weight: 200;
   display: inline; }
-
-.oldprice {
-  text-decoration: line-through; }

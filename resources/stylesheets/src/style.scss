@@ -186,6 +186,10 @@ input[type="radio"] {
   margin-right: $small-spacing / 2;
 }
 // Featured Products
+.oldprice {
+	text-decoration: line-through;
+	font-size: $small;
+}
 .product-featured {
 	h3 {
     font-weight: $heavy;
@@ -196,7 +200,4 @@ input[type="radio"] {
     font-weight: $light;
     display: inline;
 	}
-}
-.oldprice {
-	text-decoration: line-through;
 }

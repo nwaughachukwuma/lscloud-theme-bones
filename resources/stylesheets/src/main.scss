@@ -24,6 +24,30 @@ header {
 }
 section {
 	@include outer-container;
+	#home-details {
+		@include span-columns(6);
+	}
+	#featured-carousel {
+		@include span-columns(6);
+		img {
+			width: 100%;
+		}
+		.product-carousel {
+			h3 {
+		    font-weight: $heavy;
+		    margin: 0.5em 0 0.5em 0;
+			}
+			h2 {
+		    color: $grey;
+		    font-weight: $light;
+		    display: inline;
+			}
+			img {
+				width: 100%;
+				border: 1px solid $lightgrey;
+			}
+		}
+	}
 }
 nav {
 	@include span-columns(12);
@@ -40,6 +64,9 @@ nav {
 #logo {
 	float: left;
 	padding: 13px;
+}
+.home-banner {
+	max-width: none;
 }
 .banner {
 	@include span-columns(12);
