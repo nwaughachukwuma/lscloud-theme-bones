@@ -8,31 +8,36 @@ url: /
 ---
 <section>
 	<div id="home-details">
-		<h1>Product carousel</h1>
+		<h1>Product carousel IS A LITTLE BITCH</h1>
 		
 	</div>
-	<div id="featured-carousel">
+	<div class="carousel-wrap">
+		<div id="featured-carousel">
 		{% set featuredCollection = 'carousel'|collection %}
 		{% paginate featuredCollection.products by 4 %}
+	    <ul>
 			{% for product in pagination.items %}
 				{% set on_sale = product.onSale %}
-				<div class="product-carousel">
-				<figure>
-				  <a href="{{ page_url }}"><img src="{{ product.images.first.thumbnail('auto', 'auto')|default('http://placehold.it/580x352') }}" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
-				  <figcaption>
-					  <h3><a href="/product/{{ product.url_name }}" class="btn btn-default">{{ product.name }}</a></h3>
-						<h2 class="price">{{ product.price|currency }}</h2>
-						{% if on_sale %}
-							<h2 class="oldprice">{{ product.fullPrice|currency }}</h2>
-						{% endif %}
-					</figcaption>
-				</figure>
-					
-					
-				</div>
+
+        <li class="product-carousel">
+					<figure>
+					  <a href="{{ page_url }}"><img src="{{ product.images.first.thumbnail('auto', 'auto')|default('http://placehold.it/580x352') }}" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
+					  <figcaption>
+						  <h3><a href="/product/{{ product.url_name }}" class="btn btn-default">{{ product.name }}</a></h3>
+							<h2 class="price">{{ product.price|currency }}</h2>
+							{% if on_sale %}
+								<h2 class="oldprice">{{ product.fullPrice|currency }}</h2>
+							{% endif %}
+						</figcaption>
+					</figure>
+        </li>
+
 			{% endfor %}
+	    </ul>
 		{% endpaginate %}		
 	</div>
+	</div>
+	
 </section>
 <section class="home-banner">
 	<div class="banner">

@@ -5,6 +5,17 @@
 (function ($) {
 
   $(document).ready(function() {
+    //
+    // Adds unslider to carousel
+    //
+    $('#featured-carousel').unslider({
+      speed: 500,
+      delay: 3500,
+      keys: true,
+      dots: true,
+      fluid: true 
+    });
+    $('#featured-carousel').height('initial');
     // 
     // Handle thumbnail clicks on the Product page
     //

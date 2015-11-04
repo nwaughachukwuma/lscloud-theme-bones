@@ -4,6 +4,84 @@
 @import "neat";
 @import "style";
 
+
+#featured-carousel{
+  padding:0;
+}
+#featured-carousel ul{
+  list-style: none;
+  padding-left:0;
+}
+#featured-carousel ul li{
+  list-style: none;
+  margin:0 auto;
+  float:left;
+}
+#featured-carousel ul li img{
+  width:90%;
+  display:inline-block;
+  margin:0 auto;
+}
+.unslider-arrow{
+  position:absolute;
+  top:70px;
+  left:0;
+}
+.unslider-arrow:hover{
+  cursor:pointer;
+}
+#featured-carousel .next{
+  right:0;
+  text-align: right;
+}
+#loading-indicator{
+  z-index: 99999;
+}
+.list-group-item{
+  border:none;
+  border-top:1px solid #f1f1f1;
+}
+
+#featured-carousel .dots {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  padding-left:0;
+}
+#featured-carousel .dots li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+
+  width: 10px;
+  height: 10px;
+  line-height: 10px;
+  margin: 0 4px;
+
+  text-indent: -999em;
+  *text-indent: 0;
+
+  border: 2px solid;
+  border-color: tint($action-color, 50%);
+  border-radius: 6px;
+
+  cursor: pointer;
+  opacity: .9;
+
+  -webkit-transition: background .5s, opacity .5s;
+  -moz-transition: background .5s, opacity .5s;
+  transition: background .5s, opacity .5s;
+}
+#featured-carousel .dots li.active {
+  border: 2px solid $action-color;
+  opacity: 1;
+}
+
+
+
 body {
 	position: relative;
   min-height: 100vh;
@@ -27,21 +105,30 @@ section {
 	#home-details {
 		@include span-columns(6);
 	}
-	#featured-carousel {
+	.carousel-wrap {
 		@include span-columns(6);
-		.product-carousel {
-			h3 {
-		    font-weight: $heavy;
-		    margin: 0.5em 0 0.5em 0;
-			}
-			h2 {
-		    color: $grey;
-		    font-weight: $light;
-		    display: inline;
-			}
-			img {
-				width: 100%;
-				border: 1px solid $lightgrey;
+		#featured-carousel {
+			position: relative;
+			overflow: auto;
+			.product-carousel {
+				float: left;
+				h3 {
+			    font-weight: $heavy;
+			    margin: 0.5em 0 0.5em 0;
+				}
+				h2 {
+			    color: $grey;
+			    font-weight: $light;
+			    display: inline;
+				}
+				figure {
+					margin-bottom: $base-spacing;
+					img {
+						width: 100%;
+						height: auto;
+						border: 1px solid $lightgrey;
+					}
+				}
 			}
 		}
 	}
