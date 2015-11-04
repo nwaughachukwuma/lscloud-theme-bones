@@ -48,7 +48,7 @@
   text-align: center;
   left: 0;
   right: 0;
-  bottom: 20px;
+  bottom: 0;
   padding-left:0;
 }
 #featured-carousel .dots li {
@@ -77,6 +77,7 @@
 }
 #featured-carousel .dots li.active {
   border: 2px solid $action-color;
+  background: tint($action-color, 50%);
   opacity: 1;
 }
 
@@ -122,7 +123,7 @@ section {
 			    display: inline;
 				}
 				figure {
-					margin-bottom: $base-spacing;
+					margin-bottom: $base-spacing*2;
 					img {
 						width: 100%;
 						height: auto;

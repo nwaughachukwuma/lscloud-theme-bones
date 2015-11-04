@@ -15,7 +15,7 @@
       dots: true,
       fluid: true 
     });
-    $('#featured-carousel').height('initial');
+    $('#featured-carousel').height('auto');
     // 
     // Handle thumbnail clicks on the Product page
     //
