@@ -141,20 +141,14 @@ input[type="radio"] {
   display: inline;
   margin-right: 0.375em; }
 
-.product-featured p {
+.product-featured h3 {
+  font-weight: 700;
+  margin: 0.5em 0 0.5em 0; }
+
+.product-featured h2 {
   color: #9b9b9b;
-  font-size: 0.875em;
-  font-weight: 700; }
-
-.product-featured a {
-  color: #000000; }
-
-.price {
-  font-size: 1.125em;
-  font-weight: 200; }
+  font-weight: 200;
+  display: inline; }
 
 .oldprice {
-  text-decoration: line-through;
-  color: #9B9B9B;
-  font-size: 1.125em;
-  font-weight: 200; }
+  text-decoration: line-through; }
