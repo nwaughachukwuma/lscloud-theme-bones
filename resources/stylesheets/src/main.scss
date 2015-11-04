@@ -29,9 +29,6 @@ section {
 	}
 	#featured-carousel {
 		@include span-columns(6);
-		img {
-			width: 100%;
-		}
 		.product-carousel {
 			h3 {
 		    font-weight: $heavy;
