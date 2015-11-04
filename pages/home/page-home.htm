@@ -6,50 +6,42 @@ published: true
 name: Bones
 url: /
 ---
+<section>
+	<div id="featured-carousel">
+		<h1>Product carousel</h1>
+		<img src="http://placehold.it/960x150">
+	</div>
+</section>
+<section>
+	<div class="banner">
+		<h1>{{ theme.bannerText }}</h1>
+	</div>
+</section>
+<section id="featured-content">
+	<h1>How Does It Work?</h1>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</p>
+	<a class="button call-to-action" href="/shop">Shop Now</a>
+</section>
+<section>
+	<div id="featured-collection">
+		<h1>Check These Out</h1>
+		{% set featuredCollection = 'featured'|collection %}
+		{% paginate featuredCollection.products by 4 %}
+			{% for product in pagination.items %}
 
-  <section>
-    <div id="featured-carousel">
-      <h1>Product carousel</h1>
-      <img src="http://placehold.it/960x150">
-    </div>
-  </section>
+				{% set on_sale = product.onSale %}
+				<div class="product-featured">
+					<a href="/product/{{ product.url_name }}">
+						<img src="{{ product.images.first.thumbnail('280', '280') }}" >
+					</a>
+					<h3><a href="/product/{{ product.url_name }}" class="btn btn-default">{{ product.name }}</a></h3>
+					<h2 class="price">{{ product.price|currency }}</h2>
+					{% if on_sale %}
+						<h2 class="oldprice">{{ product.fullPrice|currency }}</h2>
+					{% endif %}
+				</div>
 
-  <section>
-    <div class="banner">
-      <h1>{{ theme.bannerText }}</h1>
-    </div>
-  </section>
-
-  <section id="featured-content">
-    <h1>How Does It Work?</h1>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</p>
-    <a class="button call-to-action" href="/shop">Shop Now</a>
-  </section>
-
-  <section>
-    <div id="featured-collection">
-      <h1>Check These Out</h1>
-
-      {% set featuredCollection = 'featured'|collection %}
-        {% paginate featuredCollection.products by 4 %}
-            {% for product in pagination.items %}
-            {% set on_sale = product.onSale %}
-            <div class="product-featured">
-              <a href="/product/{{ product.url_name }}">
-                <img src="{{ product.images.first.thumbnail('280', '280') }}" >
-              </a>
-              <p>
-                <a href="/product/{{ product.url_name }}" class="btn btn-default">
-                  {{ product.name }}</a><br>
-                   <span class="price">{{ product.price|currency }}</span>
-                     {% if on_sale %}
-                     <span class="oldprice">{{ product.fullPrice|currency }}</span>
-                     {% endif %}
-              </p>
-            </div>
-            {% endfor %}
-      {% endpaginate %}
-    </div>
-  </section>
-
-</div>
+			{% endfor %}
+		{% endpaginate %}
+	</div>
+</section>
