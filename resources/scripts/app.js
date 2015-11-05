@@ -137,6 +137,7 @@
             $('.rating > p').text( 'I love it' );
             $("#item_rating").val('5');
         }
+        console.log($('#item_rating').val());
     }); // END
     // Review Modal
     $(function() {

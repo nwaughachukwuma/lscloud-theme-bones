@@ -1,3 +1,14 @@
+<div class="wrapper">
+<div class="modal">
+  <label for="modal-1">
+    <div class="modal-trigger">Click for Modal</div>
+  </label>
+  <input class="modal-state" id="modal-1" type="checkbox" />
+  <div class="modal-fade-screen">
+    <div class="modal-inner">
+      <div class="modal-close" for="modal-1"></div>
+      <h1>Review {{ product.name }}</h1>
+
 {{ flash() }}
 {{ open_form({'data-ajax-handler': 'system:onSendMessage'}) }}
 
@@ -39,3 +50,8 @@
   <input type="hidden" name="fields[message_type]" value="review"/>
 
 {{ close_form() }}
+
+    </div>
+  </div>
+</div>
+</div>

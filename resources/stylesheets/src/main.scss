@@ -815,12 +815,12 @@ footer {
     width: 95%;
     padding: $modal-padding;
     border-radius: 5px;
-
+    h1 {
+	    margin-top: -.5em;
+    }
     @include media($medium-screen) {
-      max-height: 70%;
       width: 60%;
     }
-
     @include media($large-screen) {
       width: 50%;
     }
