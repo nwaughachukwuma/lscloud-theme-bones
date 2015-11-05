@@ -65,7 +65,7 @@ ul {
 
 span.error {
   color: #D20606;
-  font-size: 1em;
+  font-size: 0.75em;
   font-weight: 400;
   margin-top: -0.75em;
   margin-bottom: 1em;
@@ -620,7 +620,8 @@ nav {
       display: block;
       margin-right: 2.94118%;
       width: 85.29412%;
-      float: none; }
+      float: none;
+      margin-top: 1em; }
       #delivery-billing-info .billing-summary #billing-form:last-child {
         margin-right: 0; }
       #delivery-billing-info .billing-summary #billing-form input, #delivery-billing-info .billing-summary #billing-form textarea, #delivery-billing-info .billing-summary #billing-form select {

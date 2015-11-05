@@ -367,6 +367,7 @@ nav {
 		#billing-form {
 			@include span-columns(6 of 7);
 			float: none;
+			margin-top: 1em;
 			input,textarea,select {
 				@include fill-parent;
 			}
