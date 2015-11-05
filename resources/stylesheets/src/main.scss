@@ -341,14 +341,10 @@ nav {
 	input {
 		@include fill-parent;
 	}
-	input:last-child {
-		margin-top: 1em;
-	}
-
 }
 .forgotpass {
 	font-style: italic;
-	margin: -37px 1em 24px 0;
+	margin: -37px 1em 38px 0;
 	text-align: right;
 }
 .checkout-start-guest {
@@ -668,6 +664,7 @@ footer {
 #featured-carousel ul{
   list-style: none;
   padding-left:0;
+  margin: 0;
 }
 #featured-carousel ul li{
   list-style: none;
