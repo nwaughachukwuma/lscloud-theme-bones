@@ -1125,7 +1125,7 @@ footer {
   z-index: 99999; }
   @media screen and (min-width: 53.75em) {
     .modal .modal-fade-screen {
-      padding-top: 10em; } }
+      padding-top: 2.5em; } }
 
 .modal .modal-bg {
   position: absolute;
@@ -1174,7 +1174,7 @@ footer {
 .modal .modal-inner {
   background-color: #fff;
   margin: auto;
-  max-height: 95%;
+  max-height: 90%;
   overflow: auto;
   position: relative;
   top: 0.5em;
@@ -1189,6 +1189,8 @@ footer {
   @media screen and (min-width: 53.75em) {
     .modal .modal-inner {
       width: 50%; } }
+  .modal .modal-inner input, .modal .modal-inner textarea {
+    width: 100%; }
 
 .modal .modal-state:checked + .modal-fade-screen {
   opacity: 1;
@@ -1204,7 +1206,7 @@ footer {
   unicode-bidi: bidi-override;
   direction: rtl;
   text-align: center;
-  font-size: 7em; }
+  font-size: 3.15733em; }
   .rating span {
     display: inline-block;
     position: relative;
@@ -1222,4 +1224,5 @@ footer {
     position: absolute;
     color: gold; }
   .rating p {
-    font-size: 2.5rem; }
+    font-size: 0.75019em;
+    margin: 0.5em 0 1em 0; }

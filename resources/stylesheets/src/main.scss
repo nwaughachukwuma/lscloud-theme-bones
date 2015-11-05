@@ -768,7 +768,7 @@ footer {
     z-index: 99999;
 
     @include media($large-screen) {
-      padding-top: 10em;
+      padding-top: 2.5em;
     }
   }
 
@@ -807,7 +807,7 @@ footer {
   .modal-inner {
     background-color: #fff;
     margin: auto;
-    max-height: 95%;
+    max-height: 90%;
     overflow: auto;
     position: relative;
     top: 0.5em;
@@ -823,6 +823,9 @@ footer {
 
     @include media($large-screen) {
       width: 50%;
+    }
+    input, textarea {
+    	width: 100%;
     }
   }
 
@@ -845,7 +848,7 @@ footer {
   unicode-bidi: bidi-override;
   direction: rtl;
   text-align: center;
-  font-size: 7em;
+  font-size: $large;
   span {
     display: inline-block;
     position: relative;
@@ -868,7 +871,8 @@ footer {
     color: gold;
   }
   p {
-    font-size: 2.5rem;
+    font-size: $tiny;
+    margin: 0.5em 0 1em 0;
   }
 } 
 
