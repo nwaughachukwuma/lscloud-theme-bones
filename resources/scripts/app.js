@@ -7,16 +7,17 @@
   $(document).ready(function() {
     //
     // Adds unslider to carousel
+    // Waits for images to finish loading (window).load for correct height values
     //
-    $('#featured-carousel').unslider({
-      speed: 500,
-      delay: 3000,
-      keys: true,
-      dots: true,
-      fluid: true 
-    });
-    // Resizes unslider banner on window.load
     $(window).load(function() {
+      $('#featured-carousel').unslider({
+        speed: 500,
+        delay: 3000,
+        keys: true,
+        dots: true,
+        fluid: true 
+      });
+      // Resizes unslider banner for initial height
       var bannerHeight = $('#featured-carousel').find('li').first().css('height');
       $('#featured-carousel').css('height', bannerHeight);
     });
