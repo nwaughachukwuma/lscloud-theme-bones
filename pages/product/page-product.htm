@@ -143,11 +143,13 @@ url: '/product/:urlName'
         {% endif %}
 
       </div>
+{{ close_form }}
 
   {% else %}
   <div class="wrapper">
     <h2>We are sorry, the requested product was not found.</h2>
   </div>
   {% endif %}
-    </div>
-{{ close_form }}
+
+  {{ partial('partial-review-form') }}
+
