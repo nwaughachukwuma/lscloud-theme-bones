@@ -19,7 +19,6 @@
     $(window).load(function() {
       var bannerHeight = $('#featured-carousel').find('li').first().css('height');
       $('#featured-carousel').css('height', bannerHeight);
-      console.log(bannerHeight);
     });
     // 
     // Handle thumbnail clicks on the Product page
