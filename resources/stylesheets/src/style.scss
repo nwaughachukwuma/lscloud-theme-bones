@@ -188,12 +188,12 @@ input[type="radio"] {
   display: inline;
   margin-right: $small-spacing / 2;
 }
-// Featured Products
+// Products
 .oldprice {
 	text-decoration: line-through;
 	font-size: $small;
 }
-.product-featured {
+.product {
 	h3 {
     font-weight: $heavy;
     margin: 0.5em 0 0.5em 0;
