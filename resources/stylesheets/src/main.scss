@@ -750,7 +750,16 @@ footer {
 .modal-state {
   display: none !important;
 }
+.modal-trigger {
+	cursor: pointer;
+	display: inline;
+	h2 {
+		color: $link;
+		display: inline;
+	}
+}
 .modal {
+	display: inline;
   $medium-screen: em(640) !default;
   $large-screen: em(860) !default;
 

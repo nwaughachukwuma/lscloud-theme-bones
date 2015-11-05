@@ -144,10 +144,10 @@
       $("#modal-1").on("change", function() {
         if ($(this).is(":checked")) {
           $("body").addClass("modal-open");
-          $(".modal-fade-screen").addClass("modal-fade-open");
+          $(".modal-form-fade-screen").addClass("modal-fade-open");
         } else {
           $("body").removeClass("modal-open");
-          $(".modal-fade-screen").removeClass("modal-fade-open");
+          $(".modal-form-fade-screen").removeClass("modal-fade-open");
         }
       });
       $("#modal-2").on("change", function() {
