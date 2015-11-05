@@ -1,0 +1,74 @@
+<div class="modal">
+  <label for="modal-2">
+    <div class="modal-trigger">view</div>
+  </label>
+  <input class="modal-state" id="modal-2" type="checkbox" />
+  <div class="modal-fade-screen">
+    <div class="modal-inner">
+      <div class="modal-close" for="modal-2"></div>
+      <h1> {{ product.name }}</h1>
+
+        {% set product_rating = product.rating() %}
+        <p>
+            {% if product_rating.total_reviews %}
+                <span style="margin-right: -4px">
+                {% for i in range(1, product_rating.average_int) %}&starf;{% endfor %}
+                </span>
+                {% if product_rating.average_int != 5 %}
+                    {% for i in range(1, 5 - product_rating.average_int) %}&star;{% endfor %} 
+                {% endif %}
+                Based on {{ product_rating.total_reviews }} 
+                {% if product_rating.total_reviews == 1 %} review {% else %} reviews {% endif %}
+            {% endif %}
+        </p>
+        <a href="#reviews" data-dismiss="modal" ><strong>Write a Review</strong></a>
+
+
+        
+        <div class="reviews">
+            
+
+        
+                {% for review in product.reviews() %}
+                    
+                    {% if review.item_rating == 5 %}
+                        <div class="review-body">&starf;&starf;&starf;&starf;&starf;</div>
+                    {% endif %}
+                    {% if review.item_rating == 4 %}
+                        <div class="review-body">&starf;&starf;&starf;&starf;&star;</div>
+                    {% endif %}
+                    {% if review.item_rating == 3 %}
+                        <div class="review-body">&starf;&starf;&starf;&star;&star;</div>
+                    {% endif %}
+                    {% if review.item_rating == 2 %}
+                        <div class="review-body">&starf;&starf;&star;&star;&star;</div>
+                    {% endif %}
+                    {% if review.item_rating == 1 %}
+                        <div class="review-body">&starf;&star;&star;&star;&star;</div>  
+                    {% endif %}
+                    
+                    <div class="review-body" style="text-align: right; font-size: 1.1rem;">
+                        <p>{{ review.created_at|date('M jS, Y') }}</p>
+                        
+                    </div>
+                    <div class="review-body" >
+                        
+                        <p><strong>{{ review.title }}</strong></p>
+                        <p><em>{{ review.comment }}</em></p>
+                    </div>
+                    <div class="review-body" style="text-align: right; font-size: 1.1rem;">
+                        <p>{{ review.from_name }}</p>
+                    </div>
+                    
+                    
+                    <hr>
+
+                {% endfor %}
+                
+
+            
+        </div>
+
+    </div>
+  </div>
+</div>

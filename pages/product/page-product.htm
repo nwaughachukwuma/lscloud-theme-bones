@@ -42,10 +42,10 @@ url: '/product/:urlName'
           
           <span>
           {% if product_rating.total_reviews %}
-            {{ partial('partial-review-form2') }}
-           <a href="#reviews" data-toggle="modal" data-target="#viewModal">view</a>
+            {{ partial('partial-review-form') }}
+            {{ partial('partial-review-view') }}
           {% else %}
-           <a href="#reviews" data-toggle="modal" data-target="#writeModal">write</a>
+            {{ partial('partial-review-form') }}
           {% endif %}
           </span>
           </p>
