@@ -1180,10 +1180,11 @@ footer {
   top: 0.5em;
   transition: opacity 0.25s ease;
   width: 95%;
+  max-width: 580px;
   padding: 2em;
   border-radius: 5px; }
   .modal .modal-inner h1 {
-    margin-top: -.5em; }
+    margin: -0.25em 0 0.5em 0; }
   @media screen and (min-width: 40em) {
     .modal .modal-inner {
       width: 60%; } }
