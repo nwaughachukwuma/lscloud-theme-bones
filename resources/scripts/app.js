@@ -158,6 +158,11 @@
         }
       });
 
+      $("#write-review-inview").on("click", function() {
+        $(".modal-state:checked").prop("checked", false).change();
+        $("#modal-1").prop("checked", true).change();
+      })
+
       $(".modal-fade-screen, .modal-close").on("click", function() {
         $(".modal-state:checked").prop("checked", false).change();
       });
