@@ -747,19 +747,12 @@ footer {
   opacity: 1 !important;
   visibility: visible !important;
 }
+.modal-state {
+  display: none !important;
+}
 .modal {
   $medium-screen: em(640) !default;
   $large-screen: em(860) !default;
-
-  label {
-    cursor: pointer;
-    font-weight: normal;
-    margin-bottom: 0;
-  }
-
-  .modal-state {
-    display: none;
-  }
 
   .modal-fade-screen { 
 // overlay

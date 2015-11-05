@@ -1108,13 +1108,8 @@ footer {
   opacity: 1 !important;
   visibility: visible !important; }
 
-.modal label {
-  cursor: pointer;
-  font-weight: normal;
-  margin-bottom: 0; }
-
-.modal .modal-state {
-  display: none; }
+.modal-state {
+  display: none !important; }
 
 .modal .modal-fade-screen {
   position: fixed;

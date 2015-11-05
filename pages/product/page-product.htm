@@ -39,10 +39,11 @@ url: '/product/:urlName'
           &star;&star;&star;&star;&star;
            (no reviews yet)
           {% endif %}
-              <label for="modal-1">
-      <div class="modal-trigger">write</div>
-    </label>
-    <input class="modal-state" id="modal-1" type="checkbox" />
+          </p>
+          <label for="modal-1">
+            <div class="modal-trigger">write</div>
+          </label>
+          <input class="modal-state" id="modal-1" type="checkbox" />
           <span>
           {% if product_rating.total_reviews %}
 
@@ -51,7 +52,6 @@ url: '/product/:urlName'
             {{ partial('partial-review-form') }}
           {% endif %}
           </span>
-          </p>
   <!--       <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
           Rated <span itemprop="ratingValue">3.5</span>/5
           based on <span itemprop="reviewCount">11</span> customer reviews
