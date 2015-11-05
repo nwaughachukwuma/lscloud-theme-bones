@@ -828,6 +828,16 @@ footer {
     input, textarea {
     	width: 100%;
     }
+    .reviews {
+    	margin-top: 1.5em;
+    	.review-rating {
+    		display: inline;
+    	}
+    	.review-date {
+		    display: inline;
+		    margin-left: 1em;
+    	}
+    }
   }
 
   .modal-state:checked + .modal-fade-screen {

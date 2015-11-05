@@ -1193,6 +1193,13 @@ footer {
       width: 50%; } }
   .modal .modal-inner input, .modal .modal-inner textarea {
     width: 100%; }
+  .modal .modal-inner .reviews {
+    margin-top: 1.5em; }
+    .modal .modal-inner .reviews .review-rating {
+      display: inline; }
+    .modal .modal-inner .reviews .review-date {
+      display: inline;
+      margin-left: 1em; }
 
 .modal .modal-state:checked + .modal-fade-screen {
   opacity: 1;

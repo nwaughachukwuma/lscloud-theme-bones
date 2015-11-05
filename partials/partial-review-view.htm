@@ -32,33 +32,33 @@
                 {% for review in product.reviews() %}
                     
                     {% if review.item_rating == 5 %}
-                        <div class="review-body">&starf;&starf;&starf;&starf;&starf;</div>
+                        <div class="review-rating">&starf;&starf;&starf;&starf;&starf;</div>
                     {% endif %}
                     {% if review.item_rating == 4 %}
-                        <div class="review-body">&starf;&starf;&starf;&starf;&star;</div>
+                        <div class="review-rating">&starf;&starf;&starf;&starf;&star;</div>
                     {% endif %}
                     {% if review.item_rating == 3 %}
-                        <div class="review-body">&starf;&starf;&starf;&star;&star;</div>
+                        <div class="review-rating">&starf;&starf;&starf;&star;&star;</div>
                     {% endif %}
                     {% if review.item_rating == 2 %}
-                        <div class="review-body">&starf;&starf;&star;&star;&star;</div>
+                        <div class="review-rating">&starf;&starf;&star;&star;&star;</div>
                     {% endif %}
                     {% if review.item_rating == 1 %}
-                        <div class="review-body">&starf;&star;&star;&star;&star;</div>  
+                        <div class="review-rating">&starf;&star;&star;&star;&star;</div>  
                     {% endif %}
                     
-                    <div class="review-body" style="text-align: right; font-size: 1.1rem;">
-                        <p>{{ review.created_at|date('M jS, Y') }}</p>
+                    
+                        <p class="review-date">{{ review.created_at|date('M jS, Y') }}</p>
                         
-                    </div>
-                    <div class="review-body" >
+
+
                         
                         <p><strong>{{ review.title }}</strong></p>
                         <p><em>{{ review.comment }}</em></p>
-                    </div>
-                    <div class="review-body" style="text-align: right; font-size: 1.1rem;">
+
+
                         <p>{{ review.from_name }}</p>
-                    </div>
+
                     
                     
                     <hr>
