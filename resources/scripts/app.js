@@ -10,7 +10,7 @@
     //
     $('#featured-carousel').unslider({
       speed: 500,
-      delay: 33500,
+      delay: 3000,
       keys: true,
       dots: true,
       fluid: true 
