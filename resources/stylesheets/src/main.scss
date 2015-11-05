@@ -761,7 +761,7 @@ footer {
   .modal-fade-screen { 
 // overlay
     @include position(fixed, 0 0 0 0);
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.85);
     opacity: 0;
     transition: opacity 0.25s ease;
     visibility: hidden;
@@ -840,6 +840,37 @@ footer {
   overflow: auto;
 }
 
+// Review Stars!
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: center;
+  font-size: 7em;
+  span {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+  span:hover, span:hover ~ span {
+    color: transparent;
+  }
+  span:hover:before, span:hover ~ span:before {
+    content: "\2605";
+    position: absolute; 
+    color: gold;
+  }
+  span.select {
+    color: transparent;
+  }
+  span.select:before {
+    content: "\2605";
+    position: absolute; 
+    color: gold;
+  }
+  p {
+    font-size: 2.5rem;
+  }
+} 
 
 
 
