@@ -44,13 +44,13 @@ url: '/product/:urlName'
 
           {% if product_rating.total_reviews %}
             {{ partial('partial-review-view') }}
-            <label class="modal-trigger" for="modal-1">
-              <h2>write</h2>
+            <label class="modal-trigger write-review" for="modal-1">
+              <h2>write review</h2>
             </label>
             <input class="modal-state" id="modal-1" type="checkbox" />
           {% else %}
             <label class="modal-trigger" for="modal-1">
-                <h2>write</h2>
+              <h2>write review</h2>
             </label>
             <input class="modal-state" id="modal-1" type="checkbox" />
           {% endif %}

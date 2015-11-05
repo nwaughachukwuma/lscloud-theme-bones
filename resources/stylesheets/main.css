@@ -1118,6 +1118,9 @@ footer {
     color: #0087C8;
     display: inline; }
 
+.write-review {
+  float: right; }
+
 .modal {
   display: inline; }
   .modal .modal-fade-screen {
