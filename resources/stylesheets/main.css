@@ -60,6 +60,9 @@ ul {
     font-weight: 200;
     color: #4a4a4a; }
 
+.blue {
+  color: #0087C8; }
+
 span.error {
   color: #D20606;
   font-size: 1em;
@@ -217,6 +220,18 @@ section {
         margin-bottom: 1em; }
     section #home-details .coupon {
       color: #55A537; }
+    section #home-details a {
+      float: left;
+      display: block;
+      margin-right: 3.44828%;
+      width: 65.51724%;
+      margin-left: 17.24138%;
+      margin-top: 1em;
+      margin-bottom: 0.75em;
+      width: 280px;
+      text-align: center; }
+      section #home-details a:last-child {
+        margin-right: 0; }
   section .carousel-wrap {
     float: left;
     display: block;

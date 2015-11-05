@@ -46,6 +46,9 @@ ul {
     font-weight: 200;
     color: #4a4a4a; }
 
+.blue {
+  color: #0087C8; }
+
 span.error {
   color: #D20606;
   font-size: 1em;
