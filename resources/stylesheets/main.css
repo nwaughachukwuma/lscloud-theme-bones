@@ -1103,3 +1103,64 @@ footer {
   border: 2px solid #F0C332;
   background: #f8e199;
   opacity: 1; }
+
+.modal label {
+  cursor: pointer;
+  font-weight: normal;
+  margin-bottom: 0; }
+
+.modal .modal-state {
+  display: none; }
+
+.modal .modal-fade-screen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  visibility: hidden;
+  z-index: 99999; }
+  @media screen and (min-width: 53.75em) {
+    .modal .modal-fade-screen {
+      padding-top: 10em; } }
+
+.modal .modal-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer; }
+
+.modal .modal-close {
+  cursor: pointer; }
+
+.modal .modal-inner {
+  background-color: #fff;
+  margin: auto;
+  max-height: 95%;
+  overflow: auto;
+  position: relative;
+  top: 0.5em;
+  transition: opacity 0.25s ease;
+  width: 95%; }
+  @media screen and (min-width: 40em) {
+    .modal .modal-inner {
+      max-height: 70%;
+      width: 60%; } }
+  @media screen and (min-width: 53.75em) {
+    .modal .modal-inner {
+      width: 50%; } }
+
+.modal .modal-state:checked + .modal-fade-screen {
+  opacity: 1;
+  visibility: visible; }
+
+.modal-open {
+  overflow: hidden; }
+
+.modal-closed {
+  overflow: auto; }
