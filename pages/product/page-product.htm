@@ -39,10 +39,13 @@ url: '/product/:urlName'
           &star;&star;&star;&star;&star;
            (no reviews yet)
           {% endif %}
-          
+              <label for="modal-1">
+      <div class="modal-trigger">write</div>
+    </label>
+    <input class="modal-state" id="modal-1" type="checkbox" />
           <span>
           {% if product_rating.total_reviews %}
-            {{ partial('partial-review-form') }}
+
             {{ partial('partial-review-view') }}
           {% else %}
             {{ partial('partial-review-form') }}
@@ -165,15 +168,5 @@ url: '/product/:urlName'
   {% endif %}
 {{ close_form() }}
 
-<div class="wrapper">
-<div class="modal">
 
-  <div class="modal-fade-screen">
-    <div class="modal-inner">
-      <div class="modal-close" for="modal-1"></div>
-      <h1>Review {{ product.name }}</h1>
-      <p class="modal-content">{{ partial('partial-review-form') }}</p>
-    </div>
-  </div>
-</div>
-</div>
+            {{ partial('partial-review-form') }}

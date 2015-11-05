@@ -743,7 +743,10 @@ footer {
 // MODAL
 // 
 // 
-
+.modal-fade-open {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
 .modal {
   $medium-screen: em(640) !default;
   $large-screen: em(860) !default;
@@ -845,7 +848,6 @@ footer {
     visibility: visible;
   }
 }
-
 .modal-open {
   overflow: hidden;
 }

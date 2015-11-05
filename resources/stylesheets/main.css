@@ -1104,6 +1104,10 @@ footer {
   background: #f8e199;
   opacity: 1; }
 
+.modal-fade-open {
+  opacity: 1 !important;
+  visibility: visible !important; }
+
 .modal label {
   cursor: pointer;
   font-weight: normal;
