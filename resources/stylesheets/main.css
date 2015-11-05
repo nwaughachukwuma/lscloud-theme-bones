@@ -168,75 +168,6 @@ input[type="radio"] {
   font-weight: 200;
   display: inline; }
 
-#featured-carousel {
-  padding: 0; }
-
-#featured-carousel ul {
-  list-style: none;
-  padding-left: 0; }
-
-#featured-carousel ul li {
-  list-style: none;
-  margin: 0 auto;
-  float: left; }
-
-#featured-carousel ul li img {
-  width: 90%;
-  display: inline-block;
-  margin: 0 auto; }
-
-.unslider-arrow {
-  position: absolute;
-  top: 70px;
-  left: 0; }
-
-.unslider-arrow:hover {
-  cursor: pointer; }
-
-#featured-carousel .next {
-  right: 0;
-  text-align: right; }
-
-#loading-indicator {
-  z-index: 99999; }
-
-.list-group-item {
-  border: none;
-  border-top: 1px solid #f1f1f1; }
-
-#featured-carousel .dots {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding-left: 0; }
-
-#featured-carousel .dots li {
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-  width: 10px;
-  height: 10px;
-  line-height: 10px;
-  margin: 0 4px;
-  text-indent: -999em;
-  *text-indent: 0;
-  border: 2px solid;
-  border-color: #f8e199;
-  border-radius: 6px;
-  cursor: pointer;
-  opacity: .9;
-  -webkit-transition: background 0.5s, opacity 0.5s;
-  -moz-transition: background 0.5s, opacity 0.5s;
-  transition: background 0.5s, opacity 0.5s; }
-
-#featured-carousel .dots li.active {
-  border: 2px solid #F0C332;
-  background: #f8e199;
-  opacity: 1; }
-
 body {
   position: relative;
   min-height: 100vh;
@@ -280,6 +211,12 @@ section {
     width: 49.15254%; }
     section #home-details:last-child {
       margin-right: 0; }
+    section #home-details h1 {
+      margin-bottom: 0.25em; }
+      section #home-details h1:last-of-type {
+        margin-bottom: 1em; }
+    section #home-details .coupon {
+      color: #55A537; }
   section .carousel-wrap {
     float: left;
     display: block;
@@ -290,21 +227,22 @@ section {
     section .carousel-wrap #featured-carousel {
       position: relative;
       overflow: auto; }
-      section .carousel-wrap #featured-carousel .product-carousel {
+      section .carousel-wrap #featured-carousel ul li {
         float: left; }
-        section .carousel-wrap #featured-carousel .product-carousel h3 {
-          font-weight: 700;
-          margin: 0.5em 0 0.5em 0; }
-        section .carousel-wrap #featured-carousel .product-carousel h2 {
-          color: #9b9b9b;
-          font-weight: 200;
-          display: inline; }
-        section .carousel-wrap #featured-carousel .product-carousel figure {
+        section .carousel-wrap #featured-carousel ul li figure {
           margin-bottom: 3em; }
-          section .carousel-wrap #featured-carousel .product-carousel figure img {
+          section .carousel-wrap #featured-carousel ul li figure a img {
+            display: block;
             width: 100%;
             height: auto;
             border: 1px solid rgba(155, 155, 155, 0.3); }
+          section .carousel-wrap #featured-carousel ul li figure figcaption h3 {
+            font-weight: 700;
+            margin: 0.5em 0 0.5em 0; }
+          section .carousel-wrap #featured-carousel ul li figure figcaption h2 {
+            color: #9b9b9b;
+            font-weight: 200;
+            display: inline; }
 
 nav {
   float: left;
@@ -1087,3 +1025,72 @@ footer {
   .breadcrumbs :not(:last-child):after {
     content: ">";
     margin-left: 5px; }
+
+#featured-carousel {
+  padding: 0; }
+
+#featured-carousel ul {
+  list-style: none;
+  padding-left: 0; }
+
+#featured-carousel ul li {
+  list-style: none;
+  margin: 0 auto;
+  float: left; }
+
+#featured-carousel ul li img {
+  width: 90%;
+  display: inline-block;
+  margin: 0 auto; }
+
+.unslider-arrow {
+  position: absolute;
+  top: 70px;
+  left: 0; }
+
+.unslider-arrow:hover {
+  cursor: pointer; }
+
+#featured-carousel .next {
+  right: 0;
+  text-align: right; }
+
+#loading-indicator {
+  z-index: 99999; }
+
+.list-group-item {
+  border: none;
+  border-top: 1px solid #f1f1f1; }
+
+#featured-carousel .dots {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-left: 0; }
+
+#featured-carousel .dots li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  width: 10px;
+  height: 10px;
+  line-height: 10px;
+  margin: 0 4px;
+  text-indent: -999em;
+  *text-indent: 0;
+  border: 2px solid;
+  border-color: #f8e199;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: .9;
+  -webkit-transition: background 0.5s, opacity 0.5s;
+  -moz-transition: background 0.5s, opacity 0.5s;
+  transition: background 0.5s, opacity 0.5s; }
+
+#featured-carousel .dots li.active {
+  border: 2px solid #F0C332;
+  background: #f8e199;
+  opacity: 1; }

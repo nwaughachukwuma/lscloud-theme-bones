@@ -8,8 +8,10 @@ url: /
 ---
 <section>
 	<div id="home-details">
-		<h1>Product carousel IS A LITTLE BITCH</h1>
-		
+		<h1>Product carousel.</h1>
+		<h1>Fast delivery. 🚀</h1>
+		<h3>Create a collection with the API code: <strong>carousel</strong></h3>
+		<h3>Use Coupon Code <span class="coupon"><strong>#ExampleCode2015</strong></span></h3>
 	</div>
 	<div class="carousel-wrap">
 		<div id="featured-carousel">
@@ -19,7 +21,7 @@ url: /
 			{% for product in pagination.items %}
 				{% set on_sale = product.onSale %}
 
-        <li class="product-carousel">
+        <li>
 					<figure>
 					  <a href="{{ page_url }}"><img src="{{ product.images.first.thumbnail('auto', 'auto')|default('http://placehold.it/580x352') }}" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
 					  <figcaption>

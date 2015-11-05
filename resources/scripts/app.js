@@ -10,12 +10,11 @@
     //
     $('#featured-carousel').unslider({
       speed: 500,
-      delay: 3500,
+      delay: 33500,
       keys: true,
       dots: true,
       fluid: true 
     });
-    $('#featured-carousel').height('auto');
     // 
     // Handle thumbnail clicks on the Product page
     //
