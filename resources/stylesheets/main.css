@@ -1136,7 +1136,40 @@ footer {
   cursor: pointer; }
 
 .modal .modal-close {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  height: 1.5em;
+  width: 1.5em;
+  background: #fff;
   cursor: pointer; }
+  .modal .modal-close:after,
+  .modal .modal-close:before {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    height: 1.5em;
+    width: 0.15em;
+    background: #9b9b9b;
+    content: '';
+    display: block;
+    margin: -3px 0 0 -1px; }
+  .modal .modal-close:hover:after,
+  .modal .modal-close:hover:before {
+    background: #828282; }
+  .modal .modal-close:before {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
 
 .modal .modal-inner {
   background-color: #fff;
@@ -1146,7 +1179,9 @@ footer {
   position: relative;
   top: 0.5em;
   transition: opacity 0.25s ease;
-  width: 95%; }
+  width: 95%;
+  padding: 2em;
+  border-radius: 5px; }
   @media screen and (min-width: 40em) {
     .modal .modal-inner {
       max-height: 70%;

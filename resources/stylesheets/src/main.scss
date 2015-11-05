@@ -778,7 +778,30 @@ footer {
   }
 
   .modal-close {
+    @include position(absolute, ($modal-padding /2) ($modal-padding /2) null null);
+    @include size(1.5em);
+    background: $white;
     cursor: pointer;
+
+    &:after,
+    &:before {
+      @include position(absolute, 3px 3px 0 50%);
+      @include transform(rotate(45deg));
+      @include size(0.15em 1.5em);
+      background: $grey;
+      content: '';
+      display: block;
+      margin: -3px 0 0 -1px;
+    }
+
+    &:hover:after,
+    &:hover:before {
+      background: darken($grey, 10%);
+    }
+
+    &:before {
+      @include transform(rotate(-45deg));
+    }
   }
 
   .modal-inner {
@@ -790,6 +813,8 @@ footer {
     top: 0.5em;
     transition: opacity 0.25s ease;
     width: 95%;
+    padding: $modal-padding;
+    border-radius: 5px;
 
     @include media($medium-screen) {
       max-height: 70%;
