@@ -155,8 +155,7 @@ select {
 
 input[type="checkbox"],
 input[type="radio"] {
-  display: inline;
-  margin-right: 0.375em; }
+  display: inline; }
 
 .oldprice {
   text-decoration: line-through;
@@ -392,7 +391,8 @@ nav {
     .product-wrap #product-form .product-add:last-child {
       margin-right: 0; }
   .product-wrap #product-form .product-extras + div {
-    margin-right: 0; }
+    margin-right: 0;
+    margin-bottom: 1em; }
   .product-wrap #product-form .product-attributes {
     margin: 1em 0 1em 0; }
     .product-wrap #product-form .product-attributes h2 {
@@ -415,15 +415,16 @@ nav {
   font-size: 20px; }
   .product-extras:last-child {
     margin-right: 0; }
-  .product-extras .extra-price {
-    display: block;
+  .product-extras input {
     font-size: 1em;
     margin: 0; }
+  .product-extras .extra-price {
+    font-size: 0.75em; }
   .product-extras img {
     display: block;
     border: 1px solid rgba(155, 155, 155, 0.3); }
   .product-extras label {
-    display: inline-block; }
+    display: block; }
 
 .product-image-grid {
   float: left;

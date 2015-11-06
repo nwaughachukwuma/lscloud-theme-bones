@@ -90,12 +90,12 @@ url: '/product/:urlName'
             {% for index, extra in product.extras|slice(0, 2) %}
             <div class="product product-extras">
               <img src="{{ extra.images.first.thumbnail(230, 230)|default('http://placehold.it/230x230') }}" width="230" height="230" alt="{{ extra.images.first.description }}" title="{{ extra.images.first.title }}"/>
+              <label for="{{ 'extra-'~index }}"><h3>{{ extra.name }}</h3></label>
               {% if extra.enabled %}
                 <input type="checkbox" id="{{ 'extra-'~index }}" {{ checkbox_state(postedExtras[extra.id], extra.id) }} name="extras[{{ extra.id }}]" data-ajax-handler="shop:product" data-ajax-update="">
               {% else %}
                 <input type="checkbox" disabled="disabled">
               {% endif %}
-              <label for="{{ 'extra-'~index }}"><h3>{{ extra.name }}</h3></label>
               <h2 class="extra-price">Add {{ extra.price|currency }}</h2>
             </div>
             {% endfor %}

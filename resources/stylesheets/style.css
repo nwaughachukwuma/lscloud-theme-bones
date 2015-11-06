@@ -141,8 +141,7 @@ select {
 
 input[type="checkbox"],
 input[type="radio"] {
-  display: inline;
-  margin-right: 0.375em; }
+  display: inline; }
 
 .oldprice {
   text-decoration: line-through;

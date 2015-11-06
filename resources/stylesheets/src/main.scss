@@ -191,7 +191,8 @@ nav {
 			text-align: center;
 		}
 		.product-extras + div {
-			 margin-right: 0;
+			margin-right: 0;
+			margin-bottom: 1em;
 		}
 		.product-attributes {
 	    margin: 1em 0 1em 0;
@@ -215,17 +216,19 @@ nav {
 .product-extras {
 	@include span-columns(3 of 6);
 	font-size: 20px;
-	.extra-price {
-		display: block;
+	input {
 		font-size: 1em;
 		margin: 0;
+	}
+	.extra-price {		
+		font-size: 0.75em;
 	}
 	img {
 		display: block;
 		border: 1px solid $lightgrey;
 	}
 	label {
-		display: inline-block;
+		display: block;
 	}
 }
 
