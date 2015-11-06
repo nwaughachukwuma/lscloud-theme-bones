@@ -14,6 +14,8 @@ url: '/product/:urlName'
       <div class="wrapper product-wrap" itemscope itemtype="http://schema.org/Product">
         <div id="product-form">
           <h1 class="fill-parent">{{ page.title }}</h1>
+          <!-- <hr style="margin: .75em -23% .75em 0;"/> -->
+
           <meta itemprop="name" content="{{ product.name }}" />
           <meta itemprop="sku" content="{{ product.sku }}" />
           <link itemprop="url" href="{{ '/product/' ~ product.url_name }}" />
@@ -41,7 +43,6 @@ url: '/product/:urlName'
           {% endif %}
           </p>
 
-
           {% if product_rating.total_reviews %}
             {{ partial('partial-review-view') }}
             <label class="modal-trigger write-review" for="modal-1">
@@ -55,21 +56,21 @@ url: '/product/:urlName'
             <input class="modal-state" id="modal-1" type="checkbox" />
           {% endif %}
 
-  <!--       <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-          Rated <span itemprop="ratingValue">3.5</span>/5
-          based on <span itemprop="reviewCount">11</span> customer reviews
-        </div>  -->
+    <!--  <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+            Rated <span itemprop="ratingValue">3.5</span>/5
+            based on <span itemprop="reviewCount">11</span> customer reviews
+          </div>  -->
 
           <!-- product attributes -->
-          {% if product.productAttributes.count %}
             <div class="product-attributes">
+          {% if product.productAttributes.count %}
               {% for attribute in product.productAttributes %}
                   <h2>{{ attribute.name }}</h2>
                   <h3>{{ attribute.value }}</h3>
                   <br />
               {% endfor %}
-            </div>
           {% endif %}
+            </div>
 
           <!-- product options -->
           {% if product.options.count %}
@@ -87,14 +88,15 @@ url: '/product/:urlName'
           {% if product.extras.count %}
           <h2>Extras</h2>
             {% for index, extra in product.extras|slice(0, 2) %}
-            <div class="product-extras">
-                <img src="{{ extra.images.first.thumbnail(230, 230)|default('http://placehold.it/230x230') }}" width="230" height="230" alt="{{ extra.images.first.description }}" title="{{ extra.images.first.title }}"/>
+            <div class="product product-extras">
+              <img src="{{ extra.images.first.thumbnail(230, 230)|default('http://placehold.it/230x230') }}" width="230" height="230" alt="{{ extra.images.first.description }}" title="{{ extra.images.first.title }}"/>
               {% if extra.enabled %}
                 <input type="checkbox" id="{{ 'extra-'~index }}" {{ checkbox_state(postedExtras[extra.id], extra.id) }} name="extras[{{ extra.id }}]" data-ajax-handler="shop:product" data-ajax-update="">
               {% else %}
                 <input type="checkbox" disabled="disabled">
               {% endif %}
-                <label for="{{ 'extra-'~index }}"><h3>{{ extra.name }} ({{ extra.price|currency }})</h3></label>
+              <label for="{{ 'extra-'~index }}"><h3>{{ extra.name }}</h3></label>
+              <h2 class="extra-price">Add {{ extra.price|currency }}</h2>
             </div>
             {% endfor %}
 

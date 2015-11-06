@@ -394,10 +394,12 @@ nav {
   .product-wrap #product-form .product-extras + div {
     margin-right: 0; }
   .product-wrap #product-form .product-attributes {
-    margin-bottom: 1em; }
+    margin: 1em 0 1em 0; }
     .product-wrap #product-form .product-attributes h2 {
       display: inline-block;
-      font-size: 1em; }
+      font-size: 1em;
+      margin: 0.25em;
+      margin-left: 0; }
     .product-wrap #product-form .product-attributes h3 {
       display: inline; }
 
@@ -409,9 +411,14 @@ nav {
   float: left;
   display: block;
   margin-right: 3.44828%;
-  width: 48.27586%; }
+  width: 48.27586%;
+  font-size: 20px; }
   .product-extras:last-child {
     margin-right: 0; }
+  .product-extras .extra-price {
+    display: block;
+    font-size: 1em;
+    margin: 0; }
   .product-extras img {
     display: block;
     border: 1px solid rgba(155, 155, 155, 0.3); }
@@ -1119,7 +1126,8 @@ footer {
     display: inline; }
 
 .write-review {
-  float: right; }
+  float: right;
+  margin-top: 2px; }
 
 .modal {
   display: inline; }

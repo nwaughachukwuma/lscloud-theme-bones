@@ -194,10 +194,12 @@ nav {
 			 margin-right: 0;
 		}
 		.product-attributes {
-			margin-bottom: 1em;
+	    margin: 1em 0 1em 0;
 			h2 {
 				display: inline-block;
 				font-size: $small;
+				margin: 0.25em;
+		    margin-left: 0;
 			}
 			h3 {
 				display: inline;
@@ -212,6 +214,12 @@ nav {
 
 .product-extras {
 	@include span-columns(3 of 6);
+	font-size: 20px;
+	.extra-price {
+		display: block;
+		font-size: 1em;
+		margin: 0;
+	}
 	img {
 		display: block;
 		border: 1px solid $lightgrey;
@@ -760,6 +768,7 @@ footer {
 }
 .write-review {
 	float: right;
+	margin-top: 2px;
 }
 .modal {
 	display: inline;
