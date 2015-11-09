@@ -168,10 +168,12 @@ img {
 .shop-product {
 	@include span-columns(4);
 	margin-bottom: 1em;
+	margin-top: 1em;
 	figure {
-		text-align: center;
 		img {
 			border: 1px solid $lightgrey;
+	    width: 100%;
+	    height: auto;
 			&:hover {
 				border-color: $grey;
 			}
@@ -255,6 +257,13 @@ img {
 }
 .product-related {
 	@include span-columns(3);
+}
+// Category page
+.categories {
+	font-style: italic;
+	width: 30%;
+	li h3 { margin: 0; }
+	hr { border-color: rgba(255, 255, 255, 0.4); }
 }
 // Cart page
 #cart-table {

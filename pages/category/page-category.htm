@@ -7,12 +7,13 @@ name: Category
 url: '/category/:urlName@/:page?'
 ---
 <div class="wrapper">
+<h1>{{ category.name }}</h1>
 {% tree categories %}
-
-<ul>
+<ul class="categories">
 	{% for category in tree.items %}
 	<li>
-		<a href="/category/{{ category.fullUrlName }}">{{ category.name }}</a>
+		<h3><a href="/category/{{ category.fullUrlName }}">{{ category.name }}</a></h3>
+		<hr>
 		{% branch category.children %}
 	</li>
 	{% endfor %}
@@ -25,12 +26,12 @@ url: '/category/:urlName@/:page?'
 {% else %}
 
 
-	{% paginate products by 9 %}
+	{% paginate products by 3 %}
 	<ul>
 		{% for product in pagination.items %}
 			{% set is_on_sale = product.onSale %}
 			{% set page_url = '/product/' ~ product.url_name %}
-			<div class="product">
+			<div class="product shop-product">
 			<li class="{{ is_on_sale ? 'sale' : null }}">
 				<figure>
 					<a href="{{ page_url }}">
@@ -49,7 +50,9 @@ url: '/category/:urlName@/:page?'
 			</div>
 		{% endfor %}
 	</ul>
-	{% navigation %}
+	<div class="nav-wrap">
+		{% navigation %}		
+	</div>
 	{% endpaginate %}
 {% endif %}
 </div>
