@@ -59,7 +59,7 @@ section {
 						height: auto;
 						border: 1px solid $lightgrey;
 						&:hover {
-							border-color: $darkgrey;
+							border-color: $grey;
 						}
 					}
 				}
@@ -136,7 +136,7 @@ nav {
 	img {
 		border: 1px solid $lightgrey;
 		&:hover {
-			border-color: $darkgrey;
+			border-color: $grey;
 		}
 	}
 }
@@ -173,16 +173,13 @@ img {
 		img {
 			border: 1px solid $lightgrey;
 			&:hover {
-				border-color: $darkgrey;
+				border-color: $grey;
 			}
 		}
 	}
 }
 .shop-product:nth-child(3n+3) {
 	margin-right: 0px;
-}
-.product-information {
-	padding: 0 10px;
 }
 
 // Product page
@@ -248,7 +245,7 @@ img {
 	img {
 		border: 1px solid $lightgrey;
 		&:hover {
-			border-color: $darkgrey;
+			border-color: $grey;
 		}
 	}
 }

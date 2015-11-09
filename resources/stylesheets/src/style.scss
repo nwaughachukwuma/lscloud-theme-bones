@@ -205,6 +205,12 @@ input[type="radio"] {
 	font-size: $small;
 }
 .product {
+	img {
+		border: 1px solid $lightgrey;
+	}
+	&:hover {
+		img { border-color: $grey; }
+	}
 	h3 {
     font-weight: $heavy;
     margin: 0.5em 0 0.5em 0;

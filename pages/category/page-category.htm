@@ -36,19 +36,15 @@ url: '/category/:urlName@/:page?'
 					<a href="{{ page_url }}">
 					<img src="{{ product.images.first.thumbnail(365, 365)|default('http://placehold.it/365x365') }}" width="365" height="365" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/>
 					</a>
-				</figure>
-				<div class="product-information">
-				<h3><a href="{{ page_url }}">{{ product.name }}</a></h3>
-				<a href="{{ page_url }}">
-					<h4 class="cost">
-						{% if is_on_sale %}
-							<span class="sale">{{ product.fullPrice|currency }}</span>
+				  <figcaption>
+					  <h3><a href="/product/{{ product.url_name }}" class="btn btn-default">{{ product.name }}</a></h3>
+						<h2>{{ product.price|currency }}</h2>
+						{% if on_sale %}
+							<h2 class="oldprice">{{ product.fullPrice|currency }}</h2>
 						{% endif %}
-						{{ product.price|currency }}
-					</h4>
-				</a>
-				<!-- {% if is_on_sale %}<span>SALE</span>{% endif %} -->
-				</div>
+					</figcaption>
+				</figure>
+
 			</li>
 			</div>
 		{% endfor %}
