@@ -207,6 +207,14 @@ body {
   .fill-parent:last-child {
     margin-right: 0; }
 
+.success {
+  background-color: #43D67F;
+  padding: .75em;
+  border-radius: 3px;
+  color: #fff;
+  font-style: italic;
+  font-size: 1em; }
+
 header {
   width: 100%;
   background: #F9F9F9;

@@ -16,6 +16,14 @@ body {
 	@include span-columns(12);
 	@include omega();
 }
+.success {
+	background-color: #43D67F;
+  padding: .75em;
+  border-radius: 3px;
+  color: #fff;
+  font-style: italic;
+  font-size: 1em;
+}
 // Header
 header {
 	width: 100%;
