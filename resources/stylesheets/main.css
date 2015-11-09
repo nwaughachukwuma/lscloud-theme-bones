@@ -262,9 +262,17 @@ nav {
     float: right;
     margin: 0;
     padding: 0; }
-  nav li {
-    display: inline-block;
-    padding: 1.5em; }
+    nav ul li {
+      position: relative;
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      transition: all 0.2s;
+      display: inline-block;
+      padding: 1.5em; }
+    nav ul li:hover {
+      background: #555 !important; }
+      nav ul li:hover a {
+        color: #fff; }
 
 #logo {
   float: left;
@@ -1251,14 +1259,6 @@ footer {
   .rating p {
     font-size: 0.75019em;
     margin: 0.5em 0 1em 0; }
-
-ul li {
-  position: relative;
-  transition: all 0.2s; }
-
-ul li:hover {
-  background: #555;
-  color: #fff; }
 
 .dropdown ul {
   padding: 0;
