@@ -58,18 +58,10 @@ section {
 						width: 100%;
 						height: auto;
 						border: 1px solid $lightgrey;
+						&:hover {
+							border-color: $darkgrey;
+						}
 					}
-					// figcaption {
-					// 	h3 {
-					//     font-weight: $heavy;
-					//     margin: 0.5em 0 0.5em 0;
-					// 	}
-					// 	h2 {
-					//     color: $grey;
-					//     font-weight: $light;
-					//     display: inline;
-					// 	}
-					// }
 				}
 			}
 		}
@@ -88,7 +80,7 @@ nav {
 			padding: $base-spacing;
 		}
 		li:hover {
-		  background: #555 !important;
+		  background: $darkgrey !important;
 		  a {
 		  	color: $white;
 		  }
@@ -143,6 +135,9 @@ nav {
 	@include span-columns(3);
 	img {
 		border: 1px solid $lightgrey;
+		&:hover {
+			border-color: $darkgrey;
+		}
 	}
 }
 // Shop Page
@@ -167,6 +162,9 @@ nav {
 		}
 	}	
 }
+img {
+	@include transition(all 0.2s);
+}
 .shop-product {
 	@include span-columns(4);
 	margin-bottom: 1em;
@@ -174,6 +172,9 @@ nav {
 		text-align: center;
 		img {
 			border: 1px solid $lightgrey;
+			&:hover {
+				border-color: $darkgrey;
+			}
 		}
 	}
 }
@@ -246,6 +247,9 @@ nav {
 	@include omega();
 	img {
 		border: 1px solid $lightgrey;
+		&:hover {
+			border-color: $darkgrey;
+		}
 	}
 }
 .product-description {
@@ -934,7 +938,7 @@ footer {
   z-index: 9999999;
 }
 .dropdown ul li { 
-  background: #555; 
+  background: $darkgrey; 
   display: block; 
   color: #fff;
   text-shadow: 0 -1px 0 #000;
