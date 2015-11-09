@@ -38,27 +38,17 @@ description: 'Default Template'
       <ul>
         <li class="dropdown">
           <a href="/shop">Shop ▾</a>
+          {% tree categories %}
           <ul>
-            <li>Web Design</li>
-            <li>Web Development</li>
-            <li>Illustrations</li>
+            {% for category in tree.items %}
+            <li>
+              <a href="/category/{{ category.fullUrlName }}">{{ category.name }}</a>
+              {% branch category.children %}
+            </li>
+            {% endfor %}
           </ul>
-          <!-- {% for category in categories %}
-          <ul>
-            {% if category.children %}
-            <li><a href="/category/{{ category.fullUrlName }}">{{category.name}}</a></li>
-            <ul>
-              {% for child in category.children %}
-              <li><a href="/category/{{ child.fullUrlName }}">{{child.name}}</a></li>
-              {% endfor %}
-            </ul>
-            {% else %}
-            <li><a href="/category/{{ category.fullUrlName }}">{{category.name}}</a></li>
-            {% endif %}
-          </ul>
-          {% endfor %} -->
+          {% endtree %}
         </li>
-        <!-- <li><a href="/search">Search</a></li> -->
         <li>
           {% if customer %}
             <a href="/logout">My Account</a>
@@ -75,8 +65,6 @@ description: 'Default Template'
         </li>
         {% endif %}
       </ul>
-      <!-- Current page and breadcrumbs -->
-
     </nav>
   </div>
   </header>
