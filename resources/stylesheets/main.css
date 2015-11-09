@@ -487,8 +487,18 @@ img {
   float: left;
   display: block;
   margin-right: 1.69492%;
-  width: 23.72881%; }
+  width: 23.72881%;
+  margin-bottom: 1em;
+  margin-top: 1em; }
   .product-related:last-child {
+    margin-right: 0; }
+  .product-related figure img {
+    border: 1px solid rgba(155, 155, 155, 0.3);
+    width: 100%;
+    height: auto; }
+    .product-related figure img:hover {
+      border-color: #9b9b9b; }
+  .product-related:nth-of-type(4) {
     margin-right: 0; }
 
 .categories {

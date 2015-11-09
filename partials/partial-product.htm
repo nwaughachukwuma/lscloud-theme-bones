@@ -142,18 +142,27 @@
     {% if product.related.count %}
     <hr class="fill-parent">
     <h1 class="fill-parent">You Might be Into These</h1>
-      {% for product in product.related|slice(0, 4) %}
-      <div class="product-related">
-        <a href="{{ page_url }}"><img itemprop="image" src="{{ product.images.first.thumbnail(280, 280)|default('http://placehold.it/280x280') }}" width="280" height="280" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
-        <p>{{ product.name }}</p>
-        <h2 class="cost">
-          {% if on_sale %}
-          <span class="oldprice">{{ product.fullPrice|currency }}</span>
-          {% endif %}
-          {{ product.price|currency }}
-        </h2>
+    <ul>
+      {% for product in product.related %}
+      <div class="product product-related">
+      <li class="{{ is_on_sale ? 'sale' : null }}">
+        <figure>
+          <a href="{{ page_url }}">
+          <img src="{{ product.images.first.thumbnail(365, 365)|default('http://placehold.it/365x365') }}" width="365" height="365" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/>
+          </a>
+          <figcaption>
+            <h3><a href="/product/{{ product.url_name }}" class="btn btn-default">{{ product.name }}</a></h3>
+            <h2>{{ product.price|currency }}</h2>
+            {% if on_sale %}
+              <h2 class="oldprice">{{ product.fullPrice|currency }}</h2>
+            {% endif %}
+          </figcaption>
+        </figure>
+
+      </li>
       </div>
       {% endfor %}
+    </ul>
     {% endif %}
 
   </div>
