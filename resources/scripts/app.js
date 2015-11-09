@@ -8,7 +8,6 @@
     //
     // Adds unslider to carousel
     // Waits for images to finish loading (window).load for correct height values
-    //
     $(window).load(function() {
       $('#featured-carousel').unslider({
         speed: 500,
@@ -21,6 +20,7 @@
       var bannerHeight = $('#featured-carousel').find('li').first().css('height');
       $('#featured-carousel').css('height', bannerHeight);
     });
+
     // 
     // Handle thumbnail clicks on the Product page
     //
