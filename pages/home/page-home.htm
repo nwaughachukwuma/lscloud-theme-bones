@@ -25,7 +25,7 @@ url: /
 
         <li class="product">
 					<figure>
-					  <a href="{{ page_url }}"><img src="{{ product.images.first.thumbnail('auto', 'auto')|default('http://placehold.it/580x352') }}" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
+					  <a href="/product/{{ product.url_name }}"><img src="{{ product.images.first.thumbnail('auto', 'auto')|default('http://placehold.it/580x352') }}" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
 					  <figcaption>
 						  <h3><a href="/product/{{ product.url_name }}" class="btn btn-default">{{ product.name }}</a></h3>
 							<h2>{{ product.price|currency }}</h2>
