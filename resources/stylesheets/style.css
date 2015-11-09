@@ -57,13 +57,21 @@ span.error {
   margin-bottom: 1em;
   display: block; }
 
-#cart-nav-link {
-  background: #9b9b9b; }
-  #cart-nav-link a {
+#mini-cart {
+  padding: initial; }
+  #mini-cart a {
+    padding: 1.5em;
+    background: #9b9b9b;
     color: #fff;
     font-weight: 500; }
-    #cart-nav-link a:hover {
+    #mini-cart a:hover {
+      background: #555;
       color: #F0C332; }
+
+.has-items {
+  background: #F0C332 !important; }
+  .has-items:hover {
+    color: #4a4a4a !important; }
 
 .button {
   border: 0;

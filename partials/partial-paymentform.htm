@@ -1,6 +1,6 @@
 {% if paymentMethod is defined %}
   {% set name = paymentMethod.getFrontendPartialName() %}
-  {{ partial(name, {paymentMethod: paymentMethod, payment: payment}) }}
+  {{ partial(name, {paymentMethod: paymentMethod}) }}
 {% else %}
   {% set message = payment_method.pay_offline_message() %}
   {% if message %}
