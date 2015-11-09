@@ -36,9 +36,13 @@ description: 'Default Template'
         <a href="{{ site_url('/') }}"><img src="{{ theme.logoImage.thumbnail('auto', 'auto') }}" alt="" class="logo"></a>
       </div>
       <ul>
-        <li>
+        <li class="dropdown">
           <a href="/shop">Shop</a>
-
+          <ul>
+            <li>Web Design</li>
+            <li>Web Development</li>
+            <li>Illustrations</li>
+          </ul>
           <!-- {% for category in categories %}
           <ul>
             {% if category.children %}
