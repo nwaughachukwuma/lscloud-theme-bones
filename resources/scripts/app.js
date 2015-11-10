@@ -81,7 +81,8 @@
         $(this).sendRequest('shop:onCheckoutBillingInfo', {
           onAfterUpdate: function() {
             $(this).sendRequest('shop:onCopyBillingToShipping', {
-              update: {'#checkout-page' : 'partial-checkout-address', '#mini-cart':'shop-minicart'}
+              update: {'#checkout-page' : 'partial-checkout-address', '#mini-cart':'shop-minicart'},
+              extraFields: {'nextStep': 'billing_info', 'doCheckout': 1, 'step': ''}
             });
           }
         });
