@@ -314,14 +314,14 @@ img {
 			text-align: left;
 		}
 		.cart-name {
-			@include span-columns(5);
+			@include span-columns(4);
 			text-align: left;
 		}
 		.cart-item-price {
 			@include span-columns(1);
 		}
 		.cart-item-total {
-			@include span-columns(1);
+			@include span-columns(2);
 		}
 		.cart-quantity {
 			@include span-columns(2);
