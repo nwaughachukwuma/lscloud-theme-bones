@@ -49,12 +49,20 @@ description: 'Default Template'
           </ul>
           {% endtree %}
         </li>
-        <li>
-          {% if customer %}
-            <a href="/profile">My Account</a>
-          {% else %}
+        {% if customer %}
+          <li class="dropdown">
+            <a href="/profile">My Account ▾</a>
+            <ul>
+              <li>
+                <a href="/logout">Logout</a>
+              </li>
+            </ul>
+          </li>
+        {% else %}
+          <li>
             <a href="/sign-in">Login</a>
-          {% endif %}
+          </li>
+        {% endif %}
         </li>
         <li id="mini-cart">{{ partial('shop-minicart') }}</li>
         {% if search %}
