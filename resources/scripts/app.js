@@ -110,11 +110,11 @@
         $(".shipping-form").hide();
 
         $(this).sendRequest('shop:onUpdateCustomerProfile', {
-          onAfterUpdate: function() {
+          // onAfterUpdate: function() {
             $(this).sendRequest('shop:onUpdateCustomerProfile', {
               update: {'#profile-addresses' : 'partial-customerprofile'},
               extraFields: {'copy_billing_to_shipping': 1}
-            });
+            // });
           }
         });
 
