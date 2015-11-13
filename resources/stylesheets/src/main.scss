@@ -349,6 +349,33 @@ img {
 		}
 	}
 }
+// Orders Page
+#order-table {
+	@include outer-container;
+	tr {
+		@include fill-parent;
+		@include row(table);
+		td {
+
+		}
+		.order-number {
+			@include span-columns(3);
+			text-align: left;
+		}
+		.order-date {
+			@include span-columns(3);
+			text-align: left;
+		}
+		.order-status {
+			@include span-columns(3);
+			text-align: left;
+		}
+		.order-total {
+			@include span-columns(3);
+			text-align: left;
+		}
+	}
+}
 // Contact Page
 #contact-table {
 	@include span-columns(6);
@@ -644,6 +671,7 @@ img {
 		text-align: right;
 	}
 }
+// Profile Page
 #profile-changepassword {
 	@include span-columns(4);
 	margin-left: percentage(1/24);
@@ -654,7 +682,7 @@ img {
     margin-top: 16px;
 	}
 }
-
+// Receipt Page
 #receipt {
 	@include outer-container;
 	.receipt-items {

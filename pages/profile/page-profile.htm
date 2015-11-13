@@ -14,9 +14,6 @@ url: /profile
   {{ partial('partial-customerprofile') }}
   </section>
 
-  <div class="wrapper">
-  	<a class="button next logout" href="/logout">Logout</a>
-  </div>
 {% else %}
   Please <a href="{{ root_url('login') }}">login</a> to edit your profile.
 {% endif %}

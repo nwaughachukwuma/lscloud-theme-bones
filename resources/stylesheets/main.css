@@ -602,6 +602,52 @@ img {
     #cart-table tr .cart-subtotal {
       margin-bottom: 1em; }
 
+#order-table {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  #order-table::after {
+    clear: both;
+    content: "";
+    display: table; }
+  #order-table tr {
+    width: 100%;
+    display: table;
+    width: 100%;
+    table-layout: fixed; }
+    #order-table tr .order-number {
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 23.72881%;
+      text-align: left; }
+      #order-table tr .order-number:last-child {
+        margin-right: 0; }
+    #order-table tr .order-date {
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 23.72881%;
+      text-align: left; }
+      #order-table tr .order-date:last-child {
+        margin-right: 0; }
+    #order-table tr .order-status {
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 23.72881%;
+      text-align: left; }
+      #order-table tr .order-status:last-child {
+        margin-right: 0; }
+    #order-table tr .order-total {
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 23.72881%;
+      text-align: left; }
+      #order-table tr .order-total:last-child {
+        margin-right: 0; }
+
 #contact-table {
   float: left;
   display: block;
