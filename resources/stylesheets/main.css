@@ -1002,6 +1002,17 @@ img {
     .order-summary .order-summary-amount:last-child {
       margin-right: 0; }
 
+#profile-changepassword {
+  float: left;
+  display: block;
+  margin-right: 1.69492%;
+  width: 32.20339%;
+  margin-left: 4.16667%; }
+  #profile-changepassword:last-child {
+    margin-right: 0; }
+  #profile-changepassword input {
+    width: 100%; }
+
 #receipt {
   max-width: 1200px;
   margin-left: auto;
