@@ -18,7 +18,7 @@
 	<div class="billing-summary">
 		<h2>Delivery & Billing Info</h2>
 		<hr>
-		<div id="billing-form">
+		<div class="billing-form">
 
 			<div class="billing-first-name">
 				<label for="billing_firstName">First Name *</label>
@@ -46,7 +46,7 @@
 				<span class="error"></span>
 			</div>
 			<div class="billing-postal-code">
-				<label for="billing_postalCode">Postal Code *</label>
+				<label for="billing_postalCode">Zip Code *</label>
 				<input type="text" id="billing_postalCode" name="billingInfo[postalCode]" value="{{ billingInfo.postalCode }}"/>
 				<span class="error"></span>
 			</div>
@@ -88,7 +88,7 @@
 			<a class="button next" href="#" data-ajax-handler="shop:checkout" data-ajax-handler="shop:onCopyBillingToShipping" data-ajax-update="#checkout-page=partial-checkout">Next step</a>
 
 			<!-- Hide when unchecked (See app.js for implementation) -->
-			<div id="shipping-form" style="display: none;">
+			<div class="shipping-form" style="display: none;">
 				<h3>Shipping Information</h3> 
 				<div class="shipping-first-name">
 					<label for="shipping_firstName">First Name *</label>
@@ -116,7 +116,8 @@
 				<div class="shipping-postal-code">
 					<label for="shipping_postalCode">Zip Code *</label>
 					<input type="text" name="shippingInfo[postalCode]" id="shipping_postalCode" value="{{ shippingInfo.postalCode }}"/>
-					<span class="error"></span>		</div>
+					<span class="error"></span>
+				</div>
 				<div class="shipping-country">
 					<label for="shipping_country">Country *</label>
 					<select id="shipping_country" name="shippingInfo[countryId]" data-state-selector="#shipping_state" data-current-state="{{ shippingInfo.stateId }}" >

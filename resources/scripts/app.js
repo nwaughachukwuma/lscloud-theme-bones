@@ -73,10 +73,13 @@
 
     });
 
+    //
+    // Handle Checkbox copy-info button in checkout
+    //
     $(document).on('click', '#copy_billing_to_shipping', function (){
       //data-ajax-handler="shop:onCopyBillingToShipping" data-ajax-update="#checkout-page=shop-checkoutaddress"
       if($(this).is(':checked')) {
-        $("#shipping-form").hide();
+        $(".shipping-form").hide();
 
         $(this).sendRequest('shop:onCheckoutBillingInfo', {
           onAfterUpdate: function() {
@@ -88,14 +91,41 @@
         });
 
       } else {
-        $("#shipping-form").show();
+        $(".shipping-form").show();
       }
 
     });
-
     $( document ).ajaxSuccess(function( event, request, settings ) { 
       if ( $( '#copy_billing_to_shipping' ).length ) { 
         $("#copy_billing_to_shipping").prop('checked', true);
+      } 
+    });
+
+    //
+    // Handle Checkbox copy-info button in profile
+    //
+    $(document).on('click', '#profile_billing_to_shipping', function (){
+      //data-ajax-handler="shop:onCopyBillingToShipping" data-ajax-update="#checkout-page=shop-checkoutaddress"
+      if($(this).is(':checked')) {
+        $(".shipping-form").hide();
+
+        $(this).sendRequest('shop:onUpdateCustomerProfile', {
+          onAfterUpdate: function() {
+            $(this).sendRequest('shop:onUpdateCustomerProfile', {
+              update: {'#profile-addresses' : 'partial-customerprofile'},
+              extraFields: {'copy_billing_to_shipping': 1}
+            });
+          }
+        });
+
+      } else {
+        $(".shipping-form").show();
+      }
+
+    });
+    $( document ).ajaxSuccess(function( event, request, settings ) { 
+      if ( $( '#profile_billing_to_shipping' ).length ) { 
+        $("#profile_billing_to_shipping").prop('checked', true);
       } 
     });
 

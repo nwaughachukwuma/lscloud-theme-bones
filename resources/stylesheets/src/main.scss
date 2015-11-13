@@ -361,6 +361,9 @@ img {
 	    font-size: $small;
 	    font-weight: 200;
 	    color: $black;
+	    span {
+	    	float: right;
+	    }
 		}
 		th {
 			text-align: left;
@@ -440,209 +443,207 @@ img {
 	}
 }
 // Checkout Process
-#delivery-billing-info {
-	@include outer-container;
-	.billing-summary {
-		@include span-columns(7.5);
-		border-right: 1px solid $grey;
-		padding-right: percentage(1/24);
-		margin-right: 0;
-		#billing-form {
-			@include span-columns(6 of 7);
-			float: none;
-			margin-top: 1em;
-			input,textarea,select {
-				@include fill-parent;
-			}
-			a {
-				float: right;
-			}
-			input[type="checkbox"] {
-				width: auto;
-			}
-			h4 {
-				display: inline-block;
-			}
-			.billing-first-name {
+.billing-summary {
+	@include span-columns(7.5);
+	border-right: 1px solid $grey;
+	padding-right: percentage(1/24);
+	margin-right: 0;
+	.billing-form {
+		@include span-columns(6 of 7);
+		float: none;
+		margin-top: 1em;
+		input,textarea,select {
+			@include fill-parent;
+		}
+		a {
+			float: right;
+		}
+		input[type="checkbox"] {
+			width: auto;
+		}
+		h4 {
+			display: inline-block;
+		}
+		.billing-first-name {
+			@include span-columns(3 of 6);
+		}
+		.billing-last-name {
+			@include span-columns(3	of 6);
+			@include omega();
+		}
+		.billing-email {
+			@include span-columns(6 of 6);
+			@include omega();
+		}
+		.billing-address {
+			@include span-columns(6 of 6);
+			@include omega();
+		}
+		.billing-city {
+			@include span-columns(3 of 6);
+		}
+		.billing-postal-code {
+			@include span-columns(3 of 6);
+			@include omega();
+		}
+		.billing-country {
+			@include span-columns(3 of 6);
+		}
+		.billing-state {
+			@include span-columns(3 of 6);
+			@include omega();
+		}
+		.billing-phone {
+			@include span-columns(6 of 6);
+		}
+		.shipping-form {
+			@include span-columns(6 of 6);
+			.shipping-first-name {
 				@include span-columns(3 of 6);
 			}
-			.billing-last-name {
+			.shipping-last-name {
 				@include span-columns(3	of 6);
 				@include omega();
 			}
-			.billing-email {
+			.shipping-email {
 				@include span-columns(6 of 6);
 				@include omega();
 			}
-			.billing-address {
+			.shipping-address {
 				@include span-columns(6 of 6);
 				@include omega();
 			}
-			.billing-city {
+			.shipping-city {
 				@include span-columns(3 of 6);
 			}
-			.billing-postal-code {
-				@include span-columns(3 of 6);
-				@include omega();
-			}
-			.billing-country {
-				@include span-columns(3 of 6);
-			}
-			.billing-state {
+			.shipping-postal-code {
 				@include span-columns(3 of 6);
 				@include omega();
 			}
-			.billing-phone {
+			.shipping-country {
+				@include span-columns(3 of 6);
+			}
+			.shipping-state {
+				@include span-columns(3 of 6);
+				@include omega();
+			}
+			.shipping-phone {
 				@include span-columns(6 of 6);
 			}
-			#shipping-form {
-				@include span-columns(6 of 6);
-				.shipping-first-name {
-					@include span-columns(3 of 6);
+		}
+		ul {
+			@include fill-parent;
+			background-color: $lightgrey;
+			border: 1px solid $grey;
+			padding: $small-spacing;
+			margin-bottom: 0;
+			li {
+				font-size: $tiny;
+				font-weight: $light;
+				margin-bottom: 0.1em;
+				&:first-child {
+					float: left;
 				}
-				.shipping-last-name {
-					@include span-columns(3	of 6);
-					@include omega();
+				&:nth-child(2) {
+					float: right;
 				}
-				.shipping-email {
-					@include span-columns(6 of 6);
-					@include omega();
-				}
-				.shipping-address {
-					@include span-columns(6 of 6);
-					@include omega();
-				}
-				.shipping-city {
-					@include span-columns(3 of 6);
-				}
-				.shipping-postal-code {
-					@include span-columns(3 of 6);
-					@include omega();
-				}
-				.shipping-country {
-					@include span-columns(3 of 6);
-				}
-				.shipping-state {
-					@include span-columns(3 of 6);
-					@include omega();
-				}
-				.shipping-phone {
-					@include span-columns(6 of 6);
-				}
-			}
-			ul {
-				@include fill-parent;
-				background-color: $lightgrey;
-				border: 1px solid $grey;
-				padding: $small-spacing;
-				margin-bottom: 0;
-				li {
-					font-size: $tiny;
-					font-weight: $light;
-					margin-bottom: 0.1em;
-					&:first-child {
-						float: left;
-					}
-					&:nth-child(2) {
-						float: right;
-					}
-					&:nth-child(3) {
-						clear: both;
-					}
+				&:nth-child(3) {
+					clear: both;
 				}
 			}
 		}
-		#delivery-form {
-			@include span-columns(6 of 7);
-			label {
-				@include fill-parent;
-				font-size: $small;
-				font-weight: $light;
-				color: $black;
-				margin-top: $small-spacing;
-				.delivery-cost {
-					float: right;
+	}
+	#delivery-form {
+		@include span-columns(6 of 7);
+		label {
+			@include fill-parent;
+			font-size: $small;
+			font-weight: $light;
+			color: $black;
+			margin-top: $small-spacing;
+			.delivery-cost {
+				float: right;
+			}
+		}
+		a {
+			@include fill-parent;
+			display: block;
+			text-align: center;
+			margin-top: $base-spacing;
+		}
+	}
+	#pay-form {
+		@include span-columns(6 of 7);
+		margin-top: $small-spacing;
+		label {
+			@include fill-parent;
+		}
+		#payment_form {
+			ul.form {
+				@include span-columns(6 of 6);
+				input {
+					@include fill-parent;
+				}
+				li:first-child {
+					@include span-columns(3 of 6);
+				}
+				li:nth-child(2) {
+					@include span-columns(3 of 6);
+					@include omega();
+				}
+				li:nth-child(3) {
+					@include fill-parent;
+					@include omega();
+				}
+				li:nth-child(n+4) {
+					@include span-columns(2 of 6);
+				}
+				li:last-child {
+					@include omega();
+					label {
+						display: none;
+					}
+					&::before {
+						content: "<label>CVC</label>";
+						content: "CVC";
+						display: block;
+						color: #9b9b9b;
+						font-size: 0.75019em;
+						font-weight: 200;
+						margin-bottom: 0.375em;
+					}
 				}
 			}
-			a {
+			.button {
 				@include fill-parent;
 				display: block;
 				text-align: center;
 				margin-top: $base-spacing;
-			}
-		}
-		#pay-form {
-			@include span-columns(6 of 7);
-			margin-top: $small-spacing;
-			label {
-				@include fill-parent;
-			}
-			#payment_form {
-				ul.form {
-					@include span-columns(6 of 6);
-					input {
-						@include fill-parent;
-					}
-					li:first-child {
-						@include span-columns(3 of 6);
-					}
-					li:nth-child(2) {
-						@include span-columns(3 of 6);
-						@include omega();
-					}
-					li:nth-child(3) {
-						@include fill-parent;
-						@include omega();
-					}
-					li:nth-child(n+4) {
-						@include span-columns(2 of 6);
-					}
-					li:last-child {
-						@include omega();
-						label {
-							display: none;
-						}
-						&::before {
-							content: "<label>CVC</label>";
-							content: "CVC";
-							display: block;
-							color: #9b9b9b;
-							font-size: 0.75019em;
-							font-weight: 200;
-							margin-bottom: 0.375em;
-						}
-					}
-				}
-				.button {
-					@include fill-parent;
-					display: block;
-					text-align: center;
-					margin-top: $base-spacing;
-					background-color: $action-color;
+				background-color: $action-color;
+				color: $white;
+				font-weight: $heavy;
+				padding: $small-spacing $base-spacing;
+				&:hover,
+				&:focus {
+					background-color: shade($action-color, 20%);
 					color: $white;
-					font-weight: $heavy;
-					padding: $small-spacing $base-spacing;
-					&:hover,
-					&:focus {
-						background-color: shade($action-color, 20%);
-						color: $white;
-					}
 				}
 			}
-		}
-	}
-	.order-summary {
-		@include span-columns(4);
-		margin-left: percentage(1/24);
-		.order-summary-description {
-			@include span-columns(2 of 4);
-		}
-		.order-summary-amount {
-			@include span-columns(2 of 4);
-			text-align: right;
 		}
 	}
 }
+.order-summary {
+	@include span-columns(4);
+	margin-left: percentage(1/24);
+	.order-summary-description {
+		@include span-columns(2 of 4);
+	}
+	.order-summary-amount {
+		@include span-columns(2 of 4);
+		text-align: right;
+	}
+}
+
 #receipt {
 	@include outer-container;
 	.receipt-items {
