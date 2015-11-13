@@ -1,9 +1,10 @@
 <div class="wrapper">
-  {{ flash() }}
+
   {{ open_form({'data-ajax-handler': 'shop:onUpdateCustomerProfile', 'class': 'custom', 'data-ajax-update': "#profile-addresses=partial-customerprofile,#profile-changepassword=partial-changepassword", 'data-validation-message' : ''}) }}
   <input type="hidden" name="billing[id]" value="{{ billing.id }}" />
 
   <div class="billing-summary">
+    {{ flash() }}
     <h2>Billing information</h2>
     <hr>
     <div class="billing-form">

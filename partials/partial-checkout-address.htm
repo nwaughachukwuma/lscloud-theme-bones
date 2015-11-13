@@ -11,11 +11,12 @@
   </tr>
 </table>
 
-{{ flash() }}
+
 {{ open_form({'class': 'custom', 'data-validation-message' : ''}) }}
 
 <div class="wrapper">
 	<div class="billing-summary">
+		{{ flash() }}
 		<h2>Delivery & Billing Info</h2>
 		<hr>
 		<div class="billing-form">
