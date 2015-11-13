@@ -1295,6 +1295,7 @@ footer {
   text-align: center;
   font-size: 3.15733em; }
   .rating span {
+    color: #555;
     display: inline-block;
     position: relative;
     cursor: pointer; }
@@ -1311,8 +1312,9 @@ footer {
     position: absolute;
     color: gold; }
   .rating p {
-    font-size: 0.75019em;
-    margin: 0.5em 0 1em 0; }
+    font-size: 0.5em;
+    margin: 0.25em 0 1.5em 0;
+    color: #555; }
 
 .dropdown ul {
   padding: 0;

@@ -913,7 +913,6 @@ footer {
 .modal-open {
   overflow: hidden;
 }
-
 .modal-closed {
   overflow: auto;
 }
@@ -925,6 +924,7 @@ footer {
   text-align: center;
   font-size: $large;
   span {
+  	color: $darkgrey;
     display: inline-block;
     position: relative;
     cursor: pointer;
@@ -946,8 +946,9 @@ footer {
     color: gold;
   }
   p {
-    font-size: $tiny;
-    margin: 0.5em 0 1em 0;
+		font-size: 0.5em;
+    margin: 0.25em 0 1.5em 0;
+    color: $darkgrey;
   }
 } 
 // Dropdown
