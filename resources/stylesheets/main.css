@@ -602,6 +602,33 @@ img {
     #cart-table tr .cart-subtotal {
       margin-bottom: 1em; }
 
+#contact-table {
+  float: left;
+  display: block;
+  margin-right: 1.69492%;
+  width: 49.15254%;
+  margin-top: 1.5em; }
+  #contact-table:last-child {
+    margin-right: 0; }
+  #contact-table tr {
+    float: left;
+    display: block;
+    margin-right: 3.44828%;
+    width: 48.27586%;
+    display: table;
+    width: 100%;
+    table-layout: fixed; }
+    #contact-table tr:last-child {
+      margin-right: 0; }
+    #contact-table tr td {
+      text-align: left;
+      font-size: 1em;
+      font-weight: 200;
+      color: #4a4a4a; }
+    #contact-table tr th {
+      text-align: left;
+      color: #4a4a4a; }
+
 #checkout-progress {
   max-width: 1200px;
   margin-left: auto;

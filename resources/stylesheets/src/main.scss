@@ -349,6 +349,25 @@ img {
 		}
 	}
 }
+// Contact Page
+#contact-table {
+	@include span-columns(6);
+	margin-top: $base-spacing;
+	tr {
+		@include span-columns(3 of 6);
+		@include row(table);
+		td {
+			text-align: left;
+	    font-size: $small;
+	    font-weight: 200;
+	    color: $black;
+		}
+		th {
+			text-align: left;
+			color: $black;
+		}
+	}
+}
 #checkout-progress {
 	@include outer-container;
 	tr {
