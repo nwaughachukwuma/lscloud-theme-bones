@@ -455,8 +455,9 @@ img {
 		input,textarea,select {
 			@include fill-parent;
 		}
-		a {
+		.next {
 			float: right;
+			width: initial;
 		}
 		input[type="checkbox"] {
 			width: auto;

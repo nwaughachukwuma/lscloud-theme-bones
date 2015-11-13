@@ -722,8 +722,9 @@ img {
       margin-right: 0; }
     .billing-summary .billing-form input, .billing-summary .billing-form textarea, .billing-summary .billing-form select {
       width: 100%; }
-    .billing-summary .billing-form a {
-      float: right; }
+    .billing-summary .billing-form .next {
+      float: right;
+      width: initial; }
     .billing-summary .billing-form input[type="checkbox"] {
       width: auto; }
     .billing-summary .billing-form h4 {
