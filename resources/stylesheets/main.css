@@ -1012,6 +1012,8 @@ img {
     margin-right: 0; }
   #profile-changepassword input {
     width: 100%; }
+  #profile-changepassword label:nth-of-type(1) {
+    margin-top: 16px; }
 
 #receipt {
   max-width: 1200px;

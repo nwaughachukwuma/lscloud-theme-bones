@@ -1,8 +1,8 @@
-{{ flash() }}
-{{ open_form({'data-ajax-handler': 'shop:onUpdateCustomerProfile', 'class': 'custom', 'data-ajax-update': "#profile-addresses=partial-customerprofile,#profile-changepassword=partial-changepassword", 'data-validation-message' : ''}) }}
-<input type="hidden" name="billing[id]" value="{{ billing.id }}" />
-
 <div class="wrapper">
+  {{ flash() }}
+  {{ open_form({'data-ajax-handler': 'shop:onUpdateCustomerProfile', 'class': 'custom', 'data-ajax-update': "#profile-addresses=partial-customerprofile,#profile-changepassword=partial-changepassword", 'data-validation-message' : ''}) }}
+  <input type="hidden" name="billing[id]" value="{{ billing.id }}" />
+
   <div class="billing-summary">
     <h2>Billing information</h2>
     <hr>
@@ -80,10 +80,12 @@
       <!-- See the onCopyBillingToShipping AJAX handler implementation on the Checkout page's AJAX tab -->
       <h3><a href="#" id="profile_billing_to_shipping" data-ajax-handler="shop:onUpdateCustomerProfile" data-ajax-update="#profile-addresses=partial-customerprofile" data-validation-message="" data-ajax-extra-fields="copy_billing_to_shipping='1'">&#8627; Copy Billing to Shipping</a></h3>
 
+      <h2>Shipping Information</h2>
+      <hr>
       <!-- Hide when unchecked (See app.js for implementation) -->
-      <div class="shipping-form" >
+      <div class="shipping-form" style="margin-top: 8px;">
         <input type="hidden" name="shipping[id]" value="{{ shipping.id }}" />
-        <h3>Shipping Information</h3>
+
 
         <div class="shipping-first-name">
           <label for="shipping_first_name">First Name</label>
@@ -160,9 +162,10 @@
     </div>
   </div>
 
+  {{ close_form() }}
+
   <div id="profile-changepassword">
     {{ partial('partial-changepassword') }}
   </div>
-</div>  
 
-{{ close_form() }}
+</div>
