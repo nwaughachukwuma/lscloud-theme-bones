@@ -100,12 +100,14 @@
           <meta itemprop="price" content="{{ product.price }}" />
         </div>
  
-          {{ flash() }} 
+        <!-- {{ flash() }}  -->
 
         <label>Quantity</label>
         <input class="product-quantity" type="text" value="{{ quantity|default("1") }}" name="quantity">
         <input type="hidden" name="productId" value="{{ product.id }}"/>
-        <a class="button next product-add" href="#" data-ajax-handler="shop:onAddToCart" data-ajax-update="#mini-cart=shop-minicart, #product-page=partial-product">Add to Cart</a>
+        <a class="button next" id="product-add" href="#" >Add to Cart</a>
+        <a class="button next " id="product-added" href="#" disabled="disabled" style="display: none;">Added!</a>
+
         {% else %}
           <p>
           This product is temporarily unavailable.

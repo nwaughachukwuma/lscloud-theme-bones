@@ -42,7 +42,7 @@
       }
     }) 
 
-    //
+    // 
     // Handle the Enter key in the Quantity field
     //
     $('#cart-content').on('keydown', 'input.quantity', function(ev) {
@@ -97,6 +97,16 @@
       if ( $( '#copy_billing_to_shipping' ).length ) { 
         $("#copy_billing_to_shipping").prop('checked', true);
       } 
+    });
+
+    $(document).on('click', '#product-add', function (){
+      $(this).sendRequest('shop:onAddToCart', {
+        update: {'#product-page' : 'partial-product', '#mini-cart' : 'shop-minicart'},
+        onAfterUpdate: function() {
+          $('#product-add').hide();
+          $('#product-added').show();
+        }
+      });
     });
 
     $('.pChk').click(function() {

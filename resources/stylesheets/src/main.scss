@@ -201,10 +201,17 @@ img {
 			height: 43px;
 			text-align: center;
 		}
-		.product-add {
+		#product-add {
 			@include span-columns(5 of 6);
 			@include omega();
 			text-align: center;
+		}
+		#product-added {
+			@include span-columns(5 of 6);
+			@include omega();
+			text-align: center;
+			background-color: #4A4A4A;
+			color: $action-color;
 		}
 		.product-extras + div {
 			margin-right: 0;
