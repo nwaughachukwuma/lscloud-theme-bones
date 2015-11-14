@@ -44,22 +44,24 @@ url: '/order/:orderId'
 	      {% endfor %}
 	    {% endfor %}
 	  {% endfor %}
+
+		{% if order.total_discount %}
+			<tr><td><p>Discount applied: <strong>{{ order.total_discount|currency }}</strong></p></td></tr>
+		{% endif %}
+		<tr><td><p>Subtotal: <strong>{{ order.subtotal_invoiced|currency }}</strong></p></td></tr>
+		<tr><td><p>Sales Tax: <strong>{{ order.total_sales_tax|currency }}</strong></p></td></tr>
+		<tr><td><p>Shipping: <strong>{{ order.total_shipping_quote|currency }}</strong></p></td></tr>
+		{% if order.total_shipping_tax %}
+			<tr><td><p>Shipping Taxes: <strong>{{ order.total_shipping_tax|currency }}</strong></p></td></tr>
+		{% endif %}
+		<tr><td><p>Total: <strong>{{ order.total|currency }}</strong></p></td></tr>
 	</table>
 
   {% if order.payment_method.has_payment_form() and not order.payment_processed() %}
-    <a class="button" href="{{ root_url('/review/'~order.order_hash) }}">Pay the order</a>
+    <a class="button next" href="{{ root_url('/review/'~order.order_hash) }}">Pay the order</a>
   {% endif %}
 
-	{% if order.total_discount %}
-	  <p><strong>Discount applied:</strong> <h4>{{ order.total_discount|currency }}</h4></p>
-	{% endif %}
-	<p><strong>Subtotal:</strong> <h4>{{ order.subtotal_invoiced|currency }}</h4></p>
-	<p><strong>Sales Tax:</strong> <h4>{{ order.total_sales_tax|currency }}</h4></p>
-	<p><strong>Shipping:</strong> <h4>{{ order.total_shipping_quote|currency }}</h4></p>
-	{% if order.total_shipping_tax %}
-	  <p><strong>Shipping Taxes:</strong> <h4>{{ order.total_shipping_tax|currency }}</h4></p>
-	{% endif %}
-	<p class="subtotal"><strong>Total:</strong>  <h4>{{ order.total|currency }}</h4></p>
+	
 
 {% else %}
   <p class="flash error">Order not found</p>

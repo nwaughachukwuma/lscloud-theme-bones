@@ -359,7 +359,7 @@ img {
 		@include fill-parent;
 		@include row(table);
 		td, th {
-			text-align: center;
+			text-align: right;
 		}
 		hr {
 			margin-top: 0;
@@ -370,6 +370,7 @@ img {
 		}
 		.order-item-header {
 			@include span-columns(3);
+			text-align: left;
 		}
 		.order-item {
 			@include span-columns(1);
@@ -390,10 +391,10 @@ img {
 			@include span-columns(2);
 		}
 		.order-discount {
-			@include span-columns(1);
+			@include span-columns(2);
 		}
 		.order-total {
-			@include span-columns(4);
+			@include span-columns(3);
 		}
 	}
 }

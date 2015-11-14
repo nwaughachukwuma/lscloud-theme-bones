@@ -618,7 +618,7 @@ img {
     width: 100%;
     table-layout: fixed; }
     #order-table tr td, #order-table tr th {
-      text-align: center; }
+      text-align: right; }
     #order-table tr hr {
       margin-top: 0; }
     #order-table tr .order {
@@ -633,7 +633,8 @@ img {
       float: left;
       display: block;
       margin-right: 1.69492%;
-      width: 23.72881%; }
+      width: 23.72881%;
+      text-align: left; }
       #order-table tr .order-item-header:last-child {
         margin-right: 0; }
     #order-table tr .order-item {
@@ -672,14 +673,14 @@ img {
       float: left;
       display: block;
       margin-right: 1.69492%;
-      width: 6.77966%; }
+      width: 15.25424%; }
       #order-table tr .order-discount:last-child {
         margin-right: 0; }
     #order-table tr .order-total {
       float: left;
       display: block;
       margin-right: 1.69492%;
-      width: 32.20339%; }
+      width: 23.72881%; }
       #order-table tr .order-total:last-child {
         margin-right: 0; }
 
