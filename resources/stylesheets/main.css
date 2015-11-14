@@ -557,6 +557,8 @@ img {
       text-align: left; }
       #cart-table tr .cart-image:last-child {
         margin-right: 0; }
+      #cart-table tr .cart-image img {
+        border: 1px solid rgba(155, 155, 155, 0.3); }
     #cart-table tr .cart-name {
       float: left;
       display: block;
@@ -615,36 +617,69 @@ img {
     display: table;
     width: 100%;
     table-layout: fixed; }
-    #order-table tr .order-number {
+    #order-table tr td, #order-table tr th {
+      text-align: center; }
+    #order-table tr hr {
+      margin-top: 0; }
+    #order-table tr .order {
       float: left;
       display: block;
       margin-right: 1.69492%;
       width: 23.72881%;
       text-align: left; }
-      #order-table tr .order-number:last-child {
+      #order-table tr .order:last-child {
         margin-right: 0; }
-    #order-table tr .order-date {
+    #order-table tr .order-item-header {
       float: left;
       display: block;
       margin-right: 1.69492%;
-      width: 23.72881%;
-      text-align: left; }
-      #order-table tr .order-date:last-child {
+      width: 23.72881%; }
+      #order-table tr .order-item-header:last-child {
         margin-right: 0; }
-    #order-table tr .order-status {
+    #order-table tr .order-item {
       float: left;
       display: block;
       margin-right: 1.69492%;
-      width: 23.72881%;
-      text-align: left; }
-      #order-table tr .order-status:last-child {
+      width: 6.77966%; }
+      #order-table tr .order-item:last-child {
+        margin-right: 0; }
+      #order-table tr .order-item img {
+        border: 1px solid rgba(155, 155, 155, 0.3); }
+        #order-table tr .order-item img:hover {
+          border-color: #9b9b9b; }
+    #order-table tr .order-name {
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 15.25424%; }
+      #order-table tr .order-name:last-child {
+        margin-right: 0; }
+    #order-table tr .order-quantity {
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 15.25424%; }
+      #order-table tr .order-quantity:last-child {
+        margin-right: 0; }
+    #order-table tr .order-price {
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 15.25424%; }
+      #order-table tr .order-price:last-child {
+        margin-right: 0; }
+    #order-table tr .order-discount {
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 6.77966%; }
+      #order-table tr .order-discount:last-child {
         margin-right: 0; }
     #order-table tr .order-total {
       float: left;
       display: block;
       margin-right: 1.69492%;
-      width: 23.72881%;
-      text-align: left; }
+      width: 32.20339%; }
       #order-table tr .order-total:last-child {
         margin-right: 0; }
 

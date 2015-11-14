@@ -13,19 +13,19 @@ url: /orders
 {% else %}
   <table id="order-table">
     <tr>
-      <th class="order-number"><h2>#</h2></th>
-      <th class="order-date"><h2>Date</h2></th>
-      <th class="order-status"><h2>Status</h2></th>
-      <th class="order-total"><h2>Total</h2></th>
+      <th class="order"><h2>#</h2></th>
+      <th class="order"><h2>Date</h2></th>
+      <th class="order"><h2>Status</h2></th>
+      <th class="order"><h2>Total</h2></th>
     </tr>
     {% for order in orders if not order.is_quote %}
       {% set url = root_url('/order/'~order.id) %}
       <tr><td><hr></td></tr>
       <tr>
-        <td class="order-number"><a href="{{ url }}">{{ order.number }}</a></a></td>
-        <td class="order-date"><a href="{{ url }}">{{ order.created_at.format('M jS, Y') }}</a></td>
-        <td class="order-status"><a href="{{ url }}">{{ order.orderStatus.name }}</a></td>
-        <td class="order-total"><a href="{{ url }}"><i>{{ order.total|currency }}</i></a></td>
+        <td class="order"><a href="{{ url }}">{{ order.number }}</a></a></td>
+        <td class="order"><a href="{{ url }}">{{ order.created_at.format('M jS, Y') }}</a></td>
+        <td class="order"><a href="{{ url }}">{{ order.orderStatus.name }}</a></td>
+        <td class="order"><a href="{{ url }}"><i>{{ order.total|currency }}</i></a></td>
       </tr>
 
     {% endfor %}

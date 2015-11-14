@@ -319,6 +319,9 @@ img {
 		.cart-image {
 			@include span-columns(2);
 			text-align: left;
+			img {
+				border: 1px solid $lightgrey;
+			}
 		}
 		.cart-name {
 			@include span-columns(4);
@@ -355,24 +358,42 @@ img {
 	tr {
 		@include fill-parent;
 		@include row(table);
-		td {
-
+		td, th {
+			text-align: center;
 		}
-		.order-number {
+		hr {
+			margin-top: 0;
+		}
+		.order {
 			@include span-columns(3);
 			text-align: left;
 		}
-		.order-date {
+		.order-item-header {
 			@include span-columns(3);
-			text-align: left;
 		}
-		.order-status {
-			@include span-columns(3);
-			text-align: left;
+		.order-item {
+			@include span-columns(1);
+			img {
+				border: 1px solid $lightgrey;
+				&:hover {
+					border-color: $grey;
+				}
+			}
+		}
+		.order-name {
+			@include span-columns(2);
+		}
+		.order-quantity {
+			@include span-columns(2);
+		}
+		.order-price {
+			@include span-columns(2);
+		}
+		.order-discount {
+			@include span-columns(1);
 		}
 		.order-total {
-			@include span-columns(3);
-			text-align: left;
+			@include span-columns(4);
 		}
 	}
 }

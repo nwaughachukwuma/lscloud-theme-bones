@@ -15,31 +15,31 @@ url: '/order/:orderId'
   {% endif %}
   <p><strong>Order Date: </strong> {{ order.created_at.format('M jS, Y') }}</p>
 
-	<table class="product-list full-width">
+	<table id="order-table">
 	  <tr>
-	    <th>Item</th>
-	    <th class="narrow">Quantity</th>
-	    <th class="narrow">Price</th>
-	    <th class="narrow">Discount</th>
-	    <th class="narrow">Total</th>
+	    <th class="order-item-header"><h2>Item</h2></th>
+	    <th class="order-quantity"><h2>Quantity</h2></th>
+	    <th class="order-price"><h2>Price</h2></th>
+	    <th class="order-discount"><h2>Discount</h2></th>
+	    <th class="order-total"><h2>Total</h2></th>
 	  </tr>
 	  {% for invoice in order.invoices %}
 	    {% for shipment in invoice.shipments %}
 	      {% for item in shipment.shipmentItems %}
+	      <tr><td><hr></td></tr>
 	      <tr>
-	        <td>
-	          <a class="hide-for-small" href="/product/{{ item.product.url_name }}"><img src="{{ item.product.images.first.thumbnail(80, 80)|default('http://placehold.it/80x80') }}"/></a>
-	          <div class="short-description">
-	            <h3><a href="/product/{{ item.product.url_name }}">{{ item.product.name }}</a></h3>
-	            
-	            {% set description = item.optionsString() %}
-	            {% if description %}<p>{{ description|unescape }}</p>{% endif %}
-	          </div>
+	        <td class="order-item">
+	          <a href="/product/{{ item.product.url_name }}"><img src="{{ item.product.images.first.thumbnail(100, 100)|default('http://placehold.it/100x100') }}"/></a>
 	        </td>
-	        <td class="narrow"><h4>{{ item.quantity|number_format(0) }}</h4></td>
-	        <td class="narrow"><h4>{{ item.pivot.price|currency }}</h4></td>
-	        <td class="narrow"><h4>{{ 0|currency }}</h4></td>
-	        <td class="narrow"><h4>{{ (item.quantity *item.pivot.price)|currency }}</h4></td>
+	        <td class="order-name">
+						<a href="/product/{{ item.product.url_name }}">{{ item.product.name }}</a>
+						{% set description = item.optionsString() %}
+						{% if description %}<p>{{ description|unescape }}</p>{% endif %}
+					</td>
+	        <td class="order-quantity">{{ item.quantity|number_format(0) }}</td>
+	        <td class="order-price">{{ item.pivot.price|currency }}</td>
+	        <td class="order-discount">{{ 0|currency }}</td>
+	        <td class="order-total">{{ (item.quantity *item.pivot.price)|currency }}</td>
 	      </tr>
 	      {% endfor %}
 	    {% endfor %}
