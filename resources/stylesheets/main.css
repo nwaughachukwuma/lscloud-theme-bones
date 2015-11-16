@@ -297,16 +297,18 @@ nav {
       background: #555; }
       nav ul li:hover a {
         color: #fff; }
+  @media screen and (max-width: 768px) {
+    nav #web-nav {
+      display: none; } }
+  nav #hamburger {
+    display: none; }
+    @media screen and (max-width: 768px) {
+      nav #hamburger {
+        display: initial; } }
 
 #logo {
   float: left;
   padding: 13px; }
-  @media screen and (max-width: 768px) {
-    #logo {
-      float: none;
-      margin: auto;
-      width: 300px;
-      text-align: center; } }
 
 .home-banner {
   max-width: none; }
@@ -1516,7 +1518,8 @@ footer {
   background: #555;
   display: block;
   color: #fff;
-  text-shadow: 0 -1px 0 #000; }
+  text-shadow: 0 -1px 0 #000;
+  font-size: 0.75em; }
 
 #hamburger .hamburger-dropdown ul li a {
   color: #fff; }
