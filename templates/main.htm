@@ -37,9 +37,10 @@ description: 'Default Template'
       </div>
       <ul>
         <li class="dropdown">
-          <a href="/shop">Shop ▾</a>
+          <a>Shop ▾</a>
           {% tree categories %}
           <ul>
+            <li><a href="/shop">All items</a></li>
             {% for category in tree.items %}
             <li>
               <a href="/category/{{ category.fullUrlName }}">{{ category.name }}</a>
