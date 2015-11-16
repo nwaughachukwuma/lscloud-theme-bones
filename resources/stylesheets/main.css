@@ -1473,7 +1473,7 @@ footer {
 .dropdown ul {
   padding: 0;
   position: absolute;
-  top: 66px;
+  top: 100%;
   left: 0;
   width: 150px;
   -webkit-box-shadow: none;

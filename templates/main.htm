@@ -39,17 +39,25 @@ description: 'Default Template'
       <ul id="hamburger">
         <li class="hamburger-dropdown">
           <a href="#">☰</a>
-          {% tree categories %}
           <ul>
-            <li><a href="/shop">All items</a></li>
-            {% for category in tree.items %}
-            <li>
-              <a href="/category/{{ category.fullUrlName }}">{{ category.name }}</a>
-              {% branch category.children %}
-            </li>
-            {% endfor %}
+            {% if customer %}
+              <li>
+                <a href="/profile">Your Account</a>
+              </li>
+              <li>
+                <a href="/orders">Your orders</a>
+              </li>
+              <li>
+                <a href="/logout">Logout</a>
+              </li>
+            {% else %}
+              <li>
+                <a href="/sign-in">Login</a>
+              </li>
+            {% endif %}
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/about">About us</a></li>
           </ul>
-          {% endtree %}
         </li>
       </ul>
 
@@ -71,7 +79,7 @@ description: 'Default Template'
         </li>
         {% if customer %}
           <li class="dropdown">
-            <a href="/profile">My Account ▾</a>
+            <a href="/profile">Your Account ▾</a>
             <ul>
               <li>
                 <a href="/orders">Your orders</a>
