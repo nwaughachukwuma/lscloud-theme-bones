@@ -95,16 +95,17 @@ span.error {
 	display: block;
 }
 #mini-cart {
-	padding: initial;
+	padding: $base-spacing;
+	background: $grey;
 	a {
-		padding: $base-spacing;
-		background: $grey;
 		color: $white;
 		font-weight: $bold;
 		&:hover {
-			background: $darkgrey;
 			color: $action-color;
 		}
+	}
+	&:hover {
+		background: $darkgrey;
 	}
 }
 .has-items {

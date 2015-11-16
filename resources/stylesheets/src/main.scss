@@ -110,6 +110,23 @@ nav {
 		}
 	}
 }
+#mobile-nav {
+	display: none;
+	background-color: #EAEAEA;
+	.shop-nav {
+		float: left;
+		.dropdown ul {
+			font-size: 1em;
+			top
+		}
+	}
+	ul {
+		font-size: 0.75em;
+	}
+	@include media(max-width $tablet) {
+		display: initial;
+	}
+}
 #logo {
 	float: left;
 	padding: 13px;
@@ -1064,7 +1081,7 @@ footer {
 .dropdown ul {
   padding: 0;
   position: absolute;
-  top: 66px;
+  top: 100%;
   left: 0;
   width: 150px;
   -webkit-box-shadow: none;
@@ -1096,6 +1113,7 @@ footer {
 #hamburger {
 	.hamburger-dropdown {
 		padding: 1em;
+		height: 66px;
 		a {
 			font-size: 1.5em;
 		}
@@ -1105,7 +1123,7 @@ footer {
 	  position: absolute;
 	  top: 66px;
 	  right: 0;
-	  width: 150px;
+	  width: 200px;
 	  -webkit-box-shadow: none;
 	  -moz-box-shadow: none;
 	  box-shadow: none;

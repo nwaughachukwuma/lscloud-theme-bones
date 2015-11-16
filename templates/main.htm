@@ -96,6 +96,28 @@ description: 'Default Template'
         {% endif %}
       </ul>
     </nav>
+    <nav id="mobile-nav">
+      <ul class="shop-nav">
+        <li class="dropdown">
+          <a>Shop ▾</a>
+          {% tree categories %}
+          <ul>
+            <li><a href="/shop">All items</a></li>
+            {% for category in tree.items %}
+            <li>
+              <a href="/category/{{ category.fullUrlName }}">{{ category.name }}</a>
+              {% branch category.children %}
+            </li>
+            {% endfor %}
+          </ul>
+          {% endtree %}
+        </li>
+      </ul>
+      <ul>
+        <li id="mini-cart">{{ partial('shop-minicart') }}</li>
+      </ul>
+    </nav>
+
   </div>
   </header>
   <body>

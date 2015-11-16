@@ -72,15 +72,15 @@ span.error {
   display: block; }
 
 #mini-cart {
-  padding: initial; }
+  padding: 1.5em;
+  background: #9b9b9b; }
   #mini-cart a {
-    padding: 1.5em;
-    background: #9b9b9b;
     color: #fff;
     font-weight: 500; }
     #mini-cart a:hover {
-      background: #555;
       color: #F0C332; }
+  #mini-cart:hover {
+    background: #555; }
 
 .has-items {
   background: #F0C332 !important; }
@@ -305,6 +305,19 @@ nav {
     @media screen and (max-width: 768px) {
       nav #hamburger {
         display: initial; } }
+
+#mobile-nav {
+  display: none;
+  background-color: #EAEAEA; }
+  #mobile-nav .shop-nav {
+    float: left; }
+    #mobile-nav .shop-nav .dropdown ul {
+      font-size: 1em; }
+  #mobile-nav ul {
+    font-size: 0.75em; }
+  @media screen and (max-width: 768px) {
+    #mobile-nav {
+      display: initial; } }
 
 #logo {
   float: left;
@@ -1491,7 +1504,8 @@ footer {
   visibility: visible; }
 
 #hamburger .hamburger-dropdown {
-  padding: 1em; }
+  padding: 1em;
+  height: 66px; }
   #hamburger .hamburger-dropdown a {
     font-size: 1.5em; }
 
@@ -1500,7 +1514,7 @@ footer {
   position: absolute;
   top: 66px;
   right: 0;
-  width: 150px;
+  width: 200px;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;

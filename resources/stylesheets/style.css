@@ -58,15 +58,15 @@ span.error {
   display: block; }
 
 #mini-cart {
-  padding: initial; }
+  padding: 1.5em;
+  background: #9b9b9b; }
   #mini-cart a {
-    padding: 1.5em;
-    background: #9b9b9b;
     color: #fff;
     font-weight: 500; }
     #mini-cart a:hover {
-      background: #555;
       color: #F0C332; }
+  #mini-cart:hover {
+    background: #555; }
 
 .has-items {
   background: #F0C332 !important; }
