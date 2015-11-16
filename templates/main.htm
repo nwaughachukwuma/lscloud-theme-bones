@@ -35,6 +35,25 @@ description: 'Default Template'
       <div id="logo">
         <a href="{{ site_url('/') }}"><img src="{{ theme.logoImage.thumbnail('auto', 'auto') }}" alt="" class="logo"></a>
       </div>
+
+      <ul id="hamburger">
+        <li class="hamburger-dropdown">
+          <a href="#">=</a>
+          {% tree categories %}
+          <ul>
+            <li><a href="/shop">All items</a></li>
+            {% for category in tree.items %}
+            <li>
+              <a href="/category/{{ category.fullUrlName }}">{{ category.name }}</a>
+              {% branch category.children %}
+            </li>
+            {% endfor %}
+          </ul>
+          {% endtree %}
+        </li>
+      </ul>
+
+
       <ul>
         <li class="dropdown">
           <a>Shop ▾</a>
@@ -67,7 +86,6 @@ description: 'Default Template'
             <a href="/sign-in">Login</a>
           </li>
         {% endif %}
-        </li>
         <li id="mini-cart">{{ partial('shop-minicart') }}</li>
         {% if search %}
         <li>

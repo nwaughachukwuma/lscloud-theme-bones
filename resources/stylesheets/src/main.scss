@@ -4,6 +4,10 @@
 @import "neat";
 @import "style";
 
+// Media queries
+$tablet: 768px;
+$smartphone: 450px;
+
 body {
 	position: relative;
   min-height: 100vh;
@@ -98,6 +102,12 @@ nav {
 #logo {
 	float: left;
 	padding: 13px;
+	@include media(max-width $tablet) {
+    float: none;
+    margin: auto;
+    width: 300px;
+    text-align: center;
+	}
 }
 .home-banner {
 	max-width: none;
@@ -1077,4 +1087,37 @@ footer {
   opacity: 1;
   visibility: visible;
 }
-
+// Hamburger
+#hamburger {
+	.hamburger-dropdown ul {
+	  padding: 0;
+	  position: absolute;
+	  top: 66px;
+	  right: 0;
+	  width: 150px;
+	  -webkit-box-shadow: none;
+	  -moz-box-shadow: none;
+	  box-shadow: none;
+	  display: none;
+	  opacity: 0;
+	  visibility: hidden;
+	  -webkit-transiton: opacity 0.2s;
+	  -moz-transition: opacity 0.2s;
+	  -ms-transition: opacity 0.2s;
+	  -o-transition: opacity 0.2s;
+	  -transition: opacity 0.2s;
+	  z-index: 9999999;
+	}
+	.hamburger-dropdown ul li { 
+	  background: $darkgrey; 
+	  display: block; 
+	  color: #fff;
+	  text-shadow: 0 -1px 0 #000;
+	}
+	.hamburger-dropdown ul li:active { background: #666; }
+	.hamburger-dropdown:active ul {
+	  display: block;
+	  opacity: 1;
+	  visibility: visible;
+	}
+}
