@@ -104,34 +104,6 @@
       } 
     });
 
-    //
-    // Handle Checkbox copy-info button in profile
-    //
-    // $(document).on('click', '#profile_billing_to_shipping', function (){
-    //   //data-ajax-handler="shop:onCopyBillingToShipping" data-ajax-update="#checkout-page=shop-checkoutaddress"
-    //   if($(this).is(':checked')) {
-    //     $(".shipping-form").hide();
-
-    //     $(this).sendRequest('shop:onUpdateCustomerProfile', {
-    //       // onAfterUpdate: function() {
-    //         // $(this).sendRequest('shop:onUpdateCustomerProfile', {
-    //           update: {'#profile-addresses' : 'partial-customerprofile'},
-    //           extraFields: {'copy_billing_to_shipping': 1}
-    //         // });
-    //       // }
-    //     });
-
-    //   } else {
-    //     $(".shipping-form").show();
-    //   }
-
-    // });
-    // $( document ).ajaxSuccess(function( event, request, settings ) { 
-    //   if ( $( '#profile_billing_to_shipping' ).length ) { 
-    //     $("#profile_billing_to_shipping").prop('checked', true);
-    //   } 
-    // });
-
     $(document).on('click', '#product-add', function (){
       $(this).sendRequest('shop:onAddToCart', {
         update: {'#product-page' : 'partial-product', '#mini-cart' : 'shop-minicart'},
@@ -214,6 +186,10 @@
       $(".modal-inner").on("click", function(e) {
         e.stopPropagation();
       });
+    });
+
+    $(document).on('click', '.hamburger-dropdown', function (){
+      $(this).toggleClass("active");
     });
 
   });

@@ -1089,6 +1089,12 @@ footer {
 }
 // Hamburger
 #hamburger {
+	.hamburger-dropdown {
+		padding: 1em;
+		a {
+			font-size: 1.5em;
+		}
+	}
 	.hamburger-dropdown ul {
 	  padding: 0;
 	  position: absolute;
@@ -1114,10 +1120,14 @@ footer {
 	  color: #fff;
 	  text-shadow: 0 -1px 0 #000;
 	}
-	.hamburger-dropdown ul li:active { background: #666; }
-	.hamburger-dropdown:active ul {
+	.hamburger-dropdown ul li a {
+		color: $white;
+	}
+	.hamburger-dropdown ul li:hover { background: #666; }
+	.hamburger-dropdown.active ul {
 	  display: block;
 	  opacity: 1;
 	  visibility: visible;
 	}
 }
+
