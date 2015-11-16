@@ -830,13 +830,12 @@ footer {
 .breadcrumbs {
 	float: left;
 	display: block;
-	margin: 0 0 65px 0;
+	margin-bottom: 65px;
 	width: 100%;
 	font-size: 1em;
 	ul {
 		margin: 0;
 	}
-
 	.crumb {
 		display: inline;
 		list-style: none;
@@ -844,6 +843,9 @@ footer {
 	:not(:last-child):after {
 			content: ">";
 			margin-left: 5px;
+	}
+	@include media(max-width $tablet) {
+		margin-bottom: 1em;
 	}
 }
 // Unslider.js Style
