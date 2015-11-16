@@ -633,7 +633,7 @@ img {
       float: left;
       display: block;
       margin-right: 1.69492%;
-      width: 23.72881%;
+      width: 32.20339%;
       text-align: left; }
       #order-table tr .order-item-header:last-child {
         margin-right: 0; }
@@ -652,7 +652,7 @@ img {
       float: left;
       display: block;
       margin-right: 1.69492%;
-      width: 15.25424%; }
+      width: 23.72881%; }
       #order-table tr .order-name:last-child {
         margin-right: 0; }
     #order-table tr .order-quantity {
@@ -680,7 +680,7 @@ img {
       float: left;
       display: block;
       margin-right: 1.69492%;
-      width: 23.72881%; }
+      width: 15.25424%; }
       #order-table tr .order-total:last-child {
         margin-right: 0; }
 
@@ -1130,7 +1130,8 @@ img {
         width: 23.72881%; }
         #receipt .receipt-items tr td:nth-child(n+2):last-child {
           margin-right: 0; }
-    #receipt .receipt-items tr:first-child {
+    #receipt .receipt-items tr:first
+-child {
       background-color: rgba(155, 155, 155, 0.3); }
     #receipt .receipt-items tr:last-child {
       border-bottom: 1px solid #9b9b9b; }

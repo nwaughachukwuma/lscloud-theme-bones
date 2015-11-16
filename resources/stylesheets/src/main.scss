@@ -382,7 +382,7 @@ img {
 			}
 		}
 		.order-name {
-			@include span-columns(2);
+			@include span-columns(3);
 		}
 		.order-quantity {
 			@include span-columns(2);

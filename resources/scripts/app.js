@@ -98,6 +98,7 @@
     $( document ).ajaxSuccess(function( event, request, settings ) { 
       if ( $( '#copy_billing_to_shipping' ).length ) { 
         $("#copy_billing_to_shipping").prop('checked', true);
+        $(".shipping-form").hide();
       } 
     });
 
