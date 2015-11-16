@@ -95,9 +95,10 @@ span.error {
 	display: block;
 }
 #mini-cart {
-	padding: $base-spacing;
+	padding: $base-spacing 0 $base-spacing 0;
 	background: $grey;
 	a {
+		padding: 1.5em;
 		color: $white;
 		font-weight: $bold;
 		&:hover {

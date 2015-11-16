@@ -58,9 +58,10 @@ span.error {
   display: block; }
 
 #mini-cart {
-  padding: 1.5em;
+  padding: 1.5em 0 1.5em 0;
   background: #9b9b9b; }
   #mini-cart a {
+    padding: 1.5em;
     color: #fff;
     font-weight: 500; }
     #mini-cart a:hover {

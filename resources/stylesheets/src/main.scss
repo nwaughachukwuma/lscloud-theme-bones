@@ -13,8 +13,12 @@ body {
   min-height: 100vh;
   padding-bottom: 283px;
 }
+#header-wrap {
+	@include outer-container;
+}
 .wrapper {
 	@include outer-container;
+	padding: 0 10px 0 10px;
 }
 .fill-parent {
 	@include span-columns(12);
@@ -33,6 +37,9 @@ header {
 	width: 100%;
 	background: $headergrey;
 	margin-bottom: 83px;
+	@include media(max-width $tablet) {
+		margin-bottom: 1em;
+	}
 }
 section {
 	@include outer-container;
@@ -332,7 +339,6 @@ img {
 }
 // Cart page
 #cart-table {
-	@include outer-container;
 	tr {
 		@include fill-parent;
 		@include row(table);
