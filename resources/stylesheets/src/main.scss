@@ -369,7 +369,7 @@ img {
 			text-align: left;
 		}
 		.order-item-header {
-			@include span-columns(3);
+			@include span-columns(4);
 			text-align: left;
 		}
 		.order-item {
@@ -394,7 +394,7 @@ img {
 			@include span-columns(2);
 		}
 		.order-total {
-			@include span-columns(3);
+			@include span-columns(2);
 		}
 	}
 }
@@ -714,6 +714,7 @@ img {
 			@include row(table);
 			padding: $base-spacing;
 			border: 1px solid $grey;
+			border-bottom: none;
 			td:first-child {
 				@include span-columns(5);
 				@include shift(1);
@@ -722,9 +723,12 @@ img {
 				@include span-columns(3);
 			}
 		}
-		tr:first-child {
+		tr:first
+		-child {
 			background-color: $lightgrey;
-			border-bottom: none;
+		}
+		tr:last-child {
+			border-bottom: 1px solid $grey;
 		}
 	}
 	.receipt-totals {
