@@ -886,6 +886,8 @@ img {
       width: 100%; }
       .billing-summary .billing-form .shipping-form:last-child {
         margin-right: 0; }
+      .billing-summary .billing-form .shipping-form hr {
+        margin-bottom: 1em; }
       .billing-summary .billing-form .shipping-form .shipping-first-name {
         float: left;
         display: block;
@@ -1130,8 +1132,7 @@ img {
         width: 23.72881%; }
         #receipt .receipt-items tr td:nth-child(n+2):last-child {
           margin-right: 0; }
-    #receipt .receipt-items tr:first
--child {
+    #receipt .receipt-items tr:first-child {
       background-color: rgba(155, 155, 155, 0.3); }
     #receipt .receipt-items tr:last-child {
       border-bottom: 1px solid #9b9b9b; }

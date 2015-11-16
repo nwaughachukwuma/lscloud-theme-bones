@@ -548,6 +548,9 @@ img {
 		}
 		.shipping-form {
 			@include span-columns(6 of 6);
+			hr {
+		    margin-bottom: 1em;
+			}
 			.shipping-first-name {
 				@include span-columns(3 of 6);
 			}
@@ -723,8 +726,7 @@ img {
 				@include span-columns(3);
 			}
 		}
-		tr:first
-		-child {
+		tr:first-child {
 			background-color: $lightgrey;
 		}
 		tr:last-child {
