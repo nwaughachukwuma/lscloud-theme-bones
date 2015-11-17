@@ -11,6 +11,7 @@ $smartphone: 450px;
 body {
 	position: relative;
   min-height: 100vh;
+  min-width: $min-width;
   padding-bottom: 283px;
   @include media(max-width $tablet) {
   	padding-bottom: 243px;
@@ -357,14 +358,19 @@ img {
 			}
 		}
 		.cart-image {
-			@include span-columns(2);
+			@include span-columns(3);
 			text-align: left;
 			img {
+				width: 100%;
+				max-width: 160px;
 				border: 1px solid $lightgrey;
+			}
+			@include media(max-width $tablet) {
+				@include span-columns(4);
 			}
 		}
 		.cart-name {
-			@include span-columns(4);
+			@include span-columns(3);
 			text-align: left;
 		}
 		.cart-item-price {

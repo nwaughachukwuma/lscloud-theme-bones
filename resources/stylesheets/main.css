@@ -188,6 +188,7 @@ input[type="radio"] {
 body {
   position: relative;
   min-height: 100vh;
+  min-width: 320px;
   padding-bottom: 283px; }
   @media screen and (max-width: 768px) {
     body {
@@ -583,17 +584,27 @@ img {
     float: left;
     display: block;
     margin-right: 1.69492%;
-    width: 15.25424%;
+    width: 23.72881%;
     text-align: left; }
     #cart-table tr .cart-image:last-child {
       margin-right: 0; }
     #cart-table tr .cart-image img {
+      width: 100%;
+      max-width: 160px;
       border: 1px solid rgba(155, 155, 155, 0.3); }
+    @media screen and (max-width: 768px) {
+      #cart-table tr .cart-image {
+        float: left;
+        display: block;
+        margin-right: 1.69492%;
+        width: 32.20339%; }
+        #cart-table tr .cart-image:last-child {
+          margin-right: 0; } }
   #cart-table tr .cart-name {
     float: left;
     display: block;
     margin-right: 1.69492%;
-    width: 32.20339%;
+    width: 23.72881%;
     text-align: left; }
     #cart-table tr .cart-name:last-child {
       margin-right: 0; }
