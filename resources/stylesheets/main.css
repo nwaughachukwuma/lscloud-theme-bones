@@ -189,6 +189,9 @@ body {
   position: relative;
   min-height: 100vh;
   padding-bottom: 283px; }
+  @media screen and (max-width: 768px) {
+    body {
+      padding-bottom: 243px; } }
 
 #header-wrap {
   max-width: 1200px;
@@ -1214,6 +1217,13 @@ footer {
       margin-bottom: 0.5em;
       font-size: 14px;
       font-weight: 200; }
+    @media screen and (max-width: 768px) {
+      footer ul {
+        width: 50%;
+        text-align: center;
+        margin: 34px 0 0 0; }
+        footer ul:nth-of-type(2) {
+          border-left: 1px solid #9b9b9b; } }
   footer #copyright {
     float: left;
     display: block;
@@ -1223,6 +1233,15 @@ footer {
     margin-top: 70px; }
     footer #copyright:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 768px) {
+      footer #copyright {
+        width: 100%;
+        text-align: center;
+        clear: both;
+        margin: 25px 0 0 0; } }
+  @media screen and (max-width: 768px) {
+    footer {
+      height: 160px; } }
 
 .login-register-wrap {
   max-width: 1200px;

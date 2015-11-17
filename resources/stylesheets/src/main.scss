@@ -12,6 +12,9 @@ body {
 	position: relative;
   min-height: 100vh;
   padding-bottom: 283px;
+  @include media(max-width $tablet) {
+  	padding-bottom: 243px;
+  }
 }
 #header-wrap {
 	@include outer-container;
@@ -808,11 +811,28 @@ footer {
 			font-size: 14px;
 			font-weight: $light;
 		}
+		@include media(max-width $tablet) {
+			width: 50%;
+			text-align: center;
+			margin: 34px 0 0 0;
+			&:nth-of-type(2) {
+				border-left: 1px solid $grey;
+			}
+		}
 	}
 	#copyright {
 		@include span-columns(8);
 		text-align: right;
 		margin-top: 70px;
+		@include media(max-width $tablet) {
+			width: 100%;
+			text-align: center;
+			clear: both;
+			margin: 25px 0 0 0;
+		}
+	}
+	@include media(max-width $tablet) {
+		height: 160px;
 	}
 }
 // Sign-in
