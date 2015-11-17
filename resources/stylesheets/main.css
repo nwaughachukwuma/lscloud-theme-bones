@@ -1273,7 +1273,7 @@ footer {
 .breadcrumbs {
   float: left;
   display: block;
-  margin-bottom: 65px;
+  margin: -1em 0 1em 0;
   width: 100%;
   font-size: 1em; }
   .breadcrumbs ul {
@@ -1286,7 +1286,7 @@ footer {
     margin-left: 5px; }
   @media screen and (max-width: 768px) {
     .breadcrumbs {
-      margin-bottom: 1em; } }
+      font-size: 0.75em; } }
 
 #featured-carousel {
   padding: 0; }
