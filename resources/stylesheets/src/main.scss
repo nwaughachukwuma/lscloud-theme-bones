@@ -41,7 +41,7 @@ header {
 	background: $headergrey;
 	margin-bottom: 83px;
 	@include media(max-width $tablet) {
-		margin-bottom: 1em;
+		margin-bottom: 2em;
 	}
 }
 section {
@@ -829,6 +829,9 @@ footer {
 			text-align: center;
 			clear: both;
 			margin: 25px 0 0 0;
+			img {
+				margin-top: 15px;
+			}
 		}
 	}
 	@include media(max-width $tablet) {

@@ -235,7 +235,7 @@ header {
   margin-bottom: 83px; }
   @media screen and (max-width: 768px) {
     header {
-      margin-bottom: 1em; } }
+      margin-bottom: 2em; } }
 
 section {
   max-width: 1200px;
@@ -1238,7 +1238,9 @@ footer {
         width: 100%;
         text-align: center;
         clear: both;
-        margin: 25px 0 0 0; } }
+        margin: 25px 0 0 0; }
+        footer #copyright img {
+          margin-top: 15px; } }
   @media screen and (max-width: 768px) {
     footer {
       height: 160px; } }
