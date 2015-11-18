@@ -397,6 +397,24 @@ img {
 			margin-bottom: 1em;
 		}
 	}
+	.cart-item-mobile {
+		td {
+			text-align: left;
+		}
+		input {
+			width: 55px;
+	    text-align: center;
+		}
+		.cart-image-mobile {
+			@include span-columns(4);
+		}
+		.cart-name-mobile {
+			@include span-columns(8);
+		}
+		.cart-remove-mobile {
+			float: right;
+		}
+	}
 }
 // Orders Page
 #order-table {

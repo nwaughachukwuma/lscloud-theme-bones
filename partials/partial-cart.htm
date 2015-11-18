@@ -27,6 +27,18 @@
 			</td>
 		</tr>
 		<tr><td><hr></td></tr>
+		<tr class="cart-item-mobile">
+			<td class="cart-image-mobile"><a href="/product/{{ item.product.url_name }}"><img src="{{ item.product.images.first.thumbnail(100, 100)|default('http://placehold.it/100x100') }}"/></a></td>
+			<td class="cart-name-mobile">
+				<h3>
+					<input type="text" name="item_quantity[{{ item.key }}]" value="{{ item.quantity }}">
+					<a href="/product/{{ item.product.url_name }}">{{ item.product.name }}</a>
+					<a class="cart-remove-mobile" href="#" data-ajax-handler="shop:cart" {# data-ajax-confirm="Do you really want to remove this item from the cart?" #} data-ajax-update="#cart-content=partial-cart, #mini-cart=shop-minicart"data-ajax-extra-fields="delete_item='{{ item.key }}'">&#x2716;</a>
+				</h3>
+				<h3><span style="float: left;">{{ item.price()|currency }}</span><span style="float: right;"><strong>{{ item.total()|currency }}</strong></span></h3>
+
+			</td>
+		</tr>
 		{% endfor %}
 		<tr><td><input type="text" id="coupon" name="coupon" value="{{ coupon_code }}" placeholder="Coupon code" /><a href="#" data-ajax-handler="shop:cart" data-ajax-update="#cart-content=partial-cart, #mini-cart=shop-minicart">&nbsp; &#8635; Update cart</a></td></tr>
 		<tr><td class="cart-subtotal"><h2>Subtotal: <strong>{{ totals.total|currency }}</strong></h2></td></tr>

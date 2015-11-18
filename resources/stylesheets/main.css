@@ -645,6 +645,32 @@ img {
   #cart-table tr .cart-subtotal {
     margin-bottom: 1em; }
 
+#cart-table .cart-item-mobile td {
+  text-align: left; }
+
+#cart-table .cart-item-mobile input {
+  width: 55px;
+  text-align: center; }
+
+#cart-table .cart-item-mobile .cart-image-mobile {
+  float: left;
+  display: block;
+  margin-right: 1.69492%;
+  width: 32.20339%; }
+  #cart-table .cart-item-mobile .cart-image-mobile:last-child {
+    margin-right: 0; }
+
+#cart-table .cart-item-mobile .cart-name-mobile {
+  float: left;
+  display: block;
+  margin-right: 1.69492%;
+  width: 66.10169%; }
+  #cart-table .cart-item-mobile .cart-name-mobile:last-child {
+    margin-right: 0; }
+
+#cart-table .cart-item-mobile .cart-remove-mobile {
+  float: right; }
+
 #order-table {
   max-width: 1200px;
   margin-left: auto;
