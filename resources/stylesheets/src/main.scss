@@ -343,7 +343,11 @@ img {
 }
 // Cart page
 #cart-table {
-	tr {
+	td {
+		text-align: right;
+		vertical-align: top;
+	}
+	.cart-item {
 		@include fill-parent;
 		@include row(table);
 		td {
@@ -364,9 +368,6 @@ img {
 				width: 100%;
 				max-width: 160px;
 				border: 1px solid $lightgrey;
-			}
-			@include media(max-width $tablet) {
-				@include span-columns(4);
 			}
 		}
 		.cart-name {
@@ -396,14 +397,30 @@ img {
 		.cart-subtotal {
 			margin-bottom: 1em;
 		}
+		@include media(max-width $tablet) {
+			display: none;
+		}
+		.cart-continue {
+			@include media(max-width $tablet) {
+				display: none;
+			}
+		}
 	}
 	.cart-item-mobile {
+		display: none;
 		td {
 			text-align: left;
 		}
 		input {
 			width: 55px;
 	    text-align: center;
+	    margin-right: 1em;
+		}
+		h3 {
+			margin: 0;
+		}
+		img {
+			border: 1px solid $lightgrey;
 		}
 		.cart-image-mobile {
 			@include span-columns(4);
@@ -413,6 +430,15 @@ img {
 		}
 		.cart-remove-mobile {
 			float: right;
+		}
+		@include media(max-width $tablet) {
+			display: initial;
+		}
+	}
+	.cart-continue-mobile {
+		display: none;
+		@include media(max-width $tablet) {
+			display: block;
 		}
 	}
 }
