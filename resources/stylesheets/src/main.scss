@@ -530,6 +530,16 @@ img {
 		}
 	}
 }
+#contact {
+	@include span-columns(12);
+	section {
+		@include span-columns(4 of 12);
+		@include media(max-width $tablet) {
+			@include span-columns(12 of 12);
+		}
+	}
+}
+// Checkout Progress bar
 #checkout-progress {
 	@include outer-container;
 	tr {

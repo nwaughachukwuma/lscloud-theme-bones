@@ -809,6 +809,29 @@ img {
       text-align: left;
       color: #4a4a4a; }
 
+#contact {
+  float: left;
+  display: block;
+  margin-right: 1.69492%;
+  width: 100%; }
+  #contact:last-child {
+    margin-right: 0; }
+  #contact section {
+    float: left;
+    display: block;
+    margin-right: 1.69492%;
+    width: 32.20339%; }
+    #contact section:last-child {
+      margin-right: 0; }
+    @media screen and (max-width: 768px) {
+      #contact section {
+        float: left;
+        display: block;
+        margin-right: 1.69492%;
+        width: 100%; }
+        #contact section:last-child {
+          margin-right: 0; } }
+
 #checkout-progress {
   max-width: 1200px;
   margin-left: auto;
