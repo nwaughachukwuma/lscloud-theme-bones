@@ -1121,6 +1121,13 @@ footer {
 		.button { width: auto; margin-top: $small-spacing;}
 	}
 }
+#passwordRestoreRequestForm {
+	@include media(max-width $tablet) {
+		input {
+			width: 100%;
+		}
+	}
+}
 // Breadcrumbs
 .breadcrumbs {
 	float: left;

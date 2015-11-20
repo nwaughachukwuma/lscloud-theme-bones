@@ -1669,6 +1669,10 @@ footer {
       width: auto;
       margin-top: 0.75em; }
 
+@media screen and (max-width: 768px) {
+  #passwordRestoreRequestForm input {
+    width: 100%; } }
+
 .breadcrumbs {
   float: left;
   display: block;
