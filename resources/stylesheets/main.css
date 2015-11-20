@@ -561,7 +561,8 @@ img {
 
 .categories {
   font-style: italic;
-  width: 30%; }
+  width: 30%;
+  min-width: 300px; }
   .categories li h3 {
     margin: 0; }
   .categories hr {
@@ -682,7 +683,8 @@ img {
       display: block;
       text-align: center; } }
   #cart-table .cart-continue-mobile {
-    display: none; }
+    display: none;
+    margin-top: 0.5em; }
     #cart-table .cart-continue-mobile td {
       width: 100%;
       display: block;

@@ -338,6 +338,7 @@ img {
 .categories {
 	font-style: italic;
 	width: 30%;
+	min-width: 300px;
 	li h3 { margin: 0; }
 	hr { border-color: rgba(255, 255, 255, 0.4); }
 }
@@ -441,6 +442,7 @@ img {
 	}
 	.cart-continue-mobile {
 		display: none;
+    margin-top: 0.5em;
 		td {
 	    width: 100%;
 	    display: block;
