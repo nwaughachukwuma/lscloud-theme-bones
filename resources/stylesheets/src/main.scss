@@ -513,6 +513,25 @@ img {
 		.order {
 			@include span-columns(3);
 			text-align: left;
+			@include media(max-width $tablet) {
+				&:nth-of-type(1) {
+					@include span-columns(1);
+				}
+				&:nth-of-type(2) {
+					@include span-columns(5);
+				}
+				&:nth-of-type(3) {
+					@include span-columns(2);
+					text-align: center;
+				}
+				&:nth-of-type(4) {
+					@include span-columns(4);
+					text-align: right;
+				}
+			}
+			&:nth-of-type(1) {
+				a { color: $link; }
+			}
 		}
 		.order-item-header {
 			@include span-columns(4);
