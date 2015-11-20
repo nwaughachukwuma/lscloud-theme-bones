@@ -458,6 +458,9 @@ img {
 		}
 	}
 }
+#coupon {
+	max-width: 150px;
+}
 // Orders Page
 #order-table {
 	@include outer-container;
@@ -582,6 +585,9 @@ img {
 	input {
 		@include fill-parent;
 	}
+	@include media(max-width $tablet) {
+		width: 100%;
+	}
 }
 .forgotpass {
 	font-style: italic;
@@ -595,6 +601,10 @@ img {
 		@include fill-parent;
 		display: block;
 		text-align: center;
+	}
+	@include media(max-width $tablet) {
+		width: 100%;
+		margin: 0;
 	}
 }
 // Checkout Process

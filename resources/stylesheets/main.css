@@ -696,6 +696,9 @@ img {
     #cart-table .cart-continue {
       display: none; } }
 
+#coupon {
+  max-width: 150px; }
+
 #order-table {
   max-width: 1200px;
   margin-left: auto;
@@ -856,6 +859,9 @@ img {
     margin-right: 0; }
   .checkout-start-login input {
     width: 100%; }
+  @media screen and (max-width: 768px) {
+    .checkout-start-login {
+      width: 100%; } }
 
 .forgotpass {
   font-style: italic;
@@ -874,6 +880,10 @@ img {
     width: 100%;
     display: block;
     text-align: center; }
+  @media screen and (max-width: 768px) {
+    .checkout-start-guest {
+      width: 100%;
+      margin: 0; } }
 
 .billing-summary {
   float: left;
