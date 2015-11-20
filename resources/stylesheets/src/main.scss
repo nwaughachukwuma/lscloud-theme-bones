@@ -548,7 +548,7 @@ img {
 		    content: " ";
 		    margin-top: -18px;
 		    margin-left: -50%;
-		    width: 384px;
+		    width: 100%;
 		    height: 6px;
 		    background-color: rgb(216, 216, 216);
 		    display: block;
@@ -603,10 +603,18 @@ img {
 	border-right: 1px solid $grey;
 	padding-right: percentage(1/24);
 	margin-right: 0;
+	@include media(max-width $tablet) {
+		border-right: none;
+		@include span-columns(12);
+		padding: 0;
+	}
 	.billing-form {
 		@include span-columns(6 of 7);
 		float: none;
 		margin-top: 1em;
+		@include media(max-width $tablet) {
+			@include span-columns(12 of 12);
+		}
 		input,textarea,select {
 			@include fill-parent;
 		}
@@ -622,35 +630,66 @@ img {
 		}
 		.billing-first-name {
 			@include span-columns(3 of 6);
+			@include media(max-width $tablet) {
+				@include span-columns(12 of 12);
+				@include omega();
+			}
 		}
 		.billing-last-name {
 			@include span-columns(3	of 6);
 			@include omega();
+			@include media(max-width $tablet) {
+				@include span-columns(12 of 12);
+			}
 		}
 		.billing-email {
 			@include span-columns(6 of 6);
 			@include omega();
+			@include media(max-width $tablet) {
+				@include span-columns(12 of 12);
+			}
 		}
 		.billing-address {
 			@include span-columns(6 of 6);
 			@include omega();
+			@include media(max-width $tablet) {
+				@include span-columns(12 of 12);
+			}
 		}
 		.billing-city {
 			@include span-columns(3 of 6);
+			@include media(max-width $tablet) {
+				@include span-columns(12 of 12);
+				@include omega();
+			}
 		}
 		.billing-postal-code {
 			@include span-columns(3 of 6);
 			@include omega();
+			@include media(max-width $tablet) {
+				@include span-columns(12 of 12);
+			}
 		}
 		.billing-country {
 			@include span-columns(3 of 6);
+			@include media(max-width $tablet) {
+				@include span-columns(12 of 12);
+				@include omega();
+			}
 		}
 		.billing-state {
 			@include span-columns(3 of 6);
 			@include omega();
+			@include media(max-width $tablet) {
+				@include span-columns(12 of 12);
+			}
 		}
 		.billing-phone {
 			@include span-columns(6 of 6);
+			@include media(max-width $tablet) {
+				@include span-columns(12 of 12);
+				@include omega();
+			}
 		}
 		.shipping-form {
 			@include span-columns(6 of 6);
@@ -659,35 +698,66 @@ img {
 			}
 			.shipping-first-name {
 				@include span-columns(3 of 6);
+				@include media(max-width $tablet) {
+					@include span-columns(12 of 12);
+					@include omega();
+				}
 			}
 			.shipping-last-name {
 				@include span-columns(3	of 6);
 				@include omega();
+				@include media(max-width $tablet) {
+					@include span-columns(12 of 12);
+				}
 			}
 			.shipping-email {
 				@include span-columns(6 of 6);
 				@include omega();
+				@include media(max-width $tablet) {
+					@include span-columns(12 of 12);
+				}
 			}
 			.shipping-address {
 				@include span-columns(6 of 6);
 				@include omega();
+				@include media(max-width $tablet) {
+					@include span-columns(12 of 12);
+				}
 			}
 			.shipping-city {
 				@include span-columns(3 of 6);
+				@include media(max-width $tablet) {
+					@include span-columns(12 of 12);
+					@include omega();
+				}
 			}
 			.shipping-postal-code {
 				@include span-columns(3 of 6);
 				@include omega();
+				@include media(max-width $tablet) {
+					@include span-columns(12 of 12);
+				}
 			}
 			.shipping-country {
 				@include span-columns(3 of 6);
+				@include media(max-width $tablet) {
+					@include span-columns(12 of 12);
+					@include omega();
+				}
 			}
 			.shipping-state {
 				@include span-columns(3 of 6);
 				@include omega();
+				@include media(max-width $tablet) {
+					@include span-columns(12 of 12);
+				}
 			}
 			.shipping-phone {
 				@include span-columns(6 of 6);
+				@include media(max-width $tablet) {
+					@include span-columns(12 of 12);
+					@include omega();
+				}
 			}
 		}
 		ul {
@@ -800,6 +870,9 @@ img {
 	.order-summary-amount {
 		@include span-columns(2 of 4);
 		text-align: right;
+	}
+	@include media(max-width $tablet) {
+		display: none;
 	}
 }
 // Profile Page
