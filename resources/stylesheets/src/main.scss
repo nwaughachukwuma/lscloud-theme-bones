@@ -613,7 +613,7 @@ img {
 		float: none;
 		margin-top: 1em;
 		@include media(max-width $tablet) {
-			@include span-columns(12 of 12);
+			width: 100%;
 		}
 		input,textarea,select {
 			@include fill-parent;
@@ -836,6 +836,32 @@ img {
 				}
 				li:nth-child(n+4) {
 					@include span-columns(2 of 6);
+				}
+				li:nth-child(4) {
+					@include media(max-width $tablet) {
+						label { display: none; }
+						&::before {
+							content: "Expiration Month";
+							display: block;
+							color: #9b9b9b;
+							font-size: 0.75019em;
+							font-weight: 200;
+							margin-bottom: 0.375em;
+						}
+					}
+				}
+				li:nth-child(5) {
+					@include media(max-width $tablet) {
+						label { display: none; }
+						&::before {
+							content: "Expiration Year";
+							display: block;
+							color: #9b9b9b;
+							font-size: 0.75019em;
+							font-weight: 200;
+							margin-bottom: 0.375em;
+						}
+					}
 				}
 				li:last-child {
 					@include omega();

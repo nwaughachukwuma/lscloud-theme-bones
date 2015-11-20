@@ -906,12 +906,7 @@ img {
       margin-right: 0; }
     @media screen and (max-width: 768px) {
       .billing-summary .billing-form {
-        float: left;
-        display: block;
-        margin-right: 1.69492%;
-        width: 100%; }
-        .billing-summary .billing-form:last-child {
-          margin-right: 0; } }
+        width: 100%; } }
     .billing-summary .billing-form input, .billing-summary .billing-form textarea, .billing-summary .billing-form select {
       width: 100%; }
     .billing-summary .billing-form .next {
@@ -1308,6 +1303,26 @@ img {
         width: 31.03448%; }
         .billing-summary #pay-form #payment_form ul.form li:nth-child(n+4):last-child {
           margin-right: 0; }
+      @media screen and (max-width: 768px) {
+        .billing-summary #pay-form #payment_form ul.form li:nth-child(4) label {
+          display: none; }
+        .billing-summary #pay-form #payment_form ul.form li:nth-child(4)::before {
+          content: "Expiration Month";
+          display: block;
+          color: #9b9b9b;
+          font-size: 0.75019em;
+          font-weight: 200;
+          margin-bottom: 0.375em; } }
+      @media screen and (max-width: 768px) {
+        .billing-summary #pay-form #payment_form ul.form li:nth-child(5) label {
+          display: none; }
+        .billing-summary #pay-form #payment_form ul.form li:nth-child(5)::before {
+          content: "Expiration Year";
+          display: block;
+          color: #9b9b9b;
+          font-size: 0.75019em;
+          font-weight: 200;
+          margin-bottom: 0.375em; } }
       .billing-summary #pay-form #payment_form ul.form li:last-child {
         margin-right: 0; }
         .billing-summary #pay-form #payment_form ul.form li:last-child label {
