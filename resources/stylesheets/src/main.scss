@@ -499,7 +499,7 @@ img {
 	max-width: 150px;
 }
 // Orders Page
-#order-table {
+#orders-table {
 	@include outer-container;
 	tr {
 		@include fill-parent;
@@ -533,6 +533,29 @@ img {
 				a { color: $link; }
 			}
 		}
+	}
+}
+#order-table {
+	@include outer-container;
+	tr {
+		@include fill-parent;
+		@include row(table);
+		td, th {
+			text-align: right;
+		}
+		hr {
+			margin-top: 0;
+		}
+		@include media(max-width $tablet) {
+			font-size: 12px;
+			th, td {
+				width: 20% !important;
+				margin: 0 !important;
+			}
+			p {
+				margin-bottom: 0;
+			}
+		}
 		.order-item-header {
 			@include span-columns(4);
 			text-align: left;
@@ -545,21 +568,41 @@ img {
 					border-color: $grey;
 				}
 			}
+			@include media(max-width $tablet) {
+				display: none;
+			}
 		}
 		.order-name {
 			@include span-columns(3);
+			text-align: left;
+			@include media(max-width $tablet) {
+				width: 20%;
+			}
 		}
 		.order-quantity {
 			@include span-columns(2);
+			text-align: center;
+			@include media(max-width $tablet) {
+				width: 20%;
+			}
 		}
 		.order-price {
 			@include span-columns(2);
+			@include media(max-width $tablet) {
+				width: 20%;
+			}
 		}
 		.order-discount {
 			@include span-columns(2);
+			@include media(max-width $tablet) {
+				width: 20%;
+			}
 		}
 		.order-total {
 			@include span-columns(2);
+			@include media(max-width $tablet) {
+				width: 20%;
+			}
 		}
 	}
 }

@@ -756,6 +756,65 @@ img {
 #coupon {
   max-width: 150px; }
 
+#orders-table {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  #orders-table::after {
+    clear: both;
+    content: "";
+    display: table; }
+  #orders-table tr {
+    width: 100%;
+    display: table;
+    width: 100%;
+    table-layout: fixed; }
+    #orders-table tr td, #orders-table tr th {
+      text-align: right; }
+    #orders-table tr hr {
+      margin-top: 0; }
+    #orders-table tr .order {
+      float: left;
+      display: block;
+      margin-right: 1.69492%;
+      width: 23.72881%;
+      text-align: left; }
+      #orders-table tr .order:last-child {
+        margin-right: 0; }
+      @media screen and (max-width: 768px) {
+        #orders-table tr .order:nth-of-type(1) {
+          float: left;
+          display: block;
+          margin-right: 1.69492%;
+          width: 6.77966%; }
+          #orders-table tr .order:nth-of-type(1):last-child {
+            margin-right: 0; }
+        #orders-table tr .order:nth-of-type(2) {
+          float: left;
+          display: block;
+          margin-right: 1.69492%;
+          width: 40.67797%; }
+          #orders-table tr .order:nth-of-type(2):last-child {
+            margin-right: 0; }
+        #orders-table tr .order:nth-of-type(3) {
+          float: left;
+          display: block;
+          margin-right: 1.69492%;
+          width: 15.25424%;
+          text-align: center; }
+          #orders-table tr .order:nth-of-type(3):last-child {
+            margin-right: 0; }
+        #orders-table tr .order:nth-of-type(4) {
+          float: left;
+          display: block;
+          margin-right: 1.69492%;
+          width: 32.20339%;
+          text-align: right; }
+          #orders-table tr .order:nth-of-type(4):last-child {
+            margin-right: 0; } }
+      #orders-table tr .order:nth-of-type(1) a {
+        color: #0087C8; }
+
 #order-table {
   max-width: 1200px;
   margin-left: auto;
@@ -773,47 +832,14 @@ img {
       text-align: right; }
     #order-table tr hr {
       margin-top: 0; }
-    #order-table tr .order {
-      float: left;
-      display: block;
-      margin-right: 1.69492%;
-      width: 23.72881%;
-      text-align: left; }
-      #order-table tr .order:last-child {
-        margin-right: 0; }
-      @media screen and (max-width: 768px) {
-        #order-table tr .order:nth-of-type(1) {
-          float: left;
-          display: block;
-          margin-right: 1.69492%;
-          width: 6.77966%; }
-          #order-table tr .order:nth-of-type(1):last-child {
-            margin-right: 0; }
-        #order-table tr .order:nth-of-type(2) {
-          float: left;
-          display: block;
-          margin-right: 1.69492%;
-          width: 40.67797%; }
-          #order-table tr .order:nth-of-type(2):last-child {
-            margin-right: 0; }
-        #order-table tr .order:nth-of-type(3) {
-          float: left;
-          display: block;
-          margin-right: 1.69492%;
-          width: 15.25424%;
-          text-align: center; }
-          #order-table tr .order:nth-of-type(3):last-child {
-            margin-right: 0; }
-        #order-table tr .order:nth-of-type(4) {
-          float: left;
-          display: block;
-          margin-right: 1.69492%;
-          width: 32.20339%;
-          text-align: right; }
-          #order-table tr .order:nth-of-type(4):last-child {
-            margin-right: 0; } }
-      #order-table tr .order:nth-of-type(1) a {
-        color: #0087C8; }
+    @media screen and (max-width: 768px) {
+      #order-table tr {
+        font-size: 12px; }
+        #order-table tr th, #order-table tr td {
+          width: 20% !important;
+          margin: 0 !important; }
+        #order-table tr p {
+          margin-bottom: 0; } }
     #order-table tr .order-item-header {
       float: left;
       display: block;
@@ -833,20 +859,31 @@ img {
         border: 1px solid rgba(155, 155, 155, 0.3); }
         #order-table tr .order-item img:hover {
           border-color: #9b9b9b; }
+      @media screen and (max-width: 768px) {
+        #order-table tr .order-item {
+          display: none; } }
     #order-table tr .order-name {
       float: left;
       display: block;
       margin-right: 1.69492%;
-      width: 23.72881%; }
+      width: 23.72881%;
+      text-align: left; }
       #order-table tr .order-name:last-child {
         margin-right: 0; }
+      @media screen and (max-width: 768px) {
+        #order-table tr .order-name {
+          width: 20%; } }
     #order-table tr .order-quantity {
       float: left;
       display: block;
       margin-right: 1.69492%;
-      width: 15.25424%; }
+      width: 15.25424%;
+      text-align: center; }
       #order-table tr .order-quantity:last-child {
         margin-right: 0; }
+      @media screen and (max-width: 768px) {
+        #order-table tr .order-quantity {
+          width: 20%; } }
     #order-table tr .order-price {
       float: left;
       display: block;
@@ -854,6 +891,9 @@ img {
       width: 15.25424%; }
       #order-table tr .order-price:last-child {
         margin-right: 0; }
+      @media screen and (max-width: 768px) {
+        #order-table tr .order-price {
+          width: 20%; } }
     #order-table tr .order-discount {
       float: left;
       display: block;
@@ -861,6 +901,9 @@ img {
       width: 15.25424%; }
       #order-table tr .order-discount:last-child {
         margin-right: 0; }
+      @media screen and (max-width: 768px) {
+        #order-table tr .order-discount {
+          width: 20%; } }
     #order-table tr .order-total {
       float: left;
       display: block;
@@ -868,6 +911,9 @@ img {
       width: 15.25424%; }
       #order-table tr .order-total:last-child {
         margin-right: 0; }
+      @media screen and (max-width: 768px) {
+        #order-table tr .order-total {
+          width: 20%; } }
 
 #contact {
   float: left;
