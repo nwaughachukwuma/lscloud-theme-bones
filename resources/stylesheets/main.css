@@ -917,6 +917,10 @@ img {
     .billing-summary .billing-form .next {
       float: right;
       width: initial; }
+      @media screen and (max-width: 768px) {
+        .billing-summary .billing-form .next {
+          width: 100%;
+          text-align: center; } }
     .billing-summary .billing-form input[type="checkbox"] {
       width: auto; }
     .billing-summary .billing-form h4 {
@@ -1241,6 +1245,9 @@ img {
     width: 85.29412%; }
     .billing-summary #delivery-form:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 768px) {
+      .billing-summary #delivery-form {
+        width: 100%; } }
     .billing-summary #delivery-form label {
       width: 100%;
       font-size: 1em;
@@ -1262,6 +1269,9 @@ img {
     margin-top: 0.75em; }
     .billing-summary #pay-form:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 768px) {
+      .billing-summary #pay-form {
+        width: 100%; } }
     .billing-summary #pay-form label {
       width: 100%; }
     .billing-summary #pay-form #payment_form ul.form {
@@ -1303,7 +1313,6 @@ img {
         .billing-summary #pay-form #payment_form ul.form li:last-child label {
           display: none; }
         .billing-summary #pay-form #payment_form ul.form li:last-child::before {
-          content: "<label>CVC</label>";
           content: "CVC";
           display: block;
           color: #9b9b9b;

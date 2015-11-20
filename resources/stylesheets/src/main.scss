@@ -621,6 +621,10 @@ img {
 		.next {
 			float: right;
 			width: initial;
+			@include media(max-width $tablet) {
+				width: 100%;
+				text-align: center;	
+			}
 		}
 		input[type="checkbox"] {
 			width: auto;
@@ -784,6 +788,9 @@ img {
 	}
 	#delivery-form {
 		@include span-columns(6 of 7);
+		@include media(max-width $tablet) {
+			width: 100%;
+		}
 		label {
 			@include fill-parent;
 			font-size: $small;
@@ -804,6 +811,9 @@ img {
 	#pay-form {
 		@include span-columns(6 of 7);
 		margin-top: $small-spacing;
+		@include media(max-width $tablet) {
+			width: 100%;
+		}
 		label {
 			@include fill-parent;
 		}
@@ -833,7 +843,6 @@ img {
 						display: none;
 					}
 					&::before {
-						content: "<label>CVC</label>";
 						content: "CVC";
 						display: block;
 						color: #9b9b9b;
