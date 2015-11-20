@@ -61,7 +61,8 @@ ul {
     color: #4a4a4a; }
 
 .blue {
-  color: #0087C8; }
+  color: #0087C8;
+  text-decoration: underline; }
 
 span.error {
   color: #D20606;
@@ -253,6 +254,10 @@ section {
     width: 49.15254%; }
     section #home-details:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 768px) {
+      section #home-details {
+        width: 100%;
+        text-align: center; } }
     section #home-details h1 {
       margin-bottom: 0.25em; }
       section #home-details h1:last-of-type {
@@ -271,6 +276,17 @@ section {
       text-align: center; }
       section #home-details a:last-child {
         margin-right: 0; }
+      @media screen and (max-width: 768px) {
+        section #home-details a {
+          float: left;
+          display: block;
+          margin-right: 1.69492%;
+          width: 49.15254%;
+          margin-left: 25.42373%; }
+          section #home-details a:last-child {
+            margin-right: 0; } }
+      section #home-details a:last-of-type {
+        margin-bottom: 2em; }
   section .carousel-wrap {
     float: left;
     display: block;
@@ -278,6 +294,9 @@ section {
     width: 49.15254%; }
     section .carousel-wrap:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 768px) {
+      section .carousel-wrap {
+        width: 100%; } }
     section .carousel-wrap #featured-carousel {
       position: relative;
       overflow: auto; }
@@ -352,13 +371,18 @@ nav {
   background: url(../images/bones-banner.png) no-repeat;
   height: 400px;
   text-align: center;
-  background-size: cover; }
+  background-size: cover;
+  display: table; }
   .banner:last-child {
     margin-right: 0; }
   .banner h1 {
     color: white;
-    padding: 161px;
-    font-size: 4em; }
+    font-size: 4em;
+    display: table-cell;
+    vertical-align: middle; }
+    @media screen and (max-width: 768px) {
+      .banner h1 {
+        font-size: 3em; } }
 
 #featured-content {
   text-align: center;
@@ -779,35 +803,6 @@ img {
       width: 15.25424%; }
       #order-table tr .order-total:last-child {
         margin-right: 0; }
-
-#contact-table {
-  float: left;
-  display: block;
-  margin-right: 1.69492%;
-  width: 49.15254%;
-  margin-top: 1.5em; }
-  #contact-table:last-child {
-    margin-right: 0; }
-  #contact-table tr {
-    float: left;
-    display: block;
-    margin-right: 3.44828%;
-    width: 48.27586%;
-    display: table;
-    width: 100%;
-    table-layout: fixed; }
-    #contact-table tr:last-child {
-      margin-right: 0; }
-    #contact-table tr td {
-      text-align: left;
-      font-size: 1em;
-      font-weight: 200;
-      color: #4a4a4a; }
-      #contact-table tr td span {
-        float: right; }
-    #contact-table tr th {
-      text-align: left;
-      color: #4a4a4a; }
 
 #contact {
   float: left;

@@ -49,6 +49,10 @@ section {
 	@include outer-container;
 	#home-details {
 		@include span-columns(6);
+		@include media(max-width $tablet) {
+			width: 100%;
+			text-align: center;
+		}
 		h1 {
 			margin-bottom: 0.25em;
 			&:last-of-type {
@@ -65,10 +69,20 @@ section {
 	    margin-bottom: 0.75em;
 	    width: 280px;
 	    text-align: center;
+	    @include media(max-width $tablet) {
+	    	@include span-columns(6 of 12);
+	    	@include shift(3);
+	    }
+    	&:last-of-type {
+    		margin-bottom: 2em;
+    	}
 		}
 	}
 	.carousel-wrap {
 		@include span-columns(6);
+		@include media(max-width $tablet) {
+			width: 100%;
+		}
 		#featured-carousel {
 			position: relative;
 			overflow: auto;
@@ -150,10 +164,15 @@ nav {
   height: 400px;
   text-align: center;
   background-size: cover;
+  display: table;
   h1 {
   	color: white;
-		padding: 161px;
     font-size: 4em;
+    display: table-cell;
+    vertical-align: middle;
+    @include media(max-width $tablet) {
+    	font-size: 3em;
+    }
   }
 }
 // Body
@@ -509,27 +528,6 @@ img {
 	}
 }
 // Contact Page
-#contact-table {
-	@include span-columns(6);
-	margin-top: $base-spacing;
-	tr {
-		@include span-columns(3 of 6);
-		@include row(table);
-		td {
-			text-align: left;
-	    font-size: $small;
-	    font-weight: 200;
-	    color: $black;
-	    span {
-	    	float: right;
-	    }
-		}
-		th {
-			text-align: left;
-			color: $black;
-		}
-	}
-}
 #contact {
 	@include span-columns(12);
 	section {

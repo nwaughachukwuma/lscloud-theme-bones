@@ -47,7 +47,8 @@ ul {
     color: #4a4a4a; }
 
 .blue {
-  color: #0087C8; }
+  color: #0087C8;
+  text-decoration: underline; }
 
 span.error {
   color: #D20606;
