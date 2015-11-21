@@ -274,15 +274,26 @@ img {
 .product-wrap {
 	#product-form {
 		@include span-columns(5);
+		@include media(max-width $tablet) {
+	    width: 50%;
+	    margin: 0;
+		}
 		.product-quantity {
 			@include span-columns(1 of 6);
 			height: 43px;
 			text-align: center;
+			@include media(max-width $tablet) {
+				@include span-columns(2 of 6);
+			}
 		}
 		#product-add {
 			@include span-columns(5 of 6);
 			@include omega();
 			text-align: center;
+			@include media(max-width $tablet) {
+				@include span-columns(4 of 6);
+				width: 100%;
+			}
 		}
 		#product-added {
 			@include span-columns(5 of 6);
@@ -290,6 +301,10 @@ img {
 			text-align: center;
 			background-color: #4A4A4A;
 			color: $action-color;
+			@include media(max-width $tablet) {
+				@include span-columns(4 of 6);
+				width: 100%;
+			}
 		}
 		.product-extras + div {
 			margin-right: 0;
@@ -325,6 +340,8 @@ img {
 		font-size: 0.75em;
 	}
 	img {
+    width: 100%;
+    height: auto;
 		display: block;
 		border: 1px solid $lightgrey;
 	}
@@ -341,8 +358,14 @@ img {
 	@include span-columns(6);
 	@include shift(1);
 	@include omega();
+	@include media(max-width $tablet) {
+    width: 50%;
+    margin: 0;
+	}
 	img {
 		border: 1px solid $lightgrey;
+		width: 100%;
+		height: auto;
 		&:hover {
 			border-color: $grey;
 		}
@@ -351,6 +374,9 @@ img {
 .product-description {
 	@include span-columns(8);
 	@include omega();
+	@include media(max-width $tablet) {
+		width: 100%;
+	}
 }
 .product-related {
 	@include span-columns(3);
@@ -1253,6 +1279,10 @@ footer {
 .write-review {
 	float: right;
 	margin-top: 2px;
+	@include media(max-width $tablet) {
+		display: block;
+		float: none;
+	}
 }
 .modal {
 	display: inline;
