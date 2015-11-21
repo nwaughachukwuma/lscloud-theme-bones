@@ -1163,6 +1163,9 @@ footer {
 	}
 }
 #passwordRestoreRequestForm {
+	input {
+		width: 200px;
+	}
 	@include media(max-width $tablet) {
 		input {
 			width: 100%;
@@ -1289,6 +1292,10 @@ footer {
 	h2 {
 		color: $link;
 		display: inline;
+	}
+	@include media(max-width $tablet) {
+		display: block;
+    margin-top: 1em;
 	}
 }
 .write-review {

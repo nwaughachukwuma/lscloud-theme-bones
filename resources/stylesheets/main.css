@@ -1726,6 +1726,9 @@ footer {
         .login-register-wrap section:nth-of-type(2) {
           margin-top: 1em; } }
 
+#passwordRestoreRequestForm input {
+  width: 200px; }
+
 @media screen and (max-width: 768px) {
   #passwordRestoreRequestForm input {
     width: 100%; } }
@@ -1831,6 +1834,10 @@ footer {
   .modal-trigger h2 {
     color: #0087C8;
     display: inline; }
+  @media screen and (max-width: 768px) {
+    .modal-trigger {
+      display: block;
+      margin-top: 1em; } }
 
 .write-review {
   float: right;
