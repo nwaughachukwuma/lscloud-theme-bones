@@ -1614,10 +1614,19 @@ img {
     float: left;
     display: block;
     margin-right: 1.69492%;
-    width: 23.72881%;
-    margin-left: 76.27119%; }
+    width: 32.20339%;
+    margin-left: 67.79661%; }
     #receipt .receipt-totals:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 768px) {
+      #receipt .receipt-totals {
+        float: left;
+        display: block;
+        margin-right: 1.69492%;
+        width: 66.10169%;
+        margin-left: 33.89831%; }
+        #receipt .receipt-totals:last-child {
+          margin-right: 0; } }
     #receipt .receipt-totals .receipt-totals-description {
       float: left;
       display: block;

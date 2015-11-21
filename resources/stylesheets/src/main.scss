@@ -1076,8 +1076,12 @@ img {
 		}
 	}
 	.receipt-totals {
-		@include span-columns(3);
-		@include shift(9);
+		@include span-columns(4);
+		@include shift(8);
+		@include media(max-width $tablet) {
+			@include span-columns(8);
+			@include shift(4);
+		}
 		.receipt-totals-description {
 			@include span-columns(2 of 4);
 		}
