@@ -146,6 +146,7 @@
     <h1 class="fill-parent">You Might be Into These</h1>
     <ul>
       {% for product in product.related %}
+      {% set page_url = '/product/' ~ product.url_name %}
       <div class="product product-related">
       <li class="{{ is_on_sale ? 'sale' : null }}">
         <figure>

@@ -292,7 +292,7 @@ img {
 			text-align: center;
 			@include media(max-width $tablet) {
 				@include span-columns(4 of 6);
-				width: 100%;
+				width: 200%;
 			}
 		}
 		#product-added {
@@ -303,7 +303,7 @@ img {
 			color: $action-color;
 			@include media(max-width $tablet) {
 				@include span-columns(4 of 6);
-				width: 100%;
+				width: 200%;
 			}
 		}
 		.product-extras + div {
@@ -359,8 +359,8 @@ img {
 	@include shift(1);
 	@include omega();
 	@include media(max-width $tablet) {
-    width: 50%;
-    margin: 0;
+    width: calc(50% - 10px);
+    margin: 0 0 0 10px;
 	}
 	img {
 		border: 1px solid $lightgrey;
@@ -1038,6 +1038,10 @@ img {
 #profile-changepassword {
 	@include span-columns(4);
 	margin-left: percentage(1/24);
+	@include media(max-width $tablet) {
+    margin: 0;
+    width: 100%;
+	}
 	input {
 		@include fill-parent;
 	}
@@ -1280,6 +1284,7 @@ footer {
 	float: right;
 	margin-top: 2px;
 	@include media(max-width $tablet) {
+    margin-top: 1em;
 		display: block;
 		float: none;
 	}
