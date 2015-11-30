@@ -1,13 +1,25 @@
 //
-// Theme scripts
+// Bones - Responsive Theme
+// Theme Scripts
 //
 
 (function ($) {
 
   $(document).ready(function() {
+
+    //
+    // Link scroll animate on home page
+    //
+    $('#how-does-it-work').click(function(){
+      $('html, body').animate({
+          scrollTop: $( $.attr(this, 'href') ).offset().top
+      }, 500);
+      return false;
+    });
     //
     // Adds unslider to carousel
     // Waits for images to finish loading (window).load for correct height values
+    //
     $(window).load(function() {
       $('#featured-carousel').unslider({
         speed: 500,
@@ -66,7 +78,6 @@
       // When the shipping method is shipping we want to update the 
       // order totals area on the Checkout page. The native Checkout 
       // action does all the calculations.
-      //
       $(this).sendRequest('shop:onCheckoutShippingMethod', {
         update: {'#checkout-totals': 'shop-checkout-totals', '#mini-cart':'shop-minicart'},
       })
@@ -77,7 +88,7 @@
     // Handle Checkbox copy-info button in checkout
     //
     $(document).on('click', '#copy_billing_to_shipping', function (){
-      //data-ajax-handler="shop:onCopyBillingToShipping" data-ajax-update="#checkout-page=shop-checkoutaddress"
+
       if($(this).is(':checked')) {
         $(".shipping-form").hide();
 
@@ -121,6 +132,7 @@
             $("#ProjectListButton").hide();
         }
     }); 
+
     // Star Rating
     $('.rating > span').click(function() {
         var currentId = $(this).attr('id');
@@ -154,7 +166,8 @@
             $("#item_rating").val('5');
         }
         console.log($('#item_rating').val());
-    }); // END
+    });
+
     // Review Modal
     $(function() {
       $("#modal-1").on("change", function() {

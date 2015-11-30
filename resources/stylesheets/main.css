@@ -1,9 +1,3 @@
-body, h1, figure {
-  margin: 0; }
-
-ul {
-  padding: 0; }
-
 html {
   box-sizing: border-box; }
 
@@ -185,6 +179,12 @@ input[type="radio"] {
   color: #9b9b9b;
   font-weight: 200;
   display: inline; }
+
+body, h1, figure {
+  margin: 0; }
+
+ul {
+  padding: 0; }
 
 body {
   position: relative;

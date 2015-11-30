@@ -128,7 +128,7 @@
     <!-- picture grid -->
     <div class="product-image-grid">
       <figure>
-        <a href="{{ page_url }}"><img itemprop="image" src="{{ product.images.first.thumbnail(580, 580)|default('http://placehold.it/580x580') }}" width="580" height="580" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
+        <a href="{{ page_url }}"><img itemprop="image" src="{{ product.images.first.thumbnail(580, 'auto')|default('http://placehold.it/580x580') }}" width="580" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
       </figure>
     </div>
 

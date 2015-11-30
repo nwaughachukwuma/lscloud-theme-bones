@@ -26,14 +26,14 @@ $heavy: 700;
 // --- BUTTONS ---
 $action-color: #F0C332;
 $base-border-radius: 3px;
+// --- SPACING ---
 $base-spacing: 1.5em;
 $continue-spacing: 4em;
 $small-spacing: $base-spacing / 2;
 $modal-padding: 2em;
-// Transitions
+// --- TRANSITIONS ---
 $base-duration: 150ms;
 $base-timing: ease;
-
 body {
 	font-family: $helvetica;
 }
@@ -69,12 +69,10 @@ a {
 		color: $link;
 	}
 }
-
 p {
 	font-size: 1.125em;
 	font-weight: $light;
 }
-
 ul {
 	list-style: none;
 	li {
@@ -148,9 +146,6 @@ span.error {
     color: $white;
   }
 }
-.option {
-
-}
 .continue-shopping {
 	background-color: $white;
 	border: 1px solid $grey;
@@ -200,7 +195,6 @@ select {
 input[type="checkbox"],
 input[type="radio"] {
   display: inline;
-  // margin-right: $small-spacing / 2;
 }
 // Products
 .oldprice {
