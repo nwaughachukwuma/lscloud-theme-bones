@@ -70,11 +70,11 @@ section {
 			color: $progress-green;
 		}
 		a {
-	    @include span-columns(4 of 6);
-	    @include shift(1);
+	    display: inline-block;
+	    margin-right: 3.44828%;
+	    width: 40%;
 	    margin-top: 1em;
 	    margin-bottom: 0.75em;
-	    width: 280px;
 	    text-align: center;
 	    @include media(max-width $mobile) {
 	    	@include span-columns(6 of 12);

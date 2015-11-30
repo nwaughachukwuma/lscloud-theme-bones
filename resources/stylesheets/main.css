@@ -265,17 +265,12 @@ section {
     section #home-details .coupon {
       color: #55A537; }
     section #home-details a {
-      float: left;
-      display: block;
+      display: inline-block;
       margin-right: 3.44828%;
-      width: 65.51724%;
-      margin-left: 17.24138%;
+      width: 40%;
       margin-top: 1em;
       margin-bottom: 0.75em;
-      width: 280px;
       text-align: center; }
-      section #home-details a:last-child {
-        margin-right: 0; }
       @media screen and (max-width: 768px) {
         section #home-details a {
           float: left;
