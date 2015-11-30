@@ -16,22 +16,6 @@
       }, 500);
       return false;
     });
-    //
-    // Adds unslider to carousel
-    // Waits for images to finish loading (window).load for correct height values
-    //
-    $(window).load(function() {
-      $('#featured-carousel').unslider({
-        speed: 500,
-        delay: 3000,
-        keys: true,
-        dots: true,
-        fluid: true 
-      });
-      // Resizes unslider banner for initial height
-      var bannerHeight = $('#featured-carousel').find('li').first().css('height');
-      $('#featured-carousel').css('height', bannerHeight);
-    });
 
     // 
     // Handle thumbnail clicks on the Product page
@@ -107,7 +91,9 @@
 
     });
     
+    //
     // If copy-billing is checked, on ajax reload, prop checked and hide shipping form
+    //
     $( document ).ajaxSuccess(function( event, request, settings ) { 
       if ( $( '#copy_billing_to_shipping' ).length ) { 
         $("#copy_billing_to_shipping").prop('checked', true);
@@ -133,7 +119,9 @@
         }
     }); 
 
+    //
     // Star Rating
+    //
     $('.rating > span').click(function() {
         var currentId = $(this).attr('id');
         if ( currentId === 'hate' ) {
@@ -168,7 +156,9 @@
         console.log($('#item_rating').val());
     });
 
+    //
     // Review Modal
+    //
     $(function() {
       $("#modal-1").on("change", function() {
         if ($(this).is(":checked")) {

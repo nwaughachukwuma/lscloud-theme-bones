@@ -8,17 +8,17 @@ url: /
 ---
 <section class="wrapper">
 	<div id="home-details">
-		<h1>Product collection Carousel.</h1>
-		<h1>Build quickly and easily. 🚀</h1>
-		<h3>Create a collection with the API code: <strong>carousel</strong></h3>
-		<h3>Don't forget Coupon Codes! <span class="coupon"><strong>#ExampleCode2015</strong></span></h3>
+		<h1>Online Alcohol Shopping.</h1>
+		<h1>Delivered Within 20 Min. 🚀</h1>
+		<h3>1 Day Only: <strong>30% Off All Items.</strong></h3>
+		<h3>Use Coupon Code <span class="coupon"><strong>#FaceOff2015</strong></span></h3>
 		<a class="button call-to-action" href="/shop">Shop Now</a>
 		<a class="blue" id="how-does-it-work" href="#featured-content">How does it work?</a>
 	</div>
 	<div class="carousel-wrap">
 		<div id="featured-carousel">
-		{% set featuredCollection = 'carousel'|collection %}
-		{% paginate featuredCollection.products by 4 %}
+		{% set featuredCollection = 'display'|collection %}
+		{% paginate featuredCollection.products by 1 %}
 	    <ul>
 			{% for product in pagination.items %}
 				{% set on_sale = product.onSale %}

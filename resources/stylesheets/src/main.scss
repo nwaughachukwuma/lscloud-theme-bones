@@ -71,9 +71,9 @@ section {
 		}
 		a {
 	    display: inline-block;
-	    @include span-columns(2 of 6);
 	    margin-top: 1em;
 	    margin-bottom: 0.75em;
+      margin-right: 1.5em;
 	    text-align: center;
 	    @include media(max-width $mobile) {
 	    	@include span-columns(6 of 12);
@@ -84,6 +84,7 @@ section {
 	    }
     	&:last-of-type {
     		margin-bottom: 2em;
+    		margin-left: 2em;
     	}
 		}
 	}

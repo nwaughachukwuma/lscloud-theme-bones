@@ -266,15 +266,10 @@ section {
       color: #55A537; }
     section #home-details a {
       display: inline-block;
-      float: left;
-      display: block;
-      margin-right: 3.44828%;
-      width: 31.03448%;
       margin-top: 1em;
       margin-bottom: 0.75em;
+      margin-right: 1.5em;
       text-align: center; }
-      section #home-details a:last-child {
-        margin-right: 0; }
       @media screen and (max-width: 768px) {
         section #home-details a {
           float: left;
@@ -287,7 +282,8 @@ section {
       section #home-details a:first-of-type {
         width: 280px; }
       section #home-details a:last-of-type {
-        margin-bottom: 2em; }
+        margin-bottom: 2em;
+        margin-left: 2em; }
   section .carousel-wrap {
     float: left;
     display: block;
