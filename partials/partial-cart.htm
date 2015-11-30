@@ -23,20 +23,7 @@
 				<input type="text" name="item_quantity[{{ item.key }}]" value="{{ item.quantity }}">
 			</td>
 			<td class="cart-remove">
-				<h4><a href="#" data-ajax-handler="shop:cart" {# data-ajax-confirm="Do you really want to remove this item from the cart?" #} data-ajax-update="#cart-content=partial-cart, #mini-cart=shop-minicart"data-ajax-extra-fields="delete_item='{{ item.key }}'">Remove</a></h4>
-			</td>
-		</tr>
-
-		<tr class="cart-item-mobile">
-			<td class="cart-image-mobile"><a href="/product/{{ item.product.url_name }}"><img src="{{ item.product.images.first.thumbnail(100, 100)|default('http://placehold.it/100x100') }}"/></a></td>
-			<td class="cart-name-mobile">
-				<h3>
-					<input type="text" name="item_quantity[{{ item.key }}]" value="{{ item.quantity }}">
-					<a href="/product/{{ item.product.url_name }}">{{ item.product.name }}</a>
-					<a class="cart-remove-mobile" href="#" data-ajax-handler="shop:cart" {# data-ajax-confirm="Do you really want to remove this item from the cart?" #} data-ajax-update="#cart-content=partial-cart, #mini-cart=shop-minicart"data-ajax-extra-fields="delete_item='{{ item.key }}'">&#x2716;</a>
-				</h3>
-				<h3><span style="float: left; font-style: italic;">{{ item.price()|currency }}</span><span style="float: right;"><strong>{{ item.total()|currency }}</strong></span></h3>
-
+				<h4><a class="blue" href="#" data-ajax-handler="shop:cart" {# data-ajax-confirm="Do you really want to remove this item from the cart?" #} data-ajax-update="#cart-content=partial-cart, #mini-cart=shop-minicart"data-ajax-extra-fields="delete_item='{{ item.key }}'">Remove</a></h4>
 			</td>
 		</tr>
 

@@ -703,6 +703,16 @@ img {
         width: 100%;
         max-width: 160px;
         border: 1px solid rgba(155, 155, 155, 0.3); }
+      @media screen and (max-width: 768px) {
+        #cart-table .cart-item .cart-image {
+          float: left;
+          display: block;
+          margin-right: 1.69492%;
+          width: 23.72881%; }
+          #cart-table .cart-item .cart-image:last-child {
+            margin-right: 0; }
+          #cart-table .cart-item .cart-image img {
+            max-width: 100px; } }
     #cart-table .cart-item .cart-name {
       float: left;
       display: block;
@@ -711,6 +721,15 @@ img {
       text-align: left; }
       #cart-table .cart-item .cart-name:last-child {
         margin-right: 0; }
+      @media screen and (max-width: 768px) {
+        #cart-table .cart-item .cart-name {
+          float: left;
+          display: block;
+          margin-right: 1.69492%;
+          width: 23.72881%;
+          font-size: 12px; }
+          #cart-table .cart-item .cart-name:last-child {
+            margin-right: 0; } }
     #cart-table .cart-item .cart-item-price {
       float: left;
       display: block;
@@ -718,6 +737,15 @@ img {
       width: 6.77966%; }
       #cart-table .cart-item .cart-item-price:last-child {
         margin-right: 0; }
+      @media screen and (max-width: 768px) {
+        #cart-table .cart-item .cart-item-price {
+          float: left;
+          display: block;
+          margin-right: 1.69492%;
+          width: 23.72881%;
+          font-size: 12px; }
+          #cart-table .cart-item .cart-item-price:last-child {
+            margin-right: 0; } }
     #cart-table .cart-item .cart-item-total {
       float: left;
       display: block;
@@ -725,6 +753,18 @@ img {
       width: 15.25424%; }
       #cart-table .cart-item .cart-item-total:last-child {
         margin-right: 0; }
+      @media screen and (max-width: 768px) {
+        #cart-table .cart-item .cart-item-total {
+          float: left;
+          display: block;
+          margin-right: 1.69492%;
+          width: 23.72881%;
+          margin-right: 0;
+          font-size: 12px; }
+          #cart-table .cart-item .cart-item-total:last-child {
+            margin-right: 0; }
+          #cart-table .cart-item .cart-item-total h2 {
+            font-weight: 700; } }
     #cart-table .cart-item .cart-quantity {
       float: left;
       display: block;
@@ -745,44 +785,25 @@ img {
         margin-right: 0; }
       #cart-table .cart-item .cart-remove h4 {
         margin: 0; }
+      @media screen and (max-width: 768px) {
+        #cart-table .cart-item .cart-remove {
+          float: left;
+          display: block;
+          margin-right: 1.69492%;
+          width: 57.62712%; }
+          #cart-table .cart-item .cart-remove:last-child {
+            margin-right: 0; } }
     #cart-table .cart-item .cart-subtotal {
       margin-bottom: 1em; }
     @media screen and (max-width: 768px) {
       #cart-table .cart-item {
-        display: none; } }
-  #cart-table .cart-item-mobile {
-    display: none; }
-    #cart-table .cart-item-mobile td {
-      text-align: left; }
-    #cart-table .cart-item-mobile input {
-      width: 55px;
-      text-align: center;
-      margin-right: 1em; }
-    #cart-table .cart-item-mobile h3 {
-      margin: 0; }
-    #cart-table .cart-item-mobile img {
-      border: 1px solid rgba(155, 155, 155, 0.3);
-      width: 100%;
-      max-width: 100px; }
-    #cart-table .cart-item-mobile .cart-image-mobile {
-      float: left;
-      display: block;
-      margin-right: 1.69492%;
-      width: 32.20339%; }
-      #cart-table .cart-item-mobile .cart-image-mobile:last-child {
-        margin-right: 0; }
-    #cart-table .cart-item-mobile .cart-name-mobile {
-      float: left;
-      display: block;
-      margin-right: 1.69492%;
-      width: 66.10169%; }
-      #cart-table .cart-item-mobile .cart-name-mobile:last-child {
-        margin-right: 0; }
-    #cart-table .cart-item-mobile .cart-remove-mobile {
-      float: right; }
-    @media screen and (max-width: 768px) {
-      #cart-table .cart-item-mobile {
-        display: initial; } }
+        display: initial; }
+        #cart-table .cart-item input {
+          width: 55px;
+          text-align: center;
+          margin-right: 1em; }
+        #cart-table .cart-item h3 {
+          margin: 0; } }
   @media screen and (max-width: 768px) {
     #cart-table .button {
       display: block;

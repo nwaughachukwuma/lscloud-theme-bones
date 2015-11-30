@@ -455,16 +455,38 @@ img {
 				max-width: 160px;
 				border: 1px solid $lightgrey;
 			}
+			@include media(max-width $mobile) {
+				@include span-columns(3);
+				img {
+					max-width: 100px;
+				}
+			}
 		}
 		.cart-name {
 			@include span-columns(3);
 			text-align: left;
+			@include media(max-width $mobile) {
+				@include span-columns(3);
+		    font-size: 12px;
+			}
 		}
 		.cart-item-price {
 			@include span-columns(1);
+			@include media(max-width $mobile) {
+				@include span-columns(3);
+		    font-size: 12px;
+			}
 		}
 		.cart-item-total {
 			@include span-columns(2);
+			@include media(max-width $mobile) {
+				@include span-columns(3);
+				@include omega();
+		    font-size: 12px;
+		    h2 {
+		    	font-weight: $heavy;
+		    }
+			}
 		}
 		.cart-quantity {
 			@include span-columns(2);
@@ -479,43 +501,24 @@ img {
 			h4 {
 				margin: 0;
 			}
+			@include media(max-width $mobile) {
+				@include span-columns(7);
+			}
 		}
 		.cart-subtotal {
 			margin-bottom: 1em;
 		}
 		@include media(max-width $mobile) {
-			display: none;
-		}
-	}
-	.cart-item-mobile {
-		display: none;
-		td {
-			text-align: left;
-		}
-		input {
-			width: 55px;
-	    text-align: center;
-	    margin-right: 1em;
-		}
-		h3 {
-			margin: 0;
-		}
-		img {
-			border: 1px solid $lightgrey;
-			width: 100%;
-			max-width: 100px;
-		}
-		.cart-image-mobile {
-			@include span-columns(4);
-		}
-		.cart-name-mobile {
-			@include span-columns(8);
-		}
-		.cart-remove-mobile {
-			float: right;
-		}
-		@include media(max-width $mobile) {
 			display: initial;
+			input {
+				width: 55px;
+		    text-align: center;
+		    margin-right: 1em;
+			}
+			h3 {
+				margin: 0;
+			}
+
 		}
 	}
 	.button {
