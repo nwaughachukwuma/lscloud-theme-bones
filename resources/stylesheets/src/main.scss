@@ -727,33 +727,11 @@ img {
   	margin-bottom: 30px;
   }
 }
-// Checkout Start Page
-.checkout-start-login {
-	@include span-columns(5);
-	input {
-		@include fill-parent;
-	}
-	@include media(max-width $mobile) {
-		width: 100%;
-	}
-}
+// Forgotpass
 .forgotpass {
 	font-style: italic;
 	margin: -37px 1em 38px 0;
 	text-align: right;
-}
-.checkout-start-guest {
-	@include span-columns(5);
-	@include shift(1);
-	a {
-		@include fill-parent;
-		display: block;
-		text-align: center;
-	}
-	@include media(max-width $mobile) {
-		width: 100%;
-		margin: 0;
-	}
 }
 // Checkout Process
 .billing-summary {

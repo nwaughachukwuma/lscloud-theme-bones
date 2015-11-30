@@ -1057,40 +1057,10 @@ img {
       margin-top: 0;
       margin-bottom: 30px; } }
 
-.checkout-start-login {
-  float: left;
-  display: block;
-  margin-right: 1.69492%;
-  width: 40.67797%; }
-  .checkout-start-login:last-child {
-    margin-right: 0; }
-  .checkout-start-login input {
-    width: 100%; }
-  @media screen and (max-width: 768px) {
-    .checkout-start-login {
-      width: 100%; } }
-
 .forgotpass {
   font-style: italic;
   margin: -37px 1em 38px 0;
   text-align: right; }
-
-.checkout-start-guest {
-  float: left;
-  display: block;
-  margin-right: 1.69492%;
-  width: 40.67797%;
-  margin-left: 8.47458%; }
-  .checkout-start-guest:last-child {
-    margin-right: 0; }
-  .checkout-start-guest a {
-    width: 100%;
-    display: block;
-    text-align: center; }
-  @media screen and (max-width: 768px) {
-    .checkout-start-guest {
-      width: 100%;
-      margin: 0; } }
 
 .billing-summary {
   float: left;
