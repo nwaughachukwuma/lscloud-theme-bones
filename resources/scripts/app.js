@@ -191,6 +191,9 @@
       });
     });
 
+    //
+    // Handle mobile menu nav click
+    //
     $(document).on('click', '.hamburger-dropdown', function (){
       $(this).toggleClass("active");
     });

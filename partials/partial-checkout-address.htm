@@ -15,6 +15,11 @@
 	<h3>Hello user!</h3>
 {% else %}
 	<p>You are checking out as a guest. <a href="/sign-in">Sign-in/Sign-up</a> to checkout faster and save your info.</p>
+	{{ partial('partial-sign-in') }}
+        <label class="modal-trigger write-review" for="modal-1">
+          <h2>write review</h2>
+        </label>
+        <input class="modal-state" id="modal-1" type="checkbox" />
 {% endif %}
 
 {{ open_form({'class': 'custom', 'data-validation-message' : ''}) }}
