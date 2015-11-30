@@ -4,7 +4,11 @@
     <div id="product-form">
       <h1 class="fill-parent">{{ product.name }}</h1>
       <!-- <hr style="margin: .75em -23% .75em 0;"/> -->
-
+      {% if product.short_description %}
+         <p class="short-description">
+           {{ product.short_description|unescape }}
+         </p>
+      {% endif %}
       <meta itemprop="name" content="{{ product.name }}" />
       <meta itemprop="sku" content="{{ product.sku }}" />
       <link itemprop="url" href="{{ '/product/' ~ product.url_name }}" />

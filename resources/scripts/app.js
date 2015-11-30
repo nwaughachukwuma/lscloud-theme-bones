@@ -21,7 +21,7 @@
     // Handle thumbnail clicks on the Product page
     //
     $('#product-page').on('click', 'div.product-image-grid ul a', function(){
-      $('div.big-image img', $(this).closest('.product-image-grid')).attr('src', this.href);
+      $('figure.big-image img', $(this).closest('.product-image-grid')).attr('src', this.href);
 
       return false;
     })

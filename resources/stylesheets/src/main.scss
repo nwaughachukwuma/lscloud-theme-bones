@@ -289,6 +289,9 @@ img {
 	    width: 50%;
 	    margin: 0;
 		}
+		.short-description {
+	    margin: 3em 0 0 0;
+		}
 		.product-quantity {
 			@include span-columns(1 of 6);
 			height: 43px;

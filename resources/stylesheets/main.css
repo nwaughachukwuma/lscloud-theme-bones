@@ -504,6 +504,8 @@ img {
     .product-wrap #product-form {
       width: 50%;
       margin: 0; } }
+  .product-wrap #product-form .short-description {
+    margin: 3em 0 0 0; }
   .product-wrap #product-form .product-quantity {
     float: left;
     display: block;
