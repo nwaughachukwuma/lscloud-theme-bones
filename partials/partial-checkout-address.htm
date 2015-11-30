@@ -11,6 +11,11 @@
   </tr>
 </table>
 
+{% if customer %}
+	<h3>Hello user!</h3>
+{% else %}
+	<p>You are checking out as a guest. <a href="/sign-in">Sign-in/Sign-up</a> to checkout faster and save your info.</p>
+{% endif %}
 
 {{ open_form({'class': 'custom', 'data-validation-message' : ''}) }}
 
