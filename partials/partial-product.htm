@@ -127,9 +127,17 @@
 
     <!-- picture grid -->
     <div class="product-image-grid">
-      <figure>
-        <a href="{{ page_url }}"><img itemprop="image" src="{{ product.images.first.thumbnail(580, 'auto')|default('http://placehold.it/580x580') }}" width="580" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
+      <figure class="big-image">
+        <img itemprop="image" src="{{ product.images.first.thumbnail(746, 'auto')|default('http://placehold.it/460x300') }}" alt="{{ product.name }}"/>
       </figure>
+      
+      {% if product.images.count > 1 %}
+      <ul>
+        {% for image in product.images %}
+          <li class="image-grid-item"><a href="{{ image.thumbnail(746, 'auto') }}"><img src="{{ image.thumbnail(367, 367) }}"/></a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
     </div>
 
     <hr class="fill-parent">
