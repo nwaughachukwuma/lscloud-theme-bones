@@ -270,6 +270,11 @@ section {
       margin-bottom: 0.75em;
       margin-right: 1.5em;
       text-align: center; }
+      @media screen and (min-width: 768px) {
+        section #home-details a:first-of-type {
+          width: 280px; } }
+      section #home-details a:last-of-type {
+        margin-bottom: 2em; }
       @media screen and (max-width: 768px) {
         section #home-details a {
           float: left;
@@ -279,11 +284,6 @@ section {
           margin-left: 25.42373%; }
           section #home-details a:last-child {
             margin-right: 0; } }
-      section #home-details a:first-of-type {
-        width: 280px; }
-      section #home-details a:last-of-type {
-        margin-bottom: 2em;
-        margin-left: 2em; }
   section .carousel-wrap {
     float: left;
     display: block;
@@ -1048,6 +1048,14 @@ img {
     margin-bottom: 2em; }
   #checkout-progress tr:nth-child(2) .grey {
     color: #9b9b9b; }
+
+.checkout-customer {
+  text-align: center;
+  margin-bottom: 70px; }
+  @media screen and (max-width: 768px) {
+    .checkout-customer {
+      margin-top: 0;
+      margin-bottom: 30px; } }
 
 .checkout-start-login {
   float: left;
@@ -1876,6 +1884,12 @@ footer {
       display: block;
       float: none; } }
 
+.sign-in-modal {
+  font-size: 1em;
+  font-weight: 200;
+  color: #0087C8;
+  display: initial; }
+
 .modal {
   display: inline; }
   .modal .modal-fade-screen {
@@ -1963,6 +1977,18 @@ footer {
       .modal .modal-inner .reviews .review-date {
         display: inline;
         margin-left: 1em; }
+  .modal .checkout-modal h1 {
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em; }
+  .modal .checkout-modal form {
+    width: 75%;
+    margin: auto; }
+  .modal .checkout-modal p {
+    text-align: center;
+    margin-top: 2em; }
+  .modal .checkout-modal #sign-in-inview, .modal .checkout-modal #sign-up-inview {
+    color: #0087C8; }
   .modal .modal-state:checked + .modal-fade-screen {
     opacity: 1;
     visibility: visible; }

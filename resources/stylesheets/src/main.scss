@@ -75,17 +75,18 @@ section {
 	    margin-bottom: 0.75em;
       margin-right: 1.5em;
 	    text-align: center;
+	    &:first-of-type {
+	    	@include media(min-width $mobile) {
+		    	width: 280px;	    		
+	    	}
+	    }
+    	&:last-of-type {
+    		margin-bottom: 2em;
+    	}
 	    @include media(max-width $mobile) {
 	    	@include span-columns(6 of 12);
 	    	@include shift(3);
 	    }
-	    &:first-of-type {
-	    	width: 280px;
-	    }
-    	&:last-of-type {
-    		margin-bottom: 2em;
-    		margin-left: 2em;
-    	}
 		}
 	}
 	.carousel-wrap {
@@ -717,6 +718,15 @@ img {
 		}
 	}
 }
+// Checkout Customer Check
+.checkout-customer {
+  text-align: center;
+  margin-bottom: 70px;
+  @include media(max-width $mobile) {
+    margin-top: 0;
+  	margin-bottom: 30px;
+  }
+}
 // Checkout Start Page
 .checkout-start-login {
 	@include span-columns(5);
@@ -1331,6 +1341,12 @@ footer {
 		float: none;
 	}
 }
+.sign-in-modal {
+  font-size: 1em;
+  font-weight: 200;
+  color: $link;
+  display: initial;
+}
 .modal {
 	display: inline;
   $medium-screen: em(640) !default;
@@ -1416,7 +1432,24 @@ footer {
     	}
     }
   }
-
+	.checkout-modal {
+		h1 {
+			text-align: center;
+			margin-top: 1em;
+			margin-bottom: 1em;
+		}
+		form {
+			width: 75%;
+			margin: auto;
+		}
+		p {
+			text-align: center;
+			margin-top: 2em;
+		}
+		#sign-in-inview, #sign-up-inview {
+			color: $link;
+		}
+	}
   .modal-state:checked + .modal-fade-screen {
     opacity: 1;
     visibility: visible;

@@ -20,7 +20,7 @@ url: /sign-in
 			<a class="right blue" href="{{ site_url('/password-restore') }}">Forgot?</a>
 		</h4>
 		<span class="error"></span>
-		<input type="submit" class="button next" value="Login"/>
+		<input type="submit" class="button next" value="Sign In"/>
 		<input type="hidden" name="redirect" value="{{ site_url(root_url('/')) }}"/>
 	{{ close_form() }}
 	</section>
@@ -40,7 +40,7 @@ url: /sign-in
 		<span class="error"></span>
 		<input type="hidden" name="autologin" value="1" />
 		<input type="hidden" name="redirect" value="{{ site_url('registered') }}"/>
-		<input type="submit" class="button next" value="Submit"/>
+		<input type="submit" class="button next" value="Sign Up"/>
 	{{ close_form() }}
 	</section>
 </div>

@@ -12,14 +12,19 @@
 </table>
 
 {% if customer %}
-	<h3>Hello user!</h3>
+	<h3 class="checkout-customer">Welcome, {{ customer.first_name }}!</h3>
 {% else %}
-	<p>You are checking out as a guest. <a href="/sign-in">Sign-in/Sign-up</a> to checkout faster and save your info.</p>
+	<h3 class="checkout-customer">You are checking out as a guest.
+		<label class="modal-trigger sign-in-modal" for="modal-1">Sign in</label>
+		<input class="modal-state" id="modal-1" type="checkbox" />
+		/
+		<label class="modal-trigger sign-in-modal" for="modal-2">Sign up</label>
+    <input class="modal-state" id="modal-2" type="checkbox" />
+    to checkout faster and save your info.
+	</h3>
 	{{ partial('partial-sign-in') }}
-        <label class="modal-trigger write-review" for="modal-1">
-          <h2>write review</h2>
-        </label>
-        <input class="modal-state" id="modal-1" type="checkbox" />
+	{{ partial('partial-sign-up') }}
+
 {% endif %}
 
 {{ open_form({'class': 'custom', 'data-validation-message' : ''}) }}
