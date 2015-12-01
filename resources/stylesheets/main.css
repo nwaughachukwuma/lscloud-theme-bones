@@ -305,7 +305,7 @@ nav {
     margin: 0;
     padding: 0; }
     nav ul li {
-      margin-right: -4px;
+      margin-right: -5px;
       position: relative;
       -webkit-transition: all 0.2s;
       -moz-transition: all 0.2s;
@@ -766,7 +766,8 @@ img {
       display: block;
       margin-right: 1.69492%;
       width: 23.72881%;
-      text-align: left; }
+      text-align: left;
+      height: 1px; }
       #cart-table .cart-item .cart-name:last-child {
         margin-right: 0; }
       @media screen and (max-width: 768px) {
