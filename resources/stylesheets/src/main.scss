@@ -145,6 +145,26 @@ nav {
 			display: initial;
 		}
 	}
+	.search-bar {
+		padding: 0;
+		&:hover {
+		  background: initial;
+		  border-color: $grey;
+		}
+		input {
+			background: url(../images/search.png) no-repeat right 5px bottom 4px;
+			background-color: $white;
+	    background-size: 24px;
+	    @include media(max-width $mobile) {
+		    background: url(../images/search.png) no-repeat right 6px bottom 2px;
+  			background-color: $white;
+		    background-size: 22px;
+	    }
+	    &:focus {
+	    	background: none;
+	    }
+		}
+	}
 }
 #mobile-nav {
 	display: none;

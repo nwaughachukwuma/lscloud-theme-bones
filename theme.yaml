@@ -14,4 +14,5 @@ customFields:
     facebookUrl: { type: text, title: 'Facebook URL', default: 'http://facebook.com/lemonstand' }
     twitterUrl: { type: text, title: 'Twitter URL', default: 'http://twitter.com/lemonstand' }
     linkedInUrl: { type: text, title 'LinkedIn URL', default: 'http://www.linkedin.com/company/lemonstand' }
+    searchIcon: { type: image, title: 'Search Icon', default: '@images/search.png', comment: 'Upload a search icon or stick with the default.' }
 ---

@@ -60,6 +60,11 @@ description: 'Default Template'
 
 
       <ul id="web-nav">
+        <li class="search-bar">
+          {{ open_form({'class': 'search', 'method': 'get', 'action': site_url('search')}) }}
+            <input type="text" name="query" value="{{query|unescape}}" placeholder="Search store&hellip;"/>
+          {{ close_form() }}
+        </li>
         <li class="dropdown">
           <a>Shop ▾</a>
           {% tree categories %}
@@ -92,13 +97,6 @@ description: 'Default Template'
           </li>
         {% endif %}
         <li id="mini-cart">{{ partial('shop-minicart') }}</li>
-        {% if search %}
-        <li>
-          {{ open_form({'method': 'get', 'action': site_url('search')}) }}
-          <input type="text" name="query" value="{{query|unescape}}" placeholder="Search store&hellip;"/>
-          {{ close_form() }}
-        </li>
-        {% endif %}
       </ul>
     </nav>
     <nav id="mobile-nav">
@@ -116,6 +114,11 @@ description: 'Default Template'
             {% endfor %}
           </ul>
           {% endtree %}
+        </li>
+        <li class="search-bar">
+          {{ open_form({'class': 'search', 'method': 'get', 'action': site_url('search')}) }}
+            <input type="text" name="query" value="{{query|unescape}}" placeholder="Search store&hellip;"/>
+          {{ close_form() }}
         </li>
       </ul>
       <ul>
