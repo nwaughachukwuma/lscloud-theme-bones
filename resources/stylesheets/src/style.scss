@@ -94,27 +94,6 @@ span.error {
 	margin-bottom: 1em;
 	display: block;
 }
-#mini-cart {
-	padding: $base-spacing 0 $base-spacing 0;
-	background: $grey;
-	a {
-		padding: 1.5em;
-		color: $white;
-		font-weight: $bold;
-		&:hover {
-			color: $action-color;
-		}
-	}
-	&:hover {
-		background: $darkgrey;
-	}
-}
-.has-items {
-	background: $action-color !important;
-	&:hover {
-		color: $black !important;
-	}
-}
 // Buttons
 .button {
 	border: 0;

@@ -67,23 +67,6 @@ span.error {
   margin-bottom: 1em;
   display: block; }
 
-#mini-cart {
-  padding: 1.5em 0 1.5em 0;
-  background: #9b9b9b; }
-  #mini-cart a {
-    padding: 1.5em;
-    color: #fff;
-    font-weight: 500; }
-    #mini-cart a:hover {
-      color: #F0C332; }
-  #mini-cart:hover {
-    background: #555; }
-
-.has-items {
-  background: #F0C332 !important; }
-  .has-items:hover {
-    color: #4a4a4a !important; }
-
 .button {
   border: 0;
   border-radius: 3px;
@@ -322,16 +305,36 @@ nav {
     margin: 0;
     padding: 0; }
     nav ul li {
+      margin-right: -4px;
       position: relative;
       -webkit-transition: all 0.2s;
       -moz-transition: all 0.2s;
       transition: all 0.2s;
       display: inline-block;
-      padding: 1.5em; }
+      padding: 27px;
+      line-height: 16px; }
     nav ul li:hover {
       background: #555; }
       nav ul li:hover a {
         color: #fff; }
+    nav ul .search-bar {
+      padding: 0;
+      margin-left: 4px;
+      margin-right: 4px; }
+      nav ul .search-bar:hover {
+        background: initial;
+        border-color: #9b9b9b; }
+      nav ul .search-bar input {
+        background: url(../images/search.png) no-repeat right 5px bottom 4px;
+        background-color: #fff;
+        background-size: 24px; }
+        @media screen and (max-width: 768px) {
+          nav ul .search-bar input {
+            background: url(../images/search.png) no-repeat right 6px bottom 2px;
+            background-color: #fff;
+            background-size: 22px; } }
+        nav ul .search-bar input:focus {
+          background: none; }
   @media screen and (max-width: 768px) {
     nav #web-nav {
       display: none; } }
@@ -340,22 +343,6 @@ nav {
     @media screen and (max-width: 768px) {
       nav #hamburger {
         display: initial; } }
-  nav .search-bar {
-    padding: 0; }
-    nav .search-bar:hover {
-      background: initial;
-      border-color: #9b9b9b; }
-    nav .search-bar input {
-      background: url(../images/search.png) no-repeat right 5px bottom 4px;
-      background-color: #fff;
-      background-size: 24px; }
-      @media screen and (max-width: 768px) {
-        nav .search-bar input {
-          background: url(../images/search.png) no-repeat right 6px bottom 2px;
-          background-color: #fff;
-          background-size: 22px; } }
-      nav .search-bar input:focus {
-        background: none; }
 
 #mobile-nav {
   display: none;
@@ -366,9 +353,53 @@ nav {
       font-size: 1em; }
   #mobile-nav ul {
     font-size: 0.75em; }
+    #mobile-nav ul li {
+      padding: 18px;
+      line-height: 12px; }
+    #mobile-nav ul .search-bar {
+      padding: 0; }
+      #mobile-nav ul .search-bar:hover {
+        background: initial;
+        border-color: #9b9b9b; }
+      #mobile-nav ul .search-bar input {
+        background: url(../images/search.png) no-repeat right 5px bottom 4px;
+        background-color: #fff;
+        background-size: 24px; }
+        @media screen and (max-width: 768px) {
+          #mobile-nav ul .search-bar input {
+            background: url(../images/search.png) no-repeat right 6px bottom 2px;
+            background-color: #fff;
+            background-size: 22px; } }
+        #mobile-nav ul .search-bar input:focus {
+          background: none; }
   @media screen and (max-width: 768px) {
     #mobile-nav {
       display: initial; } }
+
+#mini-cart {
+  padding: 27px 0 27px 0;
+  background: #9b9b9b; }
+  #mini-cart a {
+    padding: 27px 27px 26px 27px;
+    color: #fff;
+    font-weight: 500; }
+    #mini-cart a:hover {
+      color: #F0C332; }
+  #mini-cart:hover {
+    background: #555; }
+  @media screen and (max-width: 768px) {
+    #mini-cart {
+      padding: 18px 0 18px 0 !important;
+      font-size: 12px;
+      color: #fff;
+      font-weight: 500; }
+      #mini-cart a {
+        padding: 16px 16px 17px 16px; } }
+
+.has-items {
+  background: #F0C332 !important; }
+  .has-items:hover {
+    color: #4a4a4a !important; }
 
 #logo {
   float: left;
@@ -2047,8 +2078,8 @@ footer {
   visibility: visible; }
 
 #hamburger .hamburger-dropdown {
-  padding: 1em;
-  height: 66px; }
+  padding: 27px;
+  height: 68px; }
   #hamburger .hamburger-dropdown a {
     font-size: 1.5em; }
 

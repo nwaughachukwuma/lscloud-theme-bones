@@ -59,23 +59,6 @@ span.error {
   margin-bottom: 1em;
   display: block; }
 
-#mini-cart {
-  padding: 1.5em 0 1.5em 0;
-  background: #9b9b9b; }
-  #mini-cart a {
-    padding: 1.5em;
-    color: #fff;
-    font-weight: 500; }
-    #mini-cart a:hover {
-      color: #F0C332; }
-  #mini-cart:hover {
-    background: #555; }
-
-.has-items {
-  background: #F0C332 !important; }
-  .has-items:hover {
-    color: #4a4a4a !important; }
-
 .button {
   border: 0;
   border-radius: 3px;

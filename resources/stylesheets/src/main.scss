@@ -122,16 +122,40 @@ nav {
 		margin: 0;
 		padding: 0;
 		li {
+			margin-right: -4px;
 		  position: relative;
 		  @include transition(all 0.2s);
 			display: inline-block;
-			padding: $base-spacing;
+	    padding: 27px;
+	    line-height: 16px;
 		}
 		li:hover {
 		  background: $darkgrey;
 		  a {
 		  	color: $white;
 		  }
+		}
+		.search-bar {
+			padding: 0;
+	    margin-left: 4px;
+	    margin-right: 4px;
+			&:hover {
+			  background: initial;
+			  border-color: $grey;
+			}
+			input {
+				background: url(../images/search.png) no-repeat right 5px bottom 4px;
+				background-color: $white;
+		    background-size: 24px;
+		    @include media(max-width $mobile) {
+			    background: url(../images/search.png) no-repeat right 6px bottom 2px;
+					background-color: $white;
+			    background-size: 22px;
+		    }
+		    &:focus {
+		    	background: none;
+		    }
+			}
 		}
 	}
 	#web-nav {
@@ -143,26 +167,6 @@ nav {
 		display: none;
 		@include media(max-width $mobile) {
 			display: initial;
-		}
-	}
-	.search-bar {
-		padding: 0;
-		&:hover {
-		  background: initial;
-		  border-color: $grey;
-		}
-		input {
-			background: url(../images/search.png) no-repeat right 5px bottom 4px;
-			background-color: $white;
-	    background-size: 24px;
-	    @include media(max-width $mobile) {
-		    background: url(../images/search.png) no-repeat right 6px bottom 2px;
-  			background-color: $white;
-		    background-size: 22px;
-	    }
-	    &:focus {
-	    	background: none;
-	    }
 		}
 	}
 }
@@ -177,9 +181,63 @@ nav {
 	}
 	ul {
 		font-size: 0.75em;
+		li {
+			padding: 18px;
+			line-height: 12px;
+		}
+		.search-bar {
+			padding: 0;
+			&:hover {
+			  background: initial;
+			  border-color: $grey;
+			}
+			input {
+				background: url(../images/search.png) no-repeat right 5px bottom 4px;
+				background-color: $white;
+		    background-size: 24px;
+		    @include media(max-width $mobile) {
+			    background: url(../images/search.png) no-repeat right 6px bottom 2px;
+					background-color: $white;
+			    background-size: 22px;
+		    }
+		    &:focus {
+		    	background: none;
+		    }
+			}
+		}
 	}
 	@include media(max-width $mobile) {
 		display: initial;
+	}
+}
+#mini-cart {
+	padding: 27px 0 27px 0;
+	background: $grey;
+	a {
+		padding: 27px 27px 26px 27px;
+		color: $white;
+		font-weight: $bold;
+		&:hover {
+			color: $action-color;
+		}
+	}
+	&:hover {
+		background: $darkgrey;
+	}
+	@include media(max-width $mobile) {
+    padding: 18px 0 18px 0 !important;
+	  font-size: 12px;
+	  color: #fff;
+	  font-weight: 500;
+	  a {
+			padding: 16px 16px 17px 16px;
+		}
+	}
+}
+.has-items {
+	background: $action-color !important;
+	&:hover {
+		color: $black !important;
 	}
 }
 #logo {
@@ -1529,8 +1587,8 @@ footer {
 // Hamburger
 #hamburger {
 	.hamburger-dropdown {
-		padding: 1em;
-		height: 66px;
+    padding: 27px;
+    height: 68px;
 		a {
 			font-size: 1.5em;
 		}
