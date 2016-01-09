@@ -1,4 +1,3 @@
-<div class="wrapper">
 <div class="breadcrumbs">
   <ul>
     <li class="crumb"><a href="/">Home</a></li>
@@ -7,8 +6,7 @@
       {% for parent in category.listAllParents() %}
         <li class="crumb"><a href="/category/{{ parent.fullUrlName }}">{{ parent.name }}</a></li>
       {% endfor %}
-      <li class="crumb active"><a href="/category/{{ category.fullUrlName }}">{{ category.name }}</a></li>
+      <li class="crumb"><a href="/category/{{ category.fullUrlName }}">{{ category.name }}</a></li>
     {% endif %}
   </ul>
-</div>
 </div>

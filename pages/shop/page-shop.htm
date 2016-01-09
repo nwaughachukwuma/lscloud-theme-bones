@@ -6,10 +6,9 @@ published: true
 name: Shop
 url: '/shop/:page?'
 ---
-<div class="wrapper">
 <h1>{{ page.title }}</h1>
 {% tree categories %}
-<ul class="categories">
+<ul>
 	{% for category in tree.items %}
 	<li>
 		<h3><a href="/category/{{ category.fullUrlName }}">{{ category.name }}</a></h3>
@@ -28,7 +27,7 @@ url: '/shop/:page?'
 
 				{% set is_on_sale = product.onSale %}
 				{% set page_url = '/product/' ~ product.url_name %}
-				<li class="product shop-product {{ is_on_sale ? 'sale' : null }}" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+				<li class="product {{ is_on_sale ? 'sale' : null }}" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
 					<figure>
 						<a href="{{ page_url }}"><img itemprop="image" src="{{ product.images.first.thumbnail(365, 365)|default('http://placehold.it/365x365') }}" width="365" height="365" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
 					</figure>
@@ -52,10 +51,7 @@ url: '/shop/:page?'
 			{% endfor %}
 		</ul>
 	</div>
-	<div class="nav-wrap">
-		{% navigation %}		
-	</div>
+	{% navigation %}		
 
 	{% endpaginate %}
 {{ close_form() }}
-</div>

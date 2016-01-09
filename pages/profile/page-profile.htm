@@ -6,7 +6,6 @@ published: true
 name: Profile
 url: /profile
 ---
-<div class="wrapper">	
 <h1>{{ page.title }}</h1>
 {% if customer %}
 
@@ -17,4 +16,3 @@ url: /profile
 {% else %}
   Please <a href="{{ root_url('login') }}">login</a> to edit your profile.
 {% endif %}
-</div>

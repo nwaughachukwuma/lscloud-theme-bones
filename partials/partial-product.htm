@@ -36,39 +36,24 @@
       {% endif %}
       </p>
 
-      {% if product_rating.total_reviews %}
-        {{ partial('partial-review-view') }}
-        <label class="modal-trigger write-review" for="modal-1">
-          <h2>write review</h2>
-        </label>
-        <input class="modal-state" id="modal-1" type="checkbox" />
-      {% else %}
-        <label class="modal-trigger" for="modal-1">
-          <h2>write review</h2>
-        </label>
-        <input class="modal-state" id="modal-1" type="checkbox" />
-      {% endif %}
-
       <!-- product attributes -->
         <div class="product-attributes">
       {% if product.productAttributes.count %}
-          {% for attribute in product.productAttributes %}
-              <h2>{{ attribute.name }}</h2>
-              <h3>{{ attribute.value }}</h3>
-              <br />
-          {% endfor %}
+        {% for attribute in product.productAttributes %}
+          <p>{{ attribute.name }} - {{ attribute.value }}</p>
+        {% endfor %}
       {% endif %}
         </div>
 
       <!-- product options -->
       {% if product.options.count %}
         {% for index, option in product.options %}
-          <label for="{{ 'option-'~index }}">{{ option.name }}</label>
+          <p><label for="{{ 'option-'~index }}">{{ option.name }}</label>
           <select id="{{ 'option-'~index }}" name="options[{{ option.id }}]" data-ajax-handler="shop:product" data-ajax-update="">
             {% for key, value in option.values %}
               <option value='{{ key }}' {{ option_state(postedOptions[option.id], key) }}>{{ value }}</option>
             {% endfor %}
-          </select>
+          </select></p>
         {% endfor %}
       {% endif %}
 
@@ -78,13 +63,14 @@
         {% for index, extra in product.extras|slice(0, 2) %}
         <div class="product product-extras">
           <img src="{{ extra.images.first.thumbnail(230, 230)|default('http://placehold.it/230x230') }}" width="230" height="230" alt="{{ extra.images.first.description }}" title="{{ extra.images.first.title }}"/>
-          <label for="{{ 'extra-'~index }}"><h3>{{ extra.name }}</h3></label>
+          <p><label for="{{ 'extra-'~index }}">{{ extra.name }}</label>
           {% if extra.enabled %}
             <input type="checkbox" id="{{ 'extra-'~index }}" {{ checkbox_state(postedExtras[extra.id], extra.id) }} name="extras[{{ extra.id }}]" data-ajax-handler="shop:product" data-ajax-update="">
           {% else %}
             <input type="checkbox" disabled="disabled">
           {% endif %}
-          <h2 class="extra-price">Add {{ extra.price|currency }}</h2>
+          </p>
+          <p class="extra-price">Add {{ extra.price|currency }}</p>
         </div>
         {% endfor %}
 
@@ -127,13 +113,13 @@
     <!-- picture grid -->
     <div class="product-image-grid">
       <figure class="big-image">
-        <img itemprop="image" src="{{ product.images.first.thumbnail(746, 'auto')|default('http://placehold.it/460x300') }}" alt="{{ product.name }}"/>
+        <img itemprop="image" src="{{ product.images.first.thumbnail(350, 'auto')|default('http://placehold.it/460x300') }}" alt="{{ product.name }}"/>
       </figure>
       
       {% if product.images.count > 1 %}
       <ul>
         {% for image in product.images %}
-          <li class="image-grid-item"><a href="{{ image.thumbnail(746, 'auto') }}"><img src="{{ image.thumbnail(367, 367) }}"/></a></li>
+          <li class="image-grid-item"><a href="{{ image.thumbnail(746, 'auto') }}"><img src="{{ image.thumbnail(150, 150) }}"/></a></li>
         {% endfor %}
       </ul>
       {% endif %}
@@ -147,6 +133,12 @@
       <h3>{{ product.description|unescape }}</h3>
     </div>
 
+    <!-- product reviews -->
+    {{ partial('partial-review-view') }}
+
+    <!-- product review form -->
+    {{ partial('partial-review-form') }}
+
     <!-- related products -->
     {% if product.related.count %}
     <hr class="fill-parent">
@@ -158,7 +150,7 @@
       <li class="{{ is_on_sale ? 'sale' : null }}">
         <figure>
           <a href="{{ page_url }}">
-          <img src="{{ product.images.first.thumbnail(365, 365)|default('http://placehold.it/365x365') }}" width="365" height="365" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/>
+          <img src="{{ product.images.first.thumbnail(200, 200)|default('http://placehold.it/200x200') }}" width="200" height="200" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/>
           </a>
           <figcaption>
             <h3><a href="/product/{{ product.url_name }}" class="btn btn-default">{{ product.name }}</a></h3>

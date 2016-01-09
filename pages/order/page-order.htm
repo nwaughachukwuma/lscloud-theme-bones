@@ -5,7 +5,6 @@ published: true
 name: Order
 url: '/order/:orderId'
 ---
-<div class="wrapper">
 <h1>{{ page.title }}</h1>
 {% if order %}
 
@@ -30,12 +29,10 @@ url: '/order/:orderId'
 	      <tr>
 	        <td class="order-item">
 	          <a href="/product/{{ item.product.url_name }}"><img src="{{ item.product.images.first.thumbnail(100, 100)|default('http://placehold.it/100x100') }}"/></a>
-	        </td>
-	        <td class="order-name">
-						<a href="/product/{{ item.product.url_name }}">{{ item.product.name }}</a>
+	          						<a href="/product/{{ item.product.url_name }}">{{ item.product.name }}</a>
 						{% set description = item.optionsString() %}
 						{% if description %}<p>{{ description|unescape }}</p>{% endif %}
-					</td>
+	        </td>
 	        <td class="order-quantity">{{ item.quantity|number_format(0) }}</td>
 	        <td class="order-price">{{ item.pivot.price|currency }}</td>
 	        <td class="order-discount">{{ 0|currency }}</td>
@@ -46,24 +43,21 @@ url: '/order/:orderId'
 	  {% endfor %}
 
 		{% if order.total_discount %}
-			<tr><td><p>Discount applied: <strong>{{ order.total_discount|currency }}</strong></p></td></tr>
+		<p>Discount applied: <strong>{{ order.total_discount|currency }}</strong></p>
 		{% endif %}
-		<tr><td><p>Subtotal: <strong>{{ order.subtotal_invoiced|currency }}</strong></p></td></tr>
-		<tr><td><p>Sales Tax: <strong>{{ order.total_sales_tax|currency }}</strong></p></td></tr>
-		<tr><td><p>Shipping: <strong>{{ order.total_shipping_quote|currency }}</strong></p></td></tr>
+		<p>Subtotal: <strong>{{ order.subtotal_invoiced|currency }}</strong></p>
+		<p>Sales Tax: <strong>{{ order.total_sales_tax|currency }}</strong></p>
+		<p>Shipping: <strong>{{ order.total_shipping_quote|currency }}</strong></p>
 		{% if order.total_shipping_tax %}
-			<tr><td><p>Shipping Taxes: <strong>{{ order.total_shipping_tax|currency }}</strong></p></td></tr>
+			<p>Shipping Taxes: <strong>{{ order.total_shipping_tax|currency }}</strong></p>
 		{% endif %}
-		<tr><td><p>Total: <strong>{{ order.total|currency }}</strong></p></td></tr>
+		<p>Total: <strong>{{ order.total|currency }}</strong></p>
 	</table>
 
   {% if order.payment_method.has_payment_form() and not order.payment_processed() %}
-    <a class="button next" href="{{ root_url('/review/'~order.order_hash) }}">Pay the order</a>
+    <h3><a href="{{ root_url('/review/'~order.order_hash) }}">Pay the order</a></h3>
   {% endif %}
-
-	
 
 {% else %}
   <p class="flash error">Order not found</p>
 {% endif %}
-</div>
