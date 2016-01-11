@@ -106,7 +106,7 @@
     {% if product.images.count > 1 %}
     <ul>
       {% for image in product.images %}
-        <li><a href="{{ image.thumbnail(746, 'auto') }}"><img src="{{ image.thumbnail(150, 150) }}"/></a></li>
+        <li class="image-grid-item"><a href="{{ image.thumbnail(746, 'auto') }}"><img src="{{ image.thumbnail(150, 150) }}"/></a></li>
       {% endfor %}
     </ul>
     {% endif %}
