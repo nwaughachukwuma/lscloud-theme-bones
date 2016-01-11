@@ -119,12 +119,6 @@
       <h3>{{ product.description|unescape }}</h3>
     </div>
 
-    <!-- product reviews -->
-    {{ partial('partial-review-view') }}
-
-    <!-- product review form -->
-    {{ partial('partial-review-form') }}
-
     <!-- related products -->
     {% if product.related.count %}
     <hr>
