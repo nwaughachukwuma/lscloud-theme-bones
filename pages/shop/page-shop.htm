@@ -18,10 +18,10 @@ url: '/shop/:page?'
 	{% endfor %}
 </ul>
 {% endtree %}
+
 {{ open_form() }}
 	{% paginate products by 12 %}
 	<div itemtype="http://schema.org/ItemList">
-
 		<ul>
 			{% for product in pagination.items %}
 
@@ -31,7 +31,6 @@ url: '/shop/:page?'
 					<figure>
 						<a href="{{ page_url }}"><img itemprop="image" src="{{ product.images.first.thumbnail(365, 365)|default('http://placehold.it/365x365') }}" width="365" height="365" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/></a>
 					</figure>
-					<div class="product-information">
 						<h3><a itemprop="url" href="{{ page_url }}"><span itemprop="name">{{ product.name }}</span></a></h3>
 						<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 						{% if product.enabled %}
@@ -46,12 +45,10 @@ url: '/shop/:page?'
 						<link itemprop="availability" href="http://schema.org/OutOfStock"/>
 						{% endif %}
 						</div>
-					</div>
 				</li>
 			{% endfor %}
 		</ul>
 	</div>
 	{% navigation %}		
-
 	{% endpaginate %}
 {{ close_form() }}

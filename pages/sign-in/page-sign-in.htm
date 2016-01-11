@@ -15,7 +15,7 @@ url: /sign-in
 	<p><label for="login_email">E-mail Address</label><input class="required" type="text" id="login_email" name="email" value="{{ post('email') }}"/>
 	<span class="error"></span></p>
 	<p><label for="login_password">Password</label><input class="required" type="password" name="password" id="login_password" />
-	<h4><a class="right blue" href="{{ site_url('/password-restore') }}">Forgot?</a></h4>
+	<h4><a href="{{ site_url('/password-restore') }}">Forgot?</a></h4>
 	<span class="error"></span></p>
 	<input type="submit" value="Sign In"/>
 	<input type="hidden" name="redirect" value="{{ site_url(root_url('/')) }}"/>

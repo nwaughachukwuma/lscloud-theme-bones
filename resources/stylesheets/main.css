@@ -14,8 +14,8 @@ html {
 *::before {
   box-sizing: inherit; }
 
-/*h1, figure {
-  margin: 0; }*/
+figure {
+  margin: 0; }
 
 body {
   font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
@@ -23,7 +23,7 @@ body {
   max-width: 1440px;
   margin: 0 auto; }
 
-h1,h2,h3,h4 {
+h2,h3,h4 {
   font-weight: normal; }
 
 h1 {
