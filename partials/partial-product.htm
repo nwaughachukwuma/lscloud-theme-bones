@@ -1,132 +1,121 @@
 {% set on_sale = product.onSale %}
 
   <div itemscope itemtype="http://schema.org/Product">
-      <h1>{{ product.name }}</h1>
-      <!-- <hr style="margin: .75em -23% .75em 0;"/> -->
-      {% if product.short_description %}
-         <p>
-           {{ product.short_description|unescape }}
-         </p>
+    <h1>{{ product.name }}</h1>
+    <!-- <hr style="margin: .75em -23% .75em 0;"/> -->
+    {% if product.short_description %}
+      <p>{{ product.short_description|unescape }}</p>
+    {% endif %}
+    <meta itemprop="name" content="{{ product.name }}" />
+    <meta itemprop="sku" content="{{ product.sku }}" />
+    <link itemprop="url" href="{{ '/product/' ~ product.url_name }}" />
+
+    <!-- product cost -->
+    <h2>
+      {% if on_sale %}
+      <span class="oldprice">{{ product.fullPrice|currency }}</span>
       {% endif %}
-      <meta itemprop="name" content="{{ product.name }}" />
-      <meta itemprop="sku" content="{{ product.sku }}" />
-      <link itemprop="url" href="{{ '/product/' ~ product.url_name }}" />
+      {{ product.price|currency }}
+    </h2>
 
-      <!-- product cost -->
-      <h2>
-        {% if on_sale %}
-        <span class="oldprice">{{ product.fullPrice|currency }}</span>
-        {% endif %}
-        {{ product.price|currency }}
-      </h2>
-
-      <!-- product ratings -->
-      {% set product_rating = product.rating() %}
-      <p style="display: inline;">
-        {% if product_rating.total_reviews %}
-      <span style="margin-right: -4px">
-        {% for i in range(1, product_rating.average_int) %}&starf;{% endfor %}
-      </span>
-      {% if product_rating.average_int != 5 %}{% for i in range(1, 5 - product_rating.average_int) %}&star;{% endfor %}{% endif %}
-       ({{ product_rating.total_reviews }})
+    <!-- product ratings -->
+    {% set product_rating = product.rating() %}
+    <p style="display: inline;">
+      {% if product_rating.total_reviews %}
+        <span style="margin-right: -4px">
+          {% for i in range(1, product_rating.average_int) %}&starf;{% endfor %}
+        </span>
+        {% if product_rating.average_int != 5 %}{% for i in range(1, 5 - product_rating.average_int) %}&star;{% endfor %}{% endif %}
+        ({{ product_rating.total_reviews }})
       {% else %}
-      &star;&star;&star;&star;&star;
-       (no reviews yet)
+        &star;&star;&star;&star;&star;
+        (no reviews yet)
       {% endif %}
-      </p>
+    </p>
 
-      <!-- product attributes -->
-        <div class="product-attributes">
-      {% if product.productAttributes.count %}
-        {% for attribute in product.productAttributes %}
-          <p>{{ attribute.name }} - {{ attribute.value }}</p>
-        {% endfor %}
-      {% endif %}
-        </div>
+    <!-- product attributes -->
+    {% if product.productAttributes.count %}
+      {% for attribute in product.productAttributes %}
+        <p>{{ attribute.name }} - {{ attribute.value }}</p>
+      {% endfor %}
+    {% endif %}
 
-      <!-- product options -->
-      {% if product.options.count %}
-        {% for index, option in product.options %}
-          <p><label for="{{ 'option-'~index }}">{{ option.name }}</label>
-          <select id="{{ 'option-'~index }}" name="options[{{ option.id }}]" data-ajax-handler="shop:product" data-ajax-update="">
-            {% for key, value in option.values %}
-              <option value='{{ key }}' {{ option_state(postedOptions[option.id], key) }}>{{ value }}</option>
-            {% endfor %}
-          </select></p>
-        {% endfor %}
-      {% endif %}
+    <!-- product options -->
+    {% if product.options.count %}
+      {% for index, option in product.options %}
+        <p><label for="{{ 'option-'~index }}">{{ option.name }}</label>
+        <select id="{{ 'option-'~index }}" name="options[{{ option.id }}]" data-ajax-handler="shop:product" data-ajax-update="">
+          {% for key, value in option.values %}
+            <option value='{{ key }}' {{ option_state(postedOptions[option.id], key) }}>{{ value }}</option>
+          {% endfor %}
+        </select></p>
+      {% endfor %}
+    {% endif %}
 
-      <!-- product extras -->
-      {% if product.extras.count %}
-      <h2>Extras</h2>
-        {% for index, extra in product.extras|slice(0, 2) %}
-        <div class="product product-extras">
-          <img src="{{ extra.images.first.thumbnail(230, 230)|default('http://placehold.it/230x230') }}" width="230" height="230" alt="{{ extra.images.first.description }}" title="{{ extra.images.first.title }}"/>
-          <p><label for="{{ 'extra-'~index }}">{{ extra.name }}</label>
-          {% if extra.enabled %}
-            <input type="checkbox" id="{{ 'extra-'~index }}" {{ checkbox_state(postedExtras[extra.id], extra.id) }} name="extras[{{ extra.id }}]" data-ajax-handler="shop:product" data-ajax-update="">
-          {% else %}
-            <input type="checkbox" disabled="disabled">
-          {% endif %}
-          </p>
-          <p class="extra-price">Add {{ extra.price|currency }}</p>
-        </div>
-        {% endfor %}
-
-      {% endif %}
-      <!-- quantity & add-to-cart -->
-
-      {% if product.enabled %}
-        {% if not product.isOutOfStock() or product.allow_preorder %}
-        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-          <link itemprop="availability" href="http://schema.org/InStock" />
-          <meta itemprop="priceCurrency" content="USD" /> <!-- Should get currency code through variable -->
-          <meta itemprop="price" content="{{ product.price }}" />
-        </div>
- 
-        <!-- {{ flash() }}  -->
-
-        <label>Quantity</label>
-        <input class="product-quantity" type="text" value="{{ quantity|default("1") }}" name="quantity">
-        <input type="hidden" name="productId" value="{{ product.id }}"/>
-        <a class="button next" id="product-add" href="#" >Add to Cart</a>
-        <a class="button next " id="product-added" href="#" disabled="disabled" style="display: none;">Added!</a>
-
+    <!-- product extras -->
+    {% if product.extras.count %}
+    <h2>Extras</h2>
+      {% for index, extra in product.extras|slice(0, 2) %}
+      <div class="product">
+        <img src="{{ extra.images.first.thumbnail(230, 230)|default('http://placehold.it/230x230') }}" width="230" height="230" alt="{{ extra.images.first.description }}" title="{{ extra.images.first.title }}"/>
+        <p><label for="{{ 'extra-'~index }}">{{ extra.name }}</label>
+        {% if extra.enabled %}
+          <input type="checkbox" id="{{ 'extra-'~index }}" {{ checkbox_state(postedExtras[extra.id], extra.id) }} name="extras[{{ extra.id }}]" data-ajax-handler="shop:product" data-ajax-update="">
         {% else %}
-          <p>
-          This product is temporarily unavailable.
-          {% if product.om('expected_availability_date', posted_options) %}
-          <br/>The expected availability date is <time><strong>{{ product.om('expected_availability_date', posted_options).format('%x') }}</strong></time>
-          {% endif %}
-          </p>
+          <input type="checkbox" disabled="disabled">
         {% endif %}
-      {% else %}
-        <link itemprop="availability" href="http://schema.org/OutOfStock"/>
-        <h2>This product is not available.</h2>
-      {% endif %}
+        </p>
+        <p>Add {{ extra.price|currency }}</p>
+      </div>
+      {% endfor %}
+    {% endif %}
 
-      <time itemprop="releaseDate" datetime="{{ product.om('expected_availability_date', posted_options).format('%x') }}"></time>
+    <!-- quantity & add-to-cart -->
+    {% if product.enabled %}
+      {% if not product.isOutOfStock() or product.allow_preorder %}
+      <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        <link itemprop="availability" href="http://schema.org/InStock" />
+        <meta itemprop="priceCurrency" content="USD" /> <!-- Should get currency code through variable -->
+        <meta itemprop="price" content="{{ product.price }}" />
+      </div>
+      <label>Quantity</label>
+      <input type="text" value="{{ quantity|default("1") }}" name="quantity">
+      <input type="hidden" name="productId" value="{{ product.id }}"/>
+      <a id="product-add" href="#" >Add to Cart</a>
+      <a id="product-added" href="#" disabled="disabled" style="display: none;">Added!</a>
+      {% else %}
+        <p>
+        This product is temporarily unavailable.
+        {% if product.om('expected_availability_date', posted_options) %}
+        <br/>The expected availability date is <time><strong>{{ product.om('expected_availability_date', posted_options).format('%x') }}</strong></time>
+        {% endif %}
+        </p>
+      {% endif %}
+    {% else %}
+      <link itemprop="availability" href="http://schema.org/OutOfStock"/>
+      <h2>This product is not available.</h2>
+    {% endif %}
+
+    <time itemprop="releaseDate" datetime="{{ product.om('expected_availability_date', posted_options).format('%x') }}"></time>
 
     <!-- picture grid -->
-    <div class="product-image-grid">
-      <figure class="big-image">
-        <img itemprop="image" src="{{ product.images.first.thumbnail(350, 'auto')|default('http://placehold.it/460x300') }}" alt="{{ product.name }}"/>
-      </figure>
-      
-      {% if product.images.count > 1 %}
-      <ul>
-        {% for image in product.images %}
-          <li class="image-grid-item"><a href="{{ image.thumbnail(746, 'auto') }}"><img src="{{ image.thumbnail(150, 150) }}"/></a></li>
-        {% endfor %}
-      </ul>
-      {% endif %}
-    </div>
+    <figure>
+      <img itemprop="image" src="{{ product.images.first.thumbnail(350, 'auto')|default('http://placehold.it/460x300') }}" alt="{{ product.name }}"/>
+    </figure>
+    
+    {% if product.images.count > 1 %}
+    <ul>
+      {% for image in product.images %}
+        <li><a href="{{ image.thumbnail(746, 'auto') }}"><img src="{{ image.thumbnail(150, 150) }}"/></a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
 
-    <hr class="fill-parent">
+    <hr>
 
     <!-- product details -->
-    <h1 class="fill-parent">Product Details</h1>
-    <div class="product-description" itemprop="description">
+    <h1>Product Details</h1>
+    <div itemprop="description">
       <h3>{{ product.description|unescape }}</h3>
     </div>
 
@@ -138,28 +127,26 @@
 
     <!-- related products -->
     {% if product.related.count %}
-    <hr class="fill-parent">
-    <h1 class="fill-parent">You Might be Into These</h1>
+    <hr>
+    <h1>You Might be Into These</h1>
     <ul>
       {% for product in product.related %}
-      {% set page_url = '/product/' ~ product.url_name %}
-      <div class="product product-related">
-      <li class="{{ is_on_sale ? 'sale' : null }}">
-        <figure>
-          <a href="{{ page_url }}">
-          <img src="{{ product.images.first.thumbnail(200, 200)|default('http://placehold.it/200x200') }}" width="200" height="200" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/>
-          </a>
-          <figcaption>
-            <h3><a href="/product/{{ product.url_name }}" class="btn btn-default">{{ product.name }}</a></h3>
-            <h2>{{ product.price|currency }}</h2>
-            {% if on_sale %}
-              <h2 class="oldprice">{{ product.fullPrice|currency }}</h2>
-            {% endif %}
-          </figcaption>
-        </figure>
-
-      </li>
-      </div>
+        {% set page_url = '/product/' ~ product.url_name %}
+        {% set on_sale = product.onSale %}
+        <li class="product">
+          <figure>
+            <a href="{{ page_url }}">
+            <img src="{{ product.images.first.thumbnail(200, 200)|default('http://placehold.it/200x200') }}" width="200" height="200" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/>
+            </a>
+            <figcaption>
+              <h3><a href="/product/{{ product.url_name }}">{{ product.name }}</a></h3>
+              <h2>{{ product.price|currency }}</h2>
+              {% if on_sale %}
+                <h2 class="oldprice">{{ product.fullPrice|currency }}</h2>
+              {% endif %}
+            </figcaption>
+          </figure>
+        </li>
       {% endfor %}
     </ul>
     {% endif %}

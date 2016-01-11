@@ -1,42 +1,42 @@
 {{ open_form({'class': 'custom'}) }}
  
-    <h2>Delivery Method</h2>
-    <hr>
+  <h2>Delivery Method</h2>
+  <hr>
 
-    {% if shippingOptions %}
+  {% if shippingOptions %}
 
-      <input type="hidden" value="" name="shippingMethod">
+    <input type="hidden" value="" name="shippingMethod">
 
-      {% for index, option in shippingOptions %}
-        <p>
-          <label for="{{ 'option'~index }}">
-            <!-- The shipping method radio button clicks are handled in the app.js -->
-            <input name="shippingMethod" {{ option.error_hint ? 'disabled' : null }} value="{{ index }}" {{ radio_state(shippingMethodInfo.id, option.id) }} type="radio" id="{{ 'option'~index }}"/>
+    {% for index, option in shippingOptions %}
+      <p>
+        <label for="{{ 'option'~index }}">
+          <!-- The shipping method radio button clicks are handled in the app.js -->
+          <input name="shippingMethod" {{ option.error_hint ? 'disabled' : null }} value="{{ index }}" {{ radio_state(shippingMethodInfo.id, option.id) }} type="radio" id="{{ 'option'~index }}"/>
 
-            <span>
-              {{ option.shippingMethodName }}
-              {% if option.shippingServiceName %}: {{ option.shippingServiceName }}{% endif %}
-            </span>
+          <span>
+            {{ option.shippingMethodName }}
+            {% if option.shippingServiceName %}: {{ option.shippingServiceName }}{% endif %}
+          </span>
 
-            {% if option.error_hint %}
-              <span>{{ option.error_hint }}</span>
-            {% endif %}
+          {% if option.error_hint %}
+            <span>{{ option.error_hint }}</span>
+          {% endif %}
 
-            <span class="delivery-cost">
-            {% if not option.error_hint  %}
-              {{ not option.is_free ? option.quote|currency : 'free' }}
-            {% endif %}
-            </span>
+          <span>
+          {% if not option.error_hint  %}
+            {{ not option.is_free ? option.quote|currency : 'free' }}
+          {% endif %}
+          </span>
 
-          </label>
-        </p>
-      {% endfor %}
+        </label>
+      </p>
+    {% endfor %}
 
-      <h3><a href="#" data-ajax-handler="shop:checkout" data-ajax-update="#checkout-page=partial-checkout, #mini-cart=shop-minicart">Place order &amp; pay</a></h3>
+    <h3><a href="#" data-ajax-handler="shop:checkout" data-ajax-update="#checkout-page=partial-checkout, #mini-cart=shop-minicart">Place order &amp; pay</a></h3>
 
-    {% else %}
-      <p>We are sorry, there are no shipping options available for your location.</p>
-    {% endif %}
+  {% else %}
+    <p>We are sorry, there are no shipping options available for your location.</p>
+  {% endif %}
 
   <input type="hidden" name="step" value="shipping_method,review" />
   <input type="hidden" name="nextStep" value="pay" />

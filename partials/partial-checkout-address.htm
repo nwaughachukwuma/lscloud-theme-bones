@@ -4,14 +4,13 @@
 	<h3>You are checking out as a guest.
 		<a href="/sign-in">Sign in or Sign up</a> to checkout faster and save your info.
 	</h3>
-
 {% endif %}
 
 {{ open_form({'class': 'custom', 'data-validation-message' : ''}) }}
 
-		{{ flash() }}
-		<h2>Delivery & Billing Info</h2>
-		<hr>
+	{{ flash() }}
+	<h2>Delivery & Billing Info</h2>
+	<hr>
 
 	<div class="billing-first-name">
 		<label for="billing_firstName">First Name *</label>
@@ -142,33 +141,5 @@
 
 	<input type="hidden" name="step" value="billing_info,shipping_info"/>
   <input type="hidden" name="nextStep" value="shipping_method" />
-
-<!-- 
-	<div class="order-summary">
-		<h2>Order Summary</h2>
-		<hr>
-		<div class="order-summary-description">
-			{% if totals.discountTotal > 0 %}
-				<h3>Discount</h3>
-			{% endif %}	
-			<h3>Subtotal</h3>
-			{% if totals.totalShippingQuote %}
-			  <h3>Shipping</h3>
-			{% endif %}
-			<h3>Tax</h3>
-			<h2>Total</h2>
-		</div>
-		<div class="order-summary-amount">
-			{% if totals.discountTotal > 0 %}
-				<h3>{{ totals.discountTotal|currency }}</h3>
-			{% endif %}	
-			<h3>{{ totals.subtotal|currency }}</h3>
-			{% if totals.totalShippingQuote %}
-			  <h3>{{ totals.totalShippingQuote|currency }}</h3>
-			{% endif %}
-			<h3>{{ totals.totalTax|currency }}</h3>
-			<h2>{{ totals.total|currency }}</h2>
-		</div>
-	</div> -->
 
 {{ close_form() }}
