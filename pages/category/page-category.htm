@@ -32,7 +32,7 @@ url: '/category/:urlName@/:page?'
 			{% for product in pagination.items %}
 				{% set is_on_sale = product.onSale %}
 				{% set page_url = '/product/' ~ product.url_name %}
-				<li class="product {{ is_on_sale ? 'sale' : null }}">
+				<li class="product">
 					<figure>
 						<a href="{{ page_url }}">
 						<img src="{{ product.images.first.thumbnail(365, 365)|default('http://placehold.it/365x365') }}" width="365" height="365" alt="{{ product.images.first.description }}" title="{{ product.images.first.title }}"/>
@@ -40,7 +40,7 @@ url: '/category/:urlName@/:page?'
 					  <figcaption>
 						  <h3><a href="/product/{{ product.url_name }}" class="btn btn-default">{{ product.name }}</a></h3>
 							<h2>{{ product.price|currency }}</h2>
-							{% if on_sale %}
+							{% if is_on_sale %}
 								<h2 class="oldprice">{{ product.fullPrice|currency }}</h2>
 							{% endif %}
 						</figcaption>

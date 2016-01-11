@@ -14,12 +14,14 @@ html {
 *::before {
   box-sizing: inherit; }
 
-body, h1, figure {
-  margin: 0; }
+/*h1, figure {
+  margin: 0; }*/
 
 body {
   font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
-  padding: 2em; }
+  padding: 2em;
+  max-width: 1440px;
+  margin: 0 auto; }
 
 h1,h2,h3,h4 {
   font-weight: normal; }
@@ -57,8 +59,12 @@ ul ul {
 .product {
   display: inline-block; }
 
+.product h2 {
+  display: inline; }
+
 .oldprice {
-  text-decoration: line-through; }
+  text-decoration: line-through;
+  color: red; }
 
 .breadcrumbs :not(:last-child):after {
   content: ">";

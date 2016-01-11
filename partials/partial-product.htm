@@ -1,11 +1,10 @@
 {% set on_sale = product.onSale %}
 
-  <div class="wrapper product-wrap" itemscope itemtype="http://schema.org/Product">
-    <div id="product-form">
-      <h1 class="fill-parent">{{ product.name }}</h1>
+  <div itemscope itemtype="http://schema.org/Product">
+      <h1>{{ product.name }}</h1>
       <!-- <hr style="margin: .75em -23% .75em 0;"/> -->
       {% if product.short_description %}
-         <p class="short-description">
+         <p>
            {{ product.short_description|unescape }}
          </p>
       {% endif %}
@@ -14,7 +13,7 @@
       <link itemprop="url" href="{{ '/product/' ~ product.url_name }}" />
 
       <!-- product cost -->
-      <h2 class="fill-parent">
+      <h2>
         {% if on_sale %}
         <span class="oldprice">{{ product.fullPrice|currency }}</span>
         {% endif %}
@@ -107,8 +106,6 @@
       {% endif %}
 
       <time itemprop="releaseDate" datetime="{{ product.om('expected_availability_date', posted_options).format('%x') }}"></time>
-
-    </div>
 
     <!-- picture grid -->
     <div class="product-image-grid">
