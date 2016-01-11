@@ -1,5 +1,5 @@
 //
-// Bones - Responsive Theme
+// Bones - Barebones Theme
 // Theme Scripts
 //
 
@@ -154,67 +154,6 @@
             $("#item_rating").val('5');
         }
         console.log($('#item_rating').val());
-    });
-
-    //
-    // Review Modal
-    //
-    $(function() {
-      $("#modal-1").on("change", function() {
-        if ($(this).is(":checked")) {
-          $("body").addClass("modal-open");
-          $(".modal-form-fade-screen").addClass("modal-fade-open");
-          console.log("modal-1 activated!");
-        } else {
-          $("body").removeClass("modal-open");
-          $(".modal-form-fade-screen").removeClass("modal-fade-open");
-        }
-      });
-      $("#modal-2").on("change", function() {
-        if ($(this).is(":checked")) {
-          $("body").addClass("modal-open");
-          $(".modal-view-fade-screen").addClass("modal-fade-open");
-          console.log("modal-2 activated!");
-        } else {
-          $("body").removeClass("modal-open");
-          $(".modal-view-fade-screen").removeClass("modal-fade-open");
-        }
-      });
-
-      //
-      // Change from view-review modal to write-review modal
-      //
-      $("#write-review-inview").on("click", function() {
-        $(".modal-state:checked").prop("checked", false).change();
-        $("#modal-1").prop("checked", true).change();
-      })
-
-      //
-      // Change from Sign-Up modal to Sign-In modal and visa-versa
-      //
-      $("#sign-up-inview").on("click", function() {
-        $(".modal-state:checked").prop("checked", false).change();
-        $("#modal-2").prop("checked", true).change();
-      })
-      $("#sign-in-inview").on("click", function() {
-        $(".modal-state:checked").prop("checked", false).change();
-        $("#modal-1").prop("checked", true).change();
-      })
-
-      $(".modal-fade-screen, .modal-close").on("click", function() {
-        $(".modal-state:checked").prop("checked", false).change();
-      });
-
-      $(".modal-inner").on("click", function(e) {
-        e.stopPropagation();
-      });
-    });
-
-    //
-    // Handle mobile menu nav click
-    //
-    $(document).on('click', '.hamburger-dropdown', function (){
-      $(this).toggleClass("active");
     });
 
   });
