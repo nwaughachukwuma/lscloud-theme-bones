@@ -88,3 +88,10 @@ input, textarea, select {
 #order-table th {
   width: 100px; }
 
+.rating span.select {
+  color: transparent; }
+.rating span.select:before {
+  content: "\2605";
+  position: absolute;
+  color: gold; }
+
