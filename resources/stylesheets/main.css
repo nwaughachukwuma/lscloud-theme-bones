@@ -40,11 +40,11 @@ h4 {
   font-size: 0.75em; }
 
 a {
-  color: royalblue;
+  color: #0084cd;
   text-decoration: none; }
 
 a:hover {
-  color: #0087C8; }
+  color: #009DF2; }
 
 ul {
   padding: 0;
@@ -61,6 +61,9 @@ ul ul {
 
 .product h2 {
   display: inline; }
+
+.product-added {
+  color: #F0C332; }
 
 .oldprice {
   text-decoration: line-through;

@@ -69,27 +69,19 @@
     });
 
     //
-    // Handle Checkbox copy-info button in checkout
+    // Handle copy-info button in checkout
     //
     $(document).on('click', '#copy_billing_to_shipping', function (){
-
-      if($(this).is(':checked')) {
-        $(".shipping-form").hide();
-
-        $(this).sendRequest('shop:onCheckoutBillingInfo', {
+      //data-ajax-handler="shop:onCopyBillingToShipping" data-ajax-update="#checkout-page=shop-checkoutaddress"
+      $(this).sendRequest('shop:onCheckoutBillingInfo', {
           onAfterUpdate: function() {
             $(this).sendRequest('shop:onCopyBillingToShipping', {
               update: {'#checkout-page' : 'partial-checkout-address', '#mini-cart':'shop-minicart'},
-              extraFields: {'nextStep': 'billing_info', 'doCheckout': 1, 'step': ''}
+              xtraFields: {'nextStep': 'billing_info', 'doCheckout': 1, 'step': ''}
             });
           }
-        });
-
-      } else {
-        $(".shipping-form").show();
-      }
-
-    });
+      });
+    })
     
     //
     // If copy-billing is checked, on ajax reload, prop checked and hide shipping form
@@ -101,12 +93,18 @@
       } 
     });
 
+    var timeout;
     $(document).on('click', '#product-add', function (){
       $(this).sendRequest('shop:onAddToCart', {
         update: {'#product-page' : 'partial-product', '#mini-cart' : 'shop-minicart'},
         onAfterUpdate: function() {
-          $('#product-add').hide();
-          $('#product-added').show();
+          clearTimeout(timeout);
+          $('#product-add').addClass('product-added');
+          $('#product-add').text('Added!');
+          timeout = setTimeout(function() {
+            $('#product-add').removeClass('product-added');
+            $('#product-add').text('Add to Cart');
+          }, 1500); // change the HTML after 1.5 seconds
         }
       });
     });
