@@ -2,7 +2,6 @@
 
   <div itemscope itemtype="http://schema.org/Product">
     <h1>{{ product.name }}</h1>
-    <!-- <hr style="margin: .75em -23% .75em 0;"/> -->
     {% if product.short_description %}
       <p>{{ product.short_description|unescape }}</p>
     {% endif %}
