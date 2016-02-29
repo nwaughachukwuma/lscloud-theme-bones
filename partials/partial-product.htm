@@ -11,7 +11,7 @@
     <!-- product cost -->
     <h2>
       {% if on_sale %}
-      <span class="oldprice">{{ product.fullPrice|currency }}</span>
+      <s>{{ product.fullPrice|currency }}</s>
       {% endif %}
       <span itemprop="price" content="{{ product.price }}">{{ product.price|currency }}</span>
     </h2>
@@ -134,7 +134,7 @@
               <h3><a href="/product/{{ product.url_name }}">{{ product.name }}</a></h3>
               <h2>{{ product.price|currency }}</h2>
               {% if on_sale %}
-                <h2 class="oldprice">{{ product.fullPrice|currency }}</h2>
+                <h2><s>{{ product.fullPrice|currency }}</s></h2>
               {% endif %}
             </figcaption>
           </figure>

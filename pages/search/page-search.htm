@@ -28,7 +28,7 @@ url: /search
 							<meta itemprop="price" content="{{ product.price }}" />
 							<h2>{{ product.price|currency }}</h2>
 							{% if on_sale %}
-								<h2 class="oldprice">{{ product.fullPrice|currency }}</h2>
+								<h2><s>{{ product.fullPrice|currency }}</s></h2>
 							{% endif %}
 						{% else %}
 						<link itemprop="availability" href="http://schema.org/OutOfStock"/>

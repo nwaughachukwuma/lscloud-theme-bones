@@ -26,7 +26,7 @@ url: /
 					  <h3><a href="/product/{{ product.url_name }}">{{ product.name }}</a></h3>
 						<h2>{{ product.price|currency }}</h2>
 						{% if on_sale %}
-							<h2 class="oldprice">{{ product.fullPrice|currency }}</h2>
+							<h2><s>{{ product.fullPrice|currency }}</s></h2>
 						{% endif %}
 					</figcaption>
 				</figure>
@@ -57,7 +57,7 @@ url: /
 				<h3><a href="/product/{{ product.url_name }}" class="btn btn-default">{{ product.name }}</a></h3>
 				<h2>{{ product.price|currency }}</h2>
 				{% if on_sale %}
-					<h2 class="oldprice">{{ product.fullPrice|currency }}</h2>
+					<h2><s>{{ product.fullPrice|currency }}</s></h2>
 				{% endif %}
 			</div>
 		{% endfor %}
