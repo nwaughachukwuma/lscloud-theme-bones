@@ -66,6 +66,7 @@ description: 'Default Template'
             <a href="/sign-in">Login</a>
           </li>
         {% endif %}
+        <li><a href="/blog">Blog</a></li>
         <li id="mini-cart">{{ partial('shop-minicart') }}</li>
       </ul>
     </nav>
@@ -79,7 +80,7 @@ description: 'Default Template'
     <hr>
     <ul>
       <li><a href="{{ site_url('contact') }}">Contact</a></li>
-      <li><a href="http://blog.lemonstand.com/">Blog</a></li>
+      <li><a href="{{ site_url('blog') }}">Blog</a></li>
       <li><a href="{{ theme.linkedInUrl }}">Jobs</a></li>
       <li><a href="{{ theme.twitterUrl }}">@LemonStand</a></li>
     </ul>
