@@ -24,7 +24,11 @@ gulp.task('styles', function () {
             lineNumbers: true,
             sourcemap: false,
             includePaths: require('node-neat').includePaths
-        }))
+        })
+        .on('error', notify.onError(
+          function (error) {
+            return "Problem file : " + error.message;
+        })))
         .pipe(gulp.dest('resources/stylesheets'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(minifycss())
