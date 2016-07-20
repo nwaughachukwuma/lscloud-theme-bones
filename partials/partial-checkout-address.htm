@@ -135,6 +135,9 @@
 		<input type="text" name="shippingInfo[phone]" id="shipping_phone" value="{{ shippingInfo.phone }}"/>
 		<span class="error"></span>
 	</div>
+	<div class="email-check-box">
+		<input type="checkbox" name="email-check" id="recieve_promotional_emails" checked>Recieve promotional emails
+	</div>
 
 	<!-- See the onSetBillingAndShippignInfo AJAX handler implementation on the Checkout page's AJAX tab -->
 	<h3><a href="#" data-ajax-handler="shop:checkout" data-ajax-update="#checkout-page=partial-checkout, #mini-cart=shop-minicart">Next step</a></h3>
