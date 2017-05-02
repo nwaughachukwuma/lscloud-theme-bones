@@ -10,9 +10,23 @@
         {% else %}
             {% set saved_card_enabled = false %}
         {% endif %}
-
         {{ paymentForm({
                 options: {
+                    number: {
+                        placeholder: 'Card number',
+                    },
+                    cvv: {
+                        placeholder: '***',
+                    },
+                    full_name: {
+                        placeholder: 'Cardholder name',
+                    },
+                    expiry: {
+                        placeholder: 'MM/YYYY',
+                    },
+                    submit: {
+                        value: 'Pay Now'
+                    },
                     save_card: {
                         label: 'Save Card',
                         enabled: saved_card_enabled
