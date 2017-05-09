@@ -1,5 +1,5 @@
 {
-  "name": "bones",
+  "name": "Bones base theme",
   "version": "1.0.0",
   "description": "Bones is a bare bones theme for developers that makes it easy for you to get started faster, so you can focus on designing a beautiful online store. All the core LemonStand theme elements, including templates, pages and partials, are already built in, saving you time and letting you get straight to the fun stuff. We stripped out all the styling, essentially giving you a blank canvas to start from. Use Bones to create a truly unique user experience by designing your online stores without any constraints.",
   "main": "README.md",
@@ -8,7 +8,7 @@
     "type": "theme",
     "options": "options.json",
     "demo" : "https//bones.lemonstand.com",
-    "screenshot" : {
+    "screenshots" : {
       "small":"https://raw.githubusercontent.com/lemonstand/lscloud-theme-bones/master/resources/screenshots/tiny-square.png",
       "large":"https://raw.githubusercontent.com/lemonstand/lscloud-theme-bones/master/resources/screenshots/large-square.png"
     }
@@ -20,7 +20,7 @@
     "type": "git",
     "url": "git://github.com/lemonstand/lscloud-theme-bones.git"
   },
-  "author": "LemonStand",
+  "author": "LemonStand <support@lemonstand.com> (http://docs.lemonstand.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/lemonstand/lscloud-theme-bones/issues"
