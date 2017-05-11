@@ -99,6 +99,19 @@ input, textarea, select {
   position: absolute;
   color: gold; }
 
+.group {
+  margin-bottom: 3px;
+}
+
+.card-table th {
+    padding: 5px;
+    font-weight: inherit;
+}
+
+.card-table tr {
+    font-weight: inherit;
+}
+
 .card-form-close {
     display: none;
 }
@@ -106,3 +119,8 @@ input, textarea, select {
 .card-form-open {
     display: block;
 }
+
+.card-form-open {
+    display: block;
+}
+
