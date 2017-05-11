@@ -98,3 +98,11 @@ input, textarea, select {
   content: "\2605";
   position: absolute;
   color: gold; }
+
+.card-form-close {
+    display: none;
+}
+
+.card-form-open {
+    display: block;
+}
