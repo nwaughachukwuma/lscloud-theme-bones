@@ -1,7 +1,7 @@
 {
   "name": "Bones base theme",
   "version": "1.0.0",
-  "description": "Bones is a bare bones theme for developers that makes it easy for you to get started faster, so you can focus on designing a beautiful online store. All the core LemonStand theme elements, including templates, pages and partials, are already built in, saving you time and letting you get straight to the fun stuff. We stripped out all the styling, essentially giving you a blank canvas to start from. Use Bones to create a truly unique user experience by designing your online stores without any constraints.",
+  "description": "Bones is a bare bones theme for developers that provides a foundation to get started faster when building a custom online store. All the core LemonStand theme elements, including templates, pages and partials, are already built in, saving you time and letting you get straight to the fun stuff. We stripped out all the styling, giving you a blank canvas to build off.<br/>Use Bones to create a truly unique user experience by designing your online stores without any constraints.",
   "main": "README.md",
   "lemonstand" : {
     "code":"bones",
@@ -12,7 +12,7 @@
       "small":"https://raw.githubusercontent.com/lemonstand/lscloud-theme-bones/master/resources/screenshots/tiny-square.png",
       "large":"https://raw.githubusercontent.com/lemonstand/lscloud-theme-bones/master/resources/screenshots/large-square.png"
     }
-  },   
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -39,9 +39,10 @@
     "node-neat": "^1.7.2"
   },
   "keywords": [
-    "bare-bones",
     "html5",
     "sass",
-    "gulp"
+    "gulp",
+    "base-theme",
+    "node-bourbon"
   ]
 }
